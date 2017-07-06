@@ -18,8 +18,10 @@ from data.simple_qa_relation import SimpleQaRelationDataset
 args = get_args()
 # set random seeds for reproducibility
 torch.manual_seed(args.seed)
-if not torch.cuda.is_available():
+if not args.cuda:
     args.gpu = -1
+if torch.cuda.is_available() and not args.cuda:
+    print("WARNING: You have CUDA but not using it.")
 if torch.cuda.is_available() and args.cuda:
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
