@@ -8,8 +8,7 @@ class Encoder(nn.Module):
     def __init__(self, config):
         super(Encoder, self).__init__()
         self.config = config
-        input_size = config.d_proj if config.projection else config.d_embed
-        self.rnn = nn.LSTM(input_size=input_size, hidden_size=config.d_hidden,
+        self.rnn = nn.LSTM(input_size=config.d_embed, hidden_size=config.d_hidden,
                         num_layers=config.n_layers, dropout=config.dropout_prob,
                         bidirectional=config.birnn)
 
