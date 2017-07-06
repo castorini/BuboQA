@@ -14,17 +14,15 @@ from model import RelationClassifier
 from args import get_args
 from data.simple_qa_relation import SimpleQaRelationDataset
 
-# get the configuration arguments
+# get the configuration arguments and set machine - GPU/CPU
 args = get_args()
-
-# set the random seed manually for reproducibility
+# set random seeds for reproducibility
 torch.manual_seed(args.seed)
-if torch.cuda.is_available():
-    if not args.cuda:
-        print("WARNING: You have a CUDA device, so you should probably run with --cuda")
-    else:
-        torch.cuda.manual_seed(args.seed)
-        torch.cuda.set_device(args.device)
+if not torch.cuda.is_available():
+    args.gpu = -1
+if torch.cuda.is_available() and args.cuda:
+    torch.cuda.set_device(args.gpu)
+    torch.cuda.manual_seed(args.seed)
 
 # ---- prepare the dataset with Torchtext -----
 questions = data.Field(lower=True)
@@ -48,7 +46,7 @@ relations.build_vocab(train, dev, test)
 
 # BucketIterator buckets the examples according to length so less padding is needed
 train_iter, dev_iter, test_iter = data.BucketIterator.splits(
-            (train, dev, test), batch_size=args.batch_size, device=args.gpu_device)
+            (train, dev, test), batch_size=args.batch_size, device=args.gpu)
 train_iter.repeat = False # do not repeat examples after finishing an epoch
 
 
@@ -68,7 +66,8 @@ else:
     model = RelationClassifier(config)
     if args.word_vectors:
         model.embed.weight.data = questions.vocab.vectors
-        model.cuda()
+        if args.cuda:
+            model.cuda()
 
 criterion = nn.NLLLoss()
 optimizer = optim.Adam(model.parameters(), lr=args.lr)
@@ -99,12 +98,12 @@ for epoch in range(args.epochs):
         answer = model(batch)
 
         # calculate accuracy of predictions in the current batch
-        n_correct += (torch.max(answer, 1)[1].view(batch.label.size()).data == batch.label.data).sum()
+        n_correct += (torch.max(answer, 1)[1].view(batch.relation.size()).data == batch.relation.data).sum()
         n_total += batch.batch_size
         train_acc = 100. * n_correct/n_total
 
         # calculate loss of the network output with respect to training labels & backpropagate to compute gradients
-        loss = criterion(answer, batch.label)
+        loss = criterion(answer, batch.relation)
         loss.backward()
 
         # clip the gradients (prevent exploding gradients) and update the weights
@@ -130,8 +129,8 @@ for epoch in range(args.epochs):
             n_dev_correct, dev_loss = 0, 0
             for dev_batch_idx, dev_batch in enumerate(dev_iter):
                  answer = model(dev_batch)
-                 n_dev_correct += (torch.max(answer, 1)[1].view(dev_batch.label.size()).data == dev_batch.label.data).sum()
-                 dev_loss = criterion(answer, dev_batch.label)
+                 n_dev_correct += (torch.max(answer, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data).sum()
+                 dev_loss = criterion(answer, dev_batch.relation)
             dev_acc = 100. * n_dev_correct / len(dev)
 
             print(dev_log_template.format(time.time()-start,
