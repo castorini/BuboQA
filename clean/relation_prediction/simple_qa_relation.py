@@ -39,7 +39,11 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
         prefix_fname = 'annotated_fb_data_'
         return super(SimpleQaRelationDataset, cls).splits(
                     os.path.join(path, prefix_fname), train, validation, test,
+<<<<<<< HEAD
                     format='TSV', fields=[('subject', None), ('predicate', label_field), (object, None), ('question', text_field)]
+=======
+                    format='TSV', fields=[('subject', None), ('relation', label_field), (object, None), ('question', text_field)]
+>>>>>>> 2f8f0ac654e4715c1b50e1afe42284535dc9f589
                 )
 
     @classmethod
