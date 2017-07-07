@@ -12,7 +12,7 @@ from torchtext import data
 
 from model import RelationClassifier
 from args import get_args
-from data.simple_qa_relation import SimpleQaRelationDataset
+from simple_qa_relation import SimpleQaRelationDataset
 
 # get the configuration arguments and set machine - GPU/CPU
 args = get_args()
