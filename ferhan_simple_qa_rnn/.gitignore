@@ -4,5 +4,3 @@ resources/
 saved_checkpoints/
 __pycache__/
 relation_prediction/*cache*/*
-.idea/*
-.DS_Store
