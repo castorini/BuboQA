@@ -19,20 +19,20 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
     @classmethod
     def splits(cls, text_field, label_field, root='../data',
                 train='train.txt', validation='valid.txt', test='test.txt'):
-        """Create dataset objects for splits of the SNLI dataset.
+        """Create dataset objects for splits of the Simple QA dataset.
         This is the most flexible way to use the dataset.
         Arguments:
             text_field: The field that will be used for premise and hypothesis
                 data.
             label_field: The field that will be used for label data.
             root: The root directory that the dataset's zip archive will be
-                expanded into; therefore the directory in whose snli_1.0
-                subdirectory the data files will be stored.
-            train: The filename of the train data. Default: 'train.jsonl'.
+                expanded into; therefore the directory in which the
+                train/valid/test data files will be stored.
+            train: The filename of the train data. Default: 'annotated_fb_data_train.txt'.
             validation: The filename of the validation data, or None to not
-                load the validation set. Default: 'dev.jsonl'.
+                load the validation set. Default: 'annotated_fb_data_valid.txt'.
             test: The filename of the test data, or None to not load the test
-                set. Default: 'test.jsonl'.
+                set. Default: 'annotated_fb_data_test.txt'.
         """
         print("root path for relation dataset: {}".format(root))
         path = cls.download_or_unzip(root)
@@ -45,7 +45,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
     @classmethod
     def iters(cls, batch_size=32, device=0, root='.', wv_dir='.',
                                 wv_type=None, wv_dim='300d', **kwargs):
-        """Create iterator objects for splits of the SNLI dataset.
+        """Create iterator objects for splits of the Simple QA dataset.
         This is the simplest way to use the dataset, and assumes common
         defaults for field, vocabulary, and iterator parameters.
         Arguments:

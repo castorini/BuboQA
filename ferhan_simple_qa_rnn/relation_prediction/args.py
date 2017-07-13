@@ -19,7 +19,7 @@ def get_args():
     parser.add_argument('--save_every', type=int, default=1200)
     parser.add_argument('--dropout_prob', type=float, default=0.3)
     parser.add_argument('--patience', type=int, default=10, help="number of epochs to wait before early stopping")
-    parser.add_argument('--cuda', action='store_true', help='use CUDA')
+    parser.add_argument('--no_cuda', action='store_false', help='do not use CUDA', dest='cuda')
     parser.add_argument('--gpu', type=int, default=0, help='GPU device to use') # use -1 for CPU
     parser.add_argument('--seed', type=int, default=1111, help='random seed for reproducing results')
     parser.add_argument('--save_path', type=str, default='saved_checkpoints')
