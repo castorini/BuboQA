@@ -26,30 +26,13 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
 
-# ---- prepare the dataset with Torchtext -----
+# ---- get the iterator over the dataset -----
 questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
+train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args=args)
 
-# build vocab for questions
-questions.build_vocab(train, dev, test)
-
-# load word vectors if already saved or else load it from start and save it
-if os.path.isfile(args.vector_cache):
-    questions.vocab.vectors = torch.load(args.vector_cache)
-else:
-    questions.vocab.load_vectors(wv_dir=args.data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
-    os.makedirs(os.path.dirname(args.vector_cache), exist_ok=True)
-    torch.save(questions.vocab.vectors, args.vector_cache)
-
-# build vocab for relations
-relations.build_vocab(train, dev, test)
-
-# create iterators
-train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False, shuffle=True)
-dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False)
-test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False)
 
 # ---- define the model, loss, optim ------
 config = args
