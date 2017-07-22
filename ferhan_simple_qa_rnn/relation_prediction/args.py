@@ -11,7 +11,6 @@ def get_args():
     parser.add_argument('--d_hidden', type=int, default=400)
     parser.add_argument('--n_layers', type=int, default=2)
     parser.add_argument('--lr', type=float, default=1e-5)
-    parser.add_argument('--hits', type=int, default=3, help="number of top results to output")
     parser.add_argument('--not_bidirectional', action='store_false', dest='birnn')
     parser.add_argument('--clip_gradient', type=float, default=0.5, help='gradient clipping')
     parser.add_argument('--log_every', type=int, default=900)
@@ -28,5 +27,7 @@ def get_args():
     parser.add_argument('--word_vectors', type=str, default='glove.42B')
     parser.add_argument('--train_embed', action='store_false', dest='fix_emb') # fine-tune the word embeddings
     parser.add_argument('--resume_snapshot', type=str, default='')
+    parser.add_argument('--hits', type=int, default=3, help="number of top results to output")
+    parser.add_argument('--test_results_path', type=str, default='test_results')
     args = parser.parse_args()
     return args
