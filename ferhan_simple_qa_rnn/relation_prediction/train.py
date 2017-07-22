@@ -208,7 +208,7 @@ for test_batch_idx, test_batch in enumerate(test_iter):
      test_losses.append(test_loss.data[0])
 
 retrieval_rate = 100. * n_retrieved / len(test)
-print("Retrieval Rate (hits = %d): {:8.6f}\n".format(args.hits, retrieval_rate))
+print("Retrieval Rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
 test_acc = 100. * n_test_correct / len(test)
 print("Test Loss: {:8.6f}\nTest Accuracy: {:8.6f}".format(sum(test_losses)/len(test_losses), test_acc))
 results_file.close()
