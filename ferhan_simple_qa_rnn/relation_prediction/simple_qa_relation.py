@@ -15,7 +15,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
     @staticmethod
     def sort_key(ex):
-        return len(ex.question)
+        return 0 # no sort order
 
     @classmethod
     def splits(cls, text_field, label_field, root='../data',
