@@ -196,7 +196,7 @@ for test_batch_idx, test_batch in enumerate(test_iter):
 
      # write to file
      for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
-         example = test_batch.dataset.examples[i]
+         example = test_batch.dataset.examples[test_batch_idx+i]
          results_file.write("test-{} %%%% {} %%%% {}\n".format(test_batch_idx+1+i, " ".join(example.question), example.relation))
          for rel, score in zip(relations_row, scores_row):
              results_file.write("{} %%%% {}\n".format(rel, score))
