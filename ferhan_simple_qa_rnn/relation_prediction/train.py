@@ -182,7 +182,6 @@ model.eval(); test_iter.init_epoch()
 # calculate accuracy on test set
 n_test_correct = 0
 test_losses = []
-test_linenum = 1
 index2rel = np.array(relations.vocab.itos)
 results_file = open(args.test_results_path, 'w')
 for test_batch_idx, test_batch in enumerate(test_iter):
@@ -197,11 +196,10 @@ for test_batch_idx, test_batch in enumerate(test_iter):
      # write to file
      for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
          example = test_batch.dataset.examples[i]
-         results_file.write("test-{} %%%% {} %%%% {}\n".format(test_linenum, example.question, example.relation))
+         results_file.write("test-{} %%%% {} %%%% {}\n".format(test_batch_idx + i, " ".join(example.question), example.relation))
          for rel, score in zip(relations_row, scores_row):
              results_file.write("{} %%%% {}\n".format(rel, score))
-     results_file.write("-" * 60 + "\n")
-     test_linenum += 1
+         results_file.write("-" * 60 + "\n")
 
      test_loss = criterion(scores, test_batch.relation)
      test_losses.append(test_loss.data[0])
