@@ -85,12 +85,13 @@ early_stop = False
 header = '  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy'
 dev_log_template = ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:8.6f},{:12.4f},{:12.4f}'.split(','))
 log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{},{:12.4f},{}'.split(','))
-snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
+best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
 
 for epoch in range(args.epochs):
     if early_stop:
+        print("Early stopping. Epoch: {}, Best Dev. Acc: {}".format(epoch, best_dev_acc))
         break
 
     train_iter.init_epoch()
@@ -152,11 +153,11 @@ for epoch in range(args.epochs):
                 iters_not_improved = 0
                 # found a model with better validation set accuracy
                 best_dev_acc = dev_acc
-                snapshot_path = snapshot_prefix + '_devacc_{}_devloss_{}__iter_{}_model.pt'.format(dev_acc, dev_loss.data[0], iterations)
+                snapshot_path = best_snapshot_prefix + '_devacc_{}_devloss_{}__iter_{}_model.pt'.format(dev_acc, dev_loss.data[0], iterations)
 
                 # save model, delete previous 'best_snapshot' files
                 torch.save(model, snapshot_path)
-                for f in glob.glob(snapshot_prefix + '*'):
+                for f in glob.glob(best_snapshot_prefix + '*'):
                     if f != snapshot_path:
                         os.remove(f)
             else:
@@ -174,7 +175,7 @@ for epoch in range(args.epochs):
 #--------TEST----------
 # load the best model
 print("Testing using the best model on dev set...")
-best_model_path = glob.glob(snapshot_prefix + '*')[0]
+best_model_path = glob.glob(best_snapshot_prefix + '*')[0]
 model = torch.load(best_model_path, map_location=lambda storage,location: storage.cuda(args.gpu))
 model.eval(); test_iter.init_epoch()
 
@@ -184,6 +185,8 @@ test_losses = []
 for test_batch_idx, test_batch in enumerate(test_iter):
      answer = model(test_batch)
      n_test_correct += (torch.max(answer, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
+     # output the best results to a file - top 'k' args.hits
+
      test_loss = criterion(answer, test_batch.relation)
      test_losses.append(test_loss.data[0])
 test_acc = 100. * n_test_correct / len(test)
