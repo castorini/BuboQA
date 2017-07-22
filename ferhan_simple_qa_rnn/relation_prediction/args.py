@@ -4,16 +4,17 @@ from argparse import ArgumentParser
 
 def get_args():
     parser = ArgumentParser(description='Simple QA model - Ferhan Ture')
-    parser.add_argument('--epochs', type=int, default=40)
+    parser.add_argument('--epochs', type=int, default=15)
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--rnn_type', type=str, default='lstm') # or use 'gru'
     parser.add_argument('--d_embed', type=int, default=300)
     parser.add_argument('--d_hidden', type=int, default=400)
     parser.add_argument('--n_layers', type=int, default=2)
     parser.add_argument('--lr', type=float, default=1e-5)
+    parser.add_argument('--hits', type=int, default=3, help="number of top results to output")
     parser.add_argument('--not_bidirectional', action='store_false', dest='birnn')
     parser.add_argument('--clip_gradient', type=float, default=0.5, help='gradient clipping')
-    parser.add_argument('--log_every', type=int, default=300)
+    parser.add_argument('--log_every', type=int, default=900)
     parser.add_argument('--dev_every', type=int, default=1200)
     parser.add_argument('--save_every', type=int, default=1200)
     parser.add_argument('--dropout_prob', type=float, default=0.3)
