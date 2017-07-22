@@ -26,13 +26,12 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
 
-# ---- get the iterator over the dataset -----
+# ---- get the Field, Dataset, Iterator for train/dev/test sets -----
 questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
 train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test)
-
 
 # ---- define the model, loss, optim ------
 config = args
@@ -178,7 +177,8 @@ for test_batch_idx, test_batch in enumerate(test_iter):
      # write to file
      for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
          index = (test_batch_idx * args.batch_size) + i
-         example = test_batch.dataset.examples[index]  # -- problem
+         example = test_batch.dataset.examples[index]
+         # correct_relation = index2rel[test_batch.relation.data[i]]
          results_file.write("test-{} %%%% {} %%%% {}\n".format(index+1, " ".join(example.question), example.relation))
          for rel, score in zip(relations_row, scores_row):
              results_file.write("{} %%%% {}\n".format(rel, score))
