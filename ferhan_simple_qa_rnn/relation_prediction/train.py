@@ -79,7 +79,9 @@ optimizer = optim.Adam(model.parameters(), lr=args.lr)
 iterations = 0
 start = time.time()
 best_dev_acc = -1
-train_iter.repeat = False
+num_iters_in_epoch = (len(train) // args.batch_size) + 1
+patience = args.patience * num_iters_in_epoch # for early stopping
+early_stop = False
 header = '  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy'
 dev_log_template = ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:8.6f},{:12.4f},{:12.4f}'.split(','))
 log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{},{:12.4f},{}'.split(','))
@@ -87,6 +89,9 @@ os.makedirs(args.save_path, exist_ok=True)
 print(header)
 
 for epoch in range(args.epochs):
+    if early_stop:
+        break
+
     train_iter.init_epoch()
     n_correct, n_total = 0, 0
 
@@ -128,19 +133,22 @@ for epoch in range(args.epochs):
             model.eval(); dev_iter.init_epoch()
 
             # calculate accuracy on validation set
-            n_dev_correct, dev_loss = 0, 0
+            n_dev_correct = 0
+            dev_losses = []
             for dev_batch_idx, dev_batch in enumerate(dev_iter):
                  answer = model(dev_batch)
                  n_dev_correct += (torch.max(answer, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data).sum()
                  dev_loss = criterion(answer, dev_batch.relation)
+                 dev_losses.append(dev_loss.data[0])
             dev_acc = 100. * n_dev_correct / len(dev)
 
             print(dev_log_template.format(time.time()-start,
                 epoch, iterations, 1+batch_idx, len(train_iter),
-                100. * (1+batch_idx) / len(train_iter), loss.data[0], dev_loss.data[0], train_acc, dev_acc))
+                100. * (1+batch_idx) / len(train_iter), loss.data[0], sum(dev_losses)/len(dev_losses), train_acc, dev_acc))
 
             # update best valiation set accuracy
             if dev_acc > best_dev_acc:
+                iters_not_improved = 0
                 # found a model with better validation set accuracy
                 best_dev_acc = dev_acc
                 snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
@@ -151,11 +159,31 @@ for epoch in range(args.epochs):
                 for f in glob.glob(snapshot_prefix + '*'):
                     if f != snapshot_path:
                         os.remove(f)
+            else:
+                iters_not_improved += 1
+                if iters_not_improved >= patience:
+                    early_stop = True
+                    break
 
         elif iterations % args.log_every == 0:
-
             # print progress message
             print(log_template.format(time.time()-start,
                 epoch, iterations, 1+batch_idx, len(train_iter),
                 100. * (1+batch_idx) / len(train_iter), loss.data[0], ' '*8, n_correct/n_total*100, ' '*12))
+
+#--------TEST----------
+# test the best model
+model.eval(); test_iter.init_epoch()
+
+# calculate accuracy on test set
+n_test_correct = 0
+test_losses = []
+for test_batch_idx, test_batch in enumerate(test_iter):
+     answer = model(test_batch)
+     n_test_correct += (torch.max(answer, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
+     test_loss = criterion(answer, test_batch.relation)
+     test_losses.append(test_loss.data[0])
+test_acc = 100. * n_test_correct / len(test)
+
+print("Test Loss: {:8.6f}\nTest Accuracy: {:12.4f}".format(sum(test_losses)/len(test_losses), test_acc))
 
