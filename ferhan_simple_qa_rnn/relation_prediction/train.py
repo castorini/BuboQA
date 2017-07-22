@@ -31,7 +31,7 @@ questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
-train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args=args)
+train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test)
 
 
 # ---- define the model, loss, optim ------
