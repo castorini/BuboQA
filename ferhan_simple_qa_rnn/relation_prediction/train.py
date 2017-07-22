@@ -85,6 +85,7 @@ early_stop = False
 header = '  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy'
 dev_log_template = ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:8.6f},{:12.4f},{:12.4f}'.split(','))
 log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{},{:12.4f},{}'.split(','))
+snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
 
@@ -151,7 +152,6 @@ for epoch in range(args.epochs):
                 iters_not_improved = 0
                 # found a model with better validation set accuracy
                 best_dev_acc = dev_acc
-                snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
                 snapshot_path = snapshot_prefix + '_devacc_{}_devloss_{}__iter_{}_model.pt'.format(dev_acc, dev_loss.data[0], iterations)
 
                 # save model, delete previous 'best_snapshot' files
@@ -172,7 +172,10 @@ for epoch in range(args.epochs):
                 100. * (1+batch_idx) / len(train_iter), loss.data[0], ' '*8, n_correct/n_total*100, ' '*12))
 
 #--------TEST----------
-# test the best model
+# load the best model
+print("Testing using the best model on dev set...")
+best_model_path = glob.glob(snapshot_prefix + '*')[0]
+model = torch.load(best_model_path, map_location=lambda storage,location: storage.cuda(args.gpu))
 model.eval(); test_iter.init_epoch()
 
 # calculate accuracy on test set
