@@ -89,7 +89,7 @@ best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
 
-for epoch in range(args.epochs):
+for epoch in range(1, args.epochs+1):
     if early_stop:
         print("Early stopping. Epoch: {}, Best Dev. Acc: {}".format(epoch, best_dev_acc))
         break
@@ -104,15 +104,15 @@ for epoch in range(args.epochs):
         model.train(); optimizer.zero_grad()
 
         # forward pass
-        answer = model(batch)
+        scores = model(batch)
 
         # calculate accuracy of predictions in the current batch
-        n_correct += (torch.max(answer, 1)[1].view(batch.relation.size()).data == batch.relation.data).sum()
+        n_correct += (torch.max(scores, 1)[1].view(batch.relation.size()).data == batch.relation.data).sum()
         n_total += batch.batch_size
         train_acc = 100. * n_correct/n_total
 
         # calculate loss of the network output with respect to training labels & backpropagate to compute gradients
-        loss = criterion(answer, batch.relation)
+        loss = criterion(scores, batch.relation)
         loss.backward()
 
         # clip the gradients (prevent exploding gradients) and update the weights
@@ -138,9 +138,9 @@ for epoch in range(args.epochs):
             n_dev_correct = 0
             dev_losses = []
             for dev_batch_idx, dev_batch in enumerate(dev_iter):
-                 answer = model(dev_batch)
-                 n_dev_correct += (torch.max(answer, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data).sum()
-                 dev_loss = criterion(answer, dev_batch.relation)
+                 scores = model(dev_batch)
+                 n_dev_correct += (torch.max(scores, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data).sum()
+                 dev_loss = criterion(scores, dev_batch.relation)
                  dev_losses.append(dev_loss.data[0])
             dev_acc = 100. * n_dev_correct / len(dev)
 
@@ -182,14 +182,30 @@ model.eval(); test_iter.init_epoch()
 # calculate accuracy on test set
 n_test_correct = 0
 test_losses = []
+test_linenum = 1
+index2rel = np.array(relations.vocab.itos)
+results_file = open(args.test_results_path, 'w')
 for test_batch_idx, test_batch in enumerate(test_iter):
-     answer = model(test_batch)
-     n_test_correct += (torch.max(answer, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
-     # output the best results to a file - top 'k' args.hits
+     scores = model(test_batch)
+     n_test_correct += (torch.max(scores, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
+     # output the top results to a file
+     top_k_scores, top_k_indices = torch.topk(scores, k=args.hits, dim=1, sorted=True) # shape: (batch_size, k)
+     top_k_indices_array = top_k_indices.cpu().data.numpy()
+     top_k_scores_array = top_k_scores.cpu().data.numpy()
+     top_k_relatons_array = index2rel[top_k_indices_array] # shape: (batch_size, k)
 
-     test_loss = criterion(answer, test_batch.relation)
+     # write to file
+     for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
+         example = test_batch.dataset.examples[i]
+         results_file.write("test-{} %%%% {} %%%% {}\n".format(test_linenum, example.question, example.relation))
+         for rel, score in zip(relations_row, scores_row):
+             results_file.write("{} %%%% {}\n".format(rel, score))
+     results_file.write("-" * 60 + "\n")
+     test_linenum += 1
+
+     test_loss = criterion(scores, test_batch.relation)
      test_losses.append(test_loss.data[0])
+
 test_acc = 100. * n_test_correct / len(test)
-
-print("Test Loss: {:8.6f}\nTest Accuracy: {:12.4f}".format(sum(test_losses)/len(test_losses), test_acc))
-
+print("Test Loss: {:8.6f}\nTest Accuracy: {:8.6f}".format(sum(test_losses)/len(test_losses), test_acc))
+results_file.close()
