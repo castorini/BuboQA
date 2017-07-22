@@ -181,6 +181,7 @@ model.eval(); test_iter.init_epoch()
 
 # calculate accuracy on test set
 n_test_correct = 0
+n_retrieved = 0
 test_losses = []
 index2rel = np.array(relations.vocab.itos)
 results_file = open(args.test_results_path, 'w')
@@ -196,14 +197,18 @@ for test_batch_idx, test_batch in enumerate(test_iter):
      # write to file
      for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
          example = test_batch.dataset.examples[i]
-         results_file.write("test-{} %%%% {} %%%% {}\n".format(test_batch_idx + i, " ".join(example.question), example.relation))
+         results_file.write("test-{} %%%% {} %%%% {}\n".format(test_batch_idx+1+i, " ".join(example.question), example.relation))
          for rel, score in zip(relations_row, scores_row):
              results_file.write("{} %%%% {}\n".format(rel, score))
+             if (rel == example.relation):
+                 n_retrieved += 1
          results_file.write("-" * 60 + "\n")
 
      test_loss = criterion(scores, test_batch.relation)
      test_losses.append(test_loss.data[0])
 
+retrieval_rate = 100. * n_retrieved / len(test)
+print("Retrieval Rate (hits = %d): {:8.6f}\n".format(args.hits, retrieval_rate))
 test_acc = 100. * n_test_correct / len(test)
 print("Test Loss: {:8.6f}\nTest Accuracy: {:8.6f}".format(sum(test_losses)/len(test_losses), test_acc))
 results_file.close()
