@@ -46,11 +46,10 @@ else:
 # build vocab for relations
 relations.build_vocab(train, dev, test)
 
-# BucketIterator buckets the examples according to length so less padding is needed
-train_iter, dev_iter, test_iter = data.BucketIterator.splits(
-            (train, dev, test), batch_size=args.batch_size, device=args.gpu)
-train_iter.repeat = False # do not repeat examples after finishing an epoch
-
+# create iterators
+train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False, shuffle=True)
+dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False)
+test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False)
 
 # ---- define the model, loss, optim ------
 config = args
@@ -182,7 +181,6 @@ model.eval(); test_iter.init_epoch()
 # calculate accuracy on test set
 n_test_correct = 0
 n_retrieved = 0
-test_losses = []
 index2rel = np.array(relations.vocab.itos)
 results_file = open(args.test_results_path, 'w')
 for test_batch_idx, test_batch in enumerate(test_iter):
@@ -197,7 +195,7 @@ for test_batch_idx, test_batch in enumerate(test_iter):
      # write to file
      for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
          index = (test_batch_idx * args.batch_size) + i
-         example = test_batch.dataset.examples[index]
+         example = test_batch.dataset.examples[index]  # -- problem
          results_file.write("test-{} %%%% {} %%%% {}\n".format(index+1, " ".join(example.question), example.relation))
          for rel, score in zip(relations_row, scores_row):
              results_file.write("{} %%%% {}\n".format(rel, score))
@@ -205,11 +203,8 @@ for test_batch_idx, test_batch in enumerate(test_iter):
                  n_retrieved += 1
          results_file.write("-" * 60 + "\n")
 
-     test_loss = criterion(scores, test_batch.relation)
-     test_losses.append(test_loss.data[0])
-
 retrieval_rate = 100. * n_retrieved / len(test)
 print("Retrieval Rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
 test_acc = 100. * n_test_correct / len(test)
-print("Test Loss: {:8.6f}\nTest Accuracy: {:8.6f}".format(sum(test_losses)/len(test_losses), test_acc))
+print("Test Accuracy: {:8.6f}".format(test_acc))
 results_file.close()
