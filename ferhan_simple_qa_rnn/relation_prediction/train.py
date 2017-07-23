@@ -164,7 +164,8 @@ model.eval(); test_iter.init_epoch()
 n_test_correct = 0
 n_retrieved = 0
 index2rel = np.array(relations.vocab.itos)
-results_file = open(args.test_results_path, 'w')
+fname = "{}-hits-{}.txt".format("test", args.hits)
+results_file = open(os.path.join(args.test_results_path, fname), 'w')
 for test_batch_idx, test_batch in enumerate(test_iter):
      scores = model(test_batch)
      n_test_correct += (torch.max(scores, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
