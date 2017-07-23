@@ -28,6 +28,6 @@ def get_args():
     parser.add_argument('--train_embed', action='store_false', dest='fix_emb') # fine-tune the word embeddings
     parser.add_argument('--resume_snapshot', type=str, default='')
     parser.add_argument('--hits', type=int, default=3, help="number of top results to output")
-    parser.add_argument('--test_results_path', type=str, default='test_results.txt')
+    parser.add_argument('--test_results_path', type=str, default='test_results')
     args = parser.parse_args()
     return args
