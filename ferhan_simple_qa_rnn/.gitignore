@@ -2,6 +2,6 @@ data/*
 data/glove/
 resources/
 saved_checkpoints/
-test_results/
+results/
 __pycache__/
 relation_prediction/*cache*/*
