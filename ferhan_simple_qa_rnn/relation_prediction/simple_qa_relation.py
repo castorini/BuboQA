@@ -44,7 +44,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
                 )
 
     @classmethod
-    def iters(cls, args=None, questions=None, relations=None, train=None, dev=None, test=None,
+    def iters(cls, args=None, questions=None, relations=None, train=None, dev=None, test=None, shuffleTrain=True,
               batch_size=32, device=0, root='.', wv_dir='.', wv_type=None, wv_dim='300d', **kwargs):
         """Create iterator objects for splits of the Simple QA dataset.
         This is the simplest way to use the dataset, and assumes common
@@ -78,7 +78,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
         # create iterators
         train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   shuffle=True)
+                                   shuffle=shuffleTrain)
         dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False)
         test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False)
 

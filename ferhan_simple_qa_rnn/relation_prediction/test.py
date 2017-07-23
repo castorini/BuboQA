@@ -19,7 +19,7 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
 
-if args.resume_snapshot:
+if not args.resume_snapshot:
     print("ERROR: You need to provide a resume_snapshot path to load the model.")
     sys.exit(1)
 
@@ -28,12 +28,13 @@ questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
-train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test)
+train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, shuffleTrain=False)
 
 # load the model
 model = torch.load(args.resume_snapshot, map_location=lambda storage,location: storage.cuda(args.gpu))
 
 def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train"):
+    print("Dataset: {}".format(data_name))
     model.eval(); dataset_iter.init_epoch()
 
     # calculate accuracy on test set
@@ -66,7 +67,7 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
     retrieval_rate = 100. * n_retrieved / len(dataset)
     print("Retrieval Rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
     test_acc = 100. * n_test_correct / len(dataset)
-    print("Test Accuracy: {:8.6f}".format(test_acc))
+    print("Accuracy: {:8.6f}".format(test_acc))
     results_file.close()
 
 write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
