@@ -23,6 +23,8 @@ if not args.resume_snapshot:
     print("ERROR: You need to provide a resume_snapshot path to load the model.")
     sys.exit(1)
 
+os.makedirs(args.test_results_path, exist_ok=True)
+
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
 questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
