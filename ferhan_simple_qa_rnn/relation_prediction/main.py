@@ -60,10 +60,16 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
              example = data_batch.dataset.examples[index]
              # correct_relation = index2rel[test_batch.relation.data[i]]
              results_file.write("{}-{} %%%% {} %%%% {}\n".format(data_name, index+1, " ".join(example.question), example.relation))
-             for rel, score in zip(relations_row, scores_row):
+             found = (False, -1)
+             for i, (rel, score) in enumerate(zip(relations_row, scores_row)):
                  results_file.write("{} %%%% {}\n".format(rel, score))
                  if (rel == example.relation):
                      n_retrieved += 1
+                     found = (True, i)
+             if found[0] == True:
+                 results_file.write("FOUND at index: {}\n".format(found[1]))
+             else:
+                 results_file.write("NOT found\n")
              results_file.write("-" * 60 + "\n")
 
     retrieval_rate = 100. * n_retrieved / len(dataset)
