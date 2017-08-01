@@ -23,7 +23,7 @@ if not args.resume_snapshot:
     print("ERROR: You need to provide a resume_snapshot path to load the model.")
     sys.exit(1)
 
-os.makedirs(args.test_results_path, exist_ok=True)
+os.makedirs(args.results_path, exist_ok=True)
 
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
 questions = data.Field(lower=True)
@@ -44,7 +44,7 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
     n_retrieved = 0
     index2rel = np.array(relations.vocab.itos)
     fname = "{}-hits-{}.txt".format(data_name, args.hits)
-    results_file = open(os.path.join(args.test_results_path, fname), 'w')
+    results_file = open(os.path.join(args.results_path, fname), 'w')
     for data_batch_idx, data_batch in enumerate(dataset_iter):
          scores = model(data_batch)
          n_test_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
@@ -59,7 +59,7 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
              index = (data_batch_idx * args.batch_size) + i
              example = data_batch.dataset.examples[index]
              # correct_relation = index2rel[test_batch.relation.data[i]]
-             results_file.write("test-{} %%%% {} %%%% {}\n".format(index+1, " ".join(example.question), example.relation))
+             results_file.write("{}-{} %%%% {} %%%% {}\n".format(data_name, index+1, " ".join(example.question), example.relation))
              for rel, score in zip(relations_row, scores_row):
                  results_file.write("{} %%%% {}\n".format(rel, score))
                  if (rel == example.relation):
