@@ -24,7 +24,7 @@ if not args.trained_model:
     sys.exit(1)
 
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
-questions = data.Field(lower=True)
+questions = data.Field(lower=True, tokenize="moses")
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
@@ -40,19 +40,20 @@ index2rel = np.array(relations.vocab.itos)
 
 if not os.path.exists(args.results_path):
     os.makedirs(args.results_path)
-results_file = open(os.path.join(args.results_path, "main_test_results.txt"), 'w')
+results_file = open(os.path.join(args.results_path, "main-test-results.txt"), 'w')
 
+print("Running model on test set...")
 model.eval()
 for test_batch_idx, test_batch in enumerate(test_iter):
     scores = model(test_batch)
     n_test_correct += (torch.max(scores, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
     # output the top results to a file
     top_scores, top_indices = torch.max(scores, dim=1) # shape: (batch_size, 1)
-    top_indices_array = top_indices.cpu().data.numpy()
-    top_scores_array = top_scores.cpu().data.numpy()
-    top_relatons_array = index2rel[top_indices_array] # shape: (batch_size, 1)
+    top_indices_array = top_indices.cpu().data.numpy().reshape(-1)
+    top_scores_array = top_scores.cpu().data.numpy().reshape(-1)
+    top_relatons_array = index2rel[top_indices_array] # shape: vector of dim: batch_size
     # write to file
-    for i in range(len(test_batch)):
+    for i in range(test_batch.batch_size):
         line_to_print = "{}-{} %%%% {} %%%% {}".format("test", test_linenum, top_relatons_array[i], top_scores_array[i])
         results_file.write(line_to_print + "\n")
         test_linenum += 1

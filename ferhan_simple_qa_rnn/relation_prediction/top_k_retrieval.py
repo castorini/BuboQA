@@ -26,7 +26,7 @@ if not args.trained_model:
 os.makedirs(args.results_path, exist_ok=True)
 
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
-questions = data.Field(lower=True)
+questions = data.Field(lower=True, tokenize="moses")
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
@@ -44,7 +44,7 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
     n_retrieved = 0
     index2rel = np.array(relations.vocab.itos)
     fname = "{}-hits-{}.txt".format(data_name, args.hits)
-    results_file = open(os.path.join(args.results_path, fname), 'w')
+    results_file = open(os.path.join(args.results_path, "topk-retrieval-" + fname), 'w')
     for data_batch_idx, data_batch in enumerate(dataset_iter):
          scores = model(data_batch)
          n_test_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
