@@ -1,0 +1,611 @@
+train-262	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cchl0x	State an example of a film in the drama genre
+train-265	fb:m.0bb56b6	fb:music.composition.language	fb:m.02h40lc	What language do the characters speak in the flintstones
+train-331	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b_6846	what is a film in the genre drama
+train-439	fb:m.0fzjr3p	fb:music.album.album_content_type	fb:m.02jbfk	What kind of album is the very best of
+train-622	fb:m.0dz8wx	fb:people.person.profession	fb:m.01t2ln	What is Suebsak Pansueb's profession?
+train-658	fb:m.0_8982w	fb:film.film.production_companies	fb:m.03dhs2	what company produced my heart is mine alone
+train-1193	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hncgxx	what are examples of dramas
+train-1621	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.08_wh0	Name a 2007 film drama
+train-1970	fb:m.0dyvxvf	fb:music.album.album_content_type	fb:m.06vw6v	is non stop a studio album or compilation album?
+train-2306	fb:m.0lmk5l	fb:music.recording.releases	fb:m.03flksk	what was a song released on super trouper
+train-2485	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0dn5hh	what is a drama film
+train-2813	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.07zybm	What is the name of a drama film
+train-2915	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j29v5r	what's a japanese drama film from 2002
+train-3004	fb:m.0djb8lg	fb:media_common.netflix_title.netflix_genres	fb:m.0d05w3	What genre is the prodigal boxer in on netflix?
+train-3152	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0fq0xlz	what film is a type of drama?
+train-3277	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b77lzv	Name a film in the drama genre.
+train-3556	fb:m.0lqhmfb	fb:tv.tv_program.country_of_origin	fb:m.03_3d	What is the country of origin of the tv program hunter × hunter?
+train-3652	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0g1r_r	what is an example of a tv drama
+train-3756	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gx3384	which movie is drama
+train-3842	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0fkt4y	what is a drama film on netflix?
+train-4130	fb:m.0zj79nx	fb:music.composition.composer	fb:m.019qk5	who composed the music evidently chickentown
+train-4756	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0c1cdx2	what is a crime fiction drama film
+train-5080	fb:m.03whpdf	fb:cvg.cvg_publisher.game_versions_published	fb:m.0kz6bzc	What's a game that microprose software has published
+train-5336	fb:m.0k33swc	fb:tv.tv_series_episode.season	fb:m.0f_t_qg	During what season did the tv episode scotland air?
+train-5343	fb:m.0_rs5qn	fb:music.release_track.recording	fb:m.0160k_g	which recording contains the release track belfast?
+train-5477	fb:m.03whpdf	fb:cvg.cvg_publisher.games_published	fb:m.01glg8	what game is published by microprose software?
+train-5859	fb:m.0dn4zj6	fb:music.single.versions	fb:m.0mqsz4	which version is form the single daniel
+train-5871	fb:m.01r33px	fb:music.album.artist	fb:m.03n0q5	Who is the artist on the album mary poppins
+train-6963	fb:m.0ghvmn2	fb:tv.tv_program.genre	fb:m.09lmb	what kind of tv show is all-star celebrity apprentice?
+train-7108	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.02rny_5	What is a title located in the drama genre on netflix?
+train-7202	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crzl3p	what's an iranian drama film
+train-7361	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.019vrc	What's a drama program
+train-7425	fb:m.026r5k7	fb:cvg.computer_videogame.cvg_genre	fb:m.0g65_	what video game genre is quantum gate
+train-7448	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0clnz92	Name a film in the drama genre
+train-7475	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cr27_	what is a 2000 drama film
+train-7579	fb:m.0185gpf	fb:music.recording.releases	fb:m.0372sj4	which release is tokyo on?
+train-7608	fb:m.0wpj3tz	fb:people.person.gender	fb:m.05zppz	what gender is won-je tak
+train-7675	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0crvknm	What's a movie available under the drama category on netflix
+train-7761	fb:m.0_kd_78	fb:music.composition.composer	fb:m.01nrz4	who composed one?
+train-7937	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0c00zd0	What is an example of a drama film
+train-7990	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.04byjs	Which tv drama takes place in three different years?
+train-8382	fb:m.05f9062	fb:film.film.genre	fb:m.04t36	what type of film is beauties of the night?
+train-8567	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksq0p	What's a film in the drama genre?
+train-8799	fb:m.02kby38	fb:user.mt.default_domain.metabolite.associated_disorder	fb:m.01pf6	What is an associative disorder related to epinephrine
+train-8881	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0s9lbfw	what is a film in the genre drama
+train-8899	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09v1k8t	What's a japanese drama film
+train-9542	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gycc35	What is a film of the drama genre?
+train-9747	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04f0r8z	what is a movie title found in the netflix drama genre
+train-9939	fb:m.07xd4	fb:organization.organization.founders	fb:m.07692	Who founded the unification church?
+train-9970	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.058590	which program is of the tv genre drama
+train-10199	fb:m.0kdxy97	fb:fictional_universe.fictional_character.based_on	fb:m.082xp	who was the fictional character winston churchill inspired by
+train-10514	fb:m.05n0276	fb:medicine.disease.causes	fb:m.05ccg3	What causes viral meningitis?
+train-10559	fb:m.0lns8qj	fb:people.person.nationality	fb:m.09c7w0	Where is shelby j. from?
+train-10669	fb:m.0c03x2r	fb:film.film.genre	fb:m.02xh1	What sort of movie is crawlspace
+train-10889	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rgzpz	what is a 2001 french drama
+train-10972	fb:m.0bbhl2	fb:music.album.genre	fb:m.0145rs	What is the genre of passion: hymns ancient and modern?
+train-10995	fb:m.0wjc55v	fb:people.person.gender	fb:m.05zppz	what is ross mintzer's gender?
+train-11194	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03ckbyz	what is a drama film?
+train-11257	fb:m.0_jf3xs	fb:music.composition.recordings	fb:m.0rf3l0v	What is a recording of the composition believe?
+train-11628	fb:m.0smw0jl	fb:music.release_track.release	fb:m.0fgv80c	The release track 1995 is from what body of work
+train-11723	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0h1g_6w	what is a drama film by William Shakespeare?
+train-11767	fb:m.0ftmr4x	fb:music.release.label	fb:m.01w40h	what is the record label of greatest hits: the ultimate collection (disc 1)
+train-12151	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gkss30	What is an example of a drama film?
+train-12369	fb:m.09wjv_	fb:film.film.language	fb:m.02h40lc	what language was exclusion filmed in
+train-12374	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.06zsnc2	What is the tittle of the 2009 Australian drama film
+train-12407	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j513zd	What's a notable drama
+train-12507	fb:m.01lp4t3	fb:music.album.album_content_type	fb:m.02jbfk	What kind of album is the duke: rendezvous with rhythm (1938)
+train-12613	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0gfrrfm	Name a movie from the netflix drama genre
+train-12715	fb:m.0wznr96	fb:people.person.nationality	fb:m.09c7w0	which country was j.d. maness born in
+train-12874	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.05hmnw	Which movie title is a Netflix drama?
+train-12989	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0gfjw6m	what tv grogram is drama
+train-13063	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0nd3bc5	what is a dramatic tv program
+train-13224	fb:m.036yp_6	fb:music.release.region	fb:m.09c7w0	where was echoes (disc 2) released
+train-13234	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b_wl74	what is a war drama film
+train-13373	fb:m.0jwgv1b	fb:tv.tv_series_episode.season	fb:m.06gt5y6	what tv show has sandra bullock
+train-13523	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ghtfy_	which film is in the drama genre
+train-13527	fb:m.0vmysv4	fb:music.album.artist	fb:m.012wjr	which artist released the album anthology?
+train-13702	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0d09nz	Name a drama film
+train-13725	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0zdphql	What is a 1984 drama and thriller film written by Juan Rulfo?
+train-13991	fb:m.04fxlmx	fb:location.location.containedby	fb:m.0n3g	which country contains cuisinart resort & spa
+train-14194	fb:m.0frw6z5	fb:music.recording.canonical_version	fb:m.0dnt2rb	what is the original recording of martyr (paul van dyk remix)
+train-14256	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ddfcg8	What's a drama film
+train-14329	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gp9br	What is the name of a drama movie?
+train-14405	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02ps13p	What is a drama film?
+train-14756	fb:m.0n6gqmf	fb:music.release_track.release	fb:m.0fst629	which release is star trek from?
+train-14768	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b__08x	Name a drama film.
+train-14800	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gxm8tq	Name a drama film
+train-14883	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0f7zf5	what are netflix dramas
+train-15096	fb:m.018wk4z	fb:music.recording.releases	fb:m.035jtfk	which album features 1999
+train-15329	fb:m.0135s2d	fb:music.recording.artist	fb:m.04vcj0	who is the artist on the recording silver
+train-15554	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gywbxt	what is a political drama film
+train-15616	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0glz68j	what is a 1999 drama by kira muratova
+train-16031	fb:m.02h7hyr	fb:book.book_subject.works	fb:m.04wb0x8	What is the name of a book about transportation
+train-16145	fb:m.0l76y8l	fb:people.person.gender	fb:m.05zppz	what is the gender of ricardo buitrago?
+train-16436	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gfrvfp	what is the name of a drama movie
+train-16750	fb:m.0gyrjjh	fb:film.film.film_format	fb:m.029j_	what types of format is you can tell em i said it
+train-17043	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bhgq7l	What's an example of a drama?
+train-17262	fb:m.03h53dg	fb:music.album.genre	fb:m.012yc	What is the music genre of the album The Personal Album?
+train-17415	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bj5hny	Name a film from the drama genre
+train-17577	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.027yw01	what movie is in drama
+train-17719	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04zzmsf	whats an example of a 2008  drama film
+train-17923	fb:m.02pqq4j	fb:broadcast.broadcast.area_served	fb:m.0yzj3	Where does wiro broadcast to
+train-18017	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.090zdw	Name a drama title on netflix
+train-18483	fb:m.04t50cr	fb:book.written_work.subjects	fb:m.0jbk	What is the subject of the written work pooh and piglet go hunting
+train-18539	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0kv609	What is a good example of a drama film
+train-18659	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0wppqfl	What is a drama film?
+train-18744	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.05h4bjc	What is the name of a drama program
+train-19149	fb:m.01793jx	fb:music.recording.tracks	fb:m.0l8pr5q	what is a track of johnny cash
+train-19154	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crsssz	What is a popular drama film
+train-19197	fb:m.0f1q1b7	fb:music.album.primary_release	fb:m.0fmjz4k	what was the primary release of hollywood
+train-19371	fb:m.0kd9z1j	fb:people.person.place_of_birth	fb:m.017syz	what is  gregory wathelets place of birth
+train-19588	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j30t8	what film is in the drama genre
+train-19923	fb:m.0kynrjn	fb:cvg.computer_videogame.cvg_genre	fb:m.022dc6	What type of video game is reckless racing
+train-19968	fb:m.0rvgq2z	fb:music.release_track.release	fb:m.0qhjd5n	which release contains the track new york city?
+train-20143	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0crwdzf	Name a movie from the netflix genre, drama
+train-20402	fb:m.0gfgv_d	fb:music.artist.genre	fb:m.03_d0	what kind of music does witloof bay perform
+train-20856	fb:m.02hvshq	fb:aviation.aircraft_type.aircraft_of_this_type	fb:m.02b_lv	What is an aircraft of the night fighter variety?
+train-20881	fb:m.0ndpq5d	fb:fictional_universe.fictional_character.based_on	fb:m.01c9j8	Who is the character otto frank based on
+train-21079	fb:m.02kd3j2	fb:user.mt.default_domain.metabolite.associated_disorder	fb:m.046cxb	What is the name of the disorder associated with the pentanoic acid metabolite?
+train-21358	fb:m.0gfgv_d	fb:music.artist.genre	fb:m.02cz_7	in what genre does the artist witloof bay play
+train-21419	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j0z5s	what is a drama film name
+train-21618	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crssvl	What is the name of a drama film?
+train-21757	fb:m.0djb9ln	fb:media_common.netflix_title.netflix_genres	fb:m.03rk0	which netflix genre would kaho naa pyaar hai: disc 2: bonus material be under?
+train-21867	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.05p57kw	what are dramas on netflix
+train-22022	fb:m.0tnfs_7	fb:music.release_track.release	fb:m.037_spq	What is the name of the release where the track whos that girl? can be found?
+train-22215	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.09_37y	Name a title that can be found in the Netflix drama genre.
+train-22264	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0ldz9zc	name a tv program under the drama genre.
+train-22655	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ch28g3	What is a film that can be categorized as a drama?
+train-22876	fb:m.0mmrg0w	fb:music.release_track.recording	fb:m.015xvv9	what is the name of a track off the gold album
+train-23074	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09vxf5w	what is a drama film
+train-23093	fb:m.09vxjfw	fb:film.film.language	fb:m.06nm1	What language was used in the film la femme de chambre du titanic
+train-23241	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0gfw7cm	What's an example of a drama show
+train-23325	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04cw7n4	what is the title of a drama film
+train-23545	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crtfvg	which drama film was released in 1998?
+train-23671	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rcx99	What's an example of a drama flag
+train-23702	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05bdf6	what is a film in the drama genre?
+train-23800	fb:m.02kc1nh	fb:user.mt.default_domain.metabolite.biofluid_location	fb:m.0b7q43	What bodily fluid contains gentisic acid
+train-24172	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b_lsn9	what is a film in the drama genre
+train-24702	fb:m.0hglp1p	fb:people.deceased_person.place_of_death	fb:m.0dq16	Where did red tramback die
+train-26023	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.027q4l_	What drama film is a remake of a 1949 film?
+train-26084	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksh2p	What is the name of a popular drama film
+train-26353	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.026cqd7	What's an example of a drama program
+train-26613	fb:m.03xy_kt	fb:music.album.artist	fb:m.02kd_1	What musician made grandes exitos
+train-26704	fb:m.06bshn	fb:film.film.country	fb:m.09c7w0	what country is h. g. wells war of the worlds from?
+train-26745	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j1s2w	what drama film was directed by brad turner
+train-26845	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.05zhtt2	What is the title of a movie in the netflix genre drama?
+train-26847	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ndsl8_	Name a drama film
+train-27118	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09195_	What is the name of a drama film
+train-27344	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crvm13	what is a US drama film called
+train-27644	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.043n7xt	what movie is an example of a drama film
+train-28235	fb:m.02kcb4m	fb:user.mt.default_domain.metabolite.biofluid_location	fb:m.019jw	where is 3-(1h-imidazol-4-yl)-2-propenoic acid found
+train-28256	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0j67kx7	what is a 2012 South Korean romantic drama television series
+train-28334	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gxb3f4	What's a drama movie released in 2002
+train-28373	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03c0ndv	what is an Irish drama film
+train-29015	fb:m.0frkct6	fb:music.recording.releases	fb:m.03_sqp9	what is a release from the recording barcelona?
+train-29182	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05n3l7	what is a 2006 American crime drama film
+train-29186	fb:m.0j93_x5	fb:tv.tv_series_episode.series	fb:m.0413839	What is the name of the tv series with the episode titled pilot?
+train-29350	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crvvgm	what fench movie is drama
+train-29779	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.024g3t	A drama film would be what?
+train-30095	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.09f0_l	what is a drama on netflix?
+train-30111	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cc71dx	Which film genre does drama fall under?
+train-30126	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crd00j	what is a Croatian drama film
+train-30217	fb:m.0v1sqj6	fb:music.release_track.release	fb:m.03fg_2j	which song became the release track on sylvia
+train-30277	fb:m.0ft9sk5	fb:music.recording.releases	fb:m.0ft9sjk	What album is ben from?
+train-30349	fb:m.03_nrrk	fb:music.release.track	fb:m.0_j27t	what's a track on the quintessence: paris-bruxelles 1934-1943
+train-30476	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crsf09	what is a drama film?
+train-30975	fb:m.0djbg6m	fb:media_common.netflix_title.netflix_genres	fb:m.0c3351	what netflix genre does fatal charm belong to
+train-31000	fb:m.0q8g37n	fb:music.album.album_content_type	fb:m.02jbfk	what kind of album is paul simon and friends
+train-31038	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0dj9zz4	what are the names of dramas on netflix
+train-31185	fb:m.02x5_pr	fb:music.album.genre	fb:m.04pcmw	Which genre is the album follow me apart of?
+train-31210	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02pp0b5	what are drama films?
+train-31597	fb:m.0x3hs9b	fb:music.release_track.release	fb:m.0sh23d1	what is a track from night
+train-31867	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gynr8	What is a drama film
+train-32182	fb:m.0_kdlrp	fb:music.composition.form	fb:m.074ft	what is the composition form of the theme?
+train-32351	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.08vv85	Name a TV program of the drama genre?
+train-32368	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.074fhl	which drama films in netflix features a dictator?
+train-32397	fb:m.0vwbwy	fb:music.recording.artist	fb:m.01r6mr9	Who is the artist that recorded white horse
+train-32574	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05b13gq	What is the name of a film in the drama genre
+train-32664	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j12zk	Name a drama film
+train-32931	fb:m.0hqxrsf	fb:medicine.drug.legal_status	fb:m.01_7r6	what is the legal status of the drug fosamprenavir calcium
+train-32976	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0f1fx8	Name a drama title
+train-33125	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.051ykb1	what is a 2007 South Korean drama film
+train-33163	fb:m.02ww_qc	fb:tv.tv_program.genre	fb:m.07s9rl0	What is the genre of conan the adventurer?
+train-33492	fb:m.0yb169k	fb:music.album.artist	fb:m.014yr1	what musician is in castle masters collection
+train-33647	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.02r53vq	what's a drama film on netflix
+train-34047	fb:m.0_rqnny	fb:music.recording.artist	fb:m.015r4v	Which artist recorded the song enigma variations: theme (andante)
+train-34553	fb:m.0lf79y	fb:music.recording.artist	fb:m.02cpp	What is a song recorded by leave in silence
+train-34653	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b44rbd	What is the title of a drama film?
+train-34723	fb:m.0sj26dn	fb:music.recording.artist	fb:m.038fhj	who is the artist on the recording final: vioci l'ordre; partez
+train-34803	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crvkgx	What is the name of a drama film
+train-34912	fb:m.0_sywhx	fb:people.person.place_of_birth	fb:m.03l2n	which state was adam dunn born
+train-35335	fb:m.02wy5lc	fb:music.artist.genre	fb:m.029h7y	what classification of music is häxor och porr
+train-35358	fb:m.0hqxrsf	fb:medicine.drug.drug_class	fb:m.02_vrv	What is the drug class of fosamprenavir calcium?
+train-35469	fb:m.0dpbrmz	fb:music.recording.artist	fb:m.02sz0b	Which artist recorded collage?
+train-35524	fb:m.0dr08bk	fb:music.recording.artist	fb:m.01fm10	which artist recorded take me there (feat. ma$e and blinky blink)?
+train-35544	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0q4m0n_	What is a tv drama program?
+train-35704	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0_r37wb	What is the name of a drama film
+train-35737	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0d12sr	whats a film in the drama genre
+train-35762	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j0cx1	Name a drama film
+train-35923	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.04lfvjw	Name a drama mini tv series
+train-36261	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0n64qmp	name a 2012 movie drama
+train-36865	fb:m.0dswyx9	fb:music.recording.song	fb:m.0zlb1vp	what is a song on the recording a farewell to arms
+train-37003	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0djb9fy	what are examples of drama films
+train-37035	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06w5ymc	what film is a drama?
+train-37064	fb:m.0vc96hj	fb:music.release_track.release	fb:m.03_mdbk	Which release was brazil the release track off of
+train-37222	fb:m.0kynd3j	fb:cvg.cvg_developer.games_developed	fb:m.01cmhx	what's the name of one of funcom oslo a/s's games
+train-37352	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.091p8c	Name a drama program
+train-37518	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j086q	what is a drama film?
+train-37737	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rdyx7	what is a drama film?
+train-37974	fb:m.0g6tq91	fb:music.release.track	fb:m.01106g0	which track contains the return of the durutti column
+train-38035	fb:m.03xwypw	fb:music.album.album_content_type	fb:m.0l14g2	What type of album is mary wells recorded live on stage
+train-38337	fb:m.0_6djtp	fb:music.composition.recordings	fb:m.0dpshbl	What recording is featured in the composition of the game
+train-38426	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gkr05y	What is an example of a drama film?
+train-38666	fb:m.0zbvxwj	fb:music.album.album_content_type	fb:m.06vw6v	Which kind of album is love & hate
+train-38686	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0zd1mpq	which movie is drama
+train-38835	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0fpp7b9	What is the name of a drama?
+train-39106	fb:m.0f3jvpm	fb:music.album.artist	fb:m.04n32	what artist made the album i hope gabriel likes my music
+train-39318	fb:m.023rmqq	fb:music.album.artist	fb:m.011kyp	who is the artist that created attitude: the roir sessions
+train-39787	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.03tqsl	which drama program aired in 1997?
+train-39874	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06zsfn6	which drama film was released in 2003?
+train-40139	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04zx0rb	what is a drama movie on netflix
+train-40287	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0qn2qf_	which drama japanese films has a beatles song as their title?
+train-40424	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.07w8vr	which film by ridley scott is a  drama
+train-40544	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04p4br7	which drama film was directed by jos manuel carrasco?
+train-40898	fb:m.0zhqwxs	fb:music.release_track.recording	fb:m.0svhgz	what is a track off fall
+train-41031	fb:m.01_jgb	fb:travel.tourist_attraction.near_travel_destination	fb:m.0mm_4	what is the travel destination where colonial williamsburg is near to
+train-41188	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05f7jsw	The drama The Other Woman is based of which novel?
+train-41405	fb:m.06k9h8	fb:film.film.language	fb:m.03_9r	the war of the gargantuas was filmed in which Asian language?
+train-41427	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.036cds	what is a Mexican drama film
+train-41451	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0h7xrr	what is a drama film released in 2007?
+train-41793	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.04gjgy6	what is a reboot drama tv series
+train-42049	fb:m.0rs6mp4	fb:music.release_track.release	fb:m.0qckznf	What album is cherry featured on
+train-42219	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02qkjv5	What's a drama film directed by lal jose
+train-42306	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04j1gh9	What is a title you would see under the netflix genre drama?
+train-42331	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04n5y1m	what is a drama film?
+train-42361	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0gxz6q	what is a drama television show?
+train-42576	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j18rd	what film is considered to be a drama?
+train-42801	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04lts8	which title is considered to be a netflix drama
+train-42926	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02x1drq	Name a drama film.
+train-42998	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gkrcgb	what is a drama film?
+train-43014	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02f0g2	what is a drama historical fiction film
+train-43276	fb:m.01x3j7r	fb:people.cause_of_death.people	fb:m.025w9c8	air disaster  killed what American football player
+train-43564	fb:m.0274slz	fb:music.genre.artists	fb:m.04xg_p	Name an artist from the reggae rock genre
+train-43573	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b6ztx3	What's a drama film released in 1938
+train-43675	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0fyjvp	What film can be categorized as a drama film?
+train-43880	fb:m.0x6kxjp	fb:music.release_track.release	fb:m.0dp6t_1	the track black dog  was released on what album
+train-44103	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bnm3f2	which movie is drama
+train-44916	fb:m.03whpdf	fb:cvg.cvg_publisher.games_published	fb:m.01glg8	What is the name of a game published by microprose software
+train-44968	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0d1y78	whats a film that is known to be a drama
+train-45158	fb:m.0gyk8tl	fb:fictional_universe.fictional_character.gender	fb:m.05zppz	What gender is nick amaro?
+train-45545	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.05v7dy3	which tv drama show is based on the british government?
+train-45809	fb:m.0sh4pjl	fb:music.recording.artist	fb:m.0htbn	récit eh bien? was composed by which French composer?
+train-45846	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j2w_p	which drama was directed by Vijay Sadanah
+train-46456	fb:m.0fm7hh3	fb:music.release.format	fb:m.01www	which physical format was mindscapes released on
+train-46475	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09mr5q	Name a drama film
+train-46770	fb:m.0sppl08	fb:music.release_track.recording	fb:m.0f7569v	what is a recording of the release track barbados?
+train-47074	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06nq0j	what is a drama film?
+train-47414	fb:m.0ch8kqd	fb:fictional_universe.fictional_character.rank	fb:m.03bpv	what kind of entity is the character atropos
+train-47587	fb:m.0w7cbr8	fb:film.content_rating.film	fb:m.03qcjj	what film was rated 16+ (ru)
+train-47741	fb:m.01h0wn7	fb:music.album.release_type	fb:m.02lx2r	what was the release type for fabriclive 28: evil nine
+train-47799	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0dgq_sx	what's the name of a drama film
+train-47868	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0g4ngt_	Name a drama film
+train-47889	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ndd4x3	What is a film that is categorized as a drama film?
+train-48002	fb:m.0v36s9l	fb:music.release_track.release	fb:m.035ldk3	Which release was another day on?
+train-48049	fb:m.0_mtrfk	fb:tv.tv_program.genre	fb:m.01rbb	what type of tv program is ghost-seeing detective cheo yong
+train-48227	fb:m.02x5zsw	fb:music.album.genre	fb:m.064t9	What type of music is the album follow me?
+train-48236	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06381t	What's an example of a drama film
+train-48335	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hgl273	what are drama films by P. Vasu
+train-48528	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06g77c	which film is a drama film
+train-48908	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05b245v	Name a drama film.
+train-49532	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04q3hl8	what is a potential netflix drama
+train-49673	fb:m.0fzyrn_	fb:music.recording.artist	fb:m.01h5j3	Which artist made panis angelicus
+train-49806	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09lvld	what's an example of a chinese drama movie
+train-50122	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0_skfnb	what is a film in the genre drama
+train-50137	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0277py5	what is the title of a 1994 drama
+train-50213	fb:m.0_jf3xs	fb:music.composition.recordings	fb:m.0fb8z7_	which songs were a part of the album believe?
+train-50274	fb:m.0_kd_78	fb:music.composition.composer	fb:m.020hh3	Who was the composer for one?
+train-50335	fb:m.0crrv4f	fb:film.film.story_by	fb:m.0326yr	who wrote the story for the movie the water is wide
+train-50671	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0gkxszs	What's a drama program on tv
+train-50915	fb:m.0gxc234	fb:film.film.country	fb:m.03_3d	where was time traveller filmed
+train-51198	fb:m.0f12rzg	fb:people.person.nationality	fb:m.05qhw	What country is marek rudnicki a citizen of
+train-51243	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0t53_2g	Which movie is a drama?
+train-51276	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04j2_bd	What title is in the netflix genre drama?
+train-51372	fb:m.0dtywr	fb:film.film.subjects	fb:m.0bxg3	What type of film is the beauty and the beast?
+train-51469	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0grmg9	which 2007 drama film stars penelope cruz?
+train-51626	fb:m.05wrx38	fb:people.person.nationality	fb:m.0d060g	what is the nationality of donald mackenzie?
+train-51654	fb:m.0c3ffj	fb:book.written_work.author	fb:m.03d16t	who was the author of the book left behind
+train-51719	fb:m.0qt3xdy	fb:people.person.gender	fb:m.05zppz	Is hyunwoo kim male or female?
+train-52271	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0d2v31	whats an example of a drama film
+train-52502	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hr2qqp	what film is a drama film
+train-52698	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05b5rkk	Name an Italian drama film?
+train-52876	fb:m.0wyfx9s	fb:people.person.nationality	fb:m.06qd3	Which country is ji-yeon lim from?
+train-52938	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b_xt2d	Which film is a drama?
+train-52954	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0q1_yk9	what film is considered a drama?
+train-53106	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05c1wqd	What is the title of a film in the drama film genre?
+train-53647	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09pgcwc	What is a film in the drama genre?
+train-53710	fb:m.01w8rcl	fb:music.artist.track	fb:m.0fb965c	What is a track by milieu?
+train-53876	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02704ll	what is a made-for-tv drama movie
+train-53914	fb:m.0gh7mr8	fb:people.person.place_of_birth	fb:m.01_d4	where was don plarski born
+train-54455	fb:m.0fpdpgh	fb:music.composition.composer	fb:m.0c73z	who composed am flusse?
+train-54683	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hr7jrb	what is a drama film
+train-54738	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bbr0pv	Name a film drama
+train-54954	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.071bj2	what is an example of a drama movie
+train-55274	fb:m.0c0mb7h	fb:fictional_universe.fictional_character.based_on	fb:m.03p77	who was the fictional henry viii of england based on
+train-55293	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0wy7wzb	What is a drama film title?
+train-55603	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0464ss2	Name a drama film.
+train-55679	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04_68zj	What's an example of a drama film
+train-55751	fb:m.0pfx1x	fb:music.recording.artist	fb:m.0k6yt1	who is the female recording artist of the song gangsta bitch?
+train-56121	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ch0vb6	which movie is drama
+train-56208	fb:m.0_vbksf	fb:music.album.genre	fb:m.064t9	what genre is the album whitney dancin special
+train-56262	fb:m.02qgvhg	fb:people.person.place_of_birth	fb:m.030qb3t	which city was paul cotton (musician) born
+train-56333	fb:m.09glxwc	fb:book.book.genre	fb:m.01hmnh	what genre is the book krondor: the assassins
+train-56633	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0p_tz	what's a good drama movie on netflix
+train-56860	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.027b_kn	What is the name of a popular drama film
+train-57282	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rg75p	Name a drama film.
+train-57417	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0dlpp	What's a drama film released in 2000
+train-57425	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09gjp__	what are drama films by Geetha Krishna
+train-57594	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0lg2ppf	what drama film is directed by Palacio Rojo?
+train-57598	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05b256j	which movie is drama
+train-57843	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0fch_q	Name a film in the drama genre
+train-58167	fb:m.01kt5b6	fb:music.album.album_content_type	fb:m.0l14gg	what kind of album is kurenai no buta [porco rosso: the crimson pig]
+train-58235	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04dzf6c	whats a name of a drama film
+train-58264	fb:m.09cm87	fb:cvg.computer_videogame.publisher	fb:m.05w3f8	which company published the day after: fight for promised land?
+train-58518	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gybk_t	Name a drama film
+train-58745	fb:m.0h2d0b8	fb:theater.theater_character.plays_appears_in	fb:m.01hs5bh	what play is based on a character named joseph
+train-59127	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cryn1n	Name a 2008 drama movie originating from Australia.
+train-59193	fb:m.0_wjz54	fb:music.album.artist	fb:m.015cqh	What is an American rock band formed in 1973 and producers of greatest hits 1 & 2 album?
+train-59510	fb:m.0slw743	fb:music.release_track.release	fb:m.0j6pm9r	which album is banjo listed on
+train-59693	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0707gt	Name a drama film
+train-59796	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0c01pl4	What is the title of a film in the drama genre?
+train-59887	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0g9qgnz	what are some drama film titles
+train-59918	fb:m.05n0276	fb:medicine.disease.treatments	fb:m.018c_8	What is a treatment of viral meningitis
+train-60025	fb:m.0dtywr	fb:film.film.genre	fb:m.0hcr	What genre of film is beauty and the beast?
+train-60083	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j8f3_l	what is a 2012 film drama
+train-60094	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.027xtd9	What is the name of a drama series on netflix
+train-60259	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crtpxt	what film is considered a drama movie?
+train-60533	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j3561	what 1999 drama film was written by Jeff Albert and Hesh Rephun?
+train-60952	fb:m.059xkp_	fb:film.film.genre	fb:m.01yldk	what song is from the film forever emmanuelle?
+train-61116	fb:m.0b9t5pg	fb:biology.organism_classification.rank	fb:m.09lc9	what classification is desmodus
+train-61406	fb:m.01ngk0	fb:common.topic.notable_types	fb:m.01n7	What is the region Venetia?
+train-61422	fb:m.0ymrldg	fb:common.topic.notable_types	fb:m.02nsjl9	what is a basketball player
+train-61504	fb:m.04b2s4m	fb:location.location.containedby	fb:m.0ngs4	where is glens
+train-62107	fb:m.0xp1ks5	fb:music.release_track.release	fb:m.0wcyhs6	what is the release from the track this means war?
+train-62139	fb:m.0fr8cn2	fb:music.recording.tracks	fb:m.0mp2kxs	what is the release track on silver
+train-62584	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ccp88	Name a drama film.
+train-62765	fb:m.04t05rf	fb:book.written_work.editor	fb:m.096yh	who is the editor of the book of lost tales, part one
+train-62985	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0bkywv	what tv program is a  drama
+train-63180	fb:m.013rpk	fb:film.film_series.films_in_series	fb:m.05s_lcq	What film series is veggietales from?
+train-63181	fb:m.0kyq7nc	fb:cvg.computer_videogame.publisher	fb:m.01n073	who is the publisher of uefa euro 2000
+train-63446	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0wq0g03	what's a drama film from 2008
+train-63672	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03m8v_x	Which film is a drama?
+train-64028	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0hzs5fc	What is an example of a drama tv program
+train-64039	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crxspc	What is the title of a drama film?
+train-64144	fb:m.0xzkpwn	fb:music.album.artist	fb:m.0g66ss_	who is the artist on the album zion
+train-64580	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04jj614	what kind of movie is drama
+train-64652	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b2v79	what's the name of the 1987 crime drama film
+train-64761	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j7m0pm	what is the name of a drama movie
+train-64823	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0yqxqzm	What is an example of a drama film
+train-64877	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09qgls	Name a drama film
+train-64950	fb:m.01qv8vy	fb:music.album.releases	fb:m.0321h6v	what is a release on aurora
+train-64986	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crs6nd	what is the name of a 2007 drama film
+train-65144	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.06_wmkw	what drama movie is a silent film about a car racer
+train-65489	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0c0l40x	What is a 2004 comedy film drama?
+train-65588	fb:m.0f7f957	fb:music.recording.artist	fb:m.02cpp	Who recorded martyr?
+train-65691	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b76skz	Whats the name of a drama film
+train-65982	fb:m.07_3zt	fb:cvg.computer_videogame.publisher	fb:m.09ymx4	what company released the game tokyo xtreme racer
+train-66153	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j_46wx	what is a type of drama film?
+train-66263	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksk87	Name a famous drama film
+train-66275	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.06qv_	what is the title of a tv drama show
+train-66361	fb:m.09rs_y9	fb:film.film.genre	fb:m.015w9s	What is the genre of the film follow the stars home
+train-66555	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0287z8g	Name a television drama?
+train-66557	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gvrrxj	what is a foreign drama film
+train-66910	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.043nr_m	what is a drama film?
+train-67240	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gt_c2m	which drama film was released in 2010?
+train-67368	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rd_qd	what is a drama film?
+train-67456	fb:m.027kwms	fb:people.deceased_person.cause_of_death	fb:m.01bcp7	what was jack myers's cause of death
+train-67597	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09vry30	what is the name of a drama silent film
+train-67866	fb:m.0w7cbr8	fb:film.content_rating.film	fb:m.047vq5n	What's a film with a 16+ (ru) rating
+train-67918	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02vr8jc	Name a drama film
+train-67920	fb:m.0g8z9vt	fb:music.release.format	fb:m.01www	What physical format was popsided guitar anthology 1984 - 2002 (disc 2) released on
+train-67924	fb:m.04g1nc5	fb:film.film.genre	fb:m.0219x_	what types of movie is noise
+train-68027	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.026ptyt	what is the name of the tv genre starring moira kelly
+train-68357	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04j08xb	which drama films starred claude atkins?
+train-68381	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gy7xps	Name a film in the drama genre
+train-68445	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05zn1rp	what is a film in the drama genre?
+train-68484	fb:m.017tbqr	fb:music.recording.artist	fb:m.07s3vqk	Who recorded hard times?
+train-68622	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.047n4q_	What is an early 1900s silent drama film
+train-68682	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crtpn8	what's the name of a 2007 drama film
+train-68925	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crrbl4	what is a 1998 drama film
+train-68964	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gj4rnv	What's a drama movie released in 2006
+train-69180	fb:m.0shdpvm	fb:music.recording.artist	fb:m.01wgx3j	What artist recorded raw shit
+train-69341	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crthm7	Which film is a drama?
+train-69369	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cr_9w8	Which drama film was released in the US with a Japanese director?
+train-69855	fb:m.0gkspc0	fb:film.film.genre	fb:m.01jfsb	of what genre does the film vital parts belong to
+train-69921	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.08yjvl	Name a drama film found on Netflix
+train-70232	fb:m.032xhtt	fb:music.release.track_list	fb:m.0l1r6yp	what are some of the tracks listed in the best of vaya con dios?
+train-70308	fb:m.03b_0q5	fb:film.film.music	fb:m.01pgpdd	Who did the music for the film sunday
+train-70432	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0ndc0z2	Name a film within the drama genre.
+train-70946	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0412_bd	Name a drama tv program.
+train-71383	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bdqhjg	Name a drama film
+train-71995	fb:m.0djb2pp	fb:film.film.language	fb:m.06nm1	What language was amor y venganza filmed in?
+train-72050	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cryq_4	what's a good example of a drama drama film
+train-72187	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0djv48	What is the title of a netflix drama?
+train-72316	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0chjzw	what is an example of a tv drama genre?
+train-72569	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0kv6m4	What is an example of a drama film?
+train-72811	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0fqpmsn	What is an example of a hong kong tv drama?
+train-73033	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j2hjg	which of the scavengers or dumb and dumber is a drama
+train-73390	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.064mvch	What is a drama tv program
+train-73433	fb:m.023h4nv	fb:music.album.artist	fb:m.01vsy7t	who is the artist of the album live 1972
+train-73475	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02q1t5b	Name a drama film
+train-73650	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0fq6c0m	what is a short drama film released in 2010
+train-73696	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gkrwd8	name a film in the drama genre.
+train-73986	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0yl_365	What's a drama movie directed by Tim Szczesniak
+train-74067	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.027x09k	Name a drama film
+train-74220	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksl74	What's a movie in the drama genre?
+train-74524	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02rbsv4	which drama film was made in 1937
+train-74590	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.091m625	which drama film was released in 1938
+train-74632	fb:m.0dmr3r0	fb:music.single.versions	fb:m.0g5xc3b	whats another version of the single  atlanta
+train-74760	fb:m.0ftzc	fb:medicine.disease.symptoms	fb:m.04kllm9	Pruritus is a symptom of what disease?
+train-74904	fb:m.0nbyg9c	fb:people.person.gender	fb:m.05zppz	what gender is ethan tucker
+train-75194	fb:m.0l12d70	fb:tv.tv_program.program_creator	fb:m.01mxgq	Who was the creator of the tv program anna ballerina?
+train-75232	fb:m.05qd883	fb:book.literary_series.works_in_this_series	fb:m.08qtb0	what is the name of the third novel in the series star wars: legacy of the force?
+train-75373	fb:m.0q57lty	fb:music.producer.tracks_produced	fb:m.0nn96wb	what is a work by tom dalgety
+train-75824	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.02wby_4	what is a drama television program?
+val-23	fb:m.0zvwcn5	fb:music.composition.recordings	fb:m.0fw_qg3	which recordings contains the composition australia?
+val-114	fb:m.03g22tr	fb:music.album.release_type	fb:m.02lx2r	How was the album ellen allien remix collection released?
+val-130	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0rhnpl8	what is a film in the genre drama
+val-475	fb:m.0346hsv	fb:music.release.track_list	fb:m.0l4jgzp	what is a track in cream classics?
+val-477	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03cx_rm	What is a drama film
+val-702	fb:m.02z6y3p	fb:music.album.release_type	fb:m.02lx2r	What type of release did ohio have?
+val-902	fb:m.08vqg8n	fb:book.book.genre	fb:m.016chh	what type of novel is elemental: the power of illuminated love?
+val-942	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0s9l19y	What is the name of a film in the drama genre
+val-1168	fb:m.045p9_r	fb:location.location.containedby	fb:m.068cn	which region contains asti docg
+val-1169	fb:m.03czw5g	fb:tv.tv_theme_song.theme_song_for	fb:m.0cwrr	what is can you tell me how to get to sesame street? the theme song for
+val-1270	fb:m.0bvrjh4	fb:film.film.featured_film_locations	fb:m.0rh6k	what state is featured in seven days in may?
+val-1394	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0_qzvlr	Name a film drama
+val-1577	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.064r97z	what is the name of a drama film on netflix
+val-1595	fb:m.0h4867	fb:cvg.computer_videogame.cvg_genre	fb:m.02ntfj	cd-i games from the legend of zelda series is an example of what kind of video game?
+val-1730	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0b28r_	Name a drama on netflix
+val-1832	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02z28m8	is feel the noise of liar liar considered a drama
+val-1864	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0zn8hn2	whats the title of a drama movie
+val-1993	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hndm49	which drama film was made in 1959
+val-2044	fb:m.02qplxv	fb:people.person.nationality	fb:m.0d060g	What is the nationality of colin simpson.
+val-2416	fb:m.0_s2kgd	fb:music.artist.genre	fb:m.07t13s	what kind of music is southern associated with
+val-2786	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b8l1g	what is a drama film
+val-2795	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gp9fv	what is a movie was drama released in 1997
+val-2906	fb:m.0sn24jv	fb:music.release_track.release	fb:m.0fcl5d1	What was dogma released with
+val-3219	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.027mg4m	what is a drama film on netflix?
+val-3927	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.04gw12n	what is the name of a tv drama
+val-3936	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b6tf85	what is the name of a drama movie
+val-3958	fb:m.0gg9r39	fb:location.country.languages_spoken	fb:m.08p4cr	What dialect is spoken in republic of kosovo
+val-4850	fb:m.0g3jrr	fb:music.album.artist	fb:m.01qcdps	which estonian band produced the album paris?
+val-4888	fb:m.0gjqd5	fb:fictional_universe.fictional_character.gender	fb:m.05zppz	What is the gender of red skull?
+val-4923	fb:m.0fm7jjs	fb:music.release.track	fb:m.0qll_n	what track spawned from shihad
+val-5117	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09gp6nn	what is the name of a  drama movie by abdellatif abdelhamid
+val-5239	fb:m.04mmj61	fb:media_common.netflix_title.netflix_genres	fb:m.0f8l9c	whats the netflix genre of the film  the other one
+val-5525	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04j2x91	Name a drama.
+val-5883	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0dd90r_	Which film is a drama?
+val-6308	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02qk_n3	what is the name of a drama film
+val-6345	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02qztt7	what is the title of a movie whose film genre is a drama
+val-6668	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02ps96l	what is a indian drama film
+val-6719	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cp20f0	what film is under the drama genre?
+val-6956	fb:m.0q8g37n	fb:music.album.artist	fb:m.01w9kbl	who is the artist of paul simon and friends
+val-7154	fb:m.01642b5	fb:music.recording.canonical_version	fb:m.0lyrvw	what is the canonical version of drowning?
+val-7559	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.079x0x	what is a drama film from 1974?
+val-7641	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.02qy541	which movie is drama
+val-7689	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gkscq5	Name a film in the genre of drama
+val-7794	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0kv8q8	What is the name of a film in the drama genre?
+val-7855	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0m9p3	whats a movie title that is a netflix drama
+val-7981	fb:m.0g7tndy	fb:music.recording.tracks	fb:m.0m_hzkf	Name a track on girls just want to have fun
+val-8041	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crw8y_	Name a drama film.
+val-8102	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.026q2k7	what is a drama film?
+val-8224	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0h3y5kq	What drama came out in 2011
+val-8271	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05sqgc_	what is a drama movie
+val-8272	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gx0cs_	which is the name of a drama film released in 1920?
+val-8402	fb:m.0dyf8sh	fb:music.album.release_type	fb:m.02lx2r	What format was at queen's theatre released as
+val-8585	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crvhvr	Name a drama film
+val-8624	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0bs44j	Name a drama film
+val-8632	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.09ghhks	what film is a type of drama?
+val-8650	fb:m.0f_0htj	fb:music.recording.canonical_version	fb:m.0drd80r	What is the main recording of half nelson called?
+val-8676	fb:m.0gbjh51	fb:music.release.track	fb:m.0fzckd9	which track contains vienna
+val-8880	fb:m.0crs0fz	fb:film.film.genre	fb:m.01drsx	which genre is nuclear hurricane
+val-8910	fb:m.02hkxws	fb:cvg.cvg_developer.games_developed	fb:m.05bny_	which games did beam software pty., ltd. help develop?
+val-9190	fb:m.01bz6g5	fb:music.recording.artist	fb:m.05crg7	What artist recorded europa?
+val-9234	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0rhnf5f	what is the name of a drama
+val-9306	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.091m4hz	What is an example of a drama film
+val-9741	fb:m.0djb2pp	fb:media_common.netflix_title.netflix_genres	fb:m.06nm1	what genre is amor y venganza under?
+val-9994	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.04j2w50	what is an example of a netflix drama?
+val-10326	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03hnmbw	What's a drama film released in 1961
+val-10339	fb:m.0cl6z16	fb:fictional_universe.fictional_character.occupation	fb:m.0fj9f	what profession does ronald reagan have
+val-10351	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0603hj	what's the name of that 1993 sean connery drama film
+val-10661	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b7tzm	What's an example of a drama film
+test-76	fb:m.01g81dw	fb:music.album.album_content_type	fb:m.02jbfk	what types of album is collection, part 1: all mixed up (disc 2)
+test-163	fb:m.0qg9698	fb:music.release_track.release	fb:m.0fvs6bh	what album was chicago released on
+test-231	fb:m.0y9w_wv	fb:common.topic.notable_types	fb:m.09jd9nh	what notable type is stay
+test-401	fb:m.02ww_qc	fb:tv.tv_program.genre	fb:m.0fdjb	What is the genre of conan the adventurer tv program?
+test-457	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.047dgb_	Name a drama film.
+test-772	fb:m.03yvtl5	fb:film.producer.films_executive_produced	fb:m.06zpsmp	Which film did greg aronowitz executively produce
+test-864	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksx14	which drama film from 1967?
+test-922	fb:m.01k0677	fb:music.album.album_content_type	fb:m.0l14g2	what is the content in a live album
+test-1557	fb:m.0gw7q_r	fb:film.film.genre	fb:m.0jtdp	What genre of film is this is what love in action looks like?
+test-1788	fb:m.0319xp	fb:business.company_type.companies_of_this_type	fb:m.0cn6d25	what is a company that focuses on sole proprietorship
+test-1829	fb:m.0jw1qp1	fb:people.person.place_of_birth	fb:m.0fngy	what is denis guma's birthplace
+test-2022	fb:m.0g71sbj	fb:music.recording.canonical_version	fb:m.010cbj4	what is the canonical version of girls just want to have fun
+test-2145	fb:m.0z85h70	fb:people.person.nationality	fb:m.05b4w	which country is jonas forsang moksnes from
+test-2233	fb:m.0nn66b_	fb:music.recording.artist	fb:m.055kfg	Which artist recorded phoenix?
+test-2276	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.063z3_w	what Polish movie is drama
+test-2315	fb:m.0fr47rb	fb:music.album.album_content_type	fb:m.02jbfk	What kind of album is best album shiro-ban?
+test-2408	fb:m.0f8w6q8	fb:music.album.album_content_type	fb:m.02jbfk	what kind of album is scores (songs from copacabana and harmony)
+test-2524	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05cybl	Name a 1971 drama film
+test-2762	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05lp2j1	what's an example of a drama film
+test-3094	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cmb_6j	what is a 1966 french film drama
+test-3176	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0hz7mx7	what is a drama film
+test-3217	fb:m.05ssss_	fb:music.album.album_content_type	fb:m.0l14g2	is buena vista social club at carnegie hall a dvd or a live album
+test-3237	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0_qfhyg	which movie is drama
+test-4202	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.07k50f4	what is a drama film
+test-4510	fb:m.05n0276	fb:medicine.disease.causes	fb:m.0jfb0	what biological agent is the cause of viral meningitis
+test-5024	fb:m.0j3wpr6	fb:people.person.nationality	fb:m.088q4	what is the nationality of gilbert mapemba
+test-5036	fb:m.058mwwp	fb:music.album.artist	fb:m.0137n0	who is the artist that recorded willie – before his time
+test-5076	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.03qgxxp	what is a drama tv program
+test-5166	fb:m.0x17tvr	fb:film.film.genre	fb:m.03npn	What kind of film is cry of the bewitched featured as?
+test-5199	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0gg73q1	Name a drama tv program.
+test-5522	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.026r7dq	What's an example of a drama film
+test-5555	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0h3t9c4	which movie is drama
+test-5897	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0bx_swk	what is a drama television show?
+test-5989	fb:m.02h7hyr	fb:business.industry.companies	fb:m.0lj8m	what's a company in the transportation industry
+test-6340	fb:m.0zmpz4	fb:music.recording.artist	fb:m.01vsy7t	What male musician recorded the song andy warhol?
+test-6420	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0d0xt6	What is an example of a drama film?
+test-6474	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0g4p__1	What film is in the genre drama?
+test-6619	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.051qyy	what is a drama film?
+test-6963	fb:m.0y7q89y	fb:internet.website.category	fb:m.06h0c8	what category is the website clowdy
+test-6965	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.047rlf9	Name a drama film
+test-7059	fb:m.033g8n3	fb:music.release.track	fb:m.015qv41	which city released beach boys' party! / stack-o-tracks
+test-7218	fb:m.0nm3chn	fb:music.recording.artist	fb:m.01lzhcr	who is the artist on the recording believe
+test-7240	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.080ppc0	which film is a  drama movie
+test-7270	fb:m.02qkdzb	fb:fictional_universe.work_of_fiction.part_of_these_fictional_universes	fb:m.0dd9p	What is the fictional universe mobile suit gundam: gundam vs. zeta gundam is in?
+test-7385	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gksrlt	What is a drama film title?
+test-7392	fb:m.0b44bzz	fb:film.film.directed_by	fb:m.054xs9	who directed the film volcano
+test-7502	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gx9wq4	what is a disney drama movie
+test-7528	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.09q92l	what is a movie found in the drama genre in netflix
+test-7596	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.042222	Name a film from the drama genre
+test-7691	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.03z6bf	what is a netflix drama
+test-8617	fb:m.0d_bb4h	fb:music.recording.artist	fb:m.01vrz41	who recorded the track daniel?
+test-8646	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0gm16jq	Name a drama movie on Netflix?
+test-8690	fb:m.013f7rh	fb:music.recording.artist	fb:m.01vyymq	Which artist recorded whatever it takes?
+test-9449	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cryrb2	what's the title of a drama film
+test-9808	fb:m.0rtydgw	fb:music.release_track.release	fb:m.0g7zq1h	What is the album were the song belfast can be found?
+test-9984	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.0273qqt	what program is considered a drama?
+test-10178	fb:m.0jbctxx	fb:american_football.football_player.position_s	fb:m.01_9c1	What position does jean fanor play on defense
+test-10500	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.063vys	What is the name of a film in the drama genre
+test-10513	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04nm08l	what film is a type of drama?
+test-10911	fb:m.0f5n8xz	fb:music.album.album_content_type	fb:m.02jbfk	what kind of album is tootsie
+test-11532	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0h26vl2	what is a drama film?
+test-11596	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.02z5fjl	what is a drama on tv
+test-11629	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0277tzz	what is an American motion picture in drama
+test-11793	fb:m.0byd4y8	fb:film.film.country	fb:m.09c7w0	What country was the ugly duckling made in?
+test-11864	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crx26t	What is the name of a drama film
+test-11950	fb:m.0b0w7	fb:music.artist.track	fb:m.0dzz2m0	what tracks have madness (band) recorded?
+test-11976	fb:m.0mkvdy4	fb:music.release_track.release	fb:m.03fjv0m	Which album is japan a track of?
+test-12406	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cd3m	What's a drama film
+test-12412	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.07k9hr4	what is a film in the dramagenre
+test-12453	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0b2km_	What is the name of a drama involving September 11?
+test-12456	fb:m.09rmm6y	fb:film.film.genre	fb:m.01t_vv	what kind of genre of film is crashing hollywood
+test-12570	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.05c2pd_	What's an example of a drama film
+test-12768	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crdvv0	What's an example of a drama film
+test-12849	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.03chvw5	which film is in the genre drama
+test-13040	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0w0lxjm	What is an example of a drama film
+test-13147	fb:m.02kc1x8	fb:user.mt.default_domain.metabolite.associated_disorder	fb:m.0bqmg2	what disorder is associated with 3,7-dihydropurin-6-one
+test-13426	fb:m.0zgl46r	fb:people.deceased_person.place_of_death	fb:m.0xz_h	Where did joseph dunn pass away?
+test-13522	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0407psv	which drama film was released in 1922?
+test-13570	fb:m.0kpck1k	fb:tv.tv_series_episode.series	fb:m.041104g	what is a name of an episode in the series pilot
+test-13755	fb:m.0_jqh5j	fb:music.composition.lyricist	fb:m.0238mf	who composed go home girl
+test-13860	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04j0g1d	which movie is an example of a drama film
+test-14109	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crrssh	Name a drama
+test-14252	fb:m.0km51t_	fb:music.release_track.release	fb:m.0dr846n	what is the album the story of my life is on
+test-14556	fb:m.0v48dg8	fb:music.release_track.release	fb:m.0sl5hgc	what is a release track from free
+test-15240	fb:m.0crsn60	fb:film.film.country	fb:m.03rk0	WHich nation filmed kadal sadukudu
+test-16018	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cdnx1	drama is the genre that best describes this film.
+test-16213	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cr_b5z	What was a drama film released in 195?
+test-16353	fb:m.0k33swc	fb:tv.tv_series_episode.series	fb:m.031rm1	what is the series that the episode scotland is from ?
+test-16859	fb:m.04t1f8y	fb:book.written_work.subjects	fb:m.05sfs	what is the subject matter written in 6 events
+test-16894	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0r4qktq	what film in from the genre drama?
+test-17136	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0c1gs30	which drama films were released in 1989?
+test-17143	fb:m.06hsptf	fb:book.written_work.author	fb:m.03wrrj	Who authored poems?
+test-17695	fb:m.027z990	fb:fictional_universe.fictional_character.based_on	fb:m.0gj27	cleopatra is based on which famous figure?
+test-17749	fb:m.0r4l5d	fb:music.recording.releases	fb:m.01j4cg_	what is a recording from europa
+test-18138	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.041dc9	Which drama featured Bruce Lee as the leading actor?
+test-18273	fb:m.07s9rl0	fb:tv.tv_genre.programs	fb:m.08dsm3	what program is under the drama genre
+test-18399	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0c_j9x	what is a drama film released in 1974?
+test-18557	fb:m.0h81j6h	fb:people.person.gender	fb:m.05zppz	What is the gender of bhagwan das varma?
+test-18577	fb:m.02kbxdm	fb:user.mt.default_domain.biofunction.metabolites	fb:m.0q01m	what is the name of an essential amino acid
+test-18630	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.0f4pvg	what movie is drama in netflix
+test-18890	fb:m.0cz7_3h	fb:people.person.nationality	fb:m.056vv	Where is miloš dragojević from
+test-18996	fb:m.02xhc2v	fb:fictional_universe.character_species.characters_of_this_species	fb:m.02kqbl	what character is a wolf?
+test-19047	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0crs96s	Name a drama film
+test-19288	fb:m.02z8b2h	fb:fictional_universe.fictional_character.character_created_by	fb:m.02x8kk	who was the creator of the fictional character hitman (marvel comics)
+test-19304	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04fd25	what is a drama film?
+test-19509	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0gl3y3b	What would be called a drama
+test-19512	fb:m.06k50f	fb:cvg.computer_videogame.gameplay_modes	fb:m.02hjn4	what player mode is lcd games from the legend of zelda series played in?
+test-19605	fb:m.0ls67qg	fb:music.release_track.release	fb:m.039kc6q	What release can you find the track reincarnation on?
+test-19630	fb:m.01npl51	fb:music.artist.track	fb:m.0sjwsl	What is a track by the musical artist an emotional fish?
+test-19815	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0dgkvg4	what's a drama film made in 1967
+test-20082	fb:m.0w43mcj	fb:music.album.album_content_type	fb:m.02jbfk	what kind of release was grrr! (deluxe edition)
+test-20359	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.04f48nt	what is a drama film
+test-20509	fb:m.07rqy	fb:periodicals.newspaper_circulation_area.newspapers	fb:m.02pnv6d	what is a newspaper in the twin cities?
+test-20627	fb:m.04634rs	fb:music.artist.genre	fb:m.0ggq0m	What genre of music does the artist cantabile create
+test-20697	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0j2b5n3	what is a 1921 drama film
+test-20929	fb:m.0y9s5rm	fb:music.album.release_type	fb:m.02lx2r	what seven classic albums plus bonus tracks (disc 2) a dvd or an album
+test-21281	fb:m.07s9rl0	fb:film.film_genre.films_in_this_genre	fb:m.0cr_gnl	what is the title name of a drama film
+test-21394	fb:m.07s9rl0	fb:media_common.netflix_genre.titles	fb:m.05z5lc	name a netflix drama.
+test-21458	fb:m.037ltr7	fb:music.release.format	fb:m.01www	What medium was lord herbert of cherbury's lute book released on
