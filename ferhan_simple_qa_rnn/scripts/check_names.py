@@ -67,7 +67,7 @@ if __name__ == '__main__':
     parser.add_argument('-n', '--names', dest='names', action='store', required=True,
                         help='path to the names file (from CFO)')
     parser.add_argument('-o', '--output', dest='output', action='store', required=True,
-                        help='output file for list of examples that do not exist')
+                        help='output file path for list of examples that do not exist')
 
     args = parser.parse_args()
     print("Dataset: {}".format(args.data))
