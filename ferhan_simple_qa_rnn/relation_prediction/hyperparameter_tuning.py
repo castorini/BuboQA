@@ -10,7 +10,7 @@ for id in range(count):
     dropout = uniform(0.1, 0.5)
     clip = uniform(0.5, 0.7)
 
-    command = "python train.py --dev_every 2200 --log_every 2200 --batch_size 32 " \
+    command = "python train.py --dev_every 2200 --log_every 2200 --save_every 5000 --batch_size 32 " \
                 "--epochs {} --lr {} --d_hidden {} --n_layers {} --dropout_prob {} --clip_gradient {} >> " \
                     "hyperparameter_results.txt".format(epochs, learning_rate, d_hidden, n_layers, dropout, clip)
 
