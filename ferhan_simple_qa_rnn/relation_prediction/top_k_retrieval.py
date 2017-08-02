@@ -33,7 +33,7 @@ train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
 train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, shuffleTrain=False)
 
 # load the model
-model = torch.load(args.resume_snapshot, map_location=lambda storage,location: storage.cuda(args.gpu))
+model = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
 
 def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train"):
     print("Dataset: {}".format(data_name))
