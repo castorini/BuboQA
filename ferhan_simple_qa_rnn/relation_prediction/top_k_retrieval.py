@@ -35,20 +35,21 @@ train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions,
 # load the model
 model = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
 
-def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train"):
+index2rel = np.array(relations.vocab.itos)
+
+def write_top_k_results(dataset_iter=train_iter, dataset=train, data_name="train"):
     print("Dataset: {}".format(data_name))
     model.eval(); dataset_iter.init_epoch()
 
-    # calculate accuracy on test set
-    n_test_correct = 0
+    n_correct = 0
     n_retrieved = 0
-    index2rel = np.array(relations.vocab.itos)
-    fname = "{}-hits-{}.txt".format(data_name, args.hits)
-    results_file = open(os.path.join(args.results_path, "topk-retrieval-" + fname), 'w')
+    fname = "topk-retrieval-{}-hits-{}.txt".format(data_name, args.hits)
+    results_file = open(os.path.join(args.results_path, fname), 'w')
+
     for data_batch_idx, data_batch in enumerate(dataset_iter):
          scores = model(data_batch)
-         n_test_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
-         # output the top results to a file
+         n_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
+         # get the predicted top K relations
          top_k_scores, top_k_indices = torch.topk(scores, k=args.hits, dim=1, sorted=True) # shape: (batch_size, k)
          top_k_indices_array = top_k_indices.cpu().data.numpy()
          top_k_scores_array = top_k_scores.cpu().data.numpy()
@@ -74,10 +75,11 @@ def write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
 
     retrieval_rate = 100. * n_retrieved / len(dataset)
     print("Retrieval Rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
-    test_acc = 100. * n_test_correct / len(dataset)
-    print("Accuracy: {:8.6f}".format(test_acc))
+    accuracy = 100. * n_correct / len(dataset)
+    print("{} accuracy: {:8.6f}".format(data_name, accuracy))
     results_file.close()
 
-write_top_results(dataset_iter=train_iter, dataset=train, data_name="train")
-write_top_results(dataset_iter=dev_iter, dataset=dev, data_name="valid")
-write_top_results(dataset_iter=test_iter, dataset=test, data_name="test")
+# write out top K retrieval results for train/dev/test
+write_top_k_results(dataset_iter=train_iter, dataset=train, data_name="train")
+write_top_k_results(dataset_iter=dev_iter, dataset=dev, data_name="valid")
+write_top_k_results(dataset_iter=test_iter, dataset=test, data_name="test")
