@@ -64,7 +64,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
 
     print("no. correct: {} out of {}".format(n_correct, len(dataset)))
     accuracy = 100. * n_correct / len(dataset)
-    print("{} accuracy: {:8.6f}".format(data_name, accuracy))
+    print("{} accuracy: {:8.6f}%".format(data_name, accuracy))
     results_file.close()
 
 
