@@ -10,3 +10,4 @@ end_to_end/rel-results
 end_to_end/ent-results
 end_to_end/augmented-fb-subsets
 end_to_end/*.pkl
+indexes/*.pkl
