@@ -6,6 +6,7 @@ saved_checkpoints/
 results/
 __pycache__/
 relation_prediction/*cache*/*
+relation_prediction/trained_model
 end_to_end/rel-results
 end_to_end/ent-results
 end_to_end/augmented-fb-subsets
