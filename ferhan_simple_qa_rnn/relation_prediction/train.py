@@ -27,7 +27,7 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.manual_seed(args.seed)
 
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
-questions = data.Field(lower=True)
+questions = data.Field(lower=True, tokenize="moses")
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
@@ -53,7 +53,7 @@ else:
             model.cuda()
 
 criterion = nn.NLLLoss()
-optimizer = optim.Adam(model.parameters(), lr=args.lr)
+optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.lr_weight_decay)
 
 
 # ---- train the model ------

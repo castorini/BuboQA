@@ -3,10 +3,6 @@ import torch
 
 from torchtext import data
 
-# most basic tokenizer - split on whitespace
-def my_tokenizer():
-    return lambda text: [tok for tok in text.split()]
-
 class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
     url = 'https://www.dropbox.com/s/tohrsllcfy7rch4/SimpleQuestions_v2.tgz'
