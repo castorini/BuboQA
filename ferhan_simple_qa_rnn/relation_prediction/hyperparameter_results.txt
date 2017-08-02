@@ -1,198 +1,140 @@
 root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6124116809450607, cuda=True, d_embed=300, d_hidden=316, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.24903620095428258, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=1.8407767448376564e-06, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=1200, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=291, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3, epochs=30, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0001, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=5000, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
   Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    49     1      2200  2200/2373       93% 7.003826 7.084793       2.6562       9.2301
-    97     2      4400  2027/2373       85% 6.320805 6.590021       8.8986      13.3149
-   147     3      6600  1854/2373       78% 6.008698 6.021704      13.0883      17.6579
-   195     4      8800  1681/2373       71% 5.550379 5.518338      17.1847      20.3965
-   244     5     11000  1508/2373       64% 5.117627 5.121275      20.4555      23.9465
-   294     6     13200  1335/2373       56% 4.151577 4.773719      24.2509      27.0171
-   343     7     15400  1162/2373       49% 4.905560 4.439530      27.0546      29.5897
-   392     8     17600   989/2373       42% 4.502986 4.198701      30.2199      32.1623
-   440     9     19800   816/2373       34% 4.429275 3.917523      32.8202      35.0761
-   489    10     22000   643/2373       27% 3.560640 3.782522      35.0165      37.3997
-   538    11     24200   470/2373       20% 3.485563 3.613766      36.7088      39.3269
-   587    12     26400   297/2373       13% 2.970698 3.455398      39.2466      41.1618
-   636    13     28600   124/2373        5% 3.014011 3.334824      41.7087      43.0060
-   685    13     30800  2324/2373       98% 3.445078 3.204681      41.6779      44.0941
-   734    14     33000  2151/2373       91% 2.807158 3.129754      42.9960      44.8963
-   783    15     35200  1978/2373       83% 2.945809 3.003306      44.4372      46.3347
-   832    16     37400  1805/2373       76% 2.800500 2.910993      45.7808      47.5611
-   881    17     39600  1632/2373       69% 2.648317 2.834197      46.9612      48.5754
-   930    18     41800  1459/2373       61% 2.526352 2.755268      48.0959      49.9769
-   979    19     44000  1286/2373       54% 2.445978 2.681831      49.2443      51.1019
-  1028    20     46200  1113/2373       47% 3.143774 2.621071      50.4829      52.0332
+    28     1      2200  2200/2373       93% 2.244794 1.945284      45.1051      63.4486
+    55     2      4400  2027/2373       85% 1.388631 1.358087      68.3322      72.3098
+    83     3      6600  1854/2373       78% 1.103402 1.125702      75.1905      76.4684
+   110     4      8800  1681/2373       71% 1.021877 1.004325      78.8333      78.4417
+   138     5     11000  1508/2373       64% 1.214541 0.942883      81.0842      79.9078
+   165     6     13200  1335/2373       56% 0.546629 0.907674      82.9682      80.1568
+   193     7     15400  1162/2373       49% 0.511782 0.892994      84.5364      80.6639
+   220     8     17600   989/2373       42% 0.365639 0.883938      85.7590      80.5625
+   248     9     19800   816/2373       34% 0.290810 0.870775      86.5579      81.0788
+   275    10     22000   643/2373       27% 0.416933 0.875554      87.7770      81.1618
+   302    11     24200   470/2373       20% 1.043338 0.879189      88.8763      81.1526
+   330    12     26400   297/2373       13% 0.309862 0.885017      90.1094      81.3462
+   357    13     28600   124/2373        5% 0.185078 0.878654      90.2218      81.3094
+   384    13     30800  2324/2373       98% 0.494737 0.896525      89.8908      81.1710
+   412    14     33000  2151/2373       91% 0.586437 0.896332      90.8197      81.2172
+   439    15     35200  1978/2373       83% 0.244773 0.927071      91.5066      81.1249
+   467    16     37400  1805/2373       76% 0.411291 0.934494      92.2386      81.1157
+   494    17     39600  1632/2373       69% 0.173385 0.955720      93.0913      80.7377
+   521    18     41800  1459/2373       61% 0.243015 0.976818      93.5101      80.9221
+   549    19     44000  1286/2373       54% 0.097649 0.986367      94.2336      81.0973
+   576    20     46200  1113/2373       47% 0.163593 1.032366      94.7018      80.5717
+   604    21     48400   940/2373       40% 0.217819 1.040967      95.0432      80.5901
+   631    22     50600   767/2373       32% 0.095002 1.062644      95.7301      80.8760
+   658    23     52800   594/2373       25% 0.022001 1.076831      95.9701      80.5533
+   686    24     55000   421/2373       18% 0.087248 1.105231      96.4519      80.4149
+   713    25     57200   248/2373       10% 0.015495 1.133912      96.8750      80.3043
+   741    26     59400    75/2373        3% 0.065130 1.179072      97.7500      80.7008
+   768    26     61600  2275/2373       96% 0.047002 1.168909      96.8516      79.9723
+   795    27     63800  2102/2373       89% 0.152276 1.226961      97.1917      80.4887
+   823    28     66000  1929/2373       81% 0.126681 1.249205      97.4501      80.0277
+   850    29     68200  1756/2373       74% 0.101014 1.275273      97.6990      80.2766
+   877    30     70400  1583/2373       67% 0.039305 1.305533      97.9292      80.0738
 root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6672599316308538, cuda=True, d_embed=300, d_hidden=130, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3328418477316804, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=8.101270410487138e-06, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=1200, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=178, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3, epochs=30, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0001, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=5000, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
   Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    30     1      2200  2200/2373       93% 6.583753 6.796734       3.2216       9.8571
-    60     2      4400  2027/2373       85% 5.976291 5.802826      11.5072      17.0954
-    89     3      6600  1854/2373       78% 5.005735 5.075402      18.0303      22.5726
-   119     4      8800  1681/2373       71% 4.706964 4.468732      23.2079      27.9115
-   148     5     11000  1508/2373       64% 3.409429 4.056302      27.9696      32.5772
-   178     6     13200  1335/2373       56% 3.526104 3.683887      32.1512      35.7031
-   208     7     15400  1162/2373       49% 4.514994 3.417546      36.4404      39.2623
-   237     8     17600   989/2373       42% 3.447753 3.214854      39.7055      42.8585
-   267     9     19800   816/2373       34% 3.793969 3.023647      42.2947      44.9885
-   296    10     22000   643/2373       27% 3.109298 2.868125      44.2117      46.8326
-   325    11     24200   470/2373       20% 2.398703 2.735935      46.1702      48.8151
-   355    12     26400   297/2373       13% 3.139876 2.607512      48.5690      50.3550
-   384    13     28600   124/2373        5% 2.685475 2.496094      49.1431      52.0977
-   414    13     30800  2324/2373       98% 2.115345 2.400553      50.8323      53.7391
-   444    14     33000  2151/2373       91% 2.664074 2.310636      52.5221      55.5279
-   474    15     35200  1978/2373       83% 2.428878 2.215871      53.9829      57.3813
-   503    16     37400  1805/2373       76% 2.779488 2.149575      55.5350      58.9212
-   533    17     39600  1632/2373       69% 2.114654 2.081322      57.0849      60.2490
-   562    18     41800  1459/2373       61% 2.061877 2.019901      58.4219      61.4753
-   592    19     44000  1286/2373       54% 2.620272 1.958548      59.6180      62.3052
-   621    20     46200  1113/2373       47% 2.181640 1.901202      60.7817      63.1904
+    22     1      2200  2200/2373       93% 2.659000 2.343797      37.2060      56.8926
+    44     2      4400  2027/2373       85% 2.565542 1.615728      62.4815      68.1789
+    66     3      6600  1854/2373       78% 0.787559 1.307213      70.7743      72.9553
+    88     4      8800  1681/2373       71% 1.001916 1.143919      75.0223      76.0996
+   109     5     11000  1508/2373       64% 0.890889 1.048108      77.9323      77.7962
+   131     6     13200  1335/2373       56% 0.398077 0.988538      79.6325      78.8290
+   153     7     15400  1162/2373       49% 0.739311 0.952563      81.4571      79.3269
+   175     8     17600   989/2373       42% 0.683007 0.921180      82.3528      80.1291
+   197     9     19800   816/2373       34% 0.471566 0.900797      83.6933      80.4887
+   219    10     22000   643/2373       27% 0.403507 0.883866      84.4042      80.7284
+   240    11     24200   470/2373       20% 0.497055 0.883767      85.4787      81.0696
+   262    12     26400   297/2373       13% 0.310698 0.872334      86.3742      81.4108
+   284    13     28600   124/2373        5% 0.376233 0.874784      87.2732      81.1987
+   305    13     30800  2324/2373       98% 0.822290 0.874271      86.6596      81.2817
+   327    14     33000  2151/2373       91% 0.420914 0.868801      87.2109      81.7243
+   349    15     35200  1978/2373       83% 0.367868 0.869527      87.7781      81.4200
+   370    16     37400  1805/2373       76% 0.173553 0.874393      88.5284      81.7059
+   392    17     39600  1632/2373       69% 0.353007 0.882227      89.0529      81.4938
+   414    18     41800  1459/2373       61% 0.160437 0.897034      89.7233      81.3555
+   435    19     44000  1286/2373       54% 0.283920 0.894743      90.2240      81.3186
+   457    20     46200  1113/2373       47% 0.225078 0.914553      90.7401      81.3001
+   479    21     48400   940/2373       40% 0.401185 0.921490      91.1004      81.4108
+   501    22     50600   767/2373       32% 0.121722 0.938780      91.8799      81.4938
+   522    23     52800   594/2373       25% 0.293551 0.952005      92.0665      81.3831
+   544    24     55000   421/2373       18% 0.223378 0.972418      92.5401      81.1710
+   566    25     57200   248/2373       10% 0.292530 0.972723      93.1200      81.2264
+   587    26     59400    75/2373        3% 0.067321 0.986892      94.0000      81.4108
+   609    26     61600  2275/2373       96% 0.556498 0.998699      93.2692      81.1342
+   631    27     63800  2102/2373       89% 0.293701 1.016474      93.3709      81.2633
+   652    28     66000  1929/2373       81% 0.139885 1.022331      94.0497      81.0512
+   674    29     68200  1756/2373       74% 0.410456 1.052844      94.2999      80.7838
+   696    30     70400  1583/2373       67% 0.264722 1.054929      94.5831      81.0604
 root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6175470650784846, cuda=True, d_embed=300, d_hidden=331, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.35195576315251254, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.00033253250966426876, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=229, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3, epochs=30, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0001, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=5000, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
   Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    30     1      2200  2200/2373       93% 1.608228 1.301491      58.7244      73.5823
-    59     2      4400  2027/2373       85% 0.622278 1.018311      75.9312      77.9899
-    89     3      6600  1854/2373       78% 0.571037 0.916035      80.1257      79.9539
-   119     4      8800  1681/2373       71% 0.733440 0.882420      82.5402      80.6086
-   148     5     11000  1508/2373       64% 0.608546 0.883109      84.7770      81.1065
-   178     6     13200  1335/2373       56% 0.365694 0.890992      86.7978      81.7796
-   207     7     15400  1162/2373       49% 0.448865 0.924864      88.3337      81.6505
-   237     8     17600   989/2373       42% 0.371302 0.989531      90.2111      80.9221
-   266     9     19800   816/2373       34% 0.142374 0.998727      91.4867      81.4569
-   296    10     22000   643/2373       27% 0.125421 1.053959      92.7926      81.1434
-   326    11     24200   470/2373       20% 0.128233 1.128938      94.2287      80.5533
-   355    12     26400   297/2373       13% 0.075259 1.168139      95.4125      81.1342
-   385    13     28600   124/2373        5% 0.063946 1.232918      96.7238      81.3278
-   414    13     30800  2324/2373       98% 0.272643 1.271993      95.5451      81.2172
-   444    14     33000  2151/2373       91% 0.082194 1.374789      96.3825      81.2356
-   474    15     35200  1978/2373       83% 0.114330 1.440798      96.8797      80.5533
-   503    16     37400  1805/2373       76% 0.255076 1.496941      97.3546      80.8391
-   533    17     39600  1632/2373       69% 0.020244 1.558829      97.7462      80.8483
-   562    18     41800  1459/2373       61% 0.031153 1.627083      98.0680      80.6455
-   592    19     44000  1286/2373       54% 0.056821 1.678581      98.1678      80.6362
-   621    20     46200  1113/2373       47% 0.063721 1.718418      98.3266      80.3412
+    24     1      2200  2200/2373       93% 2.281699 2.100599      41.7855      61.1249
+    48     2      4400  2027/2373       85% 1.522048 1.466473      66.1353      70.7515
+    72     3      6600  1854/2373       78% 2.019678 1.202853      73.2689      75.1775
+    97     4      8800  1681/2373       71% 0.637149 1.063185      77.2922      77.2891
+   121     5     11000  1508/2373       64% 0.676737 0.980440      79.6751      79.0687
+   145     6     13200  1335/2373       56% 0.615357 0.938590      81.5122      79.5758
+   169     7     15400  1162/2373       49% 0.472901 0.913151      83.1487      79.8709
+   194     8     17600   989/2373       42% 0.443831 0.888426      84.4319      80.7653
+   218     9     19800   816/2373       34% 0.437015 0.886252      85.3401      81.0420
+   242    10     22000   643/2373       27% 0.417630 0.870374      86.7807      81.3555
+   267    11     24200   470/2373       20% 0.512160 0.869287      87.1742      81.2725
+   291    12     26400   297/2373       13% 0.226044 0.865288      88.1103      81.1526
+   315    13     28600   124/2373        5% 0.494842 0.871484      89.3397      81.3370
+   339    13     30800  2324/2373       98% 0.146804 0.877164      88.4507      80.9497
+   364    14     33000  2151/2373       91% 0.281728 0.870058      89.1678      81.4938
+   388    15     35200  1978/2373       83% 0.178320 0.893710      89.9962      81.4200
+   413    16     37400  1805/2373       76% 0.091906 0.906899      90.5246      81.1249
+   441    17     39600  1632/2373       69% 0.557493 0.899430      91.1439      81.2264
+   466    18     41800  1459/2373       61% 0.303518 0.924673      91.8416      81.4846
+   490    19     44000  1286/2373       54% 0.370940 0.932520      92.5666      81.1987
+   514    20     46200  1113/2373       47% 0.168436 0.961746      92.8712      81.2172
+   540    21     48400   940/2373       40% 0.133940 0.987547      93.4707      81.1249
+   565    22     50600   767/2373       32% 0.034678 0.979084      94.0922      80.9497
+   590    23     52800   594/2373       25% 0.182902 1.007931      94.3708      81.1895
+   619    24     55000   421/2373       18% 0.200724 1.025429      95.2568      81.1710
+   644    25     57200   248/2373       10% 0.086520 1.060753      96.0559      81.0973
+   668    26     59400    75/2373        3% 0.051692 1.063397      96.7083      81.1618
+   692    26     61600  2275/2373       96% 0.357181 1.085522      95.3201      81.0604
+   717    27     63800  2102/2373       89% 0.082841 1.107261      95.7184      80.7192
+   741    28     66000  1929/2373       81% 0.095492 1.139954      95.9646      80.4610
+   765    29     68200  1756/2373       74% 0.163207 1.145446      96.3429      80.7284
+   790    30     70400  1583/2373       67% 0.063513 1.165640      96.5670      80.5809
 root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6161186667518791, cuda=True, d_embed=300, d_hidden=279, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.22795623448087282, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=5.209963210124131e-05, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=118, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3, epochs=30, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0001, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=5000, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
   Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    27     1      2200  2200/2373       93% 1.782301 2.553007      36.1151      53.8774
-    54     2      4400  2027/2373       85% 1.508534 1.780576      60.7764      65.6524
-    80     3      6600  1854/2373       78% 2.396189 1.423387      69.1343      71.1849
-   107     4      8800  1681/2373       71% 1.194692 1.227665      74.1021      74.8179
-   134     5     11000  1508/2373       64% 1.458354 1.103537      77.2816      76.9202
-   161     6     13200  1335/2373       56% 1.259093 1.024960      79.5599      78.3864
-   188     7     15400  1162/2373       49% 0.334733 0.973781      81.6722      79.1609
-   215     8     17600   989/2373       42% 0.404184 0.941281      82.7856      79.4744
-   242     9     19800   816/2373       34% 0.527734 0.912332      83.7661      80.3688
-   268    10     22000   643/2373       27% 0.598615 0.900327      85.2255      80.4703
-   295    11     24200   470/2373       20% 0.471363 0.887290      86.0572      80.5809
-   322    12     26400   297/2373       13% 0.359797 0.878748      87.2475      81.1895
-   349    13     28600   124/2373        5% 0.349320 0.867086      87.0716      81.0973
-   376    13     30800  2324/2373       98% 0.567821 0.860767      87.4381      80.8114
-   402    14     33000  2151/2373       91% 0.367449 0.866015      88.0753      80.9774
-   429    15     35200  1978/2373       83% 0.617140 0.858936      88.8097      81.2172
-   456    16     37400  1805/2373       76% 0.384582 0.865211      89.4391      81.0235
-   483    17     39600  1632/2373       69% 0.510740 0.864337      89.8131      81.2725
-   509    18     41800  1459/2373       61% 0.393787 0.873168      90.8285      81.4108
-   536    19     44000  1286/2373       54% 0.225226 0.876322      91.1888      81.1803
-   563    20     46200  1113/2373       47% 0.240287 0.894687      91.9334      81.0143
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6488873397947916, cuda=True, d_embed=300, d_hidden=189, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.12801304850953749, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0032460164739904268, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    22     1      2200  2200/2373       93% 1.418586 1.248924      63.9034      73.4163
-    44     2      4400  2027/2373       85% 1.451965 1.109767      74.4558      76.0535
-    67     3      6600  1854/2373       78% 0.960919 1.038572      76.3029      77.0954
-    89     4      8800  1681/2373       71% 1.157470 1.037046      77.2736      77.1139
-   111     5     11000  1508/2373       64% 0.536233 1.036099      77.6919      77.3352
-   133     6     13200  1335/2373       56% 0.942852 1.064887      78.0993      77.2983
-   156     7     15400  1162/2373       49% 0.456036 1.080201      77.9529      77.2430
-   178     8     17600   989/2373       42% 0.703048 1.054941      78.3083      77.4182
-   200     9     19800   816/2373       34% 0.855410 1.080022      77.9105      76.9479
-   223    10     22000   643/2373       27% 0.821023 1.054910      77.5175      76.6805
-   245    11     24200   470/2373       20% 0.816018 1.048588      77.3338      77.1969
-   267    12     26400   297/2373       13% 0.441580 1.078653      78.3986      76.4131
-   289    13     28600   124/2373        5% 0.908991 1.063469      77.8478      76.7635
-   311    13     30800  2324/2373       98% 0.971184 1.058918      77.0291      76.4039
-   333    14     33000  2151/2373       91% 1.362715 1.088148      77.0819      76.4131
-   356    15     35200  1978/2373       83% 0.482051 1.053303      76.6352      76.9756
-   378    16     37400  1805/2373       76% 1.173965 1.076197      76.8213      77.3444
-   400    17     39600  1632/2373       69% 1.223660 1.074284      76.6525      76.8096
-   422    18     41800  1459/2373       61% 0.629903 1.088389      76.5229      76.2195
-   445    19     44000  1286/2373       54% 0.840407 1.089714      76.5188      76.2195
-   467    20     46200  1113/2373       47% 1.119786 1.107175      76.2803      76.2563
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6548834880753329, cuda=True, d_embed=300, d_hidden=284, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.33479383540438157, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=5.451549060084163e-06, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    27     1      2200  2200/2373       93% 6.192785 6.393265       5.7386      14.0802
-    54     2      4400  2027/2373       85% 5.235487 5.113918      15.8717      20.8391
-    80     3      6600  1854/2373       78% 4.470088 4.388784      24.3039      30.0599
-   107     4      8800  1681/2373       71% 3.843314 3.869360      31.6088      35.8045
-   134     5     11000  1508/2373       64% 3.859101 3.464156      37.1291      41.1434
-   161     6     13200  1335/2373       56% 3.052455 3.179086      41.2921      44.7026
-   188     7     15400  1162/2373       49% 2.849287 2.950699      44.6671      47.1554
-   214     8     17600   989/2373       42% 2.124265 2.776248      47.3363      49.6358
-   241     9     19800   816/2373       34% 3.002700 2.603084      49.5328      51.5722
-   268    10     22000   643/2373       27% 2.523713 2.472472      52.2162      54.2001
-   295    11     24200   470/2373       20% 2.169329 2.348013      54.2952      56.2471
-   322    12     26400   297/2373       13% 2.027185 2.240197      56.2816      58.0728
-   348    13     28600   124/2373        5% 1.401689 2.137388      58.6694      60.0184
-   375    13     30800  2324/2373       98% 1.892395 2.060575      59.1088      61.4108
-   402    14     33000  2151/2373       91% 1.764644 1.970915      60.7014      62.7294
-   429    15     35200  1978/2373       83% 1.798543 1.911890      62.0055      63.7344
-   456    16     37400  1805/2373       76% 1.874540 1.840077      63.2583      64.7487
-   482    17     39600  1632/2373       69% 1.580290 1.780117      64.5412      65.5048
-   509    18     41800  1459/2373       61% 1.789931 1.735084      65.5843      66.2148
-   536    19     44000  1286/2373       54% 1.699448 1.684090      66.2714      67.0632
-   563    20     46200  1113/2373       47% 1.400851 1.648525      67.0064      68.0037
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.577985545590836, cuda=True, d_embed=300, d_hidden=279, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.4385000740287286, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0032816847152987304, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-    45     1      2200  2200/2373       93% 2.095962 1.865980      45.8892      61.7612
-    90     2      4400  2027/2373       85% 2.772017 1.756071      57.4124      62.5818
-   136     3      6600  1854/2373       78% 2.781616 1.707069      57.5040      63.1812
-   181     4      8800  1681/2373       71% 2.075983 1.757266      56.0492      62.3790
-   226     5     11000  1508/2373       64% 2.943658 1.781909      53.2348      61.0051
-   271     6     13200  1335/2373       56% 2.368539 1.872841      51.8188      59.0226
-   316     7     15400  1162/2373       49% 2.088860 2.059820      47.3698      54.6243
-   360     8     17600   989/2373       42% 2.727878 2.342441      42.2270      48.0221
-   405     9     19800   816/2373       34% 1.875495 2.161224      41.8888      51.9963
-   450    10     22000   643/2373       27% 2.836007 2.299671      39.3371      48.6030
-   496    11     24200   470/2373       20% 4.213838 2.474591      36.2965      45.8737
-   541    12     26400   297/2373       13% 3.293028 2.633270      30.6818      41.4477
-   587    13     28600   124/2373        5% 3.815534 3.011124      25.6552      33.6561
-   632    13     30800  2324/2373       98% 3.063107 2.823124      27.7310      38.1097
-   677    14     33000  2151/2373       91% 3.308492 2.981934      27.7487      34.4583
-   722    15     35200  1978/2373       83% 3.152890 3.141442      26.7268      31.2955
-   767    16     37400  1805/2373       76% 3.468928 3.018147      25.7445      33.4809
-   812    17     39600  1632/2373       69% 4.464252 3.103671      26.5702      33.3979
-   858    18     41800  1459/2373       61% 2.973786 3.005114      25.6340      34.3107
-   903    19     44000  1286/2373       54% 3.145992 2.835151      27.3936      37.3997
-   974    20     46200  1113/2373       47% 4.119664 2.999144      26.7155      33.9511
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6283429960497897, cuda=True, d_embed=300, d_hidden=154, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.16286974074530336, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=1.0852979475377906e-06, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5462672293414534, cuda=True, d_embed=300, d_hidden=356, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.37570386315445237, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=3.5144624981410694e-05, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5985532961100709, cuda=True, d_embed=300, d_hidden=339, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.31270862310448744, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=1.7761790185233073e-06, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5862344793906765, cuda=True, d_embed=300, d_hidden=195, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.28618791180935266, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.00012461371270360588, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6112288524052734, cuda=True, d_embed=300, d_hidden=326, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.20955222800943787, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.00010943864064185285, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.6741587177040469, cuda=True, d_embed=300, d_hidden=286, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.47570916357370086, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0006515846370286133, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5220860017678557, cuda=True, d_embed=300, d_hidden=323, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.3822279913323755, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.001752366132045045, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5449257690179163, cuda=True, d_embed=300, d_hidden=218, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.39121052488008956, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=4.853257835045225e-05, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5288430177737525, cuda=True, d_embed=300, d_hidden=252, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.4496821328497398, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.0023087807734853837, lr_weight_decay=0.0, n_cells=4, n_embed=61767, n_layers=2, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
-root path for relation dataset: ../data
-Namespace(batch_size=32, birnn=True, clip_gradient=0.5087741360114231, cuda=True, d_embed=300, d_hidden=226, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=2200, dropout_prob=0.33256016092534646, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=2200, lr=0.000731517794728657, lr_weight_decay=0.0, n_cells=6, n_embed=61767, n_layers=3, patience=3, results_path='results', resume_snapshot='', rnn_type='gru', save_every=4500, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
-  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
+    19     1      2200  2200/2373       93% 2.052099 2.761875      30.2713      49.8386
+    38     2      4400  2027/2373       85% 1.906499 1.907386      56.1791      63.4209
+    57     3      6600  1854/2373       78% 1.413623 1.513615      65.6671      69.1840
+    76     4      8800  1681/2373       71% 0.807546 1.314259      70.6276      72.6879
+    94     5     11000  1508/2373       64% 0.983246 1.189526      74.2022      75.1037
+   113     6     13200  1335/2373       56% 0.724610 1.096065      76.1493      76.7358
+   132     7     15400  1162/2373       49% 0.813778 1.038748      78.1492      77.8147
+   150     8     17600   989/2373       42% 0.676374 1.006912      79.2910      78.4140
+   169     9     19800   816/2373       34% 1.131904 0.966788      80.5070      79.0503
+   187    10     22000   643/2373       27% 0.959824 0.950293      81.4493      79.7049
+   205    11     24200   470/2373       20% 0.730381 0.930043      82.1343      80.0922
+   224    12     26400   297/2373       13% 0.800508 0.913775      83.5543      80.6178
+   242    13     28600   124/2373        5% 0.700553 0.901642      84.4758      80.7377
+   260    13     30800  2324/2373       98% 0.459853 0.893086      83.4028      81.0051
+   279    14     33000  2151/2373       91% 0.545969 0.884573      84.1832      80.8483
+   297    15     35200  1978/2373       83% 0.560800 0.880071      84.6752      80.9866
+   315    16     37400  1805/2373       76% 0.347968 0.876097      85.2164      81.1803
+   334    17     39600  1632/2373       69% 0.634031 0.880174      85.7211      81.3186
+   352    18     41800  1459/2373       61% 0.335523 0.882937      86.1099      81.4385
+   371    19     44000  1286/2373       54% 0.535665 0.882545      86.6349      81.5491
+   390    20     46200  1113/2373       47% 0.411634 0.886905      87.2613      81.5030
+   408    21     48400   940/2373       40% 0.422039 0.884834      87.6596      81.5583
+   427    22     50600   767/2373       32% 0.159640 0.891196      88.3312      81.2172
+   445    23     52800   594/2373       25% 0.693551 0.898842      88.4680      81.5952
+   464    24     55000   421/2373       18% 0.419076 0.903346      89.7120      81.4753
+   483    25     57200   248/2373       10% 0.289717 0.904764      89.2641      81.6413
+   502    26     59400    75/2373        3% 0.589433 0.907861      89.2917      81.4569
+   520    26     61600  2275/2373       96% 0.363044 0.918438      89.3764      81.4938
+   538    27     63800  2102/2373       89% 0.564080 0.924549      89.7211      81.5768
+   557    28     66000  1929/2373       81% 0.318600 0.945645      90.1973      81.5768
+   576    29     68200  1756/2373       74% 0.152672 0.930703      90.4435      81.3370
+   594    30     70400  1583/2373       67% 0.631820 0.944199      90.8560      81.5122
