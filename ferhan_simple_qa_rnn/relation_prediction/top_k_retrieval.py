@@ -78,6 +78,7 @@ def write_top_k_results(dataset_iter=train_iter, dataset=train, data_name="train
     print("no. correct: {} out of {}".format(n_correct, len(dataset)))
     accuracy = 100. * n_correct / len(dataset)
     print("{} accuracy: {:8.6f}%".format(data_name, accuracy))
+    print("-" * 80)
     results_file.close()
 
 # write out top K retrieval results for train/dev/test
