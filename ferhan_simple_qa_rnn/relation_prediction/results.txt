@@ -1,0 +1,7 @@
+root path for relation dataset: ../data
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6424457850903937, cuda=True, d_embed=300, d_hidden=450, d_out=1838, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/data_cache', dev_every=500, dropout_prob=0.11336612583579347, epochs=20, fix_emb=True, gpu=0, hits=3, log_every=250, lr=4.92895882278796e-06, n_cells=4, n_embed=74820, n_layers=2, patience=5, results_path='results', resume_snapshot='', rnn_type='gru', save_every=1200, save_path='saved_checkpoints', seed=1111, vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/relation_prediction/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy
+     5     1       250   250/2373       11% 7.164139                1.3375             
+    11     1       500   500/2373       21% 7.007873 6.988521       3.7437      10.7515
+    15     1       750   750/2373       32% 6.864461                5.5833             
+    21     1      1000  1000/2373       42% 6.467433 6.489371       7.5094      17.3352
