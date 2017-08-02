@@ -28,6 +28,7 @@ def get_args():
     parser.add_argument('--word_vectors', type=str, default='glove.42B')
     parser.add_argument('--train_embed', action='store_false', dest='fix_emb') # fine-tune the word embeddings
     parser.add_argument('--resume_snapshot', type=str, default='')
+    parser.add_argument('--trained_model', type=str, default='')
     parser.add_argument('--hits', type=int, default=3, help="number of top results to output")
     parser.add_argument('--results_path', type=str, default='results')
     args = parser.parse_args()
