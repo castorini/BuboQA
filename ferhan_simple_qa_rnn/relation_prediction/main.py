@@ -68,7 +68,7 @@ def predict(dataset_iter=test_iter, data_name="test"):
 
 
 # run the model on the dev set and write the output to a file
-predict(dataset_iter=dev_iter, dataset=dev, data_name="valid")
+predict(dataset_iter=dev_iter, data_name="valid")
 
 # run the model on the test set and write the output to a file
-predict(dataset_iter=test_iter, dataset=test, data_name="test")
+predict(dataset_iter=test_iter, data_name="test")
