@@ -38,7 +38,7 @@ index2rel = np.array(relations.vocab.itos)
 if not os.path.exists(args.results_path):
     os.makedirs(args.results_path)
 
-def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
+def predict(dataset_iter=test_iter, data_name="test"):
     print("Dataset: {}".format(data_name))
     model.eval();
     dataset_iter.init_epoch()
@@ -48,16 +48,16 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     fname = "main-{}-results.txt".format(data_name)
     results_file = open(os.path.join(args.results_path, fname), 'w')
 
-    for test_batch_idx, test_batch in enumerate(test_iter):
-        scores = model(test_batch)
-        n_correct += (torch.max(scores, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
+    for data_batch_idx, data_batch in enumerate(dataset_iter):
+        scores = model(data_batch)
+        n_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
         # get the predicted relations
         top_scores, top_indices = torch.max(scores, dim=1) # shape: (batch_size, 1)
         top_indices_array = top_indices.cpu().data.numpy().reshape(-1)
         top_scores_array = top_scores.cpu().data.numpy().reshape(-1)
         top_relatons_array = index2rel[top_indices_array] # shape: vector of dim: batch_size
         # write to file
-        for i in range(test_batch.batch_size):
+        for i in range(data_batch.batch_size):
             line_to_print = "{}-{} %%%% {} %%%% {}".format(data_name, linenum, top_relatons_array[i], top_scores_array[i])
             results_file.write(line_to_print + "\n")
             linenum += 1
