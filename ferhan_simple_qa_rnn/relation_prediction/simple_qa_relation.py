@@ -3,19 +3,11 @@ import torch
 
 from torchtext import data
 
-# most basic tokenizer - split on whitespace
-def my_tokenizer():
-    return lambda text: [tok for tok in text.split()]
-
 class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
     url = 'https://www.dropbox.com/s/tohrsllcfy7rch4/SimpleQuestions_v2.tgz'
     filename = 'SimpleQuestions_v2.tgz'
     dirname = 'SimpleQuestions_v2'
-
-    @staticmethod
-    def sort_key(ex):
-        return 0 # no sort order
 
     @classmethod
     def splits(cls, text_field, label_field, root='../data',
@@ -78,8 +70,8 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
         # create iterators
         train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   shuffle=shuffleTrain)
-        dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False)
-        test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False)
+                                   sort=False, shuffle=shuffleTrain)
+        dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False, sort=False)
+        test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False, sort=False)
 
         return (train_iter, dev_iter, test_iter)
