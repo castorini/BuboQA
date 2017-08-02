@@ -3,7 +3,6 @@ data/*
 data/glove/
 resources/
 saved_checkpoints/
-results/
 __pycache__/
 relation_prediction/*cache*/*
 relation_prediction/trained_model
