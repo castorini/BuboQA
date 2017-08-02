@@ -19,8 +19,8 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
 
-if not args.resume_snapshot:
-    print("ERROR: You need to provide a resume_snapshot path to load the model.")
+if not args.trained_model:
+    print("ERROR: You need to provide a option 'trained_model' path to load the model.")
     sys.exit(1)
 
 os.makedirs(args.results_path, exist_ok=True)
