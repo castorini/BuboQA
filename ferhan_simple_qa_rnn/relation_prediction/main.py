@@ -23,8 +23,6 @@ if not args.trained_model:
     print("ERROR: You need to provide a option 'trained_model' path to load the model.")
     sys.exit(1)
 
-os.makedirs(args.results_path)
-
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
 questions = data.Field(lower=True)
 relations = data.Field(sequential=False)
@@ -33,19 +31,23 @@ train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
 train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, shuffleTrain=False)
 
 # load the model
-model = torch.load(args.resume_snapshot, map_location=lambda storage,location: storage.cuda(args.gpu))
+model = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
 
 # run the model on the test set and write the output to a file
-# calculate accuracy on test set
 n_test_correct = 0
 test_linenum = 1
 index2rel = np.array(relations.vocab.itos)
-results_file = open(args.test_results_path, 'w')
+
+if not os.path.exists(args.results_path):
+    os.makedirs(args.results_path)
+results_file = open(os.path.join(args.results_path, "main_test_results.txt"), 'w')
+
+model.eval()
 for test_batch_idx, test_batch in enumerate(test_iter):
     scores = model(test_batch)
     n_test_correct += (torch.max(scores, 1)[1].view(test_batch.relation.size()).data == test_batch.relation.data).sum()
     # output the top results to a file
-    top_scores, top_indices = torch.topk(scores, dim=1) # shape: (batch_size, 1)
+    top_scores, top_indices = torch.max(scores, dim=1) # shape: (batch_size, 1)
     top_indices_array = top_indices.cpu().data.numpy()
     top_scores_array = top_scores.cpu().data.numpy()
     top_relatons_array = index2rel[top_indices_array] # shape: (batch_size, 1)
