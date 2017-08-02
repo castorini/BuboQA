@@ -74,7 +74,8 @@ def write_top_k_results(dataset_iter=train_iter, dataset=train, data_name="train
              results_file.write("-" * 60 + "\n")
 
     retrieval_rate = 100. * n_retrieved / len(dataset)
-    print("Retrieval Rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
+    print("retrieval rate (hits = {}): {:8.6f}".format(args.hits, retrieval_rate))
+    print("no. correct: {} out of {}".format(n_correct, len(dataset)))
     accuracy = 100. * n_correct / len(dataset)
     print("{} accuracy: {:8.6f}".format(data_name, accuracy))
     results_file.close()

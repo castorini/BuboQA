@@ -38,7 +38,7 @@ index2rel = np.array(relations.vocab.itos)
 if not os.path.exists(args.results_path):
     os.makedirs(args.results_path)
 
-def predict(dataset_iter=test_iter, data_name="test"):
+def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     print("Dataset: {}".format(data_name))
     model.eval();
     dataset_iter.init_epoch()
@@ -62,13 +62,14 @@ def predict(dataset_iter=test_iter, data_name="test"):
             results_file.write(line_to_print + "\n")
             linenum += 1
 
-    accuracy = 100. * n_correct / len(test)
+    print("no. correct: {} out of {}".format(n_correct, len(dataset)))
+    accuracy = 100. * n_correct / len(dataset)
     print("{} accuracy: {:8.6f}".format(data_name, accuracy))
     results_file.close()
 
 
 # run the model on the dev set and write the output to a file
-predict(dataset_iter=dev_iter, data_name="valid")
+predict(dataset_iter=dev_iter, dataset=dev, data_name="valid")
 
 # run the model on the test set and write the output to a file
-predict(dataset_iter=test_iter, data_name="test")
+predict(dataset_iter=test_iter, dataset=test, data_name="test")
