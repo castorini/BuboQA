@@ -7,7 +7,11 @@ import pickle
 import math
 
 """
+Example command to run program:
 
+python entity_linking.py --index_ent ../indexes/entity.pkl --index_reach ../indexes/reachability_2M.pkl \
+    --index_names ../indexes/names.pkl --ent_result ../entity_detection/gold-results/test.txt \
+    --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
 
 def get_index(index_path):
