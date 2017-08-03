@@ -31,7 +31,8 @@ def get_query_text(ent_resultpath):
         for line in f:
             items = line.strip().split(" %%%% ")
             lineid = items[0].strip()
-            query = items[1].strip()
+            mid = items[1].strip()
+            query = items[2].strip()
             # print("{}   -   {}".format(lineid, query))
             lineids.append(lineid)
             id2query[lineid] = query
