@@ -30,12 +30,13 @@ def get_query_text(ent_resultpath):
     with open(ent_resultpath, 'r') as f:
         for line in f:
             items = line.strip().split(" %%%% ")
-            if len(items) != 3:
+            try:
+                lineid = items[0].strip()
+                mid = items[1].strip()
+                query = items[2].strip()
+            except:
                 print("ERROR: line does not have 3 items ::: ".format(line.strip()))
                 continue
-            lineid = items[0].strip()
-            mid = items[1].strip()
-            query = items[2].strip()
             # print("{}   -   {}".format(lineid, query))
             lineids.append(lineid)
             id2query[lineid] = query
@@ -110,7 +111,9 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
                 ## PROBLEM! - ngram doesnt exist in index
                 cand_mids = index_ent[ngram] # search entities
                 C.extend(cand_mids)
+                print("C: {}".format(C))
             if (len(C) > 0):
+                print("early termination...")
                 break  # early termination
 
         C_tfidf = []
