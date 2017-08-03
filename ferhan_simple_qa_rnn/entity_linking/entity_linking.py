@@ -6,12 +6,18 @@ import argparse
 import pickle
 import math
 
+"""
+
+"""
+
 def get_index(index_path):
+    print("loading index from: {}".format(index_path))
     with open(index_path, 'rb') as f:
         index = pickle.load(f)
     return index
 
 def get_query_text(ent_resultpath):
+    print("getting query text...")
     lineids = []
     id2query = {}
     with open(ent_resultpath, 'r') as f:
@@ -25,6 +31,7 @@ def get_query_text(ent_resultpath):
     return lineids, id2query
 
 def get_relations(rel_resultpath):
+    print("getting relations...")
     lineids = []
     id2rel = {}
     with open(rel_resultpath, 'r') as f:
@@ -42,7 +49,7 @@ def find_ngrams(input_list, n):
     ngrams = zip(*[input_list[i:] for i in range(n)])
     return set(ngrams)
 
-def get_tf_idf(query, cand_ent_name, num_entities, index_ent):
+def calc_tf_idf(query, cand_ent_name, num_entities, index_ent):
     query_terms = query.split()
     doc_tokens = cand_ent_name.split()
     common_terms = set(query_terms).intersection(set(doc_tokens))
@@ -91,7 +98,7 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
         C_tfidf = []
         for mid in C:
             cand_ent_name = index_names[mid].lower()
-            tfidf = get_tf_idf(query_text, cand_ent_name, num_entities, index_ent)
+            tfidf = calc_tf_idf(query_text, cand_ent_name, num_entities, index_ent)
             C_tfidf.append( (mid, tfidf) )
 
         # relation correction
