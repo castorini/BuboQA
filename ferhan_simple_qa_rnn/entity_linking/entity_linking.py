@@ -6,6 +6,8 @@ import argparse
 import pickle
 import math
 
+from nltk.tokenize.moses import MosesTokenizer
+
 """
 Example command to run program:
 
@@ -13,6 +15,7 @@ python entity_linking.py --index_ent ../indexes/entity.pkl --index_reach ../inde
     --index_names ../indexes/names.pkl --ent_result ../entity_detection/gold-results/test.txt \
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
+tokenizer = MosesTokenizer()
 
 def get_index(index_path):
     print("loading index from: {}".format(index_path))
@@ -54,8 +57,8 @@ def find_ngrams(input_list, n):
     return set(ngrams)
 
 def calc_tf_idf(query, cand_ent_name, num_entities, index_ent):
-    query_terms = query.split()
-    doc_tokens = cand_ent_name.split()
+    query_terms = tokenizer.tokenize(query)
+    doc_tokens = tokenizer.tokenize(cand_ent_name)
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
     # len_intersection = len(common_terms)
@@ -86,8 +89,8 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
             continue
         print("processing lineid: {}".format(lineid))
         pred_relation = id2rel[lineid]
-        query_text = id2query[lineid].lower()
-        query_tokens = query_text.split()
+        query_text = id2query[lineid].lower() # lowercase the query
+        query_tokens = tokenizer.tokenize(query_text)
         N = min(len(query_tokens), 3)
         C = [] # candidate entities
         for n in range(N, 0, -1):
