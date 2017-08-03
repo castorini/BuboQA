@@ -66,6 +66,7 @@ def calc_tf_idf(query, cand_ent_name, num_entities, index_ent):
     try:
         doc_tokens = tokenizer.tokenize(cand_ent_name)
     except:
+        print(doc_tokens)
         doc_tokens = [cand_ent_name, cand_ent_name.replace(".", "")]
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
