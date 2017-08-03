@@ -35,7 +35,7 @@ def get_query_text(ent_resultpath):
                 mid = items[1].strip()
                 query = items[2].strip()
             except:
-                print("ERROR: line does not have 3 items ::: ".format(line.strip()))
+                print("ERROR: line does not have 3 items  -->  {}".format(line.strip()))
                 continue
             # print("{}   -   {}".format(lineid, query))
             lineids.append(lineid)
@@ -118,7 +118,8 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
 
         C_tfidf = []
         for mid in C:
-            cand_ent_name = index_names[mid].lower()
+            cand_ent_possible_names = index_names[mid]
+            cand_ent_name = cand_ent_possible_names[0].lower() # pick the first name in the list for now
             tfidf = calc_tf_idf(query_text, cand_ent_name, num_entities, index_ent)
             C_tfidf.append( (mid, tfidf) )
 
