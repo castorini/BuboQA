@@ -63,6 +63,8 @@ def gold_entity_detection(datadir, namespath, outdir):
                     continue
 
                 name = names_map[subject][0]  # just pick the first name
+                if name.strip() == "":
+                    continue
                 line_to_print = "{} %%%% {} %%%% {}".format(lineid, subject, name)
                 # print(line_to_print)
                 outfile.write(line_to_print + "\n")
