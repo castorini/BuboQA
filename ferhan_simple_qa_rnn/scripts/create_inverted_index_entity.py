@@ -36,7 +36,7 @@ def create_inverted_index_entity(namespath, outpath):
 
             entity_mid = clean_uri(items[0])
             entity_type = clean_uri(items[1])
-            entity_name = clean_uri(items[2])
+            entity_name = clean_uri(items[2]).lower()
 
             try:
                 name_tokens = tokenizer.tokenize(entity_name)
