@@ -126,8 +126,9 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
         # relation correction
         C_tfidf_pruned = []
         for mid, tfidf in C_tfidf:
-            if pred_relation in index_reach[mid]:
-                C_tfidf_pruned.append( (mid, tfidf) )
+            if mid in index_reach.keys():  # PROBLEM: don't know why this may not exist??
+                if pred_relation in index_reach[mid]:
+                    C_tfidf_pruned.append( (mid, tfidf) )
 
         if len(C_tfidf_pruned) == 0:
             continue
