@@ -7,6 +7,7 @@ import pickle
 from nltk.tokenize.moses import MosesTokenizer
 from util import www2fb, clean_uri
 
+tokenizer = MosesTokenizer()
 
 def get_all_ngrams(tokens):
     all_ngrams = set()
@@ -20,10 +21,24 @@ def find_ngrams(input_list, n):
     ngrams = zip(*[input_list[i:] for i in range(n)])
     return set(ngrams)
 
+
+def get_name_ngrams(entity_name):
+    entity_name = entity_name.lower() # lowercase the name
+    try:
+        name_tokens = tokenizer.tokenize(entity_name)
+        name_ngrams = get_all_ngrams(name_tokens)
+    except:
+        name_ngrams = set()
+        name_ngrams.add((entity_name,))
+        name_ngrams.add((entity_name.replace(".", ""),))
+
+    return name_ngrams
+
+
+
 def create_inverted_index_entity(namespath, outpath):
     print("creating the index map...")
     index = {}
-    tokenizer = MosesTokenizer()
     size = 0
     with open(namespath, 'r') as f:
         for i, line in enumerate(f):
@@ -36,18 +51,10 @@ def create_inverted_index_entity(namespath, outpath):
 
             entity_mid = clean_uri(items[0])
             entity_type = clean_uri(items[1])
-            entity_name = clean_uri(items[2]).lower()
+            entity_name = clean_uri(items[2])
 
-            try:
-                name_tokens = tokenizer.tokenize(entity_name)
-                name_ngrams = get_all_ngrams(name_tokens)
-            except:
-                name_ngrams = set()
-                name_ngrams.add( (entity_name,) )
-                name_ngrams.add( (entity_name.replace(".", ""),) )
-                # print(entity_name)
+            name_ngrams = get_name_ngrams(entity_name)
 
-            # print(line.strip())
             for ngram_tuple in name_ngrams:
                 size += 1
                 ngram = " ".join(ngram_tuple)
