@@ -63,7 +63,10 @@ def find_ngrams(input_list, n):
 
 def calc_tf_idf(query, cand_ent_name, num_entities, index_ent):
     query_terms = tokenizer.tokenize(query)
-    doc_tokens = tokenizer.tokenize(cand_ent_name)
+    try:
+        doc_tokens = tokenizer.tokenize(cand_ent_name)
+    except:
+        doc_tokens = [cand_ent_name, cand_ent_name.replace(".", "")]
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
     # len_intersection = len(common_terms)
