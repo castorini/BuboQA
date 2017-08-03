@@ -32,7 +32,7 @@ def get_query_text(ent_resultpath):
             items = line.strip().split(" %%%% ")
             lineid = items[0].strip()
             query = items[1].strip()
-            print("{}   -   {}".format(lineid, query))
+            # print("{}   -   {}".format(lineid, query))
             lineids.append(lineid)
             id2query[lineid] = query
     return lineids, id2query
@@ -47,7 +47,7 @@ def get_relations(rel_resultpath):
             lineid = items[0].strip()
             rel = items[1].strip()
             score = items[2].strip()
-            print("{}   -   {}".format(lineid, rel))
+            # print("{}   -   {}".format(lineid, rel))
             lineids.append(lineid)
             id2rel[lineid] = rel
     return lineids, id2rel
@@ -87,16 +87,23 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
     for lineid in rel_lineids:
         if lineid not in ent_lineids:
             continue
-        print("processing lineid: {}".format(lineid))
+
         pred_relation = id2rel[lineid]
         query_text = id2query[lineid].lower() # lowercase the query
         query_tokens = tokenizer.tokenize(query_text)
+
+        print("lineid: {}, query_text: {}, relation: {}".format(lineid, query_text, pred_relation))
+        print("query_tokens: {}".format(query_tokens))
+
         N = min(len(query_tokens), 3)
         C = [] # candidate entities
         for n in range(N, 0, -1):
             ngrams_set = find_ngrams(query_tokens, n)
+            print("ngrams_set: {}".format(ngrams_set))
             for ngram_tuple in ngrams_set:
                 ngram = " ".join(ngram_tuple)
+                print("ngram: {}".format(ngram))
+                ## PROBLEM! - ngram doesnt exist in index
                 cand_mids = index_ent[ngram] # search entities
                 C.extend(cand_mids)
             if (len(C) > 0):
