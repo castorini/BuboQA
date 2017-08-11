@@ -22,6 +22,3 @@ class SimpleQADataset(data.TabularDataset):
             os.path.join(path, prefix_name), train, validation, test,
             format='TSV', fields=[('question', text_field), ('label', label_field)]
         )
-
-
-
