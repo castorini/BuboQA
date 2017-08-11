@@ -1,0 +1,15 @@
+Gold Test Dataset: ../data/SimpleQuestions_v2_modified/test.txt
+Predictions on Test Dataset: results/linking-results.txt
+
+total: 21687
+found: 19058
+not found: 2629
+
+both wrong: 506
+only mid wrong: 1138
+only rel wrong: 1082
+all wrong: 2726
+all wrong (including not found): 5355
+correct: 16332
+
+Accuracy: 75.30778807580577%
