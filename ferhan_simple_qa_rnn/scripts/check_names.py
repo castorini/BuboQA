@@ -51,8 +51,8 @@ def check_names(datapath, index_namespath, outpath):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Check which examples have entities that do not have name mappings')
     parser.add_argument('-d', '--data', dest='data', action='store', required = True,
-                        help='path to the NUMBERED dataset all-data.txt file')
-    parser.add_argument('--index_names', dest='index_names', action='store', required=True,
+                        help='path to the NUMBERED dataset all.txt file')
+    parser.add_argument('-i', '--index_names', dest='index_names', action='store', required=True,
                         help='path to the pickle for the names index')
     parser.add_argument('-o', '--output', dest='output', action='store', required=True,
                         help='output file path for list of examples that do not exist')
