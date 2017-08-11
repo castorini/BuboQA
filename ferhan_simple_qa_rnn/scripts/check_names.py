@@ -47,7 +47,7 @@ def check_names(datapath, namespath, outpath):
             object = www2fb(items[3])
             question = items[4]
 
-            line_to_print = "{}\t{}\t{}\t{}\t{}".format(lineid, subject, predicate, object, question);
+            line_to_print = "{}\t{}\t{}\t{}\t{}".format(lineid, subject, predicate, object, question)
 
             if subject not in names_map.keys():
                 print("WARNING: name not found in map. line - {}".format(line))
