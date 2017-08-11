@@ -17,6 +17,11 @@ python entity_linking.py --index_ent ../indexes/entity.pkl --index_reach ../inde
 """
 tokenizer = MosesTokenizer()
 
+def www2fb(in_str):
+    if in_str.startswith("www.freebase.com"):
+        return 'fb:%s' % (in_str.split('www.freebase.com/')[-1].replace('/', '.'))
+    return in_str
+
 def get_index(index_path):
     print("loading index from: {}".format(index_path))
     with open(index_path, 'rb') as f:
@@ -119,6 +124,8 @@ rel_resultpath = args.rel_result
 outpath = args.output
 
 # outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
+notfound_ent = 0
+notfound_c = 0
 
 index_ent = get_index(index_entpath)
 index_reach = get_index(index_reachpath)
@@ -129,9 +136,10 @@ num_entities = len(index_names)
 
 for lineid in rel_lineids:
     if lineid not in ent_lineids:
+        notfound_ent += 1
         continue
 
-    pred_relation = id2rel[lineid]
+    pred_relation = www2fb(id2rel[lineid])
     query_text = id2query[lineid].lower()  # lowercase the query
     query_tokens = tokenizer.tokenize(query_text)
 
@@ -174,10 +182,12 @@ for lineid in rel_lineids:
     print("C_tfidf_pruned: {}".format(C_tfidf_pruned))
 
     if len(C_tfidf_pruned) == 0:
+        print("WARNING: C_tfidf_pruned is empty.")
+        notfound_c += 1
         continue
 
     C_tfidf_pruned.sort(key=lambda t: -t[1])
-    pred_ent_mid = C_tfidf_pruned[0][0]
+    pred_ent_mid = C_tfidf_pruned[0][0] # get first entry's mid
 
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
