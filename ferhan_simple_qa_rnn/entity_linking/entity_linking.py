@@ -148,10 +148,7 @@ for i, lineid in enumerate(rel_lineids):
 
     N = min(len(query_tokens), 3)
     C = []  # candidate entities
-    Ns_descending = list(range(N, 0, -1))
-    if len(query_tokens) > 3:
-        Ns_descending.insert(0, len(query_tokens)) # add n_inf to the front
-    for n in Ns_descending:
+    for n in range(N, 0, -1):
         ngrams_set = find_ngrams(query_tokens, n)
         # print("ngrams_set: {}".format(ngrams_set))
         for ngram_tuple in ngrams_set:
