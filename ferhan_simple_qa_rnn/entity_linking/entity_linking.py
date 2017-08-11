@@ -84,7 +84,9 @@ def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
     total_idf = 0
     for term in common_terms:
         df = len(index_ent[term])
-        idf_term = (num_entities - df + k1) / (df + k2)
+        diff = max(num_entities - df, 1)
+        idf_term = (diff + k1) / (df + k2)
+        print("term: {}".format(term))
         print("df: {}".format(df))
         print("num entities: {}".format(num_entities))
         print("idf term: {}".format(idf_term))

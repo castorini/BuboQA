@@ -78,7 +78,7 @@ def create_inverted_index_entity(namespath, outpath):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Create inverted index for entity')
     parser.add_argument('-n', '--names', dest='names', action='store', required=True,
-                        help='path to the names file (from CFO)')
+                        help='path to the trimmed names file')
     parser.add_argument('-p', '--pickle', dest='pickle', action='store', required=True,
                         help='output file for the index pickle to be dumped')
 
