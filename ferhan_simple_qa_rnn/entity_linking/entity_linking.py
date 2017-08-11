@@ -123,7 +123,7 @@ ent_resultpath = args.ent_result
 rel_resultpath = args.rel_result
 outpath = args.output
 
-outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
+# outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
 notfound_ent = 0
 notfound_c = 0
 
@@ -132,7 +132,7 @@ index_reach = get_index(index_reachpath)
 index_names = get_index(index_namespath)
 rel_lineids, id2rel = get_relations(rel_resultpath)
 ent_lineids, id2query = get_query_text(ent_resultpath)  # ent_lineids may have some examples missing
-num_entities = len(index_names)
+num_entities_fbsubset = 1959820 # 2M - 1959820 , 5M -
 
 for i, lineid in enumerate(rel_lineids):
     if lineid not in ent_lineids:
@@ -179,7 +179,7 @@ for i, lineid in enumerate(rel_lineids):
         except:
             print("WARNING: mid: {} - not in index names.".format(mid))
             continue
-        tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities, index_ent)
+        tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
         C_tfidf_pruned.append((mid, tfidf))
     print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
 
@@ -194,14 +194,10 @@ for i, lineid in enumerate(rel_lineids):
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
 
-    # if (i+1) % 10 == 0:
-    #     break
-
-    outfile.write(line_to_print + "\n")
-
-outfile.close()
-
-print("notfound_ent: {}".format(notfound_ent))
-print("notfound_c: {}".format(notfound_c))
+    if (i+1) % 10 == 0:
+        break
+#     outfile.write(line_to_print + "\n")
+#
+# outfile.close()
 
 print("Entity Linking done.")
