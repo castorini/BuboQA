@@ -18,8 +18,8 @@ def gold_entity_detection(datadir, index_namespath, outdir):
     allpath = os.path.join(outdir, "all.txt")
     outallfile = open(allpath, 'w')
     names_map = names_map = get_index(index_namespath)
-    files = [("annotated_fb_data_train", "train"), ("annotated_fb_data_valid", "val"),
-             ("annotated_fb_data_test", "test")]
+    # files = [("annotated_fb_data_train", "train"), ("annotated_fb_data_valid", "val"), ("annotated_fb_data_test", "test")]
+    files = [("train", "train"), ("val", "val"), ("test", "test")]
     for f_tuple in files:
         f = f_tuple[0]
         fname = f_tuple[1]
