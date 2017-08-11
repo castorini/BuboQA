@@ -84,13 +84,7 @@ def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
     total_idf = 0
     for term in common_terms:
         df = len(index_ent[term])
-        diff = max(num_entities - df, 1)
-        idf_term = (diff + k1) / (df + k2)
-        print("term: {}".format(term))
-        print("df: {}".format(df))
-        print("num entities: {}".format(num_entities))
-        print("idf term: {}".format(idf_term))
-        idf = math.log10( idf_term )
+        idf = math.log10( (num_entities - df + k1) / (df + k2) )
         total_idf += idf
     return tf * total_idf
 
@@ -129,7 +123,7 @@ ent_resultpath = args.ent_result
 rel_resultpath = args.rel_result
 outpath = args.output
 
-# outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
+outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
 notfound_ent = 0
 notfound_c = 0
 
@@ -200,10 +194,14 @@ for i, lineid in enumerate(rel_lineids):
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
 
-    if (i+1) % 10 == 0:
-        break
-#     outfile.write(line_to_print + "\n")
-#
-# outfile.close()
+    # if (i+1) % 10 == 0:
+    #     break
+
+    outfile.write(line_to_print + "\n")
+
+outfile.close()
+
+print("notfound_ent: {}".format(notfound_ent))
+print("notfound_c: {}".format(notfound_c))
 
 print("Entity Linking done.")
