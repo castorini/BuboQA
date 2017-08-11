@@ -134,7 +134,7 @@ rel_lineids, id2rel = get_relations(rel_resultpath)
 ent_lineids, id2query = get_query_text(ent_resultpath)  # ent_lineids may have some examples missing
 num_entities = len(index_names)
 
-for lineid in rel_lineids:
+for i, lineid in enumerate(rel_lineids):
     if lineid not in ent_lineids:
         notfound_ent += 1
         continue
@@ -191,7 +191,9 @@ for lineid in rel_lineids:
 
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
-    break
+
+    if i % 10 == 0:
+        break
 #     outfile.write(line_to_print + "\n")
 #
 # outfile.close()
