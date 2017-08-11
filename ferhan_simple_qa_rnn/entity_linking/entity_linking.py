@@ -189,7 +189,7 @@ for i, lineid in enumerate(rel_lineids):
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
 
-    if i % 10 == 0:
+    if (i+1) % 10 == 0:
         break
 #     outfile.write(line_to_print + "\n")
 #
