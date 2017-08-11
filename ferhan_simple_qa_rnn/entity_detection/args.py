@@ -23,7 +23,7 @@ def get_args():
     parser.add_argument('--no_cuda', action='store_false', help='do not use CUDA', dest='cuda')
     parser.add_argument('--gpu', type=int, default=0, help='GPU device to use') # use -1 for CPU
     parser.add_argument('--seed', type=int, default=1111, help='random seed for reproducing results')
-    parser.add_argument('--save_path', type=str, default='saves')
+    parser.add_argument('--save_path', type=str, default='saved_checkpoints')
     parser.add_argument('--data_cache', type=str, default=os.path.join(os.getcwd(), 'data_cache'))
     parser.add_argument('--vector_cache', type=str, default=os.path.join(os.getcwd(), 'vector_cache/input_vectors.pt'))
     parser.add_argument('--word_vectors', type=str, default='glove.42B')

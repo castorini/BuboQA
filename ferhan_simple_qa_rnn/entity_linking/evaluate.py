@@ -4,6 +4,9 @@ import os
 import sys
 import argparse
 
+"""
+python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p results/linking-results.txt
+"""
 
 def get_predictions(datapath):
     lineids = []
