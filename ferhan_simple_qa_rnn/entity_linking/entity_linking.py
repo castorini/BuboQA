@@ -21,7 +21,7 @@ def special_tokenizing(text):
     try:
         tokens = tokenizer.tokenize(text)
     except:
-        print("PROBLEM: tokens: {}".format(tokens))
+        print("PROBLEM: could not tokenize text: {}".format(text))
         tokens = [text, text.replace(".", "")]
     return tokens
 
@@ -195,12 +195,11 @@ for i, lineid in enumerate(rel_lineids):
     C_tfidf_pruned.sort(key=lambda t: -t[1])
     pred_ent_mid = C_tfidf_pruned[0][0] # get first entry's mid
 
-    line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
-    print(line_to_print)
+    line_to_print = "{}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
+    print("PRED: " + line_to_print)
 
     # if (i+1) % 10 == 0:
     #     break
-
     outfile.write(line_to_print + "\n")
 
 outfile.close()
