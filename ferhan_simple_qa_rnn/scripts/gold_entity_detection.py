@@ -52,7 +52,10 @@ def gold_entity_detection(datadir, index_namespath, outdir):
 
                 name = names_map[subject]
                 if name.strip() == "":
+                    print("WARNING: name stripped empty. line - {}".format(line))
+                    notfound += 1
                     continue
+
                 line_to_print = "{} %%%% {} %%%% {}".format(lineid, subject, name)
                 # print(line_to_print)
                 outfile.write(line_to_print + "\n")
