@@ -8,7 +8,6 @@ from util import www2fb, clean_uri
 
 
 def get_all_entity_mids(fbpath):
-    print("getting all entity MIDs from Freebase subset...")
     mids = set()
     with open(fbpath, 'r') as f:
         for i, line in enumerate(f):
@@ -26,7 +25,9 @@ def get_all_entity_mids(fbpath):
 
 
 def trim_names(fbsubsetpath, namespath, outpath):
+    print("getting all entity MIDs from Freebase subset...")
     mids_to_check = get_all_entity_mids(fbsubsetpath)
+    print("trimming names...")
     outfile = open(outpath, 'w')
     with open(namespath, 'r') as f:
         for i, line in enumerate(f):
