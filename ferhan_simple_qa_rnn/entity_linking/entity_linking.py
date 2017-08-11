@@ -156,12 +156,14 @@ for lineid in rel_lineids:
         if (len(C) > 0):
             print("early termination...")
             break  # early termination
+    print("C: {}".format(C))
 
     C_tfidf = []
     for mid in C:
         cand_ent_name = index_names[mid]
         tfidf = calc_tf_idf(query_text, cand_ent_name, num_entities, index_ent)
         C_tfidf.append((mid, tfidf))
+    print("C_tfidf: {}".format(C_tfidf))
 
     # relation correction
     C_tfidf_pruned = []
@@ -169,6 +171,7 @@ for lineid in rel_lineids:
         if mid in index_reach.keys():  # PROBLEM: don't know why this may not exist??
             if pred_relation in index_reach[mid]:
                 C_tfidf_pruned.append((mid, tfidf))
+    print("C_tfidf_pruned: {}".format(C_tfidf_pruned))
 
     if len(C_tfidf_pruned) == 0:
         continue
