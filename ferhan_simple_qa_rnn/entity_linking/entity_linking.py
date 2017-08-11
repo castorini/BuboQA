@@ -118,7 +118,7 @@ ent_resultpath = args.ent_result
 rel_resultpath = args.rel_result
 outpath = args.output
 
-outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
+# outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
 
 index_ent = get_index(index_entpath)
 index_reach = get_index(index_reachpath)
@@ -140,7 +140,10 @@ for lineid in rel_lineids:
 
     N = min(len(query_tokens), 3)
     C = []  # candidate entities
-    for n in range(N, 0, -1):
+    Ns_descending = list(range(N, 0, -1))
+    if len(query_tokens) > 3:
+        Ns_descending.insert(index=0, obj=len(query_tokens)) # add n_inf to the front
+    for n in Ns_descending:
         ngrams_set = find_ngrams(query_tokens, n)
         # print("ngrams_set: {}".format(ngrams_set))
         for ngram_tuple in ngrams_set:
@@ -173,10 +176,11 @@ for lineid in rel_lineids:
     C_tfidf_pruned.sort(key=lambda t: -t[1])
     pred_ent_mid = C_tfidf_pruned[0][0]
 
-    line_to_print = "{}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
+    line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
-    outfile.write(line_to_print + "\n")
-
-outfile.close()
+    break
+#     outfile.write(line_to_print + "\n")
+#
+# outfile.close()
 
 print("Entity Linking done.")
