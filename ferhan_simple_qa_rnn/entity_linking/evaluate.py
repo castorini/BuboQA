@@ -22,7 +22,7 @@ def get_predictions(datapath):
     id2pred = {}
     with open(datapath, 'r') as f:
         for line in f:
-            items = line.strip().split(" %%%% ")
+            items = line.strip().split("\t")
             lineid = items[0].strip()
             mid = items[1].strip()
             rel = items[2].strip()
@@ -36,14 +36,7 @@ def get_gold_labels(datapath):
     id2label = {}
     with open(datapath, 'r') as f:
         for i, line in enumerate(f):
-            if i % 1000000 == 0:
-                print("line: {}".format(i))
-
             items = line.strip().split("\t")
-            if len(items) != 5:
-                print("ERROR: line - {}".format(line))
-                sys.exit(1)
-
             lineid = items[0]
             subject = www2fb(items[1])
             predicate = www2fb(items[2])
@@ -86,17 +79,18 @@ def evaluate(goldpath, predpath):
     all_wrong = both_wrong + mid_wrong + rel_wrong
     accuracy = 100.0 * (correct / total)
 
-    print("total: {}".format(total))
+    print("\n\ntotal: {}".format(total))
     print("found: {}".format(found))
     print("not found: {}".format(not_found))
-    print("both wrong: {}".format(both_wrong))
+
+    print("\n\nboth wrong: {}".format(both_wrong))
     print("only mid wrong: {}".format(mid_wrong))
     print("only rel wrong: {}".format(rel_wrong))
 
     print("all wrong: {}".format(all_wrong))
     print("all wrong (including not found): {}".format(all_wrong + not_found))
     print("correct: {}".format(correct))
-    print("Accuracy: {}%".format(accuracy))
+    print("\n\nAccuracy: {}%".format(accuracy))
 
 
 if __name__ == '__main__':
@@ -111,4 +105,3 @@ if __name__ == '__main__':
     print("Predictions on Test Dataset: {}".format(args.prediction))
 
     evaluate(args.gold, args.prediction)
-    print("Done evaluating.")
