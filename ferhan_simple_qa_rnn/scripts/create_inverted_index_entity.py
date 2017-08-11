@@ -35,7 +35,6 @@ def get_name_ngrams(entity_name):
     return name_ngrams
 
 
-
 def create_inverted_index_entity(namespath, outpath):
     print("creating the index map...")
     index = {}
