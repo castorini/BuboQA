@@ -158,8 +158,11 @@ for i, lineid in enumerate(rel_lineids):
         for ngram_tuple in ngrams_set:
             ngram = " ".join(ngram_tuple)
             print("ngram: {}".format(ngram))
-            ## PROBLEM! - ngram doesnt exist in index
-            cand_mids = index_ent[ngram]  # search entities
+            ## PROBLEM! - ngram doesnt exist in index - at test-2592 - KeyError: 'p.a.r.c.e. parce'
+            try:
+                cand_mids = index_ent[ngram]  # search entities
+            except:
+                continue
             C.extend(cand_mids)
             # print("C: {}".format(C))
         if (len(C) > 0):
