@@ -123,7 +123,7 @@ ent_resultpath = args.ent_result
 rel_resultpath = args.rel_result
 outpath = args.output
 
-# outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
+outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
 notfound_ent = 0
 notfound_c = 0
 
@@ -194,10 +194,14 @@ for i, lineid in enumerate(rel_lineids):
     line_to_print = "PRED: {}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
     print(line_to_print)
 
-    if (i+1) % 10 == 0:
-        break
-#     outfile.write(line_to_print + "\n")
-#
-# outfile.close()
+    # if (i+1) % 10 == 0:
+    #     break
+
+    outfile.write(line_to_print + "\n")
+
+outfile.close()
+
+print("notfound_ent : {}".format(notfound_ent))
+print("notfound_c : {}".format(notfound_c))
 
 print("Entity Linking done.")
