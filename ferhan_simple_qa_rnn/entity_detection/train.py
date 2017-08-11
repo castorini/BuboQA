@@ -33,9 +33,9 @@ labels = data.Field(sequential=True)
 train, dev, test = SimpleQADataset.splits(questions, labels)
 
 # build vocab for questions
-questions.build_vocab(train, dev) # Test dataset can not be used here for constructing the vocab
+questions.build_vocab(train, dev, test) # Test dataset can not be used here for constructing the vocab
 # build vocab for tags
-labels.build_vocab(train, dev)
+labels.build_vocab(train, dev, test)
 
 
 if os.path.isfile(args.vector_cache):
@@ -46,11 +46,16 @@ else:
     torch.save(questions.vocab.vectors, args.vector_cache)
 
 # Buckets
-train_iters, dev_iters, test_iters = data.BucketIterator.splits(
-    (train, dev, test), batch_size=args.batch_size, device=args.gpu)
+# train_iters, dev_iters, test_iters = data.BucketIterator.splits(
+#     (train, dev, test), batch_size=args.batch_size, device=args.gpu)
 
 
-train_iters.repeat = False
+train_iters = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+                                   sort=False, shuffle=True)
+dev_iters = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+                                   sort=False, shuffle=False)
+test_iters = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+                                   sort=False, shuffle=False)
 
 # define models
 
