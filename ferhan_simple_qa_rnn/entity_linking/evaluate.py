@@ -6,6 +6,40 @@ import argparse
 
 from util import www2fb, clean_uri
 
+def get_predictions(datapath):
+    lineids = []
+    id2pred = {}
+    with open(datapath, 'r') as f:
+        for line in f:
+            items = line.strip().split(" %%%% ")
+            lineid = items[0].strip()
+            ent_mid = items[1].strip()
+            rel = items[2].strip()
+            # print("{}   -   {}".format(lineid, rel))
+            lineids.append(lineid)
+            id2rel[lineid] = rel
+    return lineids, id2rel
+
+def get_gold_labels(datapath):
+    lineids = []
+    id2label = {}
+    with open(datapath, 'r') as f:
+        for i, line in enumerate(f):
+            if i % 1000000 == 0:
+                print("line: {}".format(i))
+
+            items = line.strip().split("\t")
+            if len(items) != 5:
+                print("ERROR: line - {}".format(line))
+                sys.exit(1)
+
+            lineid = items[0]
+            subject = www2fb(items[1])
+            predicate = www2fb(items[2])
+            lineids.append(lineid)
+            id2label[lineid] = (subject, predicate)
+    return lineids, id2label
+
 
 def evaluate(goldpath, predpath):
     allpath = os.path.join(outdir, "all.txt")
@@ -71,7 +105,7 @@ if __name__ == '__main__':
                         help='path to the entity linking predictions file')
 
     args = parser.parse_args()
-    print("Gold Truth for Test Dataset: {}".format(args.gold))
+    print("Gold Test Dataset: {}".format(args.gold))
     print("Predictions on Test Dataset: {}".format(args.prediction))
 
     evaluate(args.gold, args.prediction)
