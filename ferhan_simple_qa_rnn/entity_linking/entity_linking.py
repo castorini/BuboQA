@@ -174,8 +174,8 @@ for i, lineid in enumerate(rel_lineids):
 
     C_tfidf_pruned = []
     for mid, count_mid in C_pruned:
-        cand_ent_name, cand_ent_count = index_names[mid]
-        tfidf = calc_tf_idf(query_text, cand_ent_name, cand_ent_count, num_entities, index_ent)
+        cand_ent_name = index_names[mid]
+        tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities, index_ent)
         C_tfidf_pruned.append((mid, tfidf))
     print("C_tfidf_pruned: {}".format(C_tfidf_pruned))
 
