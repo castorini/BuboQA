@@ -3,7 +3,7 @@
 # creating the indexes
 mkdir indexes
 
-echo "Create the names map index for 2M-freebase-subset..."
+echo "Create the names map index for 2M-freebase-subset...\n"
 python scripts/create_index_names.py -d data/SimpleQuestions_v2_modified/all.txt -n data/names.trimmed.2M.txt -p indexes/names_2M.pkl
 
 # echo "\n\nCreate the names map index for 5M-freebase-subset...\n"
