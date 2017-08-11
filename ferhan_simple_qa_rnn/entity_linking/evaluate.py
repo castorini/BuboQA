@@ -37,6 +37,10 @@ def get_gold_labels(datapath):
     with open(datapath, 'r') as f:
         for i, line in enumerate(f):
             items = line.strip().split("\t")
+            if len(items) != 5:
+                print("ERROR: line - {}".format(line))
+                sys.exit(1)
+
             lineid = items[0]
             subject = www2fb(items[1])
             predicate = www2fb(items[2])
@@ -79,18 +83,18 @@ def evaluate(goldpath, predpath):
     all_wrong = both_wrong + mid_wrong + rel_wrong
     accuracy = 100.0 * (correct / total)
 
-    print("\n\ntotal: {}".format(total))
+    print("\ntotal: {}".format(total))
     print("found: {}".format(found))
     print("not found: {}".format(not_found))
 
-    print("\n\nboth wrong: {}".format(both_wrong))
+    print("\nboth wrong: {}".format(both_wrong))
     print("only mid wrong: {}".format(mid_wrong))
     print("only rel wrong: {}".format(rel_wrong))
 
     print("all wrong: {}".format(all_wrong))
     print("all wrong (including not found): {}".format(all_wrong + not_found))
     print("correct: {}".format(correct))
-    print("\n\nAccuracy: {}%".format(accuracy))
+    print("\nAccuracy: {}%".format(accuracy))
 
 
 if __name__ == '__main__':
