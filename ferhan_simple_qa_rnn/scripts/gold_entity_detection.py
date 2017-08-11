@@ -3,33 +3,21 @@
 import os
 import sys
 import argparse
+import pickle
 
 from util import www2fb, clean_uri
 
-def get_names_for_entities(namespath):
-    print("getting names map...")
-    names = {}
-    with open(namespath, 'r') as f:
-        for i, line in enumerate(f):
-            if i % 1000000 == 0:
-                print("line: {}".format(i))
+def get_index(index_path):
+    print("loading index from: {}".format(index_path))
+    with open(index_path, 'rb') as f:
+        index = pickle.load(f)
+    return index
 
-            items = line.strip().split("\t")
-            if len(items) != 4:
-                print("ERROR: line - {}".format(line))
-            entity = clean_uri(items[0])
-            type = clean_uri(items[1])
-            literal = clean_uri(items[2])
-            if entity not in names.keys():
-                names[entity] = [literal]
-            else:
-                names[entity].append(literal)
-    return names
 
-def gold_entity_detection(datadir, namespath, outdir):
+def gold_entity_detection(datadir, index_namespath, outdir):
     allpath = os.path.join(outdir, "all.txt")
     outallfile = open(allpath, 'w')
-    names_map = get_names_for_entities(namespath)
+    names_map = names_map = get_index(index_namespath)
     files = [("annotated_fb_data_train", "train"), ("annotated_fb_data_valid", "val"),
              ("annotated_fb_data_test", "test")]
     for f_tuple in files:
@@ -62,7 +50,7 @@ def gold_entity_detection(datadir, namespath, outdir):
                     notfound += 1
                     continue
 
-                name = names_map[subject][0]  # just pick the first name
+                name = names_map[subject]
                 if name.strip() == "":
                     continue
                 line_to_print = "{} %%%% {} %%%% {}".format(lineid, subject, name)
@@ -83,18 +71,18 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Get the gold query text after entity detection')
     parser.add_argument('-d', '--dataset', dest='dataset', action='store', required = True,
                         help='path to the dataset directory - contains train, valid, test files')
-    parser.add_argument('-n', '--names', dest='names', action='store', required=True,
-                        help='path to the names file (from CFO)')
+    parser.add_argument('--index_names', dest='index_names', action='store', required=True,
+                        help='path to the pickle for the names index')
     parser.add_argument('-o', '--output', dest='output', action='store', required=True,
                         help='output directory for the gold query text after entity detection')
 
     args = parser.parse_args()
     print("Dataset: {}".format(args.dataset))
-    print("Names: {}".format(args.names))
+    print("Index - Names: {}".format(args.index_names))
     print("Output: {}".format(args.output))
 
     if not os.path.exists(args.output):
         os.makedirs(args.output)
 
-    gold_entity_detection(args.dataset, args.names, args.output)
+    gold_entity_detection(args.dataset, args.index_names, args.output)
     print("Got the gold query text possible after entity detection")

@@ -2,31 +2,19 @@
 
 import sys
 import argparse
+import pickle
 
 from util import www2fb, clean_uri
 
-def get_names_for_entities(namespath):
-    print("getting names map...")
-    names = {}
-    with open(namespath, 'r') as f:
-        for i, line in enumerate(f):
-            if i % 1000000 == 0:
-                print("line: {}".format(i))
+def get_index(index_path):
+    print("loading index from: {}".format(index_path))
+    with open(index_path, 'rb') as f:
+        index = pickle.load(f)
+    return index
 
-            items = line.strip().split("\t")
-            if len(items) != 4:
-                print("ERROR: line - {}".format(line))
-            entity = clean_uri(items[0])
-            type = clean_uri(items[1])
-            literal = clean_uri(items[2])
-            if entity not in names.keys():
-                names[entity] = [literal]
-            else:
-                names[entity].append(literal)
-    return names
 
-def check_names(datapath, namespath, outpath):
-    names_map = get_names_for_entities(namespath)
+def check_names(datapath, index_namespath, outpath):
+    names_map = get_index(index_namespath)
     notfound = 0
     total = 0
     outfile = open(outpath, 'w')
@@ -64,15 +52,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Check which examples have entities that do not have name mappings')
     parser.add_argument('-d', '--data', dest='data', action='store', required = True,
                         help='path to the NUMBERED dataset all-data.txt file')
-    parser.add_argument('-n', '--names', dest='names', action='store', required=True,
-                        help='path to the names file (from CFO)')
+    parser.add_argument('--index_names', dest='index_names', action='store', required=True,
+                        help='path to the pickle for the names index')
     parser.add_argument('-o', '--output', dest='output', action='store', required=True,
                         help='output file path for list of examples that do not exist')
 
     args = parser.parse_args()
     print("Dataset: {}".format(args.data))
-    print("Names: {}".format(args.names))
+    print("Index - Names: {}".format(args.index_names))
     print("Output: {}".format(args.output))
 
-    check_names(args.data, args.names, args.output)
+    check_names(args.data, args.index_names, args.output)
     print("Checked the names.")
