@@ -65,6 +65,7 @@ def get_names_filtered_map(namespath, datapath):
             if subject not in names_list_map.keys():
                 print("WARNING: name not found in map. line - {}".format(line))
                 notfound += 1
+                continue
 
             best_name = pick_best_name(question, names_list_map[subject])
             names_best_map[subject] = best_name
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     print("Names file path: {}".format(args.names))
     print("Pickle output path: {}".format(args.pickle))
 
-    index_names = get_names_filtered_map(args.names)
+    index_names = get_names_filtered_map(args.names, args.data)
 
     with open(args.pickle, 'wb') as f:
         pickle.dump(index_names, f)
