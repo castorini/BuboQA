@@ -40,7 +40,7 @@ def pick_best_name(question, names_list):
     return best_name
 
 
-def get_names_filtered_map(namespath, datapath):
+def get_best_name_map(namespath, datapath):
     names_list_map = get_names_for_entities(namespath)
     names_best_map = {}
     notfound = 0
@@ -58,8 +58,6 @@ def get_names_filtered_map(namespath, datapath):
 
             lineid = items[0]
             subject = www2fb(items[1])
-            predicate = www2fb(items[2])
-            object = www2fb(items[3])
             question = items[4]
 
             if subject not in names_list_map.keys():
@@ -89,7 +87,7 @@ if __name__ == '__main__':
     print("Names file path: {}".format(args.names))
     print("Pickle output path: {}".format(args.pickle))
 
-    index_names = get_names_filtered_map(args.names, args.data)
+    index_names = get_best_name_map(args.names, args.data)
 
     with open(args.pickle, 'wb') as f:
         pickle.dump(index_names, f)
