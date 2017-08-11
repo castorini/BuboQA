@@ -66,7 +66,7 @@ def find_ngrams(input_list, n):
     ngrams = zip(*[input_list[i:] for i in range(n)])
     return set(ngrams)
 
-def calc_tf_idf(query, cand_ent_name, num_entities, index_ent):
+def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
     query_terms = tokenizer.tokenize(query)
     try:
         doc_tokens = tokenizer.tokenize(cand_ent_name)
@@ -163,19 +163,20 @@ for i, lineid in enumerate(rel_lineids):
             break  # early termination
     print("C: {}".format(C))
 
-    C_tfidf = []
-    for mid in C:
-        cand_ent_name = index_names[mid]
-        tfidf = calc_tf_idf(query_text, cand_ent_name, num_entities, index_ent)
-        C_tfidf.append((mid, tfidf))
-    print("C_tfidf: {}".format(C_tfidf))
-
     # relation correction
-    C_tfidf_pruned = []
-    for mid, tfidf in C_tfidf:
+    C_pruned = []
+    for mid in set(C):
         if mid in index_reach.keys():  # PROBLEM: don't know why this may not exist??
             if pred_relation in index_reach[mid]:
-                C_tfidf_pruned.append((mid, tfidf))
+                count_mid = C.count(mid) # count number of times mid appeared in C
+                C_pruned.append( (mid, count_mid) )
+    print("C_pruned: {}".format(C_pruned))
+
+    C_tfidf_pruned = []
+    for mid, count_mid in C_pruned:
+        cand_ent_name, cand_ent_count = index_names[mid]
+        tfidf = calc_tf_idf(query_text, cand_ent_name, cand_ent_count, num_entities, index_ent)
+        C_tfidf_pruned.append((mid, tfidf))
     print("C_tfidf_pruned: {}".format(C_tfidf_pruned))
 
     if len(C_tfidf_pruned) == 0:
