@@ -3,12 +3,11 @@ data/*
 data/glove/
 resources/
 saved_checkpoints/
+trained_model/
 __pycache__/
 entity_detection/*cache*/*
 entity_detection/data
-entity_detection/saves
 relation_prediction/*cache*/*
-relation_prediction/trained_model
 end_to_end/rel-results
 end_to_end/ent-results
 end_to_end/augmented-fb-subsets
