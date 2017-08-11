@@ -70,8 +70,8 @@ def gold_entity_detection(datadir, index_namespath, outdir):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Get the gold query text after entity detection')
     parser.add_argument('-d', '--dataset', dest='dataset', action='store', required = True,
-                        help='path to the dataset directory - contains train, valid, test files')
-    parser.add_argument('--index_names', dest='index_names', action='store', required=True,
+                        help='path to the NUMBERED dataset directory - contains train, valid, test files')
+    parser.add_argument('-i', '--index_names', dest='index_names', action='store', required=True,
                         help='path to the pickle for the names index')
     parser.add_argument('-o', '--output', dest='output', action='store', required=True,
                         help='output directory for the gold query text after entity detection')
