@@ -142,7 +142,7 @@ for lineid in rel_lineids:
     C = []  # candidate entities
     Ns_descending = list(range(N, 0, -1))
     if len(query_tokens) > 3:
-        Ns_descending.insert(index=0, obj=len(query_tokens)) # add n_inf to the front
+        Ns_descending.insert(0, len(query_tokens)) # add n_inf to the front
     for n in Ns_descending:
         ngrams_set = find_ngrams(query_tokens, n)
         # print("ngrams_set: {}".format(ngrams_set))
