@@ -19,7 +19,7 @@ def get_names_map(namespath):
                 print("ERROR: line - {}".format(line))
             entity = clean_uri(items[0])
             type = clean_uri(items[1])
-            literal = clean_uri(items[2])
+            literal = clean_uri(items[2]).lower()
             if entity not in names.keys():
                 names[entity] = [literal]
             else:
