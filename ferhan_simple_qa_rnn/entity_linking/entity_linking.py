@@ -17,6 +17,14 @@ python entity_linking.py --index_ent ../indexes/entity.pkl --index_reach ../inde
 """
 tokenizer = MosesTokenizer()
 
+def special_tokenizing(text):
+    try:
+        tokens = tokenizer.tokenize(text)
+    except:
+        print("PROBLEM: tokens: {}".format(tokens))
+        tokens = [text, text.replace(".", "")]
+    return tokens
+
 def www2fb(in_str):
     if in_str.startswith("www.freebase.com"):
         return 'fb:%s' % (in_str.split('www.freebase.com/')[-1].replace('/', '.'))
@@ -67,12 +75,8 @@ def find_ngrams(input_list, n):
     return set(ngrams)
 
 def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
-    query_terms = tokenizer.tokenize(query)
-    try:
-        doc_tokens = tokenizer.tokenize(cand_ent_name)
-    except:
-        print("PROBLEM: doc_tokens: {}".format(doc_tokens))
-        doc_tokens = [cand_ent_name, cand_ent_name.replace(".", "")]
+    query_terms = special_tokenizing(query)
+    doc_tokens = special_tokenizing(cand_ent_name)
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
     # len_intersection = len(common_terms)
@@ -132,7 +136,7 @@ index_reach = get_index(index_reachpath)
 index_names = get_index(index_namespath)
 rel_lineids, id2rel = get_relations(rel_resultpath)
 ent_lineids, id2query = get_query_text(ent_resultpath)  # ent_lineids may have some examples missing
-num_entities_fbsubset = 1959820 # 2M - 1959820 , 5M -
+num_entities_fbsubset = 1959820 # 2M - 1959820 , 5M - 1972702
 
 for i, lineid in enumerate(rel_lineids):
     if lineid not in ent_lineids:
@@ -141,7 +145,7 @@ for i, lineid in enumerate(rel_lineids):
 
     pred_relation = www2fb(id2rel[lineid])
     query_text = id2query[lineid].lower()  # lowercase the query
-    query_tokens = tokenizer.tokenize(query_text)
+    query_tokens = special_tokenizing(query_text)
 
     print("lineid: {}, query_text: {}, relation: {}".format(lineid, query_text, pred_relation))
     print("query_tokens: {}".format(query_tokens))
