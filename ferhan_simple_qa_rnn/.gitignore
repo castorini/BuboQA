@@ -4,6 +4,9 @@ data/glove/
 resources/
 saved_checkpoints/
 __pycache__/
+entity_detection/*cache*/*
+entity_detection/data
+entity_detection/saves
 relation_prediction/*cache*/*
 relation_prediction/trained_model
 end_to_end/rel-results
