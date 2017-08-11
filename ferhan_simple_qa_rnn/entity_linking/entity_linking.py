@@ -78,15 +78,19 @@ def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
     # len_intersection = len(common_terms)
     # len_union = len(set(query_terms).union(set(doc_tokens)))
     # tf = len_intersection / len_union
-
+    tf = math.log10(cand_ent_count + 1)
+    k1 = 0.5
+    k2 = 0.5
     total_idf = 0
     for term in common_terms:
         df = len(index_ent[term])
-        k1 = 0.5
-        k2 = 0.5
-        idf = math.log10( (num_entities - df + k1) / (df + k2) )
+        idf_term = (num_entities - df + k1) / (df + k2)
+        print("df: {}".format(df))
+        print("num entities: {}".format(num_entities))
+        print("idf term: {}".format(idf_term))
+        idf = math.log10( idf_term )
         total_idf += idf
-    return total_idf
+    return tf * total_idf
 
 
 ## MAIN FILE - debug
@@ -161,7 +165,7 @@ for i, lineid in enumerate(rel_lineids):
         if (len(C) > 0):
             print("early termination...")
             break  # early termination
-    print("C: {}".format(C))
+    print("C[:5]: {}".format(C[:5]))
 
     # relation correction
     C_pruned = []
@@ -170,7 +174,7 @@ for i, lineid in enumerate(rel_lineids):
             if pred_relation in index_reach[mid]:
                 count_mid = C.count(mid) # count number of times mid appeared in C
                 C_pruned.append( (mid, count_mid) )
-    print("C_pruned: {}".format(C_pruned))
+    print("C_pruned[:5]: {}".format(C_pruned[:5]))
 
     C_tfidf_pruned = []
     for mid, count_mid in C_pruned:
@@ -181,7 +185,7 @@ for i, lineid in enumerate(rel_lineids):
             continue
         tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities, index_ent)
         C_tfidf_pruned.append((mid, tfidf))
-    print("C_tfidf_pruned: {}".format(C_tfidf_pruned))
+    print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
 
     if len(C_tfidf_pruned) == 0:
         print("WARNING: C_tfidf_pruned is empty.")
