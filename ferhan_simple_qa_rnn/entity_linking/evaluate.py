@@ -33,8 +33,8 @@ def get_gold_labels(datapath):
                 sys.exit(1)
 
             lineid = items[0]
-            subject = www2fb(items[1])
-            predicate = www2fb(items[2])
+            subject = items[1]
+            predicate = items[2]
             # print("{}  -  {}  -  {}".format(lineid, subject, predicate))
             lineids.append(lineid)
             id2label[lineid] = (subject, predicate)
