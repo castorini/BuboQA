@@ -11,8 +11,8 @@ from nltk.tokenize.moses import MosesTokenizer
 """
 Example command to run program:
 
-python entity_linking.py --index_ent ../indexes/entity.pkl --index_reach ../indexes/reachability_2M.pkl \
-    --index_names ../indexes/names.pkl --ent_result ../entity_detection/gold-results/test.txt \
+python entity_linking.py --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
+    --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/gold-query-text/test.txt \
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
 tokenizer = MosesTokenizer()
@@ -150,7 +150,7 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
             try:
                 cand_ent_name = index_names[mid]
             except:
-                print("WARNING: mid: {} - not in index names.".format(mid))
+                # print("WARNING: mid: {} - not in index names.".format(mid))
                 continue
             tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
             C_tfidf_pruned.append((mid, tfidf))
