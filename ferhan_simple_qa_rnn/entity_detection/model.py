@@ -43,7 +43,7 @@ class EntityDetection(nn.Module):
         else:
             h0 = c0 = autograd.Variable(inputs.data.new(*state_shape).zero_())
             outputs, (ht, ct) = self.rnn(inputs, (h0, c0))
-
+        # shape of `outputs` - (sequence length, batch size, hidden size X num directions)
         tags = self.hidden2tag(outputs.view(-1, outputs.size(2)))
         # print(tags)
         scores = F.log_softmax(tags)
