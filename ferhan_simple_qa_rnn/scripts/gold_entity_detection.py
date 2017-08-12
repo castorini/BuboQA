@@ -56,7 +56,7 @@ def gold_entity_detection(datadir, index_namespath, outdir):
                     notfound += 1
                     continue
 
-                line_to_print = "{} %%%% {} %%%% {}".format(lineid, subject, name)
+                line_to_print = "{} %%%% {} %%%% {}".format(lineid, name, subject)
                 # print(line_to_print)
                 outfile.write(line_to_print + "\n")
                 outallfile.write(line_to_print + "\n")

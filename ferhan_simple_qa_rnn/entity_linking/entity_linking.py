@@ -45,8 +45,8 @@ def get_query_text(ent_resultpath):
             items = line.strip().split(" %%%% ")
             try:
                 lineid = items[0].strip()
-                mid = items[1].strip()
-                query = items[2].strip()
+                query = items[1].strip()
+                mid = items[2].strip()
             except:
                 print("ERROR: line does not have 3 items  -->  {}".format(line.strip()))
                 continue
