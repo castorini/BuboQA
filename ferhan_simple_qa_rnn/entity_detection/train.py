@@ -177,11 +177,14 @@ for epoch in range(1, args.epochs+1):
             if dev_acc > best_dev_acc:
                 best_dev_acc = dev_acc
                 iters_not_improved = 0
-                snapshot_path = os.path.join(args.save_path, "best_snapshot_devacc_{}__iter_{}_model.pt".format(best_dev_acc, iterations))
+                snapshot_path = best_snapshot_prefix + '_devacc_{}__iter_{}_model.pt'.format(best_dev_acc, iterations)
+
+                # save model, delete previous 'best_snapshot' files
                 torch.save(model, snapshot_path)
-                for f in glob.glob(args.save_path + '/best_model_devacc_*'):
+                for f in glob.glob(best_snapshot_prefix + '*'):
                     if f != snapshot_path:
                         os.remove(f)
+
             else:
                 iters_not_improved += 1
                 if iters_not_improved > patience:
