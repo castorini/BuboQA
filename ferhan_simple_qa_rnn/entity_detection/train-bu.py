@@ -46,16 +46,16 @@ else:
     torch.save(questions.vocab.vectors, args.vector_cache)
 
 # Buckets
-# train_iters, dev_iters, test_iters = data.BucketIterator.splits(
-#     (train, dev, test), batch_size=args.batch_size, device=args.gpu)
+train_iters, dev_iters, test_iters = data.BucketIterator.splits(
+    (train, dev, test), batch_size=args.batch_size, device=args.gpu)
 
 
-train_iters = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   sort=False, shuffle=True)
-dev_iters = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   sort=False, shuffle=False)
-test_iters = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   sort=False, shuffle=False)
+# train_iters = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+#                                    sort=False, shuffle=True)
+# dev_iters = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+#                                    sort=False, shuffle=False)
+# test_iters = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+#                                    sort=False, shuffle=False)
 
 # define models
 
