@@ -4,14 +4,9 @@ import os
 def my_tokenizer():
     return lambda text: [tok for tok in text.split()]
 
-
 class SimpleQADataset(data.TabularDataset):
 
     dirname = 'data'
-
-    @staticmethod
-    def sort_key(ex):
-        return len(ex.question)
 
     @classmethod
     def splits(cls, text_field, label_field,
