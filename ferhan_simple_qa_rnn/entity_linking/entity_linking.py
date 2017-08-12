@@ -7,6 +7,7 @@ import pickle
 import math
 
 from nltk.tokenize.moses import MosesTokenizer
+from nltk.corpus import stopwords
 
 """
 Example command to run program:
@@ -16,6 +17,7 @@ python entity_linking.py --index_ent ../indexes/entity_2M.pkl --index_reach ../i
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
 tokenizer = MosesTokenizer()
+stopwords = set(stopwords.words('english'))
 
 def special_tokenizing(text):
     try:
@@ -123,6 +125,9 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
             # print("ngrams_set: {}".format(ngrams_set))
             for ngram_tuple in ngrams_set:
                 ngram = " ".join(ngram_tuple)
+                # unigram stopwords have too many candidates so just skip over
+                if ngram in stopwords:
+                    continue
                 # print("ngram: {}".format(ngram))
                 ## PROBLEM! - ngram doesnt exist in index - at test-2592 - KeyError: 'p.a.r.c.e. parce'
                 try:
