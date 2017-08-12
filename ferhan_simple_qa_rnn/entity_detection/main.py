@@ -86,6 +86,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
         # print and write the result
         for i in range(data_batch.batch_size):
             line_to_print = "{}-{} %%%% {} %%%% {}".format(data_name, linenum, " ".join(question_array[i]), " ".join(tag_array[i]))
+            # print(line_to_print)
             results_file.write(line_to_print + "\n")
             linenum += 1
 
@@ -100,4 +101,4 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
 predict(dataset_iter=dev_iter, dataset=dev, data_name="valid")
 
 # run the model on the test set and write the output to a file
-# predict(dataset_iter=test_iter, dataset=test, data_name="test")
+predict(dataset_iter=test_iter, dataset=test, data_name="test")
