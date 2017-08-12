@@ -1,4 +1,3 @@
-
 from args import get_args
 import torch
 import torch.optim as optim
@@ -87,9 +86,9 @@ num_iters_in_epoch = (len(train) // args.batch_size) + 1
 patience = args.patience * num_iters_in_epoch # for early stopping
 iters_not_improved = 0 # this parameter is used for stopping early
 early_stop = False
-header = '  Time Epoch Iteration Progress    (%Epoch)   Loss   Dev/Loss     Accuracy  Dev/Accuracy'
-dev_log_template = ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:8.6f},{:12.4f},{:12.4f}'.split(','))
-log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{},{:12.4f},{}'.split(','))
+header = '  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy'
+dev_log_template = ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:12.4f},{:12.4f}'.split(','))
+log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0f}%,{:>8.6f},{:12.4f},{}'.split(','))
 best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
@@ -164,29 +163,25 @@ for epoch in range(1, args.epochs+1):
             model.eval()
             dev_iter.init_epoch()
             n_dev_correct = 0
-            dev_losses = []
             for dev_batch_idx, dev_batch in enumerate(dev_iter):
                 answer = model(dev_batch)
                 n_dev_correct += ((torch.max(answer, 1)[1].view(dev_batch.label.size()).data == dev_batch.label.data).sum(dim=0)
                                    == dev_batch.label.size()[0]).sum()
-                dev_loss = criterion(scores, dev_batch.label.view(-1,1)[:,0])
-                dev_losses.append(dev_loss.data[0])
             dev_acc = 100. * n_dev_correct / len(dev)
             print(dev_log_template.format(time.time() - start,
                                           epoch, iterations, 1 + batch_idx, len(train_iter),
                                           100. * (1 + batch_idx) / len(train_iter), loss.data[0],
-                                          sum(dev_losses) / len(dev_losses), train_acc, dev_acc))
+                                          train_acc, dev_acc))
 
             # update model
             if dev_acc > best_dev_acc:
                 best_dev_acc = dev_acc
                 iters_not_improved = 0
-                snapshot_path = os.path.join(args.save_path, "best_model_devacc_{}_epoch_{}.pt".format(best_dev_acc, epoch + n_total / train_instance_total))
+                snapshot_path = os.path.join(args.save_path, "best_snapshot_devacc_{}__iter_{}_model.pt".format(best_dev_acc, iterations))
                 torch.save(model, snapshot_path)
                 for f in glob.glob(args.save_path + '/best_model_devacc_*'):
                     if f != snapshot_path:
                         os.remove(f)
-                print("Updated and Save the best model, Accuracy on Development Set: {:8.4f}%, Epoch: {:6.2f}".format(best_dev_acc, epoch + n_total / train_instance_total))
             else:
                 iters_not_improved += 1
                 if iters_not_improved > patience:
@@ -198,5 +193,5 @@ for epoch in range(1, args.epochs+1):
             # print progress message
             print(log_template.format(time.time()-start,
                 epoch, iterations, 1+batch_idx, len(train_iter),
-                100. * (1+batch_idx) / len(train_iter), loss.data[0], ' '*8, n_correct/n_total*100, ' '*12))
+                100. * (1+batch_idx) / len(train_iter), loss.data[0], n_correct/n_total*100, ' '*12))
 
