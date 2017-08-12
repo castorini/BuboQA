@@ -25,7 +25,7 @@ class EntityDetection(nn.Module):
             seq_in_size *= 2
 
         self.hidden2tag = nn.Sequential(
-                        nn.Linear(seq_in_size, seq_in_size), # can apply batch norm after this - add later
+                        nn.Linear(seq_in_size, seq_in_size),
                         nn.BatchNorm1d(seq_in_size),
                         self.relu,
                         self.dropout,
