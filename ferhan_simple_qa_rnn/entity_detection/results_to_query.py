@@ -21,7 +21,7 @@ def convert_to_query_text(datadir, outdir):
                 if i % 1000000 == 0:
                     print("line: {}".format(i))
 
-                items = line.strip().split("\t")
+                items = line.strip().split(" %%%% ")
                 if len(items) != 3:
                     print("ERROR: line - {}".format(line))
                     sys.exit(1)
