@@ -5,6 +5,7 @@ resources/
 saved_checkpoints/
 trained_model/
 __pycache__/
+*log*
 entity_detection/*cache*/*
 entity_detection/data
 relation_prediction/*cache*/*
