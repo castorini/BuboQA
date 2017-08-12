@@ -17,20 +17,12 @@ class EntityDetection(nn.Module):
             self.rnn = nn.LSTM(input_size=config.d_embed, hidden_size=config.d_hidden,
                                num_layers=config.n_layers, dropout=config.dropout_prob,
                                bidirectional=config.birnn)
-
-        self.dropout = nn.Dropout(p=config.dropout_prob)
-        self.relu = nn.ReLU()
-        seq_in_size = config.d_hidden
         if self.config.birnn:
-            seq_in_size *= 2
+            self.hidden2tag = nn.Linear(config.d_hidden * 2, config.n_out)
+        else:
+            self.hidden2tag = nn.Linear(config.d_hidden, config.n_out)
 
-        self.hidden2tag = nn.Sequential(
-                        nn.Linear(seq_in_size, seq_in_size), # can apply batch norm after this - add later
-                        nn.BatchNorm1d(seq_in_size),
-                        self.relu,
-                        self.dropout,
-                        nn.Linear(seq_in_size, config.n_out)
-        )
+
 
     def forward(self, batch):
         # shape of batch (sequence length, batch size)
@@ -43,9 +35,7 @@ class EntityDetection(nn.Module):
         else:
             h0 = c0 = autograd.Variable(inputs.data.new(*state_shape).zero_())
             outputs, (ht, ct) = self.rnn(inputs, (h0, c0))
-
-        tags = self.hidden2tag(outputs.view(-1, outputs.size(2)))
-        # print(tags)
-        scores = F.log_softmax(tags)
-        return scores
+        tags = F.softmax(self.hidden2tag(outputs.view(-1, outputs.size(2))))
+        #print(tags)
+        return tags
 
