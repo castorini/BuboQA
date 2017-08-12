@@ -1,14 +1,14 @@
-from args import get_args
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torchtext import data
-from simple_qa_ner import SimpleQADataset
-from model import EntityDetection
 import time
 import os
 import glob
-import numpy as np
+
+from torchtext import data
+from args import get_args
+from simple_qa_ner import SimpleQADataset
+from model import EntityDetection
 
 # please set the configuration in the file : args.py
 args = get_args()
@@ -92,35 +92,6 @@ log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0
 best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
-
-# if args.test or args.dev:
-#     data_iters = test_iters if args.test else dev_iters
-#     model.eval()
-#     data_iters.init_epoch()
-#     n_data_correct = 0
-#     n_data_total = 0
-#     index2tag = np.array(labels.vocab.itos)
-#     index2word = np.array(questions.vocab.itos)
-#     for data_batch_idx, data_batch in enumerate(data_iters):
-#         answer = model(data_batch)
-#         # Get the tag from distribution, match the tag with gold label. 1 for correctness, 0 for error.
-#         # Sum along the sentence (dim = 0, because batch = sentence_length * batch_size)
-#         # If all tags are correct in one sentence, the sum should be equal to sentence length
-#         # Finally sum over batch_size, get the correct instance number in this batch
-#         n_data_correct += ((torch.max(answer, 1)[1].view(data_batch.label.size()).data == data_batch.label.data).sum(dim=0)
-#                             == data_batch.label.size()[0]).sum()
-#         n_data_total += data_batch.batch_size
-#         #index_tag = np.transpose(torch.max(answer, 1)[1].view(data_batch.label.size()).cpu().data.numpy())
-#         #tag_array = index2tag[index_tag]
-#         #index_question = np.transpose(data_batch.question.cpu().data.numpy())
-#         #question_array = index2word[index_question]
-#         # Print the result
-#         #for i in range(data_batch.batch_size):
-#         #    print(" ".join(question_array[i]), '\t', " ".join(tag_array[i]))
-#
-#     data_acc = 100. * n_data_correct / n_data_total
-#     print("{} accuracy: {:10.6f}%".format("Test" if args.test else "Dev", data_acc))
-#     exit()
 
 for epoch in range(1, args.epochs+1):
     if early_stop:
