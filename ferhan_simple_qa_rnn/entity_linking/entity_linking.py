@@ -46,9 +46,9 @@ def get_query_text(ent_resultpath):
             try:
                 lineid = items[0].strip()
                 query = items[1].strip()
-                mid = items[2].strip()
+                # mid = items[2].strip()
             except:
-                print("ERROR: line does not have 3 items  -->  {}".format(line.strip()))
+                print("ERROR: line does not have >2 items  -->  {}".format(line.strip()))
                 continue
             # print("{}   -   {}".format(lineid, query))
             lineids.append(lineid)
