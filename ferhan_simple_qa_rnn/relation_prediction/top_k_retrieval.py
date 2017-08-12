@@ -65,14 +65,14 @@ def write_top_k_results(dataset_iter=train_iter, dataset=train, data_name="train
             # correct_relation = index2rel[test_batch.relation.data[i]]
             # results_file.write("{}-{} %%%% {} %%%% {}\n".format(data_name, index+1, " ".join(example.question), example.relation))
             found = (False, -1)
-            label = 0
             for i, (rel, score) in enumerate(zip(relations_row, scores_row)):
                 # results_file.write("{} %%%% {}\n".format(rel, score))
                 if (rel == example.relation):
                     label = 1
                     n_retrieved += 1
                     found = (True, i)
-
+                else:
+                    label = 0
                 results_file.write(
                     "{}-{} %%%% {} %%%% {} %%%% {}\n".format(data_name, index + 1, rel, label, score))
 
