@@ -4,11 +4,13 @@ import torch.nn as nn
 import time
 import os
 import glob
+import numpy as np
 
 from torchtext import data
 from args import get_args
 from simple_qa_ner import SimpleQADataset
 from model import EntityDetection
+from evaluation import evaluation
 
 # please set the configuration in the file : args.py
 args = get_args()
@@ -82,6 +84,7 @@ optimizer = optim.Adam(model.parameters(), lr=args.lr)
 iterations = 0
 start = time.time()
 best_dev_acc = 0
+best_dev_F = 0
 num_iters_in_epoch = (len(train) // args.batch_size) + 1
 patience = args.patience * num_iters_in_epoch # for early stopping
 iters_not_improved = 0 # this parameter is used for stopping early
@@ -92,6 +95,9 @@ log_template =     ' '.join('{:>6.0f},{:>5.0f},{:>9.0f},{:>5.0f}/{:<5.0f} {:>7.0
 best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
+
+index2tag = np.array(labels.vocab.itos)
+
 
 for epoch in range(1, args.epochs+1):
     if early_stop:
@@ -107,7 +113,7 @@ for epoch in range(1, args.epochs+1):
 
         scores = model(batch)
 
-        n_correct += ((torch.max(scores, 1)[1].view(batch.label.size()).data == batch.label.data).sum(dim=0)
+        n_correct += ((torch.max(scores, 1)[1].view(batch.label.size()).data == batch.label.data).sum(dim=0) \
                        == batch.label.size()[0]).sum()
         n_total += batch.batch_size
         train_acc = 100. * n_correct / n_total
@@ -134,21 +140,31 @@ for epoch in range(1, args.epochs+1):
             model.eval()
             dev_iter.init_epoch()
             n_dev_correct = 0
+
+            gold_list = []
+            pred_list = []
+
             for dev_batch_idx, dev_batch in enumerate(dev_iter):
                 answer = model(dev_batch)
-                n_dev_correct += ((torch.max(answer, 1)[1].view(dev_batch.label.size()).data == dev_batch.label.data).sum(dim=0)
+                n_dev_correct += ((torch.max(answer, 1)[1].view(dev_batch.label.size()).data == dev_batch.label.data).sum(dim=0) \
                                    == dev_batch.label.size()[0]).sum()
+                index_tag = np.transpose(torch.max(answer, 1)[1].view(dev_batch.label.size()).cpu().data.numpy())
+                gold_list.append(np.transpose(dev_batch.label.cpu().data.numpy()))
+                pred_list.append(index_tag)
+            P, R, F = evaluation(gold_list, pred_list, index2tag)
+
+
             dev_acc = 100. * n_dev_correct / len(dev)
             print(dev_log_template.format(time.time() - start,
                                           epoch, iterations, 1 + batch_idx, len(train_iter),
                                           100. * (1 + batch_idx) / len(train_iter), loss.data[0],
                                           train_acc, dev_acc))
-
+            print("{} Precision: {:10.6f}% Recall: {:10.6f}% F1 Score: {:10.6f}%".format("Dev", 100. * P, 100. * R, 100. * F))
             # update model
-            if dev_acc > best_dev_acc:
-                best_dev_acc = dev_acc
+            if F > best_dev_F:
+                best_dev_F = F
                 iters_not_improved = 0
-                snapshot_path = best_snapshot_prefix + '_devacc_{}__iter_{}_model.pt'.format(best_dev_acc, iterations)
+                snapshot_path = best_snapshot_prefix + '_devf1_{}__iter_{}_model.pt'.format(best_dev_F, iterations)
 
                 # save model, delete previous 'best_snapshot' files
                 torch.save(model, snapshot_path)
