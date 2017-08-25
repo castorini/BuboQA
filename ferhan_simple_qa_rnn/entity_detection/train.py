@@ -7,6 +7,7 @@ import glob
 import numpy as np
 
 from torchtext import data
+from nltk.tokenize.treebank import TreebankWordTokenizer
 from args import get_args
 from simple_qa_ner import SimpleQADataset
 from model import EntityDetection
@@ -27,8 +28,11 @@ if torch.cuda.is_available() and not args.cuda:
 
 
 # load data with torchtext
+tokenizer = TreebankWordTokenizer()
+def tokenize_text():
+    return lambda text: tokenizer.tokenize(text)
 
-questions = data.Field(lower=True, sequential=True)
+questions = data.Field(lower=True, sequential=True, tokenize=tokenize_text())
 labels = data.Field(sequential=True)
 
 train, dev, test = SimpleQADataset.splits(questions, labels)
