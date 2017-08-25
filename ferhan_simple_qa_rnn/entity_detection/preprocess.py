@@ -2,14 +2,17 @@ import re
 from collections import defaultdict
 from fuzzywuzzy import process
 import logging
+from nltk.tokenize.treebank import TreebankWordTokenizer
 
 logger = logging.getLogger()
 logger.disabled = True
 
 idtostr = defaultdict(list)
 
+tokenizer = TreebankWordTokenizer()
+
 # Read ID-Name from file
-with open("data/FB5M.name.txt") as f:
+with open("../data/FB5M.name.txt") as f:
     for line in f.readlines():
         line = line.split('\t')
         key, value = line[0], line[2]
@@ -24,14 +27,14 @@ total = 0
 for item in ["train.txt","valid.txt","test.txt"]:
     fout = open("data/annotated_fb_entity_"+item, "w")
     flog = open("data/logging_"+item, "w")
-    with open("data/annotated_fb_data_"+item) as f:
+    with open("../data/SimpleQuestions_v2/annotated_fb_data_"+item) as f:
         print("Processing {} file".format(item))
         for line_num, line in enumerate(f.readlines()):
             total += 1
             exact_match = False
             line = line.split('\t')
             key, sent_ori = line[0], line[3]
-            sent = re.findall(r"\w+|[^\w\s]", sent_ori, re.UNICODE) # Tokenize the sentence
+            sent = tokenizer.tokenize(sent_ori) # Tokenize the sentence
             label = ["O"] * len(sent) # Initialize the label list with "O" (out of entity)
             key = key.split('/')[2]
             try:
