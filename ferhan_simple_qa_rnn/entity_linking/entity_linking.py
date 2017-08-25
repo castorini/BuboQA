@@ -6,7 +6,7 @@ import argparse
 import pickle
 import math
 
-from nltk.tokenize.moses import MosesTokenizer
+from nltk.tokenize.treebank import TreebankWordTokenizer
 from nltk.corpus import stopwords
 
 """
@@ -16,15 +16,11 @@ python entity_linking.py --index_ent ../indexes/entity_2M.pkl --index_reach ../i
     --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/gold-query-text/test.txt \
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
-tokenizer = MosesTokenizer()
+tokenizer = TreebankWordTokenizer()
 stopwords = set(stopwords.words('english'))
 
-def special_tokenizing(text):
-    try:
-        tokens = tokenizer.tokenize(text)
-    except:
-        print("PROBLEM: could not tokenize text: {}".format(text))
-        tokens = [text, text.replace(".", "")]
+def tokenize_text(text):
+    tokens = tokenizer.tokenize(text)
     return tokens
 
 def www2fb(in_str):
@@ -77,8 +73,8 @@ def find_ngrams(input_list, n):
     return set(ngrams)
 
 def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
-    query_terms = special_tokenizing(query)
-    doc_tokens = special_tokenizing(cand_ent_name)
+    query_terms = tokenize_text(query)
+    doc_tokens = tokenize_text(cand_ent_name)
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
     # len_intersection = len(common_terms)
@@ -113,7 +109,7 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
 
         pred_relation = www2fb(id2rel[lineid])
         query_text = id2query[lineid].lower()  # lowercase the query
-        query_tokens = special_tokenizing(query_text)
+        query_tokens = tokenize_text(query_text)
 
         print("lineid: {}, query_text: {}, relation: {}".format(lineid, query_text, pred_relation))
         # print("query_tokens: {}".format(query_tokens))

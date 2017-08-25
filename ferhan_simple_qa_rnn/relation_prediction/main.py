@@ -4,6 +4,7 @@ import numpy as np
 import torch
 
 from torchtext import data
+from nltk.tokenize.treebank import TreebankWordTokenizer
 from args import get_args
 from simple_qa_relation import SimpleQaRelationDataset
 
@@ -24,7 +25,11 @@ if not args.trained_model:
     sys.exit(1)
 
 # ---- get the Field, Dataset, Iterator for train/dev/test sets -----
-questions = data.Field(lower=True, tokenize="moses")
+tokenizer = TreebankWordTokenizer()
+def tokenize_text():
+    return lambda text: tokenizer.tokenize(text)
+
+questions = data.Field(lower=True, tokenize=tokenize_text())
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
