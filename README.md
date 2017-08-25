@@ -1,4 +1,6 @@
-## Simple QA on Knowledge-Base
+## BuboQA
+
+This repository contains work done on Simple Question Answering over a Knowledge-Base by the University of Waterloo (DSG Group).
 
 ### Important GitHub repositories
 - https://github.com/zihangdai/cfo
