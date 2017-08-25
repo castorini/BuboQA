@@ -4,10 +4,10 @@ import sys
 import argparse
 import pickle
 
-from nltk.tokenize.moses import MosesTokenizer
+from nltk.tokenize.treebank import TreebankWordTokenizer
 from util import www2fb, clean_uri
 
-tokenizer = MosesTokenizer()
+tokenizer = TreebankWordTokenizer()
 
 def get_all_ngrams(tokens):
     all_ngrams = set()
@@ -24,13 +24,8 @@ def find_ngrams(input_list, n):
 
 def get_name_ngrams(entity_name):
     entity_name = entity_name.lower() # lowercase the name
-    try:
-        name_tokens = tokenizer.tokenize(entity_name)
-        name_ngrams = get_all_ngrams(name_tokens)
-    except:
-        name_ngrams = set()
-        name_ngrams.add((entity_name,))
-        name_ngrams.add((entity_name.replace(".", ""),))
+    name_tokens = tokenizer.tokenize(entity_name)
+    name_ngrams = get_all_ngrams(name_tokens)
 
     return name_ngrams
 
