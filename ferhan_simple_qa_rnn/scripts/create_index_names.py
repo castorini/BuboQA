@@ -4,7 +4,6 @@ import sys
 import argparse
 import pickle
 
-from fuzzywuzzy import fuzz
 from util import www2fb, clean_uri, strip_accents
 
 def get_names_for_entities(namespath):
