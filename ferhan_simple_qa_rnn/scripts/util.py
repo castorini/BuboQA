@@ -1,3 +1,7 @@
+import unicodedata
+
+def strip_accents(text):
+    return ''.join(c for c in unicodedata.normalize('NFKD', text) if unicodedata.category(c) != 'Mn')
 
 def www2fb(in_str):
     if in_str.startswith("www.freebase.com"):
