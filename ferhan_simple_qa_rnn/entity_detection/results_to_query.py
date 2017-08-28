@@ -54,6 +54,7 @@ def convert_to_query_text(datapath, resultdir, outdir):
                         query_tokens.append(token)
 
                 query_text = " ".join(query_tokens)
+                # if no query text found, use the entire question as query
                 if query_text.strip() == "":
                     query_text = id2question[lineid]
 
