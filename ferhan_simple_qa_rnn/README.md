@@ -1,21 +1,30 @@
-## Relation Prediction Model
+## Simple RNN model
 
 - Download and extract SimpleQuestions dataset by running the script:
 ```
 bash fetch_dataset.sh 
 ```
 
-- You will also require the package - [torchtext](https://github.com/pytorch/text).
+- Create the indexes for the 2M Freebase subset with this script:
 ```
-git clone https://github.com/pytorch/text.git
-cd path/to/torchtext
-python setup.py install
+bash create_indexes.sh
 ```
 
-- Run the training script with the following commands. Please check out args.py file to see the different commands available:
+- Then go to the 'entity_linking' directory and start the Jupyter notebook to play with the linking phase:
 ```
-cd relation_prediction
-python train.py
-python train.py --no_cuda
-python train.py --rnn_type gru
+cd entity_linking
+jupyter notebook
+```
+
+- You can also directly run the linking script.
+```
+python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
+    --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/query-text/test.txt \
+    --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
+```
+
+- To evaluate results:
+```
+cd entity_linking
+python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p results/linking-results.txt
 ```
