@@ -32,7 +32,7 @@ tokenizer = TreebankWordTokenizer()
 def tokenize_text():
     return lambda text: tokenizer.tokenize(text)
 
-questions = data.Field(lower=True, sequential=True, tokenize=tokenize_text())
+questions = data.Field(lower=True, sequential=True)
 labels = data.Field(sequential=True)
 
 train, dev, test = SimpleQADataset.splits(questions, labels)
