@@ -11,7 +11,7 @@ def create_new_dataset(datadir, outdir):
     allpath = os.path.join(outdir, "all.txt")
     outallfile = open(allpath, 'w')
     print("creating new datasets...")
-    files = [("annotated_fb_data_train", "train"), ("annotated_fb_data_valid", "val"), ("annotated_fb_data_test", "test")]
+    files = [("annotated_fb_data_train", "train"), ("annotated_fb_data_valid", "valid"), ("annotated_fb_data_test", "test")]
     for f_tuple in files:
         f = f_tuple[0]
         fname = f_tuple[1]
