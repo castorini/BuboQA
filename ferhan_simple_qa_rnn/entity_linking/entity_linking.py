@@ -12,9 +12,14 @@ from nltk.corpus import stopwords
 
 """
 Example command to run program:
-
+Gold query text:
 python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
     --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/gold-query-text/test.txt \
+    --rel_result ../relation_prediction/results/main-test-results.txt --output ./gold-results
+    
+Predicted query text:
+python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
+    --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/query-text/test.txt \
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
 tokenizer = TreebankWordTokenizer()
