@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 """
 Example command to run program:
 
-python entity_linking.py --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
+python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
     --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/gold-query-text/test.txt \
     --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
 """
@@ -35,6 +35,30 @@ def get_index(index_path):
         index = pickle.load(f)
     return index
 
+def get_ground_truth(datapath):
+    print("getting questions...")
+    id2truth = {}
+    with open(datapath, 'r') as f:
+        for line in f:
+            items = line.strip().split("\t")
+            lineid = items[0].strip()
+            sub = items[1].strip()
+            pred = items[2].strip()
+            question = items[4].strip()
+            # print("{}   -   {}".format(lineid, question))
+            id2truth[lineid] = (sub, pred, question)
+    return id2truth
+
+def pick_best_name(question, names_list):
+    best_score = None
+    best_name = None
+    for name in names_list:
+        score =  fuzz.ratio(name, question)
+        if best_score == None or score > best_score:
+            best_score = score
+            best_name = name
+
+    return best_name
 
 def get_query_text(ent_resultpath):
     print("getting query text...")
@@ -92,7 +116,7 @@ def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
         total_idf += idf
     return tf * total_idf
 
-def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpath, rel_resultpath, outpath):
+def entity_linking(test_datapath, index_entpath, index_reachpath, index_namespath, ent_resultpath, rel_resultpath, outpath):
     outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
     notfound_ent = 0
     notfound_c = 0
@@ -100,6 +124,8 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
     index_ent = get_index(index_entpath)
     index_reach = get_index(index_reachpath)
     index_names = get_index(index_namespath)
+
+    id2truth = get_ground_truth(test_datapath)
     rel_lineids, id2rel = get_relations(rel_resultpath)
     ent_lineids, id2query = get_query_text(ent_resultpath)  # ent_lineids may have some examples missing
     num_entities_fbsubset = 1959820  # 2M - 1959820 , 5M - 1972702
@@ -109,6 +135,7 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
             notfound_ent += 1
             continue
 
+        truth_ent, truth_rel, question = id2truth[lineid]
         pred_relation = www2fb(id2rel[lineid])
         query_text = id2query[lineid].lower()  # lowercase the query
         query_tokens = tokenize_text(query_text)
@@ -151,10 +178,9 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
         C_tfidf_pruned = []
         for mid, count_mid in C_pruned:
             if mid in index_names.keys():
-                cand_ent_names = index_names[mid]
-                for cand_ent_name in cand_ent_names:
-                    tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
-                    C_tfidf_pruned.append((mid, tfidf))
+                cand_ent_name = pick_best_name(question, index_names[mid])
+                tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
+                C_tfidf_pruned.append((mid, tfidf))
         # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
 
         if len(C_tfidf_pruned) == 0:
@@ -178,6 +204,8 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Do entity linking')
+    parser.add_argument('-t', '--test_data', dest='test_data', action='store', required=True,
+                        help='path to the NUMBERED dataset test.txt file')
     parser.add_argument('--index_ent', dest='index_ent', action='store', required=True,
                         help='path to the pickle for the inverted entity index')
     parser.add_argument('--index_reach', dest='index_reach', action='store', required=True,
@@ -192,6 +220,7 @@ if __name__ == '__main__':
                         help='directory path to the output of entity linking')
 
     args = parser.parse_args()
+    print("Test Data: {}".format(args.test_data))
     print("Index - Entity: {}".format(args.index_ent))
     print("Index - Reachability: {}".format(args.index_reach))
     print("Index - Names: {}".format(args.index_names))
@@ -203,6 +232,6 @@ if __name__ == '__main__':
     if not os.path.exists(args.output):
         os.makedirs(args.output)
 
-    entity_linking(args.index_ent, args.index_reach, args.index_names, args.ent_result, args.rel_result, args.output)
+    entity_linking(args.test_data, args.index_ent, args.index_reach, args.index_names, args.ent_result, args.rel_result, args.output)
 
     print("Entity Linking done.")
