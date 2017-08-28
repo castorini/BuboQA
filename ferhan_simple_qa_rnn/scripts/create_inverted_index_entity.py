@@ -3,10 +3,9 @@
 import sys
 import argparse
 import pickle
-import unicodedata
 
 from nltk.tokenize.treebank import TreebankWordTokenizer
-from util import www2fb, clean_uri
+from util import www2fb, clean_uri, strip_accents
 
 tokenizer = TreebankWordTokenizer()
 
@@ -25,7 +24,6 @@ def find_ngrams(input_list, n):
 
 def get_name_ngrams(entity_name):
     entity_name = entity_name.lower() # lowercase the name
-    entity_name = unicodedata.normalize('NFKD', entity_name).encode('ascii', 'ignore')
     name_tokens = tokenizer.tokenize(entity_name)
     name_ngrams = get_all_ngrams(name_tokens)
 
@@ -54,6 +52,7 @@ def create_inverted_index_entity(namespath, outpath):
             for ngram_tuple in name_ngrams:
                 size += 1
                 ngram = " ".join(ngram_tuple)
+                ngram = strip_accents(ngram)
                 # print(ngram)
                 if ngram in index.keys():
                     index[ngram].add(entity_mid)

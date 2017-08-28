@@ -5,8 +5,7 @@ import argparse
 import pickle
 
 from fuzzywuzzy import fuzz
-from util import www2fb, clean_uri
-import unicodedata
+from util import www2fb, clean_uri, strip_accents
 
 def get_names_for_entities(namespath):
     print("getting names map...")
@@ -22,7 +21,7 @@ def get_names_for_entities(namespath):
             entity = clean_uri(items[0])
             type = clean_uri(items[1])
             literal = clean_uri(items[2]).lower()
-            literal = unicodedata.normalize('NFKD', literal).encode('ascii', 'ignore')
+            literal = strip_accents(literal)
             if entity not in names.keys():
                 names[entity] = [literal]
             else:
