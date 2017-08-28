@@ -10,6 +10,15 @@ bash fetch_dataset.sh
 bash create_indexes.sh
 ```
 
+- Please install the following Python packages:
+```
+PyTorch
+torchtext
+NLTK 
+NLTK data (tokenizers, stopwords list)
+fuzzywuzzy
+```
+
 - Then go to the 'entity_linking' directory and start the Jupyter notebook to play with the linking phase:
 ```
 cd entity_linking
