@@ -1,7 +1,7 @@
 valid-1 %%%% trump ocean club international hotel and tower
 valid-2 %%%% sasha vujačić
 valid-3 %%%% dead combo
-valid-4 %%%% 
+valid-4 %%%% What is a film directed by wiebke von carolsfeld?
 valid-5 %%%% music for stock exchange
 valid-6 %%%% adler school of professional psychology
 valid-7 %%%% john miltern
@@ -76,8 +76,8 @@ valid-75 %%%% the canche
 valid-76 %%%% sandy denny
 valid-77 %%%% william hung
 valid-78 %%%% hlinka
-valid-79 %%%% 
-valid-80 %%%% 
+valid-79 %%%% What composer created?
+valid-80 %%%% Which city in Alabama was named after richard montgomery
 valid-81 %%%% minutes to midnight
 valid-82 %%%% the fame monster
 valid-83 %%%% prevacid 30 capsule
@@ -127,11 +127,11 @@ valid-126 %%%% fantasy
 valid-127 %%%% gautam govinda
 valid-128 %%%% 40 - live in london
 valid-129 %%%% 374 burgundia
-valid-130 %%%% 
+valid-130 %%%% what is a film in the genre drama
 valid-131 %%%% schrøder
 valid-132 %%%% the family friend
 valid-133 %%%% maybole
-valid-134 %%%% 
+valid-134 %%%% which asteroid was names after an italian geologist?
 valid-135 %%%% andy signore
 valid-136 %%%% marion county
 valid-137 %%%% silver wilkinson
@@ -165,7 +165,7 @@ valid-164 %%%% tamara
 valid-165 %%%% william des vœux
 valid-166 %%%% the haunting passion
 valid-167 %%%% william wall
-valid-168 %%%% 
+valid-168 %%%% what are documentary films?
 valid-169 %%%% ville valo
 valid-170 %%%% a haunted house and other short stories
 valid-171 %%%% heller
@@ -265,7 +265,7 @@ valid-264 %%%% don mclean
 valid-265 %%%% lover lover
 valid-266 %%%% grant park
 valid-267 %%%% coldcut
-valid-268 %%%% 
+valid-268 %%%% What is a game played with the intellivision video game console?
 valid-269 %%%% clever katya
 valid-270 %%%% final hours at hammersmith
 valid-271 %%%% texas
@@ -474,7 +474,7 @@ valid-473 %%%% cumberland presbyterian church
 valid-474 %%%% love actually
 valid-475 %%%% cream classics
 valid-476 %%%% another bullshit night in suck city
-valid-477 %%%% 
+valid-477 %%%% What is a drama film
 valid-478 %%%% eastern daylight time
 valid-479 %%%% point guard
 valid-480 %%%% the days run away
@@ -557,7 +557,7 @@ valid-556 %%%% indie film
 valid-557 %%%% the magic
 valid-558 %%%% matt gentry
 valid-559 %%%% michiyo okusu
-valid-560 %%%% 
+valid-560 %%%% What type of area is verl
 valid-561 %%%% david mackay
 valid-562 %%%% american short story collection : the blue hotel
 valid-563 %%%% at the edge of the world
@@ -644,7 +644,7 @@ valid-643 %%%% ilonggos
 valid-644 %%%% beginning of cinderella man
 valid-645 %%%% wolf
 valid-646 %%%% devil soldier
-valid-647 %%%% 
+valid-647 %%%% what house is in pennsylvania
 valid-648 %%%% jennifer s. rose
 valid-649 %%%% phillip pullman
 valid-650 %%%% khandhar
@@ -680,7 +680,7 @@ valid-679 %%%% ned porter
 valid-680 %%%% virginijus praškevičius
 valid-681 %%%% mycophenolic acid
 valid-682 %%%% speculative fiction
-valid-683 %%%% 
+valid-683 %%%% which language is spoken in susuk
 valid-684 %%%% monster movie
 valid-685 %%%% nuba conversations
 valid-686 %%%% rap metal
@@ -939,7 +939,7 @@ valid-938 %%%% rugby league
 valid-939 %%%% another day
 valid-940 %%%% southeast of north carolina
 valid-941 %%%% documentary film
-valid-942 %%%% 
+valid-942 %%%% What is the name of a film in the drama genre
 valid-943 %%%% poodle
 valid-944 %%%% avpr : aliens vs predator - requiem
 valid-945 %%%% de pruysenaere
@@ -1051,9 +1051,9 @@ valid-1050 %%%% luis lópez nieves
 valid-1051 %%%% fantasy mercedes lackey
 valid-1052 %%%% francesco giubbilini
 valid-1053 %%%% the poisoners
-valid-1054 %%%% 
+valid-1054 %%%% What causes meningitis?
 valid-1055 %%%% teva pharmaceutical industries
-valid-1056 %%%% 
+valid-1056 %%%% what is the comédie-française used for
 valid-1057 %%%% romance film
 valid-1058 %%%% 1932 winter olympics
 valid-1059 %%%% the road to balinor
@@ -1119,7 +1119,7 @@ valid-1118 %%%% robin hood
 valid-1119 %%%% maryland
 valid-1120 %%%% the looks
 valid-1121 %%%% raphael
-valid-1122 %%%% 
+valid-1122 %%%% which albums were released by the bay city rollers?
 valid-1123 %%%% evolution in science and religion
 valid-1124 %%%% west orange high school
 valid-1125 %%%% emma
@@ -1391,7 +1391,7 @@ valid-1390 %%%% johnny doyle
 valid-1391 %%%% maine
 valid-1392 %%%% so much for justice !
 valid-1393 %%%% annlipinsky
-valid-1394 %%%% 
+valid-1394 %%%% Name a film drama
 valid-1395 %%%% page
 valid-1396 %%%% harvey lim
 valid-1397 %%%% the authenticité - the syliphone years
@@ -1456,7 +1456,7 @@ valid-1455 %%%% steve hogarth
 valid-1456 %%%% simon blackwell
 valid-1457 %%%% georgia
 valid-1458 %%%% tumko na bhool payenge
-valid-1459 %%%% 
+valid-1459 %%%% What's a full length album released by nobuo uematsu
 valid-1460 %%%% united states
 valid-1461 %%%% johan löfstedt
 valid-1462 %%%% the day you went away : the best of m2m
@@ -1482,7 +1482,7 @@ valid-1481 %%%% mercantile trust and deposit company
 valid-1482 %%%% cystic fibrosis
 valid-1483 %%%% public school
 valid-1484 %%%% night
-valid-1485 %%%% 
+valid-1485 %%%% which individual was born in revelstoke
 valid-1486 %%%% painting and 101 strings
 valid-1487 %%%% franz west
 valid-1488 %%%% day three of my new life
@@ -1574,7 +1574,7 @@ valid-1573 %%%% kitsuné tabloid
 valid-1574 %%%% johann sebastian bach
 valid-1575 %%%% triumph of the will
 valid-1576 %%%% happy reunion
-valid-1577 %%%% 
+valid-1577 %%%% what is the name of a drama film on netflix
 valid-1578 %%%% vladimir nabokov
 valid-1579 %%%% the greatest
 valid-1580 %%%% adventure book
@@ -1689,7 +1689,7 @@ valid-1688 %%%% electric landlady
 valid-1689 %%%% 82
 valid-1690 %%%% the duke of mount deer
 valid-1691 %%%% queen compilation
-valid-1692 %%%% 
+valid-1692 %%%% what alliance does scandinavian airlines join
 valid-1693 %%%% bomb 's origins
 valid-1694 %%%% from the vaults
 valid-1695 %%%% chasing amy
@@ -1727,7 +1727,7 @@ valid-1726 %%%% the complete cbs studio recordings of woody shaw
 valid-1727 %%%% the album ... to be loved : the best of papa roach
 valid-1728 %%%% david boring
 valid-1729 %%%% m. h.
-valid-1730 %%%% 
+valid-1730 %%%% Name a drama on netflix
 valid-1731 %%%% human human
 valid-1732 %%%% portrait of chieko
 valid-1733 %%%% march ör
@@ -1767,7 +1767,7 @@ valid-1766 %%%% womc
 valid-1767 %%%% ivan maric
 valid-1768 %%%% venapro 3/10/3/1/1/6/3/1
 valid-1769 %%%% yummy bingham
-valid-1770 %%%% 
+valid-1770 %%%% what is a fictional book?
 valid-1771 %%%% brownhart law
 valid-1772 %%%% the enchanted wood
 valid-1773 %%%% the unusual suspects
@@ -1840,7 +1840,7 @@ valid-1839 %%%% nefazodone hydrochloride
 valid-1840 %%%% william hay
 valid-1841 %%%% krishnanagar , nadia
 valid-1842 %%%% los carneros ava
-valid-1843 %%%% 
+valid-1843 %%%% What's an upazila in bangladesh
 valid-1844 %%%% cat scratch fever
 valid-1845 %%%% salalah airport
 valid-1846 %%%% i am round originate
@@ -1861,7 +1861,7 @@ valid-1860 %%%% future language
 valid-1861 %%%% bayonne , new
 valid-1862 %%%% bardstown junction
 valid-1863 %%%% avra
-valid-1864 %%%% 
+valid-1864 %%%% whats the title of a drama movie
 valid-1865 %%%% campaign against dong zhuo
 valid-1866 %%%% further
 valid-1867 %%%% kerissa fare
@@ -1890,7 +1890,7 @@ valid-1889 %%%% bank of america stadium
 valid-1890 %%%% owl and the sparrow
 valid-1891 %%%% state of new
 valid-1892 %%%% abduction
-valid-1893 %%%% 
+valid-1893 %%%% What is the name of a popular midfielder
 valid-1894 %%%% the legend of zelda : twilight princess
 valid-1895 %%%% liz green
 valid-1896 %%%% film producer
@@ -1990,7 +1990,7 @@ valid-1989 %%%% christopher priest
 valid-1990 %%%% atomic : the very best of blondie
 valid-1991 %%%% 7 years
 valid-1992 %%%% the rhumba boogie
-valid-1993 %%%% 
+valid-1993 %%%% which drama film was made in 1959
 valid-1994 %%%% final liberation
 valid-1995 %%%% province of pisa in the italian region of tuscany
 valid-1996 %%%% sebastian knight
@@ -2133,7 +2133,7 @@ valid-2132 %%%% astyanax support
 valid-2133 %%%% screened at 2010 fantastic fest
 valid-2134 %%%% divided kingdom
 valid-2135 %%%% kenyah , western language
-valid-2136 %%%% 
+valid-2136 %%%% in which community does the illinois river confluence with the Lower Rogue river
 valid-2137 %%%% marcus bent
 valid-2138 %%%% i shall be
 valid-2139 %%%% arthur m. jolly
@@ -2281,7 +2281,7 @@ valid-2280 %%%% does citic securities
 valid-2281 %%%% herbert hugo menges
 valid-2282 %%%% steve balboni
 valid-2283 %%%% irish hill , louisville
-valid-2284 %%%% 
+valid-2284 %%%% Who is a soccer player that plays midfielder
 valid-2285 %%%% liberty
 valid-2286 %%%% spike milligan milligan
 valid-2287 %%%% minnesota
@@ -2472,7 +2472,7 @@ valid-2471 %%%% channel communications
 valid-2472 %%%% lolo
 valid-2473 %%%% bert weedon
 valid-2474 %%%% autumn sonata
-valid-2475 %%%% 
+valid-2475 %%%% what kind of music does torres make
 valid-2476 %%%% jerusalem
 valid-2477 %%%% asteroid
 valid-2478 %%%% cabell calloway ii
@@ -2526,7 +2526,7 @@ valid-2525 %%%% marianne vi britannia
 valid-2526 %%%% robert blackwell
 valid-2527 %%%% francis of assisi
 valid-2528 %%%% shigeru okada
-valid-2529 %%%% 
+valid-2529 %%%% Which bollywood film stars Menekka Arora and Arun Bali
 valid-2530 %%%% leo fender
 valid-2531 %%%% john mccormack
 valid-2532 %%%% jim silva
@@ -2549,7 +2549,7 @@ valid-2548 %%%% the king of ads
 valid-2549 %%%% high school
 valid-2550 %%%% natalia castellanos
 valid-2551 %%%% milestones
-valid-2552 %%%% 
+valid-2552 %%%% whats the name of midfielder football player
 valid-2553 %%%% dionne warwick - 2000 - best of
 valid-2554 %%%% spice girls : live in istanbul
 valid-2555 %%%% old time comedy classics : vol. 9
@@ -2571,7 +2571,7 @@ valid-2570 %%%% mumbai matinee
 valid-2571 %%%% theodore baird residence
 valid-2572 %%%% meningitis
 valid-2573 %%%% wire detective
-valid-2574 %%%% 
+valid-2574 %%%% What is the legal status of Tylenol Cold Sore Throat Extra Strength?
 valid-2575 %%%% joseph guillemot
 valid-2576 %%%% christmas songs
 valid-2577 %%%% shuichi shindou
@@ -2595,7 +2595,7 @@ valid-2594 %%%% sexo con amor
 valid-2595 %%%% alexandria
 valid-2596 %%%% barcelona
 valid-2597 %%%% annie
-valid-2598 %%%% 
+valid-2598 %%%% what is the key component of loma lux psoriasis
 valid-2599 %%%% comedy
 valid-2600 %%%% greatest hits 1990-1995
 valid-2601 %%%% mehmood
@@ -2711,7 +2711,7 @@ valid-2710 %%%% data studio
 valid-2711 %%%% leo mccarey
 valid-2712 %%%% edward lucas
 valid-2713 %%%% holiday in your heart
-valid-2714 %%%% 
+valid-2714 %%%% what is a japanese netflix movie
 valid-2715 %%%% debye
 valid-2716 %%%% shane black
 valid-2717 %%%% new mexico
@@ -2731,7 +2731,7 @@ valid-2730 %%%% armageddon
 valid-2731 %%%% cafe mozu
 valid-2732 %%%% harald pietschmann
 valid-2733 %%%% in bacto
-valid-2734 %%%% 
+valid-2734 %%%% what is a english baroque work
 valid-2735 %%%% quickspace
 valid-2736 %%%% the velvet underground
 valid-2737 %%%% the sagan diary
@@ -2739,7 +2739,7 @@ valid-2738 %%%% telephone
 valid-2739 %%%% film is lyoha dostoevsky - a descendant of a genius
 valid-2740 %%%% ethics
 valid-2741 %%%% born to be wild
-valid-2742 %%%% 
+valid-2742 %%%% what is the nearest travel destination to  dakshineswar kali temple
 valid-2743 %%%% was now thats what i call music ! 28
 valid-2744 %%%% silk road , volume 2
 valid-2745 %%%% spain
@@ -2768,10 +2768,10 @@ valid-2767 %%%% evolution
 valid-2768 %%%% law & order : double or nothing
 valid-2769 %%%% city of wakefield
 valid-2770 %%%% b
-valid-2771 %%%% 
+valid-2771 %%%% what type of music does make?
 valid-2772 %%%% california
 valid-2773 %%%% cosimo iii de medici
-valid-2774 %%%% 
+valid-2774 %%%% Name a location in denmark
 valid-2775 %%%% mylan laboratories inc.
 valid-2776 %%%% red sox
 valid-2777 %%%% 21 and a wake-up
@@ -2783,7 +2783,7 @@ valid-2782 %%%% yuddham
 valid-2783 %%%% beto naveda
 valid-2784 %%%% out overtones
 valid-2785 %%%% follows
-valid-2786 %%%% 
+valid-2786 %%%% what is a drama film
 valid-2787 %%%% five gates to hell
 valid-2788 %%%% hausa
 valid-2789 %%%% the old army game
@@ -2792,7 +2792,7 @@ valid-2791 %%%% touch my evil
 valid-2792 %%%% japan
 valid-2793 %%%% dragon mountain
 valid-2794 %%%% didius julianus ruled
-valid-2795 %%%% 
+valid-2795 %%%% what is a movie was drama released in 1997
 valid-2796 %%%% lia orlandini
 valid-2797 %%%% goalkeeper
 valid-2798 %%%% the gender of kailash sharma
@@ -2857,7 +2857,7 @@ valid-2856 %%%% agustí mezquida
 valid-2857 %%%% george washington 's gristmill
 valid-2858 %%%% a the artist alice in videoland
 valid-2859 %%%% vay
-valid-2860 %%%% 
+valid-2860 %%%% which fiction novel has a female lead character?
 valid-2861 %%%% hearts
 valid-2862 %%%% harry potter and the prisoner of azkaban
 valid-2863 %%%% vassilis katsikis
@@ -3037,7 +3037,7 @@ valid-3036 %%%% canadian bacon
 valid-3037 %%%% dreaming
 valid-3038 %%%% goalkeeper
 valid-3039 %%%% haight-ashbury
-valid-3040 %%%% 
+valid-3040 %%%% what country is the tv program originally from
 valid-3041 %%%% happy birthday , lola
 valid-3042 %%%% partido acción nacional
 valid-3043 %%%% soul music
@@ -3058,7 +3058,7 @@ valid-3057 %%%% harron
 valid-3058 %%%% mona lisa overdrive
 valid-3059 %%%% cherry red / baby look at you
 valid-3060 %%%% titanium dioxide
-valid-3061 %%%% 
+valid-3061 %%%% Who is a midfielder
 valid-3062 %%%% ray kurzweil
 valid-3063 %%%% freestyle
 valid-3064 %%%% joe dirt car
@@ -3216,7 +3216,7 @@ valid-3215 %%%% the heart of christmas
 valid-3216 %%%% vikram phadnis
 valid-3217 %%%% earle c. clements
 valid-3218 %%%% murder
-valid-3219 %%%% 
+valid-3219 %%%% what is a drama film on netflix?
 valid-3220 %%%% stephen moyer
 valid-3221 %%%% the war report
 valid-3222 %%%% essential roy orbison
@@ -3255,7 +3255,7 @@ valid-3254 %%%% the album music is the healing force of the universe
 valid-3255 %%%% michael storm
 valid-3256 %%%% get u down
 valid-3257 %%%% album
-valid-3258 %%%% 
+valid-3258 %%%% what is track of the 1987 album
 valid-3259 %%%% action film
 valid-3260 %%%% remember me
 valid-3261 %%%% marcelo carballo
@@ -3272,7 +3272,7 @@ valid-3271 %%%% stakes is high
 valid-3272 %%%% what is a song from the release now that 's what i call xmas
 valid-3273 %%%% paulo goulart
 valid-3274 %%%% run-d.m.c
-valid-3275 %%%% 
+valid-3275 %%%% what is a 1994 album
 valid-3276 %%%% charles bulfinch
 valid-3277 %%%% introducing nat adderley
 valid-3278 %%%% liverpool
@@ -3329,7 +3329,7 @@ valid-3328 %%%% the ball game
 valid-3329 %%%% another horsedreamer’s blues
 valid-3330 %%%% nikolay alexeyev
 valid-3331 %%%% tianjin
-valid-3332 %%%% 
+valid-3332 %%%% what's one of the names of king crimson's album
 valid-3333 %%%% supervolcano
 valid-3334 %%%% kara best clips
 valid-3335 %%%% oxiconazole nitrate 10 cream
@@ -3612,7 +3612,7 @@ valid-3611 %%%% karate kommandos
 valid-3612 %%%% sir james fergusson , 6th baronet
 valid-3613 %%%% roger robinson
 valid-3614 %%%% ' language
-valid-3615 %%%% 
+valid-3615 %%%% Name a midfielder.
 valid-3616 %%%% clement fowler
 valid-3617 %%%% friends
 valid-3618 %%%% kanagawa
@@ -3760,7 +3760,7 @@ valid-3759 %%%% dubstep
 valid-3760 %%%% pecos bill
 valid-3761 %%%% the lord of the rings : war of the ring
 valid-3762 %%%% heinrich himmler
-valid-3763 %%%% 
+valid-3763 %%%% what are albums?
 valid-3764 %%%% mamrie hart
 valid-3765 %%%% the coil
 valid-3766 %%%% real , take place
@@ -3785,10 +3785,10 @@ valid-3784 %%%% romance film
 valid-3785 %%%% mastermix classic cuts 59 : soul/r & b
 valid-3786 %%%% jorge grundman
 valid-3787 %%%% linda perry
-valid-3788 %%%% 
+valid-3788 %%%% which country contains
 valid-3789 %%%% antoine fuqua
 valid-3790 %%%% cinérama
-valid-3791 %%%% 
+valid-3791 %%%% which midfielder plays for the amiens football team?
 valid-3792 %%%% philosophy
 valid-3793 %%%% snaz
 valid-3794 %%%% ghajini
@@ -3864,7 +3864,7 @@ valid-3863 %%%% borough of wokingham
 valid-3864 %%%% post-punk
 valid-3865 %%%% bono
 valid-3866 %%%% nasrani
-valid-3867 %%%% 
+valid-3867 %%%% Where is meerlo-wanssum
 valid-3868 %%%% samuel fuller
 valid-3869 %%%% mid-northern poland
 valid-3870 %%%% my son the vampire
@@ -3924,7 +3924,7 @@ valid-3923 %%%% virginia
 valid-3924 %%%% rockdale
 valid-3925 %%%% psi chess
 valid-3926 %%%% police
-valid-3927 %%%% 
+valid-3927 %%%% what is the name of a tv drama
 valid-3928 %%%% the magic show
 valid-3929 %%%% porter brook river
 valid-3930 %%%% allan d'arcangelo
@@ -3933,7 +3933,7 @@ valid-3932 %%%% complete chess masters
 valid-3933 %%%% just you , just me
 valid-3934 %%%% jump
 valid-3935 %%%% jamie aditya
-valid-3936 %%%% 
+valid-3936 %%%% what is the name of a drama movie
 valid-3937 %%%% olympus e-pl3 camera process
 valid-3938 %%%% winchester mountain lookout
 valid-3939 %%%% new orleans
@@ -3951,7 +3951,7 @@ valid-3950 %%%% cleve jones
 valid-3951 %%%% stompin at the savoy : live
 valid-3952 %%%% leftover blues 1991-2003
 valid-3953 %%%% nuclear blast
-valid-3954 %%%% 
+valid-3954 %%%% which footballer plays the midfielder position
 valid-3955 %%%% joana mendl-fink
 valid-3956 %%%% david campbell
 valid-3957 %%%% mammoth encyclopedia of science fiction
@@ -3993,7 +3993,7 @@ valid-3992 %%%% christof lauer from bluebells
 valid-3993 %%%% apocalypse
 valid-3994 %%%% jeremiah theus
 valid-3995 %%%% absolute music 57
-valid-3996 %%%% 
+valid-3996 %%%% what horror films came out in 2002?
 valid-3997 %%%% with the angels
 valid-3998 %%%% typ get in the ring
 valid-3999 %%%% country italy
@@ -4019,7 +4019,7 @@ valid-4018 %%%% stephen a.
 valid-4019 %%%% promised land
 valid-4020 %%%% kalafina
 valid-4021 %%%% steve reid
-valid-4022 %%%% 
+valid-4022 %%%% what is the dosage form of delos?
 valid-4023 %%%% 16 most requested songs
 valid-4024 %%%% per saari
 valid-4025 %%%% deep in my heart
@@ -4092,7 +4092,7 @@ valid-4091 %%%% joe e. kernan
 valid-4092 %%%% september
 valid-4093 %%%% teething complex
 valid-4094 %%%% death in the afternoon
-valid-4095 %%%% 
+valid-4095 %%%% who is an Argentinian midfielder
 valid-4096 %%%% larry groce
 valid-4097 %%%% animation
 valid-4098 %%%% cambridge
@@ -4108,7 +4108,7 @@ valid-4107 %%%% merrimack river
 valid-4108 %%%% a scare at bedtime
 valid-4109 %%%% bakushou ! ! jinsei gekijou 2
 valid-4110 %%%% natasha
-valid-4111 %%%% 
+valid-4111 %%%% who is the ragtime artist born in denmark?
 valid-4112 %%%% matador records
 valid-4113 %%%% berlin
 valid-4114 %%%% philosophy
@@ -4135,7 +4135,7 @@ valid-4134 %%%% sir salimullah medical college
 valid-4135 %%%% flyabout
 valid-4136 %%%% lao language
 valid-4137 %%%% clarence thomas
-valid-4138 %%%% 
+valid-4138 %%%% What language is spoken in the film?
 valid-4139 %%%% edward fox
 valid-4140 %%%% djibouti
 valid-4141 %%%% azithromycin
@@ -4225,7 +4225,7 @@ valid-4224 %%%% adisaya suriyabha
 valid-4225 %%%% alchemist
 valid-4226 %%%% pianist
 valid-4227 %%%% save my soul
-valid-4228 %%%% 
+valid-4228 %%%% What is the name of a film that orry-kelly did the costume design for
 valid-4229 %%%% christopher jon
 valid-4230 %%%% asteroid
 valid-4231 %%%% ned buntline
@@ -4271,7 +4271,7 @@ valid-4270 %%%% storm corrosion ( limited
 valid-4271 %%%% andrea west
 valid-4272 %%%% pastrami
 valid-4273 %%%% peter the great
-valid-4274 %%%% 
+valid-4274 %%%% What artist is behind the recording?
 valid-4275 %%%% the compass rose
 valid-4276 %%%% annick smith
 valid-4277 %%%% simon starling
@@ -4374,7 +4374,7 @@ valid-4373 %%%% pablo picasso
 valid-4374 %%%% united states
 valid-4375 %%%% from selma to sorrow
 valid-4376 %%%% bronx
-valid-4377 %%%% 
+valid-4377 %%%% who produced ?
 valid-4378 %%%% avana ivan
 valid-4379 %%%% undecided
 valid-4380 %%%% aleksandr sinyukov
@@ -4443,7 +4443,7 @@ valid-4442 %%%% america and lewis hine
 valid-4443 %%%% sami michael
 valid-4444 %%%% my winter storm formatted
 valid-4445 %%%% sakura sakurada orientation
-valid-4446 %%%% 
+valid-4446 %%%% who is a former pitcher for the san diego padres?
 valid-4447 %%%% ingmar bergman
 valid-4448 %%%% freddie prinze
 valid-4449 %%%% sea colony tower 102
@@ -4455,7 +4455,7 @@ valid-4454 %%%% berger picard
 valid-4455 %%%% warren alfson
 valid-4456 %%%% indian new zealander
 valid-4457 %%%% hermetic order of the golden dawn
-valid-4458 %%%% 
+valid-4458 %%%% where is dragoș moștenescu born
 valid-4459 %%%% hotel julien dubuque
 valid-4460 %%%% a playful
 valid-4461 %%%% hold that lion !
@@ -4747,7 +4747,7 @@ valid-4746 %%%% for madmen only
 valid-4747 %%%% harold jenkins
 valid-4748 %%%% goalkeeper
 valid-4749 %%%% bobby
-valid-4750 %%%% 
+valid-4750 %%%% WHo published
 valid-4751 %%%% all i do is win ( remix
 valid-4752 %%%% nelly arcan
 valid-4753 %%%% georgia
@@ -4778,7 +4778,7 @@ valid-4777 %%%% syria
 valid-4778 %%%% frederick campling
 valid-4779 %%%% wallis and futuna
 valid-4780 %%%% mayes county
-valid-4781 %%%% 
+valid-4781 %%%% what is a korean drama?
 valid-4782 %%%% the omni trio
 valid-4783 %%%% fatal fury special
 valid-4784 %%%% turnbull
@@ -4838,7 +4838,7 @@ valid-4837 %%%% fuerza maldita
 valid-4838 %%%% the judy garland show
 valid-4839 %%%% murrian
 valid-4840 %%%% essex county
-valid-4841 %%%% 
+valid-4841 %%%% Name an active website
 valid-4842 %%%% songbook : chico buarque , volume 1
 valid-4843 %%%% 68950 ) 2002 qf15
 valid-4844 %%%% music does the artist cedella booker
@@ -4955,7 +4955,7 @@ valid-4954 %%%% kama
 valid-4955 %%%% tristania
 valid-4956 %%%% leiria talk
 valid-4957 %%%% nevada
-valid-4958 %%%% 
+valid-4958 %%%% what surrounds astatula
 valid-4959 %%%% ayumi takano declare
 valid-4960 %%%% itunes live from soho
 valid-4961 %%%% pop rock
@@ -4986,7 +4986,7 @@ valid-4985 %%%% solar system
 valid-4986 %%%% 8660 sano
 valid-4987 %%%% koochiching county
 valid-4988 %%%% j. walsh
-valid-4989 %%%% 
+valid-4989 %%%% what is the active ingredient of the drug dofetilide?
 valid-4990 %%%% dimillos floating
 valid-4991 %%%% rattlesnakes
 valid-4992 %%%% earth , wind & fire
@@ -5114,7 +5114,7 @@ valid-5113 %%%% presbyterian ladies ' college , melbourne
 valid-5114 %%%% fiction
 valid-5115 %%%% with no spine to
 valid-5116 %%%% garden city
-valid-5117 %%%% 
+valid-5117 %%%% what is the name of a  drama movie by abdellatif abdelhamid
 valid-5118 %%%% wayi
 valid-5119 %%%% 20th century
 valid-5120 %%%% a dream in the making
@@ -5344,7 +5344,7 @@ valid-5343 %%%% krzysztof penderecki
 valid-5344 %%%% ice grill
 valid-5345 %%%% my cactus heart
 valid-5346 %%%% natasha beaumont
-valid-5347 %%%% 
+valid-5347 %%%% what is the release type of the album?
 valid-5348 %%%% mangat
 valid-5349 %%%% derek neame
 valid-5350 %%%% david lyons
@@ -5418,7 +5418,7 @@ valid-5417 %%%% paris
 valid-5418 %%%% lourds
 valid-5419 %%%% zina
 valid-5420 %%%% live at billy bob 's texas
-valid-5421 %%%% 
+valid-5421 %%%% name an airport in india
 valid-5422 %%%% the path of loneliness
 valid-5423 %%%% a marine story
 valid-5424 %%%% key to north american birds
@@ -5522,7 +5522,7 @@ valid-5521 %%%% the need for speed
 valid-5522 %%%% binding of the book the story of my life ( with her letters
 valid-5523 %%%% welcome to tha chuuch : da album
 valid-5524 %%%% painting on glass
-valid-5525 %%%% 
+valid-5525 %%%% Name a drama.
 valid-5526 %%%% pop rock
 valid-5527 %%%% winterlied
 valid-5528 %%%% threonine
@@ -5578,7 +5578,7 @@ valid-5577 %%%% a true story
 valid-5578 %%%% the blistering sun
 valid-5579 %%%% kenneth tse
 valid-5580 %%%% redux
-valid-5581 %%%% 
+valid-5581 %%%% what is an album from 2005
 valid-5582 %%%% hercules : the brave and the bold
 valid-5583 %%%% webs
 valid-5584 %%%% indie film
@@ -5880,7 +5880,7 @@ valid-5879 %%%% steven lee olsen originate
 valid-5880 %%%% mourir pour des idées
 valid-5881 %%%% the master
 valid-5882 %%%% monrose
-valid-5883 %%%% 
+valid-5883 %%%% Which film is a drama?
 valid-5884 %%%% ercan international airport
 valid-5885 %%%% jonathan ryland
 valid-5886 %%%% ethiopia
@@ -6230,7 +6230,7 @@ valid-6229 %%%% battle of najaf
 valid-6230 %%%% i̇zmir
 valid-6231 %%%% maniac magee
 valid-6232 %%%% 20th century
-valid-6233 %%%% 
+valid-6233 %%%% What male anime character has the power of mind control?
 valid-6234 %%%% wars osyrhia
 valid-6235 %%%% chuck dixon
 valid-6236 %%%% united states
@@ -6267,7 +6267,7 @@ valid-6266 %%%% short film
 valid-6267 %%%% holy rosary cathedral
 valid-6268 %%%% the year of the mouse
 valid-6269 %%%% nada fiorelli
-valid-6270 %%%% 
+valid-6270 %%%% Which mining companies are located in Brazil
 valid-6271 %%%% jenny mccarthy show
 valid-6272 %%%% comedy album
 valid-6273 %%%% aggressive breed
@@ -6305,7 +6305,7 @@ valid-6304 %%%% classic albums : the band
 valid-6305 %%%% phillip noyce
 valid-6306 %%%% gold
 valid-6307 %%%% in the name of love
-valid-6308 %%%% 
+valid-6308 %%%% what is the name of a drama film
 valid-6309 %%%% luís geraldes
 valid-6310 %%%% battle of epping forest
 valid-6311 %%%% bass guitar
@@ -6342,7 +6342,7 @@ valid-6341 %%%% wnyc
 valid-6342 %%%% nova swing
 valid-6343 %%%% alan dean foster
 valid-6344 %%%% superstar
-valid-6345 %%%% 
+valid-6345 %%%% what is the title of a movie whose film genre is a drama
 valid-6346 %%%% yiğit güralp
 valid-6347 %%%% cu online
 valid-6348 %%%% jingo
@@ -6355,20 +6355,20 @@ valid-6354 %%%% william alexander
 valid-6355 %%%% indie film
 valid-6356 %%%% lee ha-jun
 valid-6357 %%%% sky larks
-valid-6358 %%%% 
+valid-6358 %%%% Who was a football midfielder
 valid-6359 %%%% pierre-jean vaillard
 valid-6360 %%%% 6 % benzoyl peroxide 3 % sulfur 0.069/0.03 gel
 valid-6361 %%%% love trap
 valid-6362 %%%% john williams
 valid-6363 %%%% tabu thick n ' sassy\\
-valid-6364 %%%% 
+valid-6364 %%%% What are some musical films
 valid-6365 %%%% port of missing girls
 valid-6366 %%%% farrar straus and giroux
 valid-6367 %%%% the four minute mile
 valid-6368 %%%% george cecil ives
 valid-6369 %%%% chronicles of wasted time
 valid-6370 %%%% tom gehrels
-valid-6371 %%%% 
+valid-6371 %%%% WHat's the subject of found
 valid-6372 %%%% rick schwartz
 valid-6373 %%%% meditation : solo guitar
 valid-6374 %%%% james crafts
@@ -6665,7 +6665,7 @@ valid-6664 %%%% shin sawbu
 valid-6665 %%%% chimaira
 valid-6666 %%%% chaos
 valid-6667 %%%% the charleston daily mail
-valid-6668 %%%% 
+valid-6668 %%%% what is a indian drama film
 valid-6669 %%%% margarethe von trotta
 valid-6670 %%%% afonso iii of portugal
 valid-6671 %%%% dudley moore
@@ -6716,7 +6716,7 @@ valid-6715 %%%% balzac and the little chinese seamstress
 valid-6716 %%%% igor cheminava
 valid-6717 %%%% heartbeat
 valid-6718 %%%% moapa
-valid-6719 %%%% 
+valid-6719 %%%% what film is under the drama genre?
 valid-6720 %%%% norman hand
 valid-6721 %%%% billy corgan
 valid-6722 %%%% swimming
@@ -6759,7 +6759,7 @@ valid-6758 %%%% st. peters episcopal church
 valid-6759 %%%% tendonitis
 valid-6760 %%%% the lovers & friends show : season 3
 valid-6761 %%%% pub
-valid-6762 %%%% 
+valid-6762 %%%% what kind of music is the interview album
 valid-6763 %%%% to hear the angels
 valid-6764 %%%% styve c.
 valid-6765 %%%% chris killen
@@ -7057,7 +7057,7 @@ valid-7056 %%%% soil
 valid-7057 %%%% john williams
 valid-7058 %%%% brandeis university
 valid-7059 %%%% the best of
-valid-7060 %%%% 
+valid-7060 %%%% Who invented planetarium
 valid-7061 %%%% unreleased quicksilver : lost gold and silver
 valid-7062 %%%% balls to the walls
 valid-7063 %%%% classics
@@ -7100,7 +7100,7 @@ valid-7099 %%%% university of houston creative
 valid-7100 %%%% cincinnati
 valid-7101 %%%% ecomanagement
 valid-7102 %%%% riga
-valid-7103 %%%% 
+valid-7103 %%%% Which release track is also a recording?
 valid-7104 %%%% brian edwards
 valid-7105 %%%% jérusalem
 valid-7106 %%%% melvin white
@@ -7184,7 +7184,7 @@ valid-7183 %%%% telling secrets to strangers
 valid-7184 %%%% 2003-05-28 : missoula , mt , usa
 valid-7185 %%%% barry mcguire
 valid-7186 %%%% jonesburg
-valid-7187 %%%% 
+valid-7187 %%%% What is a dog breed with black tricolor
 valid-7188 %%%% artist liv kristine music
 valid-7189 %%%% male film director
 valid-7190 %%%% alastair gamble
@@ -7319,7 +7319,7 @@ valid-7318 %%%% the legend of the condor heroes
 valid-7319 %%%% noah 's arc : season 1
 valid-7320 %%%% lorang christiansen
 valid-7321 %%%% wendy and lisa
-valid-7322 %%%% 
+valid-7322 %%%% what is the topic of the book?
 valid-7323 %%%% dark horse
 valid-7324 %%%% idhaya thirudan
 valid-7325 %%%% looney tunes
@@ -7556,7 +7556,7 @@ valid-7555 %%%% neamț county
 valid-7556 %%%% chinese food
 valid-7557 %%%% i forget you every day
 valid-7558 %%%% the womb
-valid-7559 %%%% 
+valid-7559 %%%% what is a drama film from 1974?
 valid-7560 %%%% the house
 valid-7561 %%%% grande hotel
 valid-7562 %%%% consolation of philosophy
@@ -7627,7 +7627,7 @@ valid-7626 %%%% lisandro
 valid-7627 %%%% rafael araújo
 valid-7628 %%%% mario carotenuto
 valid-7629 %%%% 6870 pauldavies
-valid-7630 %%%% 
+valid-7630 %%%% which english footballer was a career midfielder
 valid-7631 %%%% little women : book i
 valid-7632 %%%% tee martin
 valid-7633 %%%% aristagoras
@@ -7638,7 +7638,7 @@ valid-7637 %%%% triple j : hottest 100 , volume 9
 valid-7638 %%%% the magnificent two
 valid-7639 %%%% wickedwisdomband create
 valid-7640 %%%% john iii of portugal
-valid-7641 %%%% 
+valid-7641 %%%% which movie is drama
 valid-7642 %%%% shogun : total war
 valid-7643 %%%% nebojša bogavac
 valid-7644 %%%% bayer am extra stength 500/65 tablet
@@ -7670,7 +7670,7 @@ valid-7669 %%%% ton chicken
 valid-7670 %%%% hymns
 valid-7671 %%%% fortress 2 : re-entry
 valid-7672 %%%% taxi
-valid-7673 %%%% 
+valid-7673 %%%% whats the name of a football  midfielder
 valid-7674 %%%% the fortress
 valid-7675 %%%% eliseu visconti
 valid-7676 %%%% compilation
@@ -7686,7 +7686,7 @@ valid-7685 %%%% yorgos makris
 valid-7686 %%%% techno music
 valid-7687 %%%% fantasy : mariah carey at madison square garden
 valid-7688 %%%% 1962 the manchurian candidate
-valid-7689 %%%% 
+valid-7689 %%%% Name a film in the genre of drama
 valid-7690 %%%% the north
 valid-7691 %%%% ni hao kai-lan : kai-lan 's carnival
 valid-7692 %%%% brøderbund software
@@ -7713,7 +7713,7 @@ valid-7712 %%%% no more lonely nights
 valid-7713 %%%% sky saxon create
 valid-7714 %%%% i want candy
 valid-7715 %%%% another day
-valid-7716 %%%% 
+valid-7716 %%%% WHat is antibacterial hand sanitizer a formulation of
 valid-7717 %%%% origin tuscarora language
 valid-7718 %%%% barber township
 valid-7719 %%%% simhadri
@@ -7791,7 +7791,7 @@ valid-7790 %%%% vodka factory originate
 valid-7791 %%%% united kingdom
 valid-7792 %%%% julisita salcedo
 valid-7793 %%%% sponsored lc
-valid-7794 %%%% 
+valid-7794 %%%% What is the name of a film in the drama genre?
 valid-7795 %%%% fred astaire
 valid-7796 %%%% swing under the swastika
 valid-7797 %%%% arthur v. dias
@@ -7807,7 +7807,7 @@ valid-7806 %%%% tibet , tibet
 valid-7807 %%%% crab claw collective
 valid-7808 %%%% karl marx
 valid-7809 %%%% free the music
-valid-7810 %%%% 
+valid-7810 %%%% who plays midfielder
 valid-7811 %%%% plastic green head
 valid-7812 %%%% universe
 valid-7813 %%%% chocoball mukai
@@ -7852,7 +7852,7 @@ valid-7851 %%%% grande récréation
 valid-7852 %%%% alberto aguilera
 valid-7853 %%%% private university
 valid-7854 %%%% lost tape originate
-valid-7855 %%%% 
+valid-7855 %%%% whats a movie title that is a netflix drama
 valid-7856 %%%% stuck in love
 valid-7857 %%%% southwest agricultural university
 valid-7858 %%%% philippe durand
@@ -7935,7 +7935,7 @@ valid-7934 %%%% captopril tablet
 valid-7935 %%%% swingin with bud
 valid-7936 %%%% sandrys book
 valid-7937 %%%% earshot
-valid-7938 %%%% 
+valid-7938 %%%% Who is someone that survived the holocaust
 valid-7939 %%%% o holy night
 valid-7940 %%%% dangerous
 valid-7941 %%%% ruby laffoon
@@ -7966,7 +7966,7 @@ valid-7965 %%%% cocoa 0.05 injectable solution
 valid-7966 %%%% beautiful dangerous get
 valid-7967 %%%% vuoksi river
 valid-7968 %%%% city of birmingham symphony orchestra
-valid-7969 %%%% 
+valid-7969 %%%% what story is in the literary genre
 valid-7970 %%%% 30960 ) 1994 uv2
 valid-7971 %%%% the lady takes a flyer explore
 valid-7972 %%%% pim fortuyn
@@ -7974,7 +7974,7 @@ valid-7973 %%%% neville southall
 valid-7974 %%%% paul robb
 valid-7975 %%%% centurylink arena boise
 valid-7976 %%%% michael berenbaum
-valid-7977 %%%% 
+valid-7977 %%%% what album was released as an album
 valid-7978 %%%% the company you keep in
 valid-7979 %%%% vartapet komitas
 valid-7980 %%%% wheeling jesuit university
@@ -8019,7 +8019,7 @@ valid-8018 %%%% jefferson
 valid-8019 %%%% jack stephens center
 valid-8020 %%%% inalchuq
 valid-8021 %%%% reconciliation through truth
-valid-8022 %%%% 
+valid-8022 %%%% Which book is written about?
 valid-8023 %%%% the untouchable
 valid-8024 %%%% rain man
 valid-8025 %%%% arizona
@@ -8038,7 +8038,7 @@ valid-8037 %%%% christ au liban
 valid-8038 %%%% desire
 valid-8039 %%%% represents manchester high
 valid-8040 %%%% lenoir
-valid-8041 %%%% 
+valid-8041 %%%% Name a drama film.
 valid-8042 %%%% grand duchess maria nikolaevna of russia
 valid-8043 %%%% hoyle
 valid-8044 %%%% millard drexler
@@ -8099,7 +8099,7 @@ valid-8098 %%%% pyar ka devta
 valid-8099 %%%% man shops globe
 valid-8100 %%%% mountain time zone
 valid-8101 %%%% patrick dempsey 2 moisturizer
-valid-8102 %%%% 
+valid-8102 %%%% what is a drama film?
 valid-8103 %%%% trance
 valid-8104 %%%% rodan
 valid-8105 %%%% the gallant blade
@@ -8120,14 +8120,14 @@ valid-8119 %%%% mastodon
 valid-8120 %%%% dogs 101
 valid-8121 %%%% other bells for us to ring book
 valid-8122 %%%% black sheep
-valid-8123 %%%% 
+valid-8123 %%%% what documentary film is based on the dalai lama
 valid-8124 %%%% battle of carrizal
 valid-8125 %%%% raghunath seth
 valid-8126 %%%% eduard wehder
 valid-8127 %%%% gary conway
 valid-8128 %%%% american civil war
 valid-8129 %%%% just dance
-valid-8130 %%%% 
+valid-8130 %%%% Name a chiropractic college located outside California
 valid-8131 %%%% dave beaumont
 valid-8132 %%%% adventure
 valid-8133 %%%% wine
@@ -8159,7 +8159,7 @@ valid-8158 %%%% super nintendo entertainment system
 valid-8159 %%%% walking man
 valid-8160 %%%% mendez vs. westminster : for all the children
 valid-8161 %%%% lorenzo balducci
-valid-8162 %%%% 
+valid-8162 %%%% Name a film that henning von gierke did the film production design for
 valid-8163 %%%% the anatomy of
 valid-8164 %%%% austrailia municipality of kiama the
 valid-8165 %%%% deep purple : concerto for group and orchestra
@@ -8186,7 +8186,7 @@ valid-8185 %%%% shrimps for a day
 valid-8186 %%%% paul bontenbal
 valid-8187 %%%% mistwalker
 valid-8188 %%%% grand junction
-valid-8189 %%%% 
+valid-8189 %%%% What is the active ingredient of reprexain
 valid-8190 %%%% chan wing hoong
 valid-8191 %%%% judas island
 valid-8192 %%%% country of the sila language
@@ -8221,7 +8221,7 @@ valid-8220 %%%% fantasy
 valid-8221 %%%% redondo beach
 valid-8222 %%%% siskid
 valid-8223 %%%% born dead
-valid-8224 %%%% 
+valid-8224 %%%% What drama came out in 2011
 valid-8225 %%%% kim jin-man
 valid-8226 %%%% joyce
 valid-8227 %%%% ned sparks
@@ -8268,9 +8268,9 @@ valid-8267 %%%% dallas
 valid-8268 %%%% roadside romeo
 valid-8269 %%%% joan bennett kennedy
 valid-8270 %%%% highball
-valid-8271 %%%% 
-valid-8272 %%%% 
-valid-8273 %%%% 
+valid-8271 %%%% what is a drama movie
+valid-8272 %%%% which is the name of a drama film released in 1920?
+valid-8273 %%%% what is the film from the production company working title films
 valid-8274 %%%% yakushi-ji
 valid-8275 %%%% senseless
 valid-8276 %%%% hercules robinson , 1st baron rosmead
@@ -8317,7 +8317,7 @@ valid-8316 %%%% diana
 valid-8317 %%%% e. grant
 valid-8318 %%%% tigger songs & story
 valid-8319 %%%% lolita
-valid-8320 %%%% 
+valid-8320 %%%% what is the legal status of the drug brompheniramine/pseudoephedrine/dextromethorphan?
 valid-8321 %%%% michael flanders
 valid-8322 %%%% family
 valid-8323 %%%% rudder middle school
@@ -8372,7 +8372,7 @@ valid-8371 %%%% shit for brains
 valid-8372 %%%% ravi sharma
 valid-8373 %%%% manuel agujetas
 valid-8374 %%%% christopher green
-valid-8375 %%%% 
+valid-8375 %%%% which scientist was joule named after
 valid-8376 %%%% ever after
 valid-8377 %%%% the war zone : d-day to paris
 valid-8378 %%%% jane seymour
@@ -8490,7 +8490,7 @@ valid-8489 %%%% 100 women
 valid-8490 %%%% blob
 valid-8491 %%%% beat it .
 valid-8492 %%%% modok
-valid-8493 %%%% 
+valid-8493 %%%% what time zone is patterson located in
 valid-8494 %%%% stay
 valid-8495 %%%% experimental music
 valid-8496 %%%% the aryan couple
@@ -8582,7 +8582,7 @@ valid-8581 %%%% the complete piano concertos
 valid-8582 %%%% ethan frome affiliate
 valid-8583 %%%% linda västrik
 valid-8584 %%%% film titles
-valid-8585 %%%% 
+valid-8585 %%%% Name a drama film
 valid-8586 %%%% manche
 valid-8587 %%%% ad campaign of coca-cola vis
 valid-8588 %%%% karma
@@ -8597,7 +8597,7 @@ valid-8596 %%%% curaçao
 valid-8597 %%%% barrier reef
 valid-8598 %%%% liam kelly
 valid-8599 %%%% my own private river
-valid-8600 %%%% 
+valid-8600 %%%% Name a university in lexington
 valid-8601 %%%% evolution
 valid-8602 %%%% independence
 valid-8603 %%%% face to the
@@ -8621,7 +8621,7 @@ valid-8620 %%%% bandai
 valid-8621 %%%% john fox
 valid-8622 %%%% bob james
 valid-8623 %%%% discovery atlas : brazil revealed
-valid-8624 %%%% 
+valid-8624 %%%% Name a drama film
 valid-8625 %%%% ventricular tachycardia
 valid-8626 %%%% cascando
 valid-8627 %%%% vienna master series
@@ -8629,7 +8629,7 @@ valid-8628 %%%% angle of repose
 valid-8629 %%%% jim shannon
 valid-8630 %%%% señor droopy
 valid-8631 %%%% f. richard jones
-valid-8632 %%%% 
+valid-8632 %%%% what film is a type of drama?
 valid-8633 %%%% beryl cook create
 valid-8634 %%%% young werther
 valid-8635 %%%% cathedral high school
@@ -8645,7 +8645,7 @@ valid-8644 %%%% feed your ears , volume 1
 valid-8645 %%%% guangzhou
 valid-8646 %%%% public schools
 valid-8647 %%%% vauro senesi
-valid-8648 %%%% 
+valid-8648 %%%% What's an airport near jinjiang, fujian
 valid-8649 %%%% law & order : criminal intent
 valid-8650 %%%% half nelson
 valid-8651 %%%% nelson
@@ -8723,7 +8723,7 @@ valid-8722 %%%% bedlington
 valid-8723 %%%% dale wilkinson
 valid-8724 %%%% juno
 valid-8725 %%%% english
-valid-8726 %%%% 
+valid-8726 %%%% where did constantina decease
 valid-8727 %%%% crime thrillers
 valid-8728 %%%% paloma valley high school
 valid-8729 %%%% war
@@ -8783,7 +8783,7 @@ valid-8782 %%%% ikkyu
 valid-8783 %%%% vamp
 valid-8784 %%%% classic early solos ( 1934-1937
 valid-8785 %%%% anniversary trouble
-valid-8786 %%%% 
+valid-8786 %%%% what is the title of a book related to liberalism
 valid-8787 %%%% august ukert
 valid-8788 %%%% duane denison create
 valid-8789 %%%% fort nelson
@@ -8964,7 +8964,7 @@ valid-8963 %%%% charles momsen
 valid-8964 %%%% indie rock
 valid-8965 %%%% rosin/potassium cation/alcohol
 valid-8966 %%%% don givens
-valid-8967 %%%% 
+valid-8967 %%%% Name an Italian soccer midfielder
 valid-8968 %%%% deception on his mind
 valid-8969 %%%% frederick willoughby
 valid-8970 %%%% iejima
@@ -9111,7 +9111,7 @@ valid-9110 %%%% the forge of god
 valid-9111 %%%% koul funk
 valid-9112 %%%% macintosh quadra 700
 valid-9113 %%%% songs from the heart
-valid-9114 %%%% 
+valid-9114 %%%% which soviet scientist was also a commissar?
 valid-9115 %%%% organ concertos
 valid-9116 %%%% agnes and his brothers
 valid-9117 %%%% and prejudice and zombies
@@ -9216,7 +9216,7 @@ valid-9215 %%%% a golden hour of
 valid-9216 %%%% milon 's secret
 valid-9217 %%%% bangkok
 valid-9218 %%%% the age of atlantic
-valid-9219 %%%% 
+valid-9219 %%%% what active ingredient is found in skin rash complex
 valid-9220 %%%% contain in book , spain
 valid-9221 %%%% red
 valid-9222 %%%% representation diamond
@@ -9231,7 +9231,7 @@ valid-9230 %%%% light and
 valid-9231 %%%% bay san francisco bay area
 valid-9232 %%%% christian rahn
 valid-9233 %%%% arrowood
-valid-9234 %%%% 
+valid-9234 %%%% what is the name of a drama
 valid-9235 %%%% kirksville
 valid-9236 %%%% hitoshi tomizawa
 valid-9237 %%%% chipmunk
@@ -9264,7 +9264,7 @@ valid-9263 %%%% mexico
 valid-9264 %%%% matagami
 valid-9265 %%%% live in london 2011
 valid-9266 %%%% youinseries '
-valid-9267 %%%% 
+valid-9267 %%%% name a census-designated place
 valid-9268 %%%% nitty
 valid-9269 %%%% routes
 valid-9270 %%%% pole position
@@ -9297,13 +9297,13 @@ valid-9296 %%%% visions of politics
 valid-9297 %%%% and furthurmore
 valid-9298 %%%% herbert b. warburton
 valid-9299 %%%% green door
-valid-9300 %%%% 
+valid-9300 %%%% What baseball position does  play
 valid-9301 %%%% massacre
 valid-9302 %%%% 1408
 valid-9303 %%%% castricum
 valid-9304 %%%% midland
 valid-9305 %%%% 82
-valid-9306 %%%% 
+valid-9306 %%%% What is an example of a drama film
 valid-9307 %%%% albert productions
 valid-9308 %%%% malaga
 valid-9309 %%%% falk
@@ -9317,7 +9317,7 @@ valid-9316 %%%% red
 valid-9317 %%%% situation two
 valid-9318 %%%% cleveland
 valid-9319 %%%% bogza displaying surrealism
-valid-9320 %%%% 
+valid-9320 %%%% who was the publisher of the stand
 valid-9321 %%%% banská bystrica
 valid-9322 %%%% austin sunday
 valid-9323 %%%% the world swappers
@@ -9496,7 +9496,7 @@ valid-9495 %%%% sts-125
 valid-9496 %%%% ep
 valid-9497 %%%% pinocchio 3000
 valid-9498 %%%% one fine
-valid-9499 %%%% 
+valid-9499 %%%% what's team stronach's ideology
 valid-9500 %%%% floorfillers : the ultimate collection
 valid-9501 %%%% prince valiant
 valid-9502 %%%% the elements
@@ -9530,7 +9530,7 @@ valid-9529 %%%% kfor-tv
 valid-9530 %%%% die in your arms
 valid-9531 %%%% ipartyradio.com : the # 1 party authority
 valid-9532 %%%% otto nückel
-valid-9533 %%%% 
+valid-9533 %%%% which drug formulation is of the category drug
 valid-9534 %%%% alka yagnik
 valid-9535 %%%% police officer smiley culture
 valid-9536 %%%% kaplan college-midland
@@ -9629,7 +9629,7 @@ valid-9628 %%%% karl august , prince of waldeck and pyrmont
 valid-9629 %%%% w.e.s.s.e.x.y.
 valid-9630 %%%% rca records
 valid-9631 %%%% two-gun gussie
-valid-9632 %%%% 
+valid-9632 %%%% what infection involves diarrhea
 valid-9633 %%%% the adventure of the impromptu mountaineer
 valid-9634 %%%% chloroquine phosphate
 valid-9635 %%%% andrew toney
@@ -9723,7 +9723,7 @@ valid-9722 %%%% baseball player
 valid-9723 %%%% charles kent
 valid-9724 %%%% lazio
 valid-9725 %%%% william carroll
-valid-9726 %%%% 
+valid-9726 %%%% what is the active drug ingredient in common daisy?
 valid-9727 %%%% going thru the motions
 valid-9728 %%%% rainbow
 valid-9729 %%%% amiodarone hydrochloride 50 injectable solution
@@ -9770,7 +9770,7 @@ valid-9769 %%%% rex liu
 valid-9770 %%%% military topics
 valid-9771 %%%% basketball player
 valid-9772 %%%% lumo
-valid-9773 %%%% 
+valid-9773 %%%% Name one of the townships in indiana
 valid-9774 %%%% el greco
 valid-9775 %%%% united kingdom
 valid-9776 %%%% edward lyons
@@ -9847,7 +9847,7 @@ valid-9846 %%%% nu metal
 valid-9847 %%%% combipatch
 valid-9848 %%%% bear bovver
 valid-9849 %%%% mads heldtberg
-valid-9850 %%%% 
+valid-9850 %%%% what bollywood Tamil film was released in 2004
 valid-9851 %%%% game n-gage
 valid-9852 %%%% opopomoz
 valid-9853 %%%% west helena
@@ -9871,7 +9871,7 @@ valid-9870 %%%% the pussycat dolls
 valid-9871 %%%% eersel
 valid-9872 %%%% tower hotel
 valid-9873 %%%% kinghorse
-valid-9874 %%%% 
+valid-9874 %%%% graham beckel  was born where
 valid-9875 %%%% quentin tarantino
 valid-9876 %%%% inspired catwoman
 valid-9877 %%%% history
@@ -9897,7 +9897,7 @@ valid-9896 %%%% house music
 valid-9897 %%%% our lady of the hills high school
 valid-9898 %%%% intervention
 valid-9899 %%%% bufo periglenes2
-valid-9900 %%%% 
+valid-9900 %%%% what compilation album did frank zappa release?
 valid-9901 %%%% michaele schreyer
 valid-9902 %%%% rocky mountain news
 valid-9903 %%%% quinidine gluconate
@@ -9916,7 +9916,7 @@ valid-9915 %%%% taking of pelham one two three
 valid-9916 %%%% three sheets
 valid-9917 %%%% ethanol
 valid-9918 %%%% african american
-valid-9919 %%%% 
+valid-9919 %%%% what is a game that features quake
 valid-9920 %%%% supported casio
 valid-9921 %%%% glenn watkins
 valid-9922 %%%% batesville
@@ -9991,7 +9991,7 @@ valid-9990 %%%% wafangdian
 valid-9991 %%%% elizabeth garrett anderson
 valid-9992 %%%% tramp , tramp , tramp
 valid-9993 %%%% zatoichi meets yojimbo
-valid-9994 %%%% 
+valid-9994 %%%% what is an example of a netflix drama?
 valid-9995 %%%% desperado
 valid-9996 %%%% georgia
 valid-9997 %%%% post-punk
@@ -10051,7 +10051,7 @@ valid-10050 %%%% tuscaloosa county
 valid-10051 %%%% styx yesterday & today
 valid-10052 %%%% spider-man
 valid-10053 %%%% south butler
-valid-10054 %%%% 
+valid-10054 %%%% in what country was what play did  born
 valid-10055 %%%% chanelle : wannabe popstar
 valid-10056 %%%% the september issue
 valid-10057 %%%% jim shapiro
@@ -10114,7 +10114,7 @@ valid-10113 %%%% mercito gesta
 valid-10114 %%%% buy now ... saved later
 valid-10115 %%%% matt mitchell
 valid-10116 %%%% amar jaan amar pran
-valid-10117 %%%% 
+valid-10117 %%%% What pop band got its name from anni-frid lyngstad
 valid-10118 %%%% argosy university-dallas
 valid-10119 %%%% dik
 valid-10120 %%%% wagah
@@ -10323,7 +10323,7 @@ valid-10322 %%%% robert mcminn
 valid-10323 %%%% pierre de fermat
 valid-10324 %%%% terrible trio
 valid-10325 %%%% shoestring
-valid-10326 %%%% 
+valid-10326 %%%% What's a drama film released in 1961
 valid-10327 %%%% west end
 valid-10328 %%%% madrid
 valid-10329 %%%% kcyy
@@ -10361,7 +10361,7 @@ valid-10360 %%%% stuntbusters
 valid-10361 %%%% freedom force vs. the third reich
 valid-10362 %%%% rudy carpenter
 valid-10363 %%%% are familiar
-valid-10364 %%%% 
+valid-10364 %%%% what style of music does mrhjeffreynothing perform
 valid-10365 %%%% monroe township
 valid-10366 %%%% bonita granville
 valid-10367 %%%% discoveries
@@ -10399,7 +10399,7 @@ valid-10398 %%%% the
 valid-10399 %%%% david danello
 valid-10400 %%%% pop music
 valid-10401 %%%% lee miller
-valid-10402 %%%% 
+valid-10402 %%%% who is the main artist of the album ?
 valid-10403 %%%% chaplin
 valid-10404 %%%% franklin
 valid-10405 %%%% compilation
@@ -10422,7 +10422,7 @@ valid-10421 %%%% bone walker
 valid-10422 %%%% egyptian pound as currency
 valid-10423 %%%% my valentine girls
 valid-10424 %%%% lego star wars ii
-valid-10425 %%%% 
+valid-10425 %%%% where is the movie originally from
 valid-10426 %%%% february 29
 valid-10427 %%%% dangerous
 valid-10428 %%%% super nintendo entertainment
@@ -10465,7 +10465,7 @@ valid-10464 %%%% self-portrait in a straw hat
 valid-10465 %%%% soil
 valid-10466 %%%% john seward johnson ii
 valid-10467 %%%% rolf skoglund
-valid-10468 %%%% 
+valid-10468 %%%% which actor was born in denver, colorado?
 valid-10469 %%%% bojangles
 valid-10470 %%%% forward
 valid-10471 %%%% lou grant tv
@@ -10535,7 +10535,7 @@ valid-10534 %%%% strange currencies
 valid-10535 %%%% joseph barbera
 valid-10536 %%%% thank you for smoking
 valid-10537 %%%% atari st
-valid-10538 %%%% 
+valid-10538 %%%% what is a travel destination near pennywell farm
 valid-10539 %%%% film bafta
 valid-10540 %%%% fact mix 213 : creep
 valid-10541 %%%% defender
@@ -10562,7 +10562,7 @@ valid-10561 %%%% album
 valid-10562 %%%% wilhelmina grubbly-plank
 valid-10563 %%%% barrero
 valid-10564 %%%% jacques-germain soufflot
-valid-10565 %%%% 
+valid-10565 %%%% What label released popaganda?
 valid-10566 %%%% spartanburg county
 valid-10567 %%%% lee hyung-min
 valid-10568 %%%% librium 25 gelatin coated capsule
@@ -10643,7 +10643,7 @@ valid-10642 %%%% uematsu
 valid-10643 %%%% opera
 valid-10644 %%%% victor guillermo ramos rangel
 valid-10645 %%%% the last command
-valid-10646 %%%% 
+valid-10646 %%%% whats jim beggarlys gender
 valid-10647 %%%% pitcher
 valid-10648 %%%% new romantics
 valid-10649 %%%% archetype
@@ -10658,13 +10658,13 @@ valid-10657 %%%% run like hell
 valid-10658 %%%% 11982 ) 1995 uf6 orbit
 valid-10659 %%%% boniva 150 film coated tablet
 valid-10660 %%%% adieu shinjuku zulu
-valid-10661 %%%% 
+valid-10661 %%%% What's an example of a drama film
 valid-10662 %%%% jay brannan
 valid-10663 %%%% dream dance 33
 valid-10664 %%%% antonio lolli
 valid-10665 %%%% ingrid borthen
 valid-10666 %%%% black swan
-valid-10667 %%%% 
+valid-10667 %%%% what natural disaster occurred in chongqing?
 valid-10668 %%%% the ace of hearts
 valid-10669 %%%% q. t. hush
 valid-10670 %%%% gary owens
@@ -10715,7 +10715,7 @@ valid-10714 %%%% xavier vives
 valid-10715 %%%% taiwan
 valid-10716 %%%% viking press
 valid-10717 %%%% dr. devil and mr. hare
-valid-10718 %%%% 
+valid-10718 %%%% What is copi's gender?
 valid-10719 %%%% cort theatre
 valid-10720 %%%% bionic
 valid-10721 %%%% fred claus
@@ -10835,7 +10835,7 @@ valid-10834 %%%% herby fortunat
 valid-10835 %%%% the pianist
 valid-10836 %%%% luxembourg
 valid-10837 %%%% holiday barbie doll by bob mackie # h8583
-valid-10838 %%%% 
+valid-10838 %%%% which airport does the airline air one services?
 valid-10839 %%%% rim drive historic district
 valid-10840 %%%% jon seda
 valid-10841 %%%% nikolaj frobenius
