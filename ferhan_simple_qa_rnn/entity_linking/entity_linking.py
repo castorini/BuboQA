@@ -6,6 +6,7 @@ import argparse
 import pickle
 import math
 
+from fuzzywuzzy import fuzz
 from nltk.tokenize.treebank import TreebankWordTokenizer
 from nltk.corpus import stopwords
 
@@ -33,6 +34,7 @@ def get_index(index_path):
     with open(index_path, 'rb') as f:
         index = pickle.load(f)
     return index
+
 
 def get_query_text(ent_resultpath):
     print("getting query text...")
@@ -148,13 +150,11 @@ def entity_linking(index_entpath, index_reachpath, index_namespath, ent_resultpa
 
         C_tfidf_pruned = []
         for mid, count_mid in C_pruned:
-            try:
-                cand_ent_name = index_names[mid]
-            except:
-                # print("WARNING: mid: {} - not in index names.".format(mid))
-                continue
-            tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
-            C_tfidf_pruned.append((mid, tfidf))
+            if mid in index_names.keys():
+                cand_ent_names = index_names[mid]
+                for cand_ent_name in cand_ent_names:
+                    tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
+                    C_tfidf_pruned.append((mid, tfidf))
         # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
 
         if len(C_tfidf_pruned) == 0:
