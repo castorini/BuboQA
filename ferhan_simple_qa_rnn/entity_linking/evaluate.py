@@ -5,6 +5,10 @@ import sys
 import argparse
 
 """
+Gold:
+python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p gold-results/linking-results.txt
+
+Predicted:
 python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p results/linking-results.txt
 """
 

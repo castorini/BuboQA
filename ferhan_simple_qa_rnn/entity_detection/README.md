@@ -8,6 +8,14 @@ bash get_data.sh
 ```
 to get data.
 
+- You will require the package - [torchtext](https://github.com/pytorch/text).
+```
+git clone https://github.com/pytorch/text.git
+cd path/to/torchtext
+python setup.py install
+```
+
+
 ```
 python3.6 train.py --no_cuda
 or
