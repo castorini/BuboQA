@@ -7,7 +7,6 @@ from torchtext import data
 from args import get_args
 from simple_qa_ner import SimpleQADataset
 from model import EntityDetection
-from nltk.tokenize.treebank import TreebankWordTokenizer
 
 # please set the configuration in the file : args.py
 args = get_args()
@@ -28,11 +27,7 @@ if not args.trained_model:
     sys.exit(1)
 
 # load data with torchtext
-tokenizer = TreebankWordTokenizer()
-def tokenize_text():
-    return lambda text: tokenizer.tokenize(text)
-
-questions = data.Field(lower=True, sequential=True, tokenize=tokenize_text())
+questions = data.Field(lower=True, sequential=True)
 labels = data.Field(sequential=True)
 
 train, dev, test = SimpleQADataset.splits(questions, labels)
