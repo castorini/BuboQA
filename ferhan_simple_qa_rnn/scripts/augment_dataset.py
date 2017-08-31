@@ -27,6 +27,7 @@ def pick_best_name(question, names_list):
 
 def augment_dataset(datadir, index_namespath, outdir):
     names_map = get_index(index_namespath)
+    skipped = 0
     allpath = os.path.join(outdir, "all.txt")
     outallfile = open(allpath, 'w')
     print("creating new datasets...")
@@ -56,6 +57,7 @@ def augment_dataset(datadir, index_namespath, outdir):
                 question = items[3]
 
                 if subject not in names_map.keys():
+                    skipped += 1
                     print("lineid {} - name not found. skipping question.".format(lineid))
                     continue
 
@@ -71,6 +73,7 @@ def augment_dataset(datadir, index_namespath, outdir):
         outfile.close()
 
     print("wrote to {}".format(allpath))
+    print("skipped # questions: {}".format(skipped))
     outallfile.close()
     print("DONE!")
 
