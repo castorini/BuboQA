@@ -21,7 +21,20 @@ python scripts/trim_names.py -s data/SimpleQuestions_v2/freebase-subsets/freebas
 echo "\n\nTrimming the names file for subset 5M...\n"
 python scripts/trim_names.py -s data/SimpleQuestions_v2/freebase-subsets/freebase-FB5M.txt -n data/FB5M.name.txt -o data/names.trimmed.5M.txt
 
-echo "\n\nCreate modified dataset...\n"
+echo "\n\nCreate modified - numbered dataset...\n"
 python scripts/modify_dataset.py -d data/SimpleQuestions_v2 -o data/SimpleQuestions_v2_modified
+
+# creating the name index
+mkdir indexes
+
+echo "Create the names map index for 2M-freebase-subset...\n"
+python scripts/create_index_names.py -n data/names.trimmed.2M.txt -p indexes/names_2M.pkl
+
+# echo "\n\nCreate the names map index for 5M-freebase-subset...\n"
+# python scripts/create_index_names.py -n data/names.trimmed.5M.txt -p indexes/names_5M.pkl
+
+echo "\n\nCreate augmented dataset...\n"
+python scripts/augment_dataset.py -d data/SimpleQuestions_v2 -o data/SimpleQuestions_v2_augmented -i indexes/names_2M.pkl
+
 
 echo "\n\nDONE!"
