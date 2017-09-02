@@ -14,6 +14,9 @@ def get_span(label, index2tag):
             span.append((st, en))
             st = 0
             en = 0
+    if st != 0 and en == 0:
+        en = k
+        span.append((st, en))
     return span
 
 def evaluation(gold, pred, index2tag):
