@@ -8,6 +8,8 @@ from args import get_args
 from simple_qa_ner import SimpleQADataset
 from model import EntityDetection
 
+from evaluation import evaluation
+
 # please set the configuration in the file : args.py
 args = get_args()
 # set the random seed for reproducibility
@@ -72,6 +74,9 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     fname = "main-{}-results.txt".format(data_name)
     results_file = open(os.path.join(args.results_path, fname), 'w')
 
+    gold_list = []
+    pred_list = []
+
     for data_batch_idx, data_batch in enumerate(dataset_iter):
         scores = model(data_batch)
         n_correct += ((torch.max(scores, 1)[1].view(data_batch.label.size()).data ==
@@ -88,11 +93,15 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
             # print(line_to_print)
             results_file.write(line_to_print + "\n")
             linenum += 1
+        gold_list.append(np.transpose(data_batch.label.cpu().data.numpy()))
+        pred_list.append(index_tag)
 
-    print("no. correct: {} out of {}".format(n_correct, len(dataset)))
-    accuracy = 100. * n_correct / len(dataset)
-    print("{} accuracy: {:8.6f}%".format(data_name, accuracy))
-    print("-" * 80)
+    #print("no. correct: {} out of {}".format(n_correct, len(dataset)))
+    #accuracy = 100. * n_correct / len(dataset)
+    #print("{} accuracy: {:8.6f}%".format(data_name, accuracy))
+    #print("-" * 80)
+    P, R, F = evaluation(gold_list, pred_list, index2tag)
+    print("Precision: {:10.6f}% Recall: {:10.6f}% F1 Score: {:10.6f}%".format(100. * P, 100. * R, 100. * F))
     results_file.close()
 
 
