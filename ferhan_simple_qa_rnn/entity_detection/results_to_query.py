@@ -17,9 +17,29 @@ def get_questions(datapath):
             pred = items[2].strip()
             obj = items[3].strip()
             question = items[4].strip()
-            print("{}   -   {}".format(lineid, question))
+            #print("{}   -   {}".format(lineid, question))
             id2question[lineid] = question
     return id2question
+
+def get_span(label):
+    span = []
+    st = 0
+    en = 0
+    flag = False
+    for k, l in enumerate(label):
+        if l == 'I' and flag == False:
+            st = k
+            flag = True
+        if l != 'I' and flag == True:
+            flag = False
+            en = k
+            span.append((st, en))
+            st = 0
+            en = 0
+    if st != 0 and en == 0:
+        en = k
+        span.append((st, en))
+    return span
 
 def convert_to_query_text(datapath, resultdir, outdir):
     id2question = get_questions(datapath)
@@ -49,18 +69,20 @@ def convert_to_query_text(datapath, resultdir, outdir):
                 tags = items[2].strip().split()
 
                 query_tokens = []
-                for token, tag in zip(tokens, tags):
-                    if tag == "I":
-                        query_tokens.append(token)
+                spans = get_span(tags)
+                for span in spans:
+                    query_tokens.append(" ".join(tokens[span[0]:span[1]]))
 
-                query_text = " ".join(query_tokens)
-                # if no query text found, use the entire question as query
-                if query_text.strip() == "":
+                outfile.write(lineid)
+                if len(query_tokens) == 0:
                     query_text = id2question[lineid]
-
-                line_to_print = "{} %%%% {}".format(lineid, query_text)
-                # print(line_to_print)
-                outfile.write(line_to_print + "\n")
+                    query_tokens.append(query_text)
+                # if no query text found, use the entire question as query
+                for token in query_tokens:
+                    line_to_print = " %%%% {}".format(token)
+                    # print(line_to_print)
+                    outfile.write(line_to_print)
+                outfile.write("\n")
 
         print("done with dataset: {}".format(fname))
         print("notfound: {}".format(notfound))
