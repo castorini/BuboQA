@@ -121,6 +121,62 @@ def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
         total_idf += idf
     return tf * total_idf
 
+def link_one_question(lineid, question, query_text, pred_relation, num_entities_fbsubset,
+                                                    index_ent, index_reach, index_names):
+    query_tokens = tokenize_text(query_text)
+
+    print("lineid: {}, query_text: {}, relation: {}".format(lineid, query_text, pred_relation))
+    # print("query_tokens: {}".format(query_tokens))
+
+    N = min(len(query_tokens), 3)
+    C = []  # candidate entities
+    for n in range(N, 0, -1):
+        ngrams_set = find_ngrams(query_tokens, n)
+        # print("ngrams_set: {}".format(ngrams_set))
+        for ngram_tuple in ngrams_set:
+            ngram = " ".join(ngram_tuple)
+            # unigram stopwords have too many candidates so just skip over
+            if ngram in stopwords:
+                continue
+            # print("ngram: {}".format(ngram))
+            ## PROBLEM! - ngram doesnt exist in index - at test-2592 - KeyError: 'p.a.r.c.e. parce'
+            try:
+                cand_mids = index_ent[ngram]  # search entities
+            except:
+                continue
+            C.extend(cand_mids)
+            # print("C: {}".format(C))
+        if (len(C) > 0):
+            # print("early termination...")
+            break
+    # print("C[:5]: {}".format(C[:5]))
+
+    # relation correction
+    C_pruned = []
+    for mid in set(C):
+        if mid in index_reach.keys():  # PROBLEM: don't know why this may not exist??
+            if pred_relation in index_reach[mid]:
+                count_mid = C.count(mid)  # count number of times mid appeared in C
+                C_pruned.append((mid, count_mid))
+    # print("C_pruned[:5]: {}".format(C_pruned[:5]))
+
+    C_tfidf_pruned = []
+    for mid, count_mid in C_pruned:
+        if mid in index_names.keys():
+            cand_ent_name = pick_best_name(question, index_names[mid])
+            tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
+            C_tfidf_pruned.append((mid, tfidf))
+    # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
+
+    if len(C_tfidf_pruned) == 0:
+        print("WARNING: C_tfidf_pruned is empty.")
+        return None
+
+    C_tfidf_pruned.sort(key=lambda t: -t[1])
+    pred_ent_mid = C_tfidf_pruned[0][0]  # get first entry's mid
+
+    return pred_ent_mid
+
 def entity_linking(test_datapath, index_entpath, index_reachpath, index_namespath, ent_resultpath, rel_resultpath, outpath):
     outfile = open(os.path.join(outpath, "linking-results.txt"), 'w')
     notfound_ent = 0
@@ -143,58 +199,12 @@ def entity_linking(test_datapath, index_entpath, index_reachpath, index_namespat
         truth_ent, truth_rel, question = id2truth[lineid]
         pred_relation = www2fb(id2rel[lineid])
         query_text = id2query[lineid].lower()  # lowercase the query
-        query_tokens = tokenize_text(query_text)
 
-        print("lineid: {}, query_text: {}, relation: {}".format(lineid, query_text, pred_relation))
-        # print("query_tokens: {}".format(query_tokens))
-
-        N = min(len(query_tokens), 3)
-        C = []  # candidate entities
-        for n in range(N, 0, -1):
-            ngrams_set = find_ngrams(query_tokens, n)
-            # print("ngrams_set: {}".format(ngrams_set))
-            for ngram_tuple in ngrams_set:
-                ngram = " ".join(ngram_tuple)
-                # unigram stopwords have too many candidates so just skip over
-                if ngram in stopwords:
-                    continue
-                # print("ngram: {}".format(ngram))
-                ## PROBLEM! - ngram doesnt exist in index - at test-2592 - KeyError: 'p.a.r.c.e. parce'
-                try:
-                    cand_mids = index_ent[ngram]  # search entities
-                except:
-                    continue
-                C.extend(cand_mids)
-                # print("C: {}".format(C))
-            if (len(C) > 0):
-                # print("early termination...")
-                break
-        # print("C[:5]: {}".format(C[:5]))
-
-        # relation correction
-        C_pruned = []
-        for mid in set(C):
-            if mid in index_reach.keys():  # PROBLEM: don't know why this may not exist??
-                if pred_relation in index_reach[mid]:
-                    count_mid = C.count(mid)  # count number of times mid appeared in C
-                    C_pruned.append((mid, count_mid))
-        # print("C_pruned[:5]: {}".format(C_pruned[:5]))
-
-        C_tfidf_pruned = []
-        for mid, count_mid in C_pruned:
-            if mid in index_names.keys():
-                cand_ent_name = pick_best_name(question, index_names[mid])
-                tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
-                C_tfidf_pruned.append((mid, tfidf))
-        # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
-
-        if len(C_tfidf_pruned) == 0:
-            print("WARNING: C_tfidf_pruned is empty.")
+        pred_ent_mid = link_one_question(lineid, question, query_text, pred_relation, num_entities_fbsubset,
+                                                    index_ent, index_reach, index_names)
+        if pred_ent_mid == None:
             notfound_c += 1
             continue
-
-        C_tfidf_pruned.sort(key=lambda t: -t[1])
-        pred_ent_mid = C_tfidf_pruned[0][0]  # get first entry's mid
 
         line_to_print = "{}\t{}\t{}".format(lineid, pred_ent_mid, pred_relation)
         print("PRED: " + line_to_print)
