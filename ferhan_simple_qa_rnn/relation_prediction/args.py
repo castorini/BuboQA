@@ -25,7 +25,7 @@ def get_args():
     parser.add_argument('--save_path', type=str, default='saved_checkpoints')
     parser.add_argument('--data_cache', type=str, default=os.path.join(os.getcwd(), 'data_cache'))
     parser.add_argument('--vector_cache', type=str, default=os.path.join(os.getcwd(), 'vector_cache/input_vectors.pt'))
-    parser.add_argument('--word_vectors', type=str, default='glove.42B')
+    parser.add_argument('--word_vectors', type=str, default='glove.42B.300')
     parser.add_argument('--train_embed', action='store_false', dest='fix_emb') # fine-tune the word embeddings
     parser.add_argument('--resume_snapshot', type=str, default='')
     parser.add_argument('--trained_model', type=str, default='')
