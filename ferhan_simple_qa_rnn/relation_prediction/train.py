@@ -35,7 +35,8 @@ questions = data.Field(lower=True, tokenize=tokenize_text())
 relations = data.Field(sequential=False)
 
 train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
-train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, word_vectors=args.word_vectors.split(','))
+train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, word_vectors=[(
+								args.word_vectors + "." + str(args.d_embed) + "d")])
 
 # ---- define the model, loss, optim ------
 config = args

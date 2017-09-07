@@ -42,7 +42,7 @@ labels.build_vocab(train, dev, test)
 if os.path.isfile(args.vector_cache):
     questions.vocab.vectors = torch.load(args.vector_cache)
 else:
-    questions.vocab.load_vectors(wv_dir=args.data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
+    questions.vocab.load_vectors(vectors=[(args.word_vectors + "." + str(args.d_embed) + "d")])
     os.makedirs(os.path.dirname(args.vector_cache), exist_ok=True)
     torch.save(questions.vocab.vectors, args.vector_cache)
 
