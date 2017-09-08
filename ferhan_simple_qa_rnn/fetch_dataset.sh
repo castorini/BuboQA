@@ -10,8 +10,9 @@ wget https://www.dropbox.com/s/tohrsllcfy7rch4/SimpleQuestions_v2.tgz
 echo "\n\nUnzipping SimpleQuestions dataset...\n"
 tar -xvzf SimpleQuestions_v2.tgz
 
-echo "\n\nDownloading the names file...\n"
+echo "\n\nDownloading the augmented FB2M graph and names file...\n"
 wget https://www.dropbox.com/s/yqbesl07hsw297w/FB5M.name.txt
+wget https://www.dropbox.com/s/8tcagdi2iq8q0w5/fb-2M-augmented.txt
 
 popd
 
@@ -36,5 +37,7 @@ python scripts/create_index_names.py -n data/names.trimmed.2M.txt -p indexes/nam
 echo "\n\nCreate augmented dataset...\n"
 python scripts/augment_dataset.py -d data/SimpleQuestions_v2 -o data/SimpleQuestions_v2_augmented -i indexes/names_2M.pkl
 
+echo "\n\nCreate the pickle for the augmented FB2M graph...\n"
+python scripts/create_fb_graph.py -s data/fb-2M-augmented.txt -p indexes/fb_graph.pkl
 
 echo "\n\nDONE!"
