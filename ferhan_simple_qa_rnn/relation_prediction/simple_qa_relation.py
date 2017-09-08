@@ -37,7 +37,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
 
     @classmethod
     def iters(cls, args=None, questions=None, relations=None, train=None, dev=None, test=None, shuffleTrain=True,
-              batch_size=32, device=0, root='.', word_vectors=['glove.42B.300'], **kwargs):
+              batch_size=32, device=0, root='.', wv_dir='.', wv_type=None, wv_dim='300d', **kwargs):
         """Create iterator objects for splits of the Simple QA dataset.
         This is the simplest way to use the dataset, and assumes common
         defaults for field, vocabulary, and iterator parameters.
@@ -48,7 +48,9 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
             root: The root directory that the dataset's zip archive will be
                 expanded into; therefore the directory in whose wikitext-2
                 subdirectory the data files will be stored.
-            word_vectors: Passed to the Vocab constructor
+            wv_dir, wv_type, wv_dim: Passed to the Vocab constructor for the
+                text field. The word vectors are accessible as
+                train.dataset.fields['text'].vocab.vectors.
             Remaining keyword arguments: Passed to the splits method.
         """
 
@@ -59,7 +61,7 @@ class SimpleQaRelationDataset(data.ZipDataset, data.TabularDataset):
         if os.path.isfile(args.vector_cache):
             questions.vocab.vectors = torch.load(args.vector_cache)
         else:
-            questions.vocab.load_vectors(vectors=word_vectors)
+            questions.vocab.load_vectors(wv_dir=args.data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
             os.makedirs(os.path.dirname(args.vector_cache), exist_ok=True)
             torch.save(questions.vocab.vectors, args.vector_cache)
 
