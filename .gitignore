@@ -4,3 +4,4 @@ __pycache__/
 .idea/*
 .DS_Store
 old_simple_qa_rnn/
+*.pkl

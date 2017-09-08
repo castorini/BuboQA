@@ -17,8 +17,17 @@ index_reachpath = "../indexes/reachability_2M.pkl"
 index_namespath = "../indexes/names_2M.pkl"
 ent_resultpath = "../entity_detection/query-text/val.txt"
 rel_resultpath = "../relation_prediction/results/topk-retrieval-valid-hits-3.txt"
-outpath = "./tmp/results"
 
+
+parser = argparse.ArgumentParser(description='Cross linking")')
+parser.add_argument('-n', '--hits', dest='hits', action='store', required=True,
+                            help='number of top hits')
+parser.add_argument('-s', '--sim', dest='sim', action='store', type=str, default='tfidf',
+                                help='similarity measure - [tfidf | fuzzy | custom]')
+
+args = parser.parse_args()
+print("Hits: {}".format(args.hits))
+print("Similarity: {}".format(args.sim))
 
 tokenizer = TreebankWordTokenizer()
 stopwords = set(stopwords.words('english'))
@@ -158,8 +167,8 @@ notfound_c = 0
 notfound_c_lineids = []
 notfound_ent = 0
 notcorrect_ent_lineids = []
-candidate_mids = {}
-HITS_TOP_ENTITIES = 5
+id2mids = {}
+HITS_TOP_ENTITIES = int(args.hits)
 
 for i, lineid in enumerate(rel_lineids):
     if lineid not in ent_lineids:
@@ -210,8 +219,15 @@ for i, lineid in enumerate(rel_lineids):
     for mid, count_mid in C_pruned:
         if mid in index_names.keys():
             cand_ent_name = pick_best_name(question[2], index_names[mid])
-            score = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
-#             score = fuzzy_match_score(cand_ent_name, query_text)
+            if args.sim == "custom":
+                tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
+                simple_match =  fuzz.ratio(cand_ent_name, question) / 100.0
+                token_sort_ratio = fuzz.token_sort_ratio(cand_ent_name, question) / 100.0
+                score = tfidf * 0.01 + simple_match + token_sort_ratio
+            elif args.sim == "fuzzy":
+                score = fuzzy_match_score(cand_ent_name, query_text)
+            else:
+                score = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, index_ent)
             C_tfidf_pruned.append((mid, cand_ent_name, score))
     # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
 
@@ -224,7 +240,12 @@ for i, lineid in enumerate(rel_lineids):
     C_tfidf_pruned.sort(key=lambda t: -t[2])
     cand_mids = C_tfidf_pruned[:HITS_TOP_ENTITIES]
 
-    candidate_mids[lineid] = cand_mids
+    id2mids[lineid] = cand_mids
 
 
-pickle.dump(candidate_mids, open('cand_mids.pkl', 'wb'))
+fname = "id2mids_h-{}_s-{}.pkl".format(args.hits, args.sim)
+pickle.dump(id2mids, open(fname, 'wb'))
+
+
+
+
