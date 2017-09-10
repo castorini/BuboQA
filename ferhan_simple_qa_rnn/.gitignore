@@ -7,11 +7,13 @@ trained_model/
 __pycache__/
 *log*
 entity_detection/*cache*/*
-entity_detection/data
 relation_prediction/*cache*/*
+end_to_end/*cache*/*
+entity_detection/data
 end_to_end/rel-results
 end_to_end/ent-results
 end_to_end/augmented-fb-subsets
 end_to_end/*.pkl
 indexes/*.pkl
 .ipynb_checkpoints
+*.pt

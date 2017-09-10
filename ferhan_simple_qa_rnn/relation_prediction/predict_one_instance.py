@@ -7,6 +7,7 @@ from torchtext import data
 from nltk.tokenize.treebank import TreebankWordTokenizer
 from args import get_args
 from simple_qa_relation import SimpleQaRelationDataset
+from model import RelationClassifier
 
 # get the configuration arguments and set machine - GPU/CPU
 args = get_args()
@@ -36,7 +37,23 @@ train, dev, test = SimpleQaRelationDataset.splits(questions, relations)
 train_iter, dev_iter, test_iter = SimpleQaRelationDataset.iters(args, questions, relations, train, dev, test, shuffleTrain=False)
 
 # load the model
-model = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
+
+config = args
+config.n_embed = len(questions.vocab) # vocab. size / number of embeddings
+config.d_out = len(relations.vocab)
+config.n_cells = config.n_layers
+# double the number of cells for bidirectional networks
+if config.birnn:
+    config.n_cells *= 2
+print(config)
+
+model = RelationClassifier(config)
+if args.word_vectors:
+    model.embed.weight.data = questions.vocab.vectors
+    if args.cuda:
+        model.cuda()
+checkpoint = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
+model.load_state_dict(checkpoint)
 
 index2rel = np.array(relations.vocab.itos)
 
@@ -54,7 +71,7 @@ def get_relation(input_sent):
     scores = model(example)
     # get the predicted relations
     top_scores, top_indices = torch.max(scores, dim=1)  # shape: (batch_size, 1)
-    top_index = top_indices.cpu().data.numpy()[0][0]
+    top_index = top_indices.cpu().data.numpy()[0]
     predicted_relation = index2rel[top_index]
     return predicted_relation
 

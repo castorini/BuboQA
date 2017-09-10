@@ -67,7 +67,8 @@ if config.birnn:
 print(config)
 
 if args.resume_snapshot:
-    model = torch.load(args.resume_snapshot, map_location=lambda storage, location: storage)
+    checkpoint = torch.load(args.resume_snapshot, map_location=lambda storage, location: storage)
+    model.load_state_dict(checkpoint)
 else:
     model = EntityDetection(config)
     if args.word_vectors:
@@ -129,7 +130,7 @@ for epoch in range(1, args.epochs+1):
             snapshot_prefix = os.path.join(args.save_path, 'snapshot')
             snapshot_path = snapshot_prefix + '_acc_{:.4f}_loss_{:.6f}_iter_{}_model.pt'.format(train_acc, loss.data[0],
                                                                                                 iterations)
-            torch.save(model, snapshot_path)
+            torch.save(model.state_dict(), snapshot_path)
             for f in glob.glob(snapshot_prefix + '*'):
                 if f != snapshot_path:
                     os.remove(f)
@@ -166,7 +167,7 @@ for epoch in range(1, args.epochs+1):
                 snapshot_path = best_snapshot_prefix + '_devf1_{}__iter_{}_model.pt'.format(best_dev_F, iterations)
 
                 # save model, delete previous 'best_snapshot' files
-                torch.save(model, snapshot_path)
+                torch.save(model.state_dict(), snapshot_path)
                 for f in glob.glob(best_snapshot_prefix + '*'):
                     if f != snapshot_path:
                         os.remove(f)
