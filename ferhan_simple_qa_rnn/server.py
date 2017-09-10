@@ -7,7 +7,7 @@ import unicodedata
 import pandas as pd
 import numpy as np
 
-from args import get_args
+from args import get_args, get_ent_args
 from torchtext import data
 
 from entity_detection.simple_qa_ner import SimpleQADataset
@@ -22,20 +22,21 @@ from utils import tokenize_text, www2fb, get_index, strip_accents, find_ngrams, 
 stopwords = set(stopwords.words('english'))
 tokenizer = TreebankWordTokenizer()
 
-def get_query_text(input_sent, questions, ent_model, index2tag):
+def get_query_text(input_sent, questions, ent_model, index2tag, args):
     sent = tokenizer.tokenize(input_sent.lower())
     example = ins(questions.numericalize(questions.pad([sent]), device=args.gpu, train=False))
     ent_model.eval()
     scores = ent_model(example)
     index_tag = np.transpose(torch.max(scores, 1)[1].cpu().data.numpy())
     tag_array = index2tag[index_tag][0]
+    print(tag_array)
     spans = get_span(tag_array)
     query_tokens = []
     for span in spans:
         query_tokens.append(" ".join(sent[span[0]:span[1]]))
     return query_tokens
 
-def get_relation(input_sent, questions, model, index2rel):
+def get_relation(input_sent, questions, model, index2rel, args):
     sent = tokenizer.tokenize(input_sent.lower())
     example = ins(questions.numericalize(questions.pad([sent]), device=args.gpu, train=False))
     model.eval()
@@ -56,6 +57,7 @@ class Server():
         self.index_reach = get_index(index_reachpath)
     def setup(self):
         args = get_args()
+        ent_args = get_ent_args()
         torch.manual_seed(args.seed)
         if not args.cuda:
             args.gpu = -1
@@ -85,18 +87,18 @@ class Server():
     
         if os.path.isfile(args.vector_cache):
             questions.vocab.vectors = torch.load(args.vector_cache)
-            questions2.vocab.vectors = torch.load(args.ent_vector_cache)
+            questions2.vocab.vectors = torch.load(ent_args.vector_cache)
         else:
             questions.vocab.load_vectors(wv_dir=args.data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
             os.makedirs(os.path.dirname(args.vector_cache), exist_ok=True)
             torch.save(questions.vocab.vectors, args.vector_cache)
-            questions2.vocab.load_vectors(wv_dir=args.ent_data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
-            os.makedirs(os.path.dirname(args.ent_vector_cache), exist_ok=True)
-            torch.save(questions2.vocab.vectors, args.ent_vector_cache)
+            questions2.vocab.load_vectors(wv_dir=ent_args.data_cache, wv_type=args.word_vectors, wv_dim=args.d_embed)
+            os.makedirs(os.path.dirname(ent_args.vector_cache), exist_ok=True)
+            torch.save(questions2.vocab.vectors, ent_args.vector_cache)
     
         # set up models from trained data
         state = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
-        state2 = torch.load(args.ent_trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
+        state2 = torch.load(ent_args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
     
         config = args
         config.n_embed = len(questions.vocab) # vocab. size / number of embeddings
@@ -107,7 +109,12 @@ class Server():
         print(config)
         model = RelationClassifier(config)
     
+        config = ent_args
+        config.n_embed = len(questions.vocab) # vocab. size / number of embeddings
         config.n_out = len(labels.vocab) # I/in entity  O/out of entity
+        config.n_cells = config.n_layers
+        if config.birnn:
+            config.n_cells *= 2
         print(config)
         ent_model = EntityDetection(config)
     
@@ -126,12 +133,13 @@ class Server():
         self.ent_model = ent_model
         self.index2rel = index2rel
         self.index2tag = index2tag
+        self.args = args
 
     def answer(self, question):
-        pred_relation = www2fb(get_relation(question, self.questions, self.model, self.index2rel))
+        pred_relation = www2fb(get_relation(question, self.questions, self.model, self.index2rel, self.args))
         print(pred_relation)
         
-        query_tokens = get_query_text(input_sent, self.questions, self.ent_model, self.index2tag)
+        query_tokens = get_query_text(question, self.questions, self.ent_model, self.index2tag, self.args)
         print(query_tokens)
         
         N = min(len(query_tokens), 3)
