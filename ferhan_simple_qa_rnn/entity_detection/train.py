@@ -12,6 +12,8 @@ from simple_qa_ner import SimpleQADataset
 from model import EntityDetection
 from evaluation import evaluation
 
+import random
+
 # please set the configuration in the file : args.py
 args = get_args()
 # set the random seed for reproducibility
@@ -24,6 +26,8 @@ if torch.cuda.is_available() and args.cuda:
     torch.cuda.manual_seed(args.seed)
 if torch.cuda.is_available() and not args.cuda:
     print("Warning: You have Cuda but do not use it. You are using CPU for training")
+np.random.seed(args.seed)
+random.seed(args.seed)
 
 
 # load data with torchtext
@@ -50,9 +54,9 @@ else:
 
 train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
                                    sort=False, shuffle=True)
-dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
                                    sort=False, shuffle=False)
-test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
                                    sort=False, shuffle=False)
 
 # define models

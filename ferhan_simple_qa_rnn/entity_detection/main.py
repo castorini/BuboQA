@@ -49,9 +49,9 @@ else:
 # get iterators
 train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
                                    sort=False, shuffle=False)
-dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
                                    sort=False, shuffle=False)
-test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
+test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
                                    sort=False, shuffle=False)
 
 
@@ -66,7 +66,7 @@ if not os.path.exists(args.results_path):
 
 def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     print("Dataset: {}".format(data_name))
-    model.eval();
+    model.eval()
     dataset_iter.init_epoch()
 
     n_correct = 0
