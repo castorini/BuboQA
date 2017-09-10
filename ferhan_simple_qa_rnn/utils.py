@@ -19,10 +19,10 @@ from relation_prediction.model import RelationClassifier
 from entity_detection.model import EntityDetection
 
 stopwords = set(stopwords.words('english'))
+tokenizer = TreebankWordTokenizer()
 
 # UTILS
 def tokenize_text(text):
-    tokenizer = TreebankWordTokenizer()
     tokens = tokenizer.tokenize(text)
     return tokens
 
@@ -44,8 +44,8 @@ def find_ngrams(input_list, n):
     ngrams = zip(*[input_list[i:] for i in range(n)])
     return set(ngrams)
 
-def calc_tf_idf(query, cand_ent_name, cand_ent_count, num_entities, index_ent):
-    query_terms = tokenize_text(query)
+def calc_tf_idf(query_terms, cand_ent_name, cand_ent_count, num_entities, index_ent):
+    #query_terms = tokenize_text(query)
     doc_tokens = tokenize_text(cand_ent_name)
     common_terms = set(query_terms).intersection(set(doc_tokens))
 
@@ -70,6 +70,8 @@ def pick_best_name(question, names_list):
         if best_score == None or score > best_score:
             best_score = score
             best_name = name
+    return best_name
+
 class ins(object):
     def __init__(self, question):
       self.question = question

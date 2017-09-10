@@ -7,6 +7,8 @@ trained_model/
 __pycache__/
 *log*
 entity_detection/*cache*/*
+entity_detection/e2e/*cache*/*
+entity_detection/e2e/data/*
 relation_prediction/*cache*/*
 end_to_end/*cache*/*
 entity_detection/data

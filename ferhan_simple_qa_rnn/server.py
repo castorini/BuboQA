@@ -28,8 +28,7 @@ def get_query_text(input_sent, questions, ent_model, index2tag, args):
     ent_model.eval()
     scores = ent_model(example)
     index_tag = np.transpose(torch.max(scores, 1)[1].cpu().data.numpy())
-    tag_array = index2tag[index_tag][0]
-    print(tag_array)
+    tag_array = index2tag[index_tag]
     spans = get_span(tag_array)
     query_tokens = []
     for span in spans:
@@ -52,17 +51,18 @@ class Server():
         index_entpath = "indexes/entity_2M.pkl"
         index_reachpath = "indexes/reachability_2M.pkl"
         index_namespath = "indexes/names_2M.pkl"
+        # FIXME: store the Freebase graph with the name field
+        fb_path = "indexes/fb_graph.pkl"
         self.index_ent = get_index(index_entpath)
         self.index_names = get_index(index_namespath)
         self.index_reach = get_index(index_reachpath)
+        self.fb_graph = get_index(fb_path)
     def setup(self):
         args = get_args()
         ent_args = get_ent_args()
         torch.manual_seed(args.seed)
         if not args.cuda:
             args.gpu = -1
-        if torch.cuda.is_available() and not args.cuda:
-            print("WARNING: You have CUDA but not using it.")
         if torch.cuda.is_available() and args.cuda:
             torch.cuda.set_device(args.gpu)
             torch.cuda.manual_seed(args.seed)
@@ -106,7 +106,7 @@ class Server():
         config.n_cells = config.n_layers
         if config.birnn:
             config.n_cells *= 2
-        print(config)
+        # print(config)
         model = RelationClassifier(config)
     
         config = ent_args
@@ -115,7 +115,7 @@ class Server():
         config.n_cells = config.n_layers
         if config.birnn:
             config.n_cells *= 2
-        print(config)
+        # print(config)
         ent_model = EntityDetection(config)
     
         if args.word_vectors:
@@ -137,37 +137,28 @@ class Server():
 
     def answer(self, question):
         pred_relation = www2fb(get_relation(question, self.questions, self.model, self.index2rel, self.args))
-        print(pred_relation)
-        
         query_tokens = get_query_text(question, self.questions, self.ent_model, self.index2tag, self.args)
-        print(query_tokens)
         
         N = min(len(query_tokens), 3)
-        print(N)
         
         C = []  # candidate entities
         for n in range(N, 0, -1):
             ngrams_set = find_ngrams(query_tokens, n)
-            print("ngrams_set: {}".format(ngrams_set))
             for ngram_tuple in ngrams_set:
                 ngram = " ".join(ngram_tuple)
                 ngram = strip_accents(ngram)
                 # unigram stopwords have too many candidates so just skip over
                 if ngram in stopwords:
                     continue
-                print("ngram: {}".format(ngram))
                 ## PROBLEM! - ngram doesnt exist in index - at test-2592 - KeyError: 'p.a.r.c.e. parce'
                 try:
                     cand_mids = self.index_ent[ngram]  # search entities
                 except:
                     continue
                 C.extend(cand_mids)
-                # print("C: {}".format(C))
             if (len(C) > 0):
-                print("early termination...")
                 break
             break
-        print(C)
         
         C_pruned = []
         for mid in set(C):
@@ -177,33 +168,20 @@ class Server():
                 if pred_relation in self.index_reach[mid]:
                     count_mid = C.count(mid)  # count number of times mid appeared in C
                     C_pruned.append((mid, count_mid))
-        print(C_pruned)
         
         num_entities_fbsubset = 1959820  # 2M - 1959820 , 5M - 1972702
         C_tfidf_pruned = []
         for mid, count_mid in C_pruned:
             if mid in self.index_names.keys():
                 cand_ent_name = pick_best_name(question, self.index_names[mid])
-                tfidf = calc_tf_idf(query_text, cand_ent_name, count_mid, num_entities_fbsubset, self.index_ent)
+                tfidf = calc_tf_idf(query_tokens, cand_ent_name, count_mid, num_entities_fbsubset, self.index_ent)
                 C_tfidf_pruned.append((mid, cand_ent_name, tfidf))
-        # print("C_tfidf_pruned[:10]: {}".format(C_tfidf_pruned[:10]))
-        print(C_tfidf_pruned)
         
         C_tfidf_pruned.sort(key=lambda t: -t[2])
         pred_ent, name_ent, score = C_tfidf_pruned[0]
-        print(pred_ent)
-        print(name_ent)
         
-        # FIXME: store the Freebase graph with the name field
-        fb_path = "indexes/fb_graph.pkl"
-        fb_graph = get_index(fb_path)
-        
-        # FIXME: lookup Freebase for object of (ent, rel)
-        result_mid = fb_graph[(pred_ent, pred_relation)]
+        result_mid = self.fb_graph[(pred_ent, pred_relation)]
         result_mid = list(result_mid)
-        print(result_mid)
         
-        # FIXME: lookup Freebase for the name predicate of that object
-        result = get_names(fb_graph, result_mid)[0]
-        print("Answer: {}".format(result))
+        result = get_names(self.fb_graph, result_mid)[0]
         return result
