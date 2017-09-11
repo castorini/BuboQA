@@ -185,7 +185,7 @@ class Server():
         key = (pred_ent, pred_relation)
         if key not in self.fb_graph:
              return "UNKNOWN"
-        result_mid = self.fb_graph[(pred_ent, pred_relation)]
+        result_mid = self.fb_graph[key]
         result_mid = list(result_mid)
         
         result = get_names(self.fb_graph, result_mid)[0]
