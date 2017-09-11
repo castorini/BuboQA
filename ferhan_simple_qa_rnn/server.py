@@ -33,6 +33,8 @@ def get_query_text(input_sent, questions, ent_model, index2tag, args):
     query_tokens = []
     for span in spans:
         query_tokens.append(" ".join(sent[span[0]:span[1]]))
+    if query_tokens is empty:
+        query_tokens = list(input_sent)
     return query_tokens
 
 def get_relation(input_sent, questions, model, index2rel, args):
@@ -180,6 +182,9 @@ class Server():
         C_tfidf_pruned.sort(key=lambda t: -t[2])
         pred_ent, name_ent, score = C_tfidf_pruned[0]
         
+        key = (pred_ent, pred_relation)
+        if key not in self.fb_graph:
+             return "UNKNOWN"
         result_mid = self.fb_graph[(pred_ent, pred_relation)]
         result_mid = list(result_mid)
         

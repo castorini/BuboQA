@@ -75,6 +75,8 @@ def get_query_text(input_sent):
     query_tokens = []
     for span in spans:
         query_tokens.append(" ".join(sent[span[0]:span[1]]))
+    if query_tokens is empty:
+        query_tokens = list(input_sent)
     return query_tokens
 
 print(get_query_text(input_sent))
