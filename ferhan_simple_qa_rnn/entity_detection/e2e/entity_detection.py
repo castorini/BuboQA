@@ -30,7 +30,6 @@ else:
     os.makedirs(os.path.dirname(vector_cache), exist_ok=True)
     torch.save(questions.vocab.vectors, vector_cache)
 
-
 trained_model = "model/model.pt"
 model = torch.load(trained_model, map_location=lambda storage,location: storage.cuda(gpu))
 
@@ -38,7 +37,6 @@ index2tag = np.array(labels.vocab.itos)
 index2word = np.array(questions.vocab.itos)
 
 input_sent = "where was sasha vujacic born?"
-
 
 class ins(object):
     def __init__(self, question):
@@ -77,6 +75,8 @@ def get_query_text(input_sent):
     query_tokens = []
     for span in spans:
         query_tokens.append(" ".join(sent[span[0]:span[1]]))
+    if not query_tokens:
+        query_tokens = list(input_sent)
     return query_tokens
 
 print(get_query_text(input_sent))
