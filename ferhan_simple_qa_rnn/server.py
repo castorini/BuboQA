@@ -33,7 +33,7 @@ def get_query_text(input_sent, questions, ent_model, index2tag, args):
     query_tokens = []
     for span in spans:
         query_tokens.append(" ".join(sent[span[0]:span[1]]))
-    if query_tokens is empty:
+    if not query_tokens:
         query_tokens = list(input_sent)
     return query_tokens
 
