@@ -55,8 +55,7 @@ def get_ent_args():
     parser.add_argument('--word_vectors', type=str, default='glove.42B')
     parser.add_argument('--train_embed', action='store_false', dest='fix_emb') # fine-tune the word embeddings
     parser.add_argument('--resume_snapshot', type=str, default=None)
-    # added for testing
-    parser.add_argument('--trained_model', type=str, default='entity_detection/state_dict_model/model.pt')
+    parser.add_argument('--trained_model', type=str, default='entity_detection/model/ent_model.pt')
     parser.add_argument('--results_path', type=str, default='results')
     args = parser.parse_args()
     return args

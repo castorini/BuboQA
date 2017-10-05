@@ -14,12 +14,34 @@ from model import RelationClassifier
 from args import get_args
 from simple_qa_relation import SimpleQaRelationDataset
 
+def save_checkpoint(state, snapshot_prefix, dev_train, acc, loss, iterations):
+    print("saving checkpoint")
+    snapshot_path = (snapshot_prefix + '_' + dev_train + 'acc_{:.4f}_'.format(acc) + 
+                    dev_train + 'loss_{:.6f}_iter_{}_model.pt'.format(loss, iterations))
+    torch.save(state, snapshot_path)
+    for f in glob.glob(snapshot_prefix + '*'):
+        if f != snapshot_path:
+            os.remove(f)
+    print("finished saving checkpoint")
+
+def load_checkpoint(model, optimizer, resume):
+    print("loading checkpoint")
+    if os.path.isfile(resume):
+        print("=> loading checkpoint '{}'".format(resume))
+        checkpoint = torch.load(resume, map_location=lambda storage,location: storage.cuda(args.gpu))
+        args.start_epoch = checkpoint['epoch']
+        model.load_state_dict(checkpoint['state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer'])
+        print("=> loaded checkpoint '{}' (epoch {})".format(resume, checkpoint['epoch']))
+
 # get the configuration arguments and set machine - GPU/CPU
 args = get_args()
 # set random seeds for reproducibility
 torch.manual_seed(args.seed)
 if not args.cuda:
     args.gpu = -1
+else:
+    args.gpu = 1
 if torch.cuda.is_available() and not args.cuda:
     print("WARNING: You have CUDA but not using it.")
 if torch.cuda.is_available() and args.cuda:
@@ -47,19 +69,21 @@ if config.birnn:
     config.n_cells *= 2
 print(config)
 
-if args.resume_snapshot:
-    checkpoint = torch.load(args.resume_snapshot, map_location=lambda storage,location: storage.cuda(args.gpu))
-    model.load_state_dict(checkpoint)
-else:
-    model = RelationClassifier(config)
-    if args.word_vectors:
-        model.embed.weight.data = questions.vocab.vectors
-        if args.cuda:
-            model.cuda()
+model = RelationClassifier(config)
+print("relation classifier initialized")
+if args.word_vectors:
+    model.embed.weight.data = questions.vocab.vectors
+    print("word vectors copied")
+    if args.cuda:
+        model.cuda()
+        print("cuda called")
 
 criterion = nn.NLLLoss()
 optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.lr_weight_decay)
+print("optimizer initialized")
 
+if args.resume_snapshot:
+    load_checkpoint(model, optimizer, args.resume_snapshot)
 
 # ---- train the model ------
 iterations = 0
@@ -75,6 +99,7 @@ best_snapshot_prefix = os.path.join(args.save_path, 'best_snapshot')
 os.makedirs(args.save_path, exist_ok=True)
 print(header)
 
+print("starting training")
 for epoch in range(1, args.epochs+1):
     if early_stop:
         print("Early stopping. Epoch: {}, Best Dev. Acc: {}".format(epoch, best_dev_acc))
@@ -108,11 +133,11 @@ for epoch in range(1, args.epochs+1):
         # checkpoint model periodically
         if iterations % args.save_every == 0:
             snapshot_prefix = os.path.join(args.save_path, 'snapshot')
-            snapshot_path = snapshot_prefix + '_acc_{:.4f}_loss_{:.6f}_iter_{}_model.pt'.format(train_acc, loss.data[0], iterations)
-            torch.save(model.state_dict(), snapshot_path)
-            for f in glob.glob(snapshot_prefix + '*'):
-                if f != snapshot_path:
-                    os.remove(f)
+
+            save_checkpoint({'epoch': epoch + 1,
+			     'state_dict': model.state_dict(),
+			     'optimizer' : optimizer.state_dict()},
+                             snapshot_prefix, '', train_acc, loss.data[0], iterations)
 
         # evaluate performance on validation set periodically
         if iterations % args.dev_every == 0:
@@ -139,13 +164,11 @@ for epoch in range(1, args.epochs+1):
                 iters_not_improved = 0
                 # found a model with better validation set accuracy
                 best_dev_acc = dev_acc
-                snapshot_path = best_snapshot_prefix + '_devacc_{}_devloss_{}__iter_{}_model.pt'.format(dev_acc, dev_loss.data[0], iterations)
-
                 # save model, delete previous 'best_snapshot' files
-                torch.save(model.state_dict(), snapshot_path)
-                for f in glob.glob(best_snapshot_prefix + '*'):
-                    if f != snapshot_path:
-                        os.remove(f)
+                save_checkpoint({'epoch': epoch + 1,
+	            	     'state_dict': model.state_dict(),
+	            	     'optimizer' : optimizer.state_dict()},
+			     best_snapshot_prefix, "dev" , dev_acc, dev_loss.data[0], iterations)
             else:
                 iters_not_improved += 1
                 if iters_not_improved >= patience:

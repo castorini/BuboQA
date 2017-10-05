@@ -99,8 +99,12 @@ def get_span(label):
 def get_names(fb_graph, mids):
     names = []
     for mid in mids:
-        names.extend( fb_graph[(mid, 'fb:type.object.name')] )
-        names.extend( fb_graph[(mid, 'fb:common.topic.alias')] )
+        key1 = (mid, 'fb:type.object.name')
+        key2 = (mid, 'fb:common.topic.alias')
+        if key1 in fb_graph:
+            names.extend( fb_graph[key1] )
+        if key2 in fb_graph:
+            names.extend( fb_graph[key2] )
     names.sort(key = lambda s: -len(s))
     return names
 

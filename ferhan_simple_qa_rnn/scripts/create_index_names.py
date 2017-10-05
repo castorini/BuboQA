@@ -33,10 +33,13 @@ if __name__ == '__main__':
                         help='path to the trimmed names file')
     parser.add_argument('-p', '--pickle', dest='pickle', action='store', required=True,
                         help='output file path for the pickle of names index')
+    parser.add_argument('-m', '--mongo', dest='mongo', action='store', required=True,
+                        help='output collection name for the names index')
 
     args = parser.parse_args()
     print("Names file path: {}".format(args.names))
     print("Pickle output path: {}".format(args.pickle))
+    print("Mongo collection path: {}".format(args.mongo))
 
     index_names = get_names_for_entities(args.names)
 
