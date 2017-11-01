@@ -14,6 +14,6 @@ def answer_question(question):
 if __name__ == '__main__':
     print("Setting up BuboQA")
     server.setup()
-    answer_question("when was albert einstein born?")
     print("BuboQA is up")
+    answer_question("when was albert einstein born?")
     app.run(host="0.0.0.0", port=4001)

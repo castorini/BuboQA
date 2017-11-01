@@ -74,7 +74,6 @@ class Server():
         args = get_args()
         ent_args = get_ent_args()
         torch.manual_seed(args.seed)
-        args.cuda = False
         if not args.cuda:
             args.gpu = -1
         if torch.cuda.is_available() and args.cuda:
