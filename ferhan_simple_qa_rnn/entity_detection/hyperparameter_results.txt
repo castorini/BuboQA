@@ -1,0 +1,420 @@
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=308, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.48898036335474876, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=5.5939782172429745e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   275     1      2200  2200/2373       93% 0.132738      59.1378      76.0535
+   548     2      4400  2027/2373       85% 0.028306      77.3403      80.1475
+   827     3      6600  1854/2373       78% 0.059686      81.2517      82.4066
+   986     4      8800  1681/2373       71% 0.046172      83.4455      83.8635
+  1219     5     11000  1508/2373       64% 0.036793      84.9905      84.4629
+  1494     6     13200  1335/2373       56% 0.073764      86.2875      85.5048
+  1772     7     15400  1162/2373       49% 0.065433      87.5672      85.3112
+  2042     8     17600   989/2373       42% 0.053084      88.2109      85.1544
+  2315     9     19800   816/2373       34% 0.055531      89.3497      86.4822
+  2592    10     22000   643/2373       27% 0.063087      89.5947      85.7077
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=276, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.41511247718363575, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0007881609315721411, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   188     1      2200  2200/2373       93% 0.044895      80.4276      87.0078
+   280     2      4400  2027/2373       85% 0.084012      89.0170      88.0129
+   384     3      6600  1854/2373       78% 0.031274      91.9566      87.1185
+   570     4      8800  1681/2373       71% 0.011970      93.6849      88.1143
+   761     5     11000  1508/2373       64% 0.018774      95.2089      87.0539
+   945     6     13200  1335/2373       56% 0.000378      96.2313      87.1646
+  1132     7     15400  1162/2373       49% 0.000928      96.9826      87.2845
+  1318     8     17600   989/2373       42% 0.022464      97.4817      87.6441
+  1504     9     19800   816/2373       34% 0.004688      97.9167      87.6533
+  1691    10     22000   643/2373       27% 0.003471      98.3816      87.0724
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=245, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4434172531310513, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=3.762268195374705e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   259     1      2200  2200/2373       93% 0.064462      51.7770      73.2227
+   512     2      4400  2027/2373       85% 0.086802      74.2831      78.1005
+   622     3      6600  1854/2373       78% 0.087503      78.2379      79.6035
+   867     4      8800  1681/2373       71% 0.054127      80.8113      81.2725
+  1124     5     11000  1508/2373       64% 0.089074      82.5390      82.8769
+  1379     6     13200  1335/2373       56% 0.098694      83.8811      83.3564
+  1633     7     15400  1162/2373       49% 0.054525      85.0393      83.8082
+  1889     8     17600   989/2373       42% 0.080709      85.8380      84.6565
+  2143     9     19800   816/2373       34% 0.065362      86.6422      84.8041
+  2400    10     22000   643/2373       27% 0.057054      87.4320      85.5417
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=198, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.2213432158249524, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=9.573147808900565e-05, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    68     1      2200  2200/2373       93% 0.024501      68.5071      78.5615
+   183     2      4400  2027/2373       85% 0.119561      81.1683      82.5634
+   349     3      6600  1854/2373       78% 0.053432      84.4508      84.1494
+   515     4      8800  1681/2373       71% 0.015228      86.3753      85.4864
+   686     5     11000  1508/2373       64% 0.114712      88.0077      85.9013
+   855     6     13200  1335/2373       56% 0.058382      89.3844      86.3808
+  1024     7     15400  1162/2373       49% 0.026413      90.1974      86.1595
+  1192     8     17600   989/2373       42% 0.024418      91.1337      86.5929
+  1360     9     19800   816/2373       34% 0.034687      92.1913      86.4822
+  1529    10     22000   643/2373       27% 0.022427      92.7974      86.1411
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=100, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.417902799593281, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=3.84572027474766e-05, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   121     1      2200  2200/2373       93% 0.148739      53.6960      71.8027
+   241     2      4400  2027/2373       85% 0.106569      71.9243      76.8741
+   362     3      6600  1854/2373       78% 0.050185      75.8984      78.4878
+   470     4      8800  1681/2373       71% 0.050675      78.5135      80.4057
+   523     5     11000  1508/2373       64% 0.036152      80.0999      81.0604
+   596     6     13200  1335/2373       56% 0.105494      81.7978      82.1485
+   716     7     15400  1162/2373       49% 0.031948      82.7345      83.0337
+   836     8     17600   989/2373       42% 0.056458      83.6293      82.9414
+   954     9     19800   816/2373       34% 0.039726      84.2525      83.4947
+  1073    10     22000   643/2373       27% 0.064786      85.3033      83.5316
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=345, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.41527155646519337, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=9.973627772561865e-05, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   149     1      2200  2200/2373       93% 0.043114      70.7287      79.7418
+   296     2      4400  2027/2373       85% 0.097216      81.7557      83.2918
+   445     3      6600  1854/2373       78% 0.022268      85.1116      85.0991
+   593     4      8800  1681/2373       71% 0.028488      87.0836      85.7169
+   741     5     11000  1508/2373       64% 0.023577      88.5527      86.4546
+   890     6     13200  1335/2373       56% 0.032558      89.5763      86.7681
+  1039     7     15400  1162/2373       49% 0.057357      90.6761      87.0355
+  1189     8     17600   989/2373       42% 0.033965      91.7278      86.2886
+  1337     9     19800   816/2373       34% 0.026193      92.7083      86.2333
+  1448    10     22000   643/2373       27% 0.005982      93.5799      85.0161
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=429, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4175761232406293, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0002184279868705418, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   224     1      2200  2200/2373       93% 0.027232      75.0540      83.8082
+   455     2      4400  2027/2373       85% 0.080915      85.8226      85.9843
+   686     3      6600  1854/2373       78% 0.028838      88.8956      87.6533
+   921     4      8800  1681/2373       71% 0.024842      90.6046      87.5242
+  1154     5     11000  1508/2373       64% 0.007964      92.1419      87.4873
+  1385     6     13200  1335/2373       56% 0.023620      93.2654      86.5652
+  1617     7     15400  1162/2373       49% 0.023186      94.2287      87.6810
+  1851     8     17600   989/2373       42% 0.005218      95.2667      85.2651
+  2082     9     19800   816/2373       34% 0.003890      95.9406      86.4177
+  2225    10     22000   643/2373       27% 0.003352      96.5591      86.4822
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=380, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.3404980124106801, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0009051819109825092, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    89     1      2200  2200/2373       93% 0.094180      81.4034      86.7220
+   177     2      4400  2027/2373       85% 0.076904      89.5027      88.4463
+   266     3      6600  1854/2373       78% 0.064204      92.2414      88.2988
+   353     4      8800  1681/2373       71% 0.008467      94.2110      87.9852
+   440     5     11000  1508/2373       64% 0.000464      95.4679      88.1697
+   527     6     13200  1335/2373       56% 0.000117      96.4747      88.0775
+   615     7     15400  1162/2373       49% 0.002894      97.2085      86.9249
+   702     8     17600   989/2373       42% 0.006478      97.7534      86.7958
+   790     9     19800   816/2373       34% 0.026068      98.2958      88.3633
+   878    10     22000   643/2373       27% 0.006262      98.5128      88.3264
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=492, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4838588256000536, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0004843431921589469, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   107     1      2200  2200/2373       93% 0.025505      79.1690      85.0530
+   212     2      4400  2027/2373       85% 0.062753      88.0920      86.7497
+   320     3      6600  1854/2373       78% 0.032734      90.7902      88.3910
+   426     4      8800  1681/2373       71% 0.050403      92.6532      88.1604
+   532     5     11000  1508/2373       64% 0.065905      94.1603      87.1185
+   637     6     13200  1335/2373       56% 0.028442      95.2575      87.5795
+   743     7     15400  1162/2373       49% 0.018731      96.1408      86.4177
+   848     8     17600   989/2373       42% 0.001300      96.7897      86.9894
+   953     9     19800   816/2373       34% 0.002404      97.3729      87.0263
+  1059    10     22000   643/2373       27% 0.000839      97.7109      87.5426
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=436, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.3259663151017024, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.00048745850237556554, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    68     1      2200  2200/2373       93% 0.054962      79.7628      85.7815
+   135     2      4400  2027/2373       85% 0.036244      88.4481      87.5058
+   203     3      6600  1854/2373       78% 0.013378      91.0818      88.0498
+   270     4      8800  1681/2373       71% 0.041266      92.9859      87.7086
+   336     5     11000  1508/2373       64% 0.036713      94.7861      87.3951
+   403     6     13200  1335/2373       56% 0.003060      95.7865      87.2384
+   469     7     15400  1162/2373       49% 0.005381      96.6195      86.3716
+   535     8     17600   989/2373       42% 0.005565      97.3553      86.9710
+   601     9     19800   816/2373       34% 0.001489      97.8362      87.5519
+   668    10     22000   643/2373       27% 0.000017      98.2650      86.7958
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=125, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.26909373240933093, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=8.046330268782919e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    78     1      2200  2200/2373       93% 0.078664      61.1591      77.3997
+   155     2      4400  2027/2373       85% 0.103108      78.8851      81.1618
+   235     3      6600  1854/2373       78% 0.047371      82.4349      82.7663
+   314     4      8800  1681/2373       71% 0.101649      84.7282      84.4721
+   395     5     11000  1508/2373       64% 0.020570      86.2318      84.8225
+   474     6     13200  1335/2373       56% 0.057980      87.4883      85.1268
+   555     7     15400  1162/2373       49% 0.020056      88.6941      85.6339
+   635     8     17600   989/2373       42% 0.073091      89.5665      86.3347
+   714     9     19800   816/2373       34% 0.034441      90.2535      86.0950
+   793    10     22000   643/2373       27% 0.016192      90.8048      86.2425
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=410, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.274550596314186, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=4.321217936828873e-05, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    93     1      2200  2200/2373       93% 0.112066      65.3707      76.6713
+   185     2      4400  2027/2373       85% 0.042056      78.2160      80.4795
+   279     3      6600  1854/2373       78% 0.047571      81.9647      82.1577
+   371     4      8800  1681/2373       71% 0.040638      83.7039      84.2047
+   465     5     11000  1508/2373       64% 0.025877      85.1998      84.7856
+   560     6     13200  1335/2373       56% 0.100903      86.7041      84.5643
+   653     7     15400  1162/2373       49% 0.055142      87.7743      85.3020
+   747     8     17600   989/2373       42% 0.025858      88.4637      85.4772
+   840     9     19800   816/2373       34% 0.079096      89.1621      85.9843
+   936    10     22000   643/2373       27% 0.049726      89.9203      86.7404
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=218, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.22652077925165875, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.00025480224764451594, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    67     1      2200  2200/2373       93% 0.070874      75.4332      82.9230
+   133     2      4400  2027/2373       85% 0.116789      86.3437      86.5284
+   200     3      6600  1854/2373       78% 0.024946      89.1805      87.2660
+   267     4      8800  1681/2373       71% 0.074310      91.1771      86.4085
+   333     5     11000  1508/2373       64% 0.005435      92.6289      87.5611
+   398     6     13200  1335/2373       56% 0.076784      93.6517      87.4320
+   465     7     15400  1162/2373       49% 0.002855      94.7047      87.0539
+   530     8     17600   989/2373       42% 0.029497      95.7470      85.7446
+   594     9     19800   816/2373       34% 0.013486      96.4537      87.2384
+   660    10     22000   643/2373       27% 0.001666      96.7098      86.7497
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=146, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.37208708113197464, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=1.9227174546229904e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   155     1      2200  2200/2373       93% 0.153325      31.2699      62.5726
+   309     2      4400  2027/2373       85% 0.127062      65.0099      72.8538
+   415     3      6600  1854/2373       78% 0.116703      71.5969      75.9336
+   526     4      8800  1681/2373       71% 0.091400      74.6895      77.4643
+   686     5     11000  1508/2373       64% 0.103298      76.5604      79.1240
+   838     6     13200  1335/2373       56% 0.107347      78.1437      79.7603
+   923     7     15400  1162/2373       49% 0.119717      79.4293      80.8575
+  1007     8     17600   989/2373       42% 0.071046      80.5454      81.3186
+  1125     9     19800   816/2373       34% 0.097467      81.6751      82.0655
+  1281    10     22000   643/2373       27% 0.065085      82.7323      82.3698
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=167, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.2256148894083811, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0009361176274357266, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    60     1      2200  2200/2373       93% 0.041936      81.3054      86.7220
+   111     2      4400  2027/2373       85% 0.074400      89.6322      88.4371
+   164     3      6600  1854/2373       78% 0.019138      92.4909      87.9576
+   215     4      8800  1681/2373       71% 0.010655      94.5550      86.7958
+   266     5     11000  1508/2373       64% 0.008013      95.8637      87.9299
+   318     6     13200  1335/2373       56% 0.036378      96.8048      86.9064
+   372     7     15400  1162/2373       49% 0.000720      97.5124      87.3121
+   453     8     17600   989/2373       42% 0.002480      97.9272      87.8101
+   575     9     19800   816/2373       34% 0.000822      98.3456      87.5703
+   699    10     22000   643/2373       27% 0.000598      98.6781      87.7178
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=219, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4326975785729349, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=3.343940797714898e-05, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   131     1      2200  2200/2373       93% 0.078882      58.8026      72.9922
+   261     2      4400  2027/2373       85% 0.087766      73.5446      77.8884
+   393     3      6600  1854/2373       78% 0.132566      77.3395      79.9631
+   523     4      8800  1681/2373       71% 0.085325      79.7702      81.3278
+   653     5     11000  1508/2373       64% 0.054858      81.5173      82.3421
+   783     6     13200  1335/2373       56% 0.022130      82.9822      82.8031
+   913     7     15400  1162/2373       49% 0.046817      83.6327      83.2734
+  1042     8     17600   989/2373       42% 0.066869      85.1112      83.9650
+  1144     9     19800   816/2373       34% 0.018730      85.4205      83.8266
+  1196    10     22000   643/2373       27% 0.024511      86.3336      84.1033
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=285, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.26822896973144517, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=6.175553488540919e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   164     1      2200  2200/2373       93% 0.044297      63.9503      77.1508
+   352     2      4400  2027/2373       85% 0.063876      79.1132      81.4016
+   477     3      6600  1854/2373       78% 0.061643      82.8631      83.3287
+   581     4      8800  1681/2373       71% 0.120374      84.9848      83.7529
+   778     5     11000  1508/2373       64% 0.056786      86.3623      85.1268
+  1043     6     13200  1335/2373       56% 0.029000      88.0618      86.3071
+  1311     7     15400  1162/2373       49% 0.074706      88.7425      86.7128
+  1576     8     17600   989/2373       42% 0.024006      89.3643      86.1687
+  1845     9     19800   816/2373       34% 0.014481      90.2459      86.2517
+  2113    10     22000   643/2373       27% 0.040769      90.8631      86.5837
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=138, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4229487691247148, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.00017071216692112956, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   163     1      2200  2200/2373       93% 0.037481      69.3026      80.7192
+   323     2      4400  2027/2373       85% 0.064213      82.6252      84.3061
+   485     3      6600  1854/2373       78% 0.061030      86.0589      85.2928
+   646     4      8800  1681/2373       71% 0.057737      87.9406      86.1226
+   807     5     11000  1508/2373       64% 0.063248      89.6904      86.3716
+   875     6     13200  1335/2373       56% 0.005463      90.9714      86.5745
+   937     7     15400  1162/2373       49% 0.029572      91.8917      86.1595
+  1000     8     17600   989/2373       42% 0.009785      92.9664      86.3993
+  1063     9     19800   816/2373       34% 0.041821      93.9759      86.7128
+  1128    10     22000   643/2373       27% 0.019194      94.4498      86.0581
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=371, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.37840985081706746, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0006872389161987501, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   125     1      2200  2200/2373       93% 0.085285      80.3509      86.2333
+   248     2      4400  2027/2373       85% 0.012483      88.8783      88.2434
+   372     3      6600  1854/2373       78% 0.045513      91.6448      88.0775
+   492     4      8800  1681/2373       71% 0.007665      93.4693      87.9484
+   615     5     11000  1508/2373       64% 0.011407      94.8752      86.9156
+   736     6     13200  1335/2373       56% 0.018381      95.9527      88.0314
+   858     7     15400  1162/2373       49% 0.008341      96.6625      87.5426
+   980     8     17600   989/2373       42% 0.010993      97.1847      87.8193
+  1102     9     19800   816/2373       34% 0.010010      97.9818      87.5703
+  1223    10     22000   643/2373       27% 0.011474      97.9296      87.8008
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=198, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.29411546493177143, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0004120572722916528, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    53     1      2200  2200/2373       93% 0.040612      77.6236      84.4076
+   105     2      4400  2027/2373       85% 0.071404      87.5802      86.8972
+   157     3      6600  1854/2373       78% 0.015522      90.3385      86.6667
+   208     4      8800  1681/2373       71% 0.015891      92.4729      87.2384
+   261     5     11000  1508/2373       64% 0.026563      93.9987      86.4730
+   312     6     13200  1335/2373       56% 0.012270      95.3230      85.6893
+   364     7     15400  1162/2373       49% 0.012176      96.0736      86.0489
+   415     8     17600   989/2373       42% 0.002764      96.7265      85.6800
+   466     9     19800   816/2373       34% 0.017774      97.2695      85.5325
+   517    10     22000   643/2373       27% 0.010551      97.6477      86.4269
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=321, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.37820723320029015, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=4.728959163551384e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   111     1      2200  2200/2373       93% 0.138914      60.4361      76.5053
+   219     2      4400  2027/2373       85% 0.053727      77.2370      79.6312
+   328     3      6600  1854/2373       78% 0.120525      80.8590      81.9456
+   438     4      8800  1681/2373       71% 0.046130      83.2150      82.3421
+   548     5     11000  1508/2373       64% 0.060660      84.4537      83.8174
+   658     6     13200  1335/2373       56% 0.071427      86.1049      84.5828
+   769     7     15400  1162/2373       49% 0.022583      87.3010      85.2651
+   879     8     17600   989/2373       42% 0.071759      87.9929      85.6063
+   988     9     19800   816/2373       34% 0.039805      88.8595      86.3071
+  1099    10     22000   643/2373       27% 0.061130      89.2934      86.2148
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=116, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.44659493767545555, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.00024388972353387654, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    79     1      2200  2200/2373       93% 0.052073      69.4929      82.7201
+   157     2      4400  2027/2373       85% 0.061813      84.1653      85.3665
+   235     3      6600  1854/2373       78% 0.018481      87.2000      86.4361
+   315     4      8800  1681/2373       71% 0.032655      89.3683      85.7907
+   396     5     11000  1508/2373       64% 0.096631      90.9483      87.3398
+   475     6     13200  1335/2373       56% 0.034531      92.0552      86.1226
+   554     7     15400  1162/2373       49% 0.010184      93.0508      86.9986
+   632     8     17600   989/2373       42% 0.032276      94.0154      86.5007
+   710     9     19800   816/2373       34% 0.082444      94.6500      86.5468
+   791    10     22000   643/2373       27% 0.002075      95.3538      87.0447
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=142, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4758977168342218, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0002707856484742028, n_cells=4, n_embed=59480, n_layers=2, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    51     1      2200  2200/2373       93% 0.043132      73.8111      82.0562
+   103     2      4400  2027/2373       85% 0.186257      84.6972      85.3296
+   155     3      6600  1854/2373       78% 0.043403      88.0984      86.2609
+   207     4      8800  1681/2373       71% 0.014887      90.0245      86.8050
+   259     5     11000  1508/2373       64% 0.012800      91.7316      86.5560
+   309     6     13200  1335/2373       56% 0.030533      93.0969      86.4454
+   359     7     15400  1162/2373       49% 0.022856      94.2583      86.1319
+   409     8     17600   989/2373       42% 0.016080      95.0613      85.0530
+   458     9     19800   816/2373       34% 0.008744      95.8295      85.2282
+   510    10     22000   643/2373       27% 0.006911      96.3355      85.3665
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=422, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.26524366628807594, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=8.584880424181869e-05, n_cells=6, n_embed=59480, n_layers=3, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    95     1      2200  2200/2373       93% 0.067491      70.6179      78.9212
+   191     2      4400  2027/2373       85% 0.029690      81.9129      83.2642
+   287     3      6600  1854/2373       78% 0.070825      85.2633      84.6842
+   382     4      8800  1681/2373       71% 0.018727      87.3624      85.9843
+   477     5     11000  1508/2373       64% 0.012480      88.6625      85.7907
+   570     6     13200  1335/2373       56% 0.032209      89.7144      86.8603
+   665     7     15400  1162/2373       49% 0.012394      90.9988      87.3582
+   760     8     17600   989/2373       42% 0.007542      91.8952      86.7404
+   853     9     19800   816/2373       34% 0.010872      92.6968      87.1646
+   947    10     22000   643/2373       27% 0.008541      93.4730      86.3808
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=106, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.3796720562756615, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=8.567102962465034e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    78     1      2200  2200/2373       93% 0.084097      57.6719      77.2614
+   155     2      4400  2027/2373       85% 0.140536      78.3686      80.8575
+   235     3      6600  1854/2373       78% 0.067579      82.2040      83.3379
+   314     4      8800  1681/2373       71% 0.063812      84.6353      84.6104
+   394     5     11000  1508/2373       64% 0.075868      86.0038      84.8225
+   472     6     13200  1335/2373       56% 0.025964      87.2870      85.6708
+   551     7     15400  1162/2373       49% 0.011862      88.1105      85.9198
+   630     8     17600   989/2373       42% 0.018592      89.1557      86.3163
+   710     9     19800   816/2373       34% 0.016191      89.9318      85.8737
+   788    10     22000   643/2373       27% 0.028850      91.0818      85.9474
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=115, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.3450104934308668, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=2.6846615474127982e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    78     1      2200  2200/2373       93% 0.145179      37.0838      67.1277
+   157     2      4400  2027/2373       85% 0.060560      68.6344      74.7072
+   237     3      6600  1854/2373       78% 0.101059      73.9179      77.1047
+   316     4      8800  1681/2373       71% 0.136577      76.8757      79.2070
+   396     5     11000  1508/2373       64% 0.079613      78.6742      80.0184
+   476     6     13200  1335/2373       56% 0.066528      79.9602      80.8852
+   555     7     15400  1162/2373       49% 0.053590      81.1989      82.1024
+   634     8     17600   989/2373       42% 0.129840      82.3717      82.5726
+   713     9     19800   816/2373       34% 0.107490      83.0308      82.8216
+   794    10     22000   643/2373       27% 0.061519      84.1806      83.5039
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=442, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.419372969683666, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=4.6184504538149856e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   135     1      2200  2200/2373       93% 0.048922      60.9631      75.3988
+   270     2      4400  2027/2373       85% 0.074506      77.4806      80.3320
+   406     3      6600  1854/2373       78% 0.150710      81.3798      82.4343
+   541     4      8800  1681/2373       71% 0.047708      83.5868      83.1535
+   676     5     11000  1508/2373       64% 0.028074      85.2143      84.6289
+   810     6     13200  1335/2373       56% 0.052241      86.7369      85.4587
+   945     7     15400  1162/2373       49% 0.036831      87.7178      85.6432
+  1079     8     17600   989/2373       42% 0.022470      88.4132      84.9608
+  1212     9     19800   816/2373       34% 0.042948      89.1544      85.6985
+  1348    10     22000   643/2373       27% 0.148934      89.7696      86.7497
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=183, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.47921170077349967, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0002911818914602264, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+    87     1      2200  2200/2373       93% 0.069286      73.2756      83.4947
+   173     2      4400  2027/2373       85% 0.060615      85.8196      86.5745
+   259     3      6600  1854/2373       78% 0.051041      88.6495      86.9802
+   344     4      8800  1681/2373       71% 0.089359      90.6752      87.8654
+   429     5     11000  1508/2373       64% 0.027222      92.0424      87.5058
+   512     6     13200  1335/2373       56% 0.055599      93.2303      87.3582
+   599     7     15400  1162/2373       49% 0.012484      94.2852      87.3767
+   683     8     17600   989/2373       42% 0.017125      94.8717      87.4597
+   768     9     19800   816/2373       34% 0.002133      95.6189      86.8787
+   855    10     22000   643/2373       27% 0.000999      96.4036      87.2384
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=340, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.4691639794425097, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=3.77494147118245e-05, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   114     1      2200  2200/2373       93% 0.108837      55.0568      73.9880
+   226     2      4400  2027/2373       85% 0.085597      75.1958      78.7828
+   338     3      6600  1854/2373       78% 0.122255      79.0470      80.9590
+   451     4      8800  1681/2373       71% 0.037729      81.4117      82.5818
+   565     5     11000  1508/2373       64% 0.056093      83.1441      83.2365
+   679     6     13200  1335/2373       56% 0.052352      84.4803      83.9373
+   793     7     15400  1162/2373       49% 0.037115      85.5233      84.2139
+   905     8     17600   989/2373       42% 0.053523      86.4541      85.0438
+  1016     9     19800   816/2373       34% 0.059623      86.9562      85.7446
+  1128    10     22000   643/2373       27% 0.044082      88.2825      85.7169
+Note: You are using GPU for training
+Namespace(batch_size=32, birnn=True, clip_gradient=0.6, cuda=True, d_embed=300, d_hidden=432, data_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/data_cache', dev=False, dev_every=2200, dropout_prob=0.26986059698595766, epochs=10, fix_emb=True, gpu=0, log_every=2200, lr=0.0007881468585942576, n_cells=8, n_embed=59480, n_layers=4, n_out=4, patience=5, results_path='results', resume_snapshot=None, rnn_type='lstm', save_every=5000, save_path='saved_checkpoints', seed=1111, test=False, trained_model='', vector_cache='/u/s43mohammed/dev/simple-qa-on-kb/ferhan_simple_qa_rnn/entity_detection/vector_cache/input_vectors.pt', word_vectors='glove.42B')
+Shift model to GPU
+  Time Epoch Iteration Progress    (%Epoch)   Loss       Accuracy  Dev/Accuracy
+   130     1      2200  2200/2373       93% 0.050036      80.9943      84.8133
+   260     2      4400  2027/2373       85% 0.016256      89.2714      88.0498
+   392     3      6600  1854/2373       78% 0.064518      91.9903      87.9852
+   522     4      8800  1681/2373       71% 0.020767      93.9619      87.8193
+   654     5     11000  1508/2373       64% 0.012030      95.2814      87.4412
+   784     6     13200  1335/2373       56% 0.023979      96.4302      87.7916
+   915     7     15400  1162/2373       49% 0.001072      97.0068      87.5150
+  1046     8     17600   989/2373       42% 0.000147      97.7281      88.0590
+  1176     9     19800   816/2373       34% 0.000410      98.0507      87.8377
+  1307    10     22000   643/2373       27% 0.000228      98.4302      88.0959
