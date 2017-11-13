@@ -1,23 +1,39 @@
-## BuboQA
+## Simple RNN model
 
-This repository contains work done on Simple Question Answering over a Knowledge-Base by the University of Waterloo (DSG Group).
+- Download and extract SimpleQuestions dataset by running the script:
+```
+bash fetch_dataset.sh 
+```
 
-### Important GitHub repositories
-- https://github.com/zihangdai/cfo
-- https://github.com/Gorov/SimpleQuestions-EntityLinking
-- https://github.com/yinwenpeng/KBQA_IBM
-- https://github.com/yinwenpeng/KBQA_IBM_New
-- https://github.com/WDAqua/teafacto
-- https://github.com/syxu828/QuestionAnsweringOverFB
-- https://github.com/facebook/MemNN
+- Create the indexes for the 2M Freebase subset with this script:
+```
+bash create_indexes.sh
+```
 
+- Please install the following Python packages:
+```
+PyTorch
+torchtext
+NLTK 
+NLTK data (tokenizers, stopwords list)
+fuzzywuzzy
+```
 
-### Important papers
-- [Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://www.aclweb.org/anthology/P/P16/P16-1076.pdf)
-- [Simple Question Answering by Attentive Convolutional Neural Network - SOTA results](https://arxiv.org/abs/1606.03391)
-- [Character-Level Question Answering with Attention](https://arxiv.org/abs/1604.00727)
-- [Neural Network-based Question Answering over Knowledge Graphs on Word and Character Level](http://jens-lehmann.org/files/2017/www_nn_factoid_qa.pdf)
-- [Simple and Effective Question Answering with Recurrent Neural Networks](https://arxiv.org/abs/1606.05029)
-- [Improved Neural Relation Detection for Knowledge Base Question Answering - SOTA results](https://arxiv.org/pdf/1704.06194.pdf)
-- [Question Answering on Freebase via Relation Extraction and Textual Evidence](https://arxiv.org/abs/1603.00957)
-- [Comparative Study of CNN and RNN for Natural Language Processing](https://arxiv.org/abs/1702.01923)
+- Then go to the 'entity_linking' directory and start the Jupyter notebook to play with the linking phase:
+```
+cd entity_linking
+jupyter notebook
+```
+
+- You can also directly run the linking script.
+```
+python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
+    --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/query-text/test.txt \
+    --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
+```
+
+- To evaluate results:
+```
+cd entity_linking
+python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p results/linking-results.txt
+```
