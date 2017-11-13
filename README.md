@@ -1,16 +1,6 @@
-## Simple RNN model
+## Retrieval-based model for simple question answering
 
-- Download and extract SimpleQuestions dataset by running the script:
-```
-bash fetch_dataset.sh 
-```
-
-- Create the indexes for the 2M Freebase subset with this script:
-```
-bash create_indexes.sh
-```
-
-- Please install the following Python packages:
+- Please install the following Python 3 packages:
 ```
 PyTorch
 torchtext
@@ -19,21 +9,16 @@ NLTK data (tokenizers, stopwords list)
 fuzzywuzzy
 ```
 
-- Then go to the 'entity_linking' directory and start the Jupyter notebook to play with the linking phase:
+- Run the setup script. This takes a long time. It fetches dataset, other files, processes them and creates indexes:
 ```
-cd entity_linking
-jupyter notebook
-```
-
-- You can also directly run the linking script.
-```
-python entity_linking.py -t ../data/SimpleQuestions_v2_modified/test.txt --index_ent ../indexes/entity_2M.pkl --index_reach ../indexes/reachability_2M.pkl \
-    --index_names ../indexes/names_2M.pkl --ent_result ../entity_detection/query-text/test.txt \
-    --rel_result ../relation_prediction/results/main-test-results.txt --output ./results
+sh setup.sh 
 ```
 
-- To evaluate results:
-```
-cd entity_linking
-python evaluate.py -g ../data/SimpleQuestions_v2_modified/test.txt  -p results/linking-results.txt
-```
+
+- There are four main components: entity detection, entity linking, relation prediction and evidence integration (read paper for more info)
+
+- Each of these components have a directory and you can read the README file there on how to use them.
+
+- entity_detection and relation_prediction can be run independently.
+- entity_detection needs to be run before entity_linking.
+- entity_linking and relation_prediction needs to be run before evidence_integration.

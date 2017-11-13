@@ -4,10 +4,7 @@ import sys
 import argparse
 import pickle
 
-from nltk.tokenize.treebank import TreebankWordTokenizer
-from util import www2fb, clean_uri, strip_accents
-
-tokenizer = TreebankWordTokenizer()
+from util import www2fb, clean_uri, processed_text
 
 def get_all_ngrams(tokens):
     all_ngrams = set()
@@ -23,8 +20,8 @@ def find_ngrams(input_list, n):
 
 
 def get_name_ngrams(entity_name):
-    entity_name = entity_name.lower() # lowercase the name
-    name_tokens = tokenizer.tokenize(entity_name)
+    processed_name = processed_text(entity_name) # lowercase the name
+    name_tokens = processed_name.split()
     name_ngrams = get_all_ngrams(name_tokens)
 
     return name_ngrams
@@ -40,24 +37,24 @@ def create_inverted_index_entity(namespath, outpath):
                 print("line: {}".format(i))
 
             items = line.strip().split("\t")
-            if len(items) != 4:
+            if len(items) != 3:
                 print("ERROR: line - {}".format(line))
+                continue
 
-            entity_mid = clean_uri(items[0])
-            entity_type = clean_uri(items[1])
-            entity_name = clean_uri(items[2])
+            entity_mid = items[0]
+            entity_type = items[1]
+            entity_name = items[2]
 
             name_ngrams = get_name_ngrams(entity_name)
 
             for ngram_tuple in name_ngrams:
                 size += 1
                 ngram = " ".join(ngram_tuple)
-                ngram = strip_accents(ngram)
                 # print(ngram)
                 if ngram in index.keys():
-                    index[ngram].add(entity_mid)
+                    index[ngram].add((entity_mid, entity_name, entity_type))
                 else:
-                    index[ngram] = set([entity_mid])
+                    index[ngram] = set([(entity_mid, entity_name, entity_type)])
 
 
     print("num keys: {}".format(len(index)))
