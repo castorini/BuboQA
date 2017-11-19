@@ -78,10 +78,10 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
             top_k_scores_array = top_k_scores.cpu().data.numpy()
             top_k_indices_array = top_k_indices.cpu().data.numpy()
             top_k_relatons_array = index2tag[top_k_indices_array]
-            for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array[::-1], top_k_scores_array[::-1])):
+            for i, (relations_row, scores_row) in enumerate(zip(top_k_relatons_array, top_k_scores_array)):
+                index = (data_batch_idx * args.batch_size) + i
+                example = data_batch.dataset.examples[index]
                 for j, (rel, score) in enumerate(zip(relations_row, scores_row)):
-                    index = (data_batch_idx * args.batch_size) + i
-                    example = data_batch.dataset.examples[index]
                     if (rel == example.relation):
                         label = 1
                         n_retrieved += 1

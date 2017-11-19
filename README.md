@@ -2,8 +2,8 @@
 
 - Please install the following Python 3 packages:
 ```
-PyTorch
-torchtext(0.2.0)
+PyTorch (version 0.2.0)
+torchtext (version 0.2.0)
 NLTK 
 NLTK data (tokenizers, stopwords list)
 fuzzywuzzy
