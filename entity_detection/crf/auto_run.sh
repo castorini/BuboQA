@@ -7,7 +7,7 @@ if [ ! -d stanford-ner ]; then
     unzip stanford-ner.zip
     mv stanford-ner-2017-06-09 stanford-ner
 fi
-pushd stanford-ner
+cd stanford-ner
 pwd
 mkdir data
 ## Convert
@@ -25,8 +25,8 @@ echo "Evaluation on test data (in-domain)"
 python ../eval.py data/stanford.predicted.valid
 python ../eval.py data/stanford.predicted.test
 
-popd
+cd ..
 
 mkdir query_text
 python output2query.py --data_dir stanford-ner/data/stanford.predicted.valid --valid_line ../../data/processed_simplequestions_dataset/lineids_valid.txt --results_path query_text/query.valid
-python output2query.py --data_dir stanford-ner/data/stanford.predicted.test --valid_line ../../data/processed_simplequestions_dataset/lineids_test.txt --results_path query_text/query.test 
+python output2query.py --data_dir stanford-ner/data/stanford.predicted.test --valid_line ../../data/processed_simplequestions_dataset/lineids_test.txt --results_path query_text/query.test
