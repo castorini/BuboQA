@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+
 
 def convert(fileName, idFile, outputFile):
     fin = open(fileName)
@@ -26,5 +28,9 @@ def convert(fileName, idFile, outputFile):
         print("Length Error")
 
 if __name__=="__main__":
-    convert("stanford-ner/data/stanford.predicted.valid", "../../data/processed_simplequestions_dataset/lineids_valid.txt" , "query_text/query.valid")
-    convert("stanford-ner/data/stanford.predicted.test", "../../data/processed_simplequestions_dataset/lineids_test.txt" , "query_text/query.test")
+    parser = ArgumentParser(description='Convert result to query text')
+    parser.add_argument('--data_dir', type=str, default="stanford-ner/data/stanford.predicted.valid")
+    parser.add_argument('--valid_line', type=str, default="../../data/processed_simplequestions_dataset/lineids_valid.txt")
+    parser.add_argument('--results_path', type=str, default="query_text/query.valid")
+    args = parser.parse_args()
+    convert(args.data_dir, args.valid_line, args.results_path)

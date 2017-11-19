@@ -1,3 +1,7 @@
+from argparse import ArgumentParser
+
+
+
 
 def convert(filename, output):
     fin = open(filename, 'r')
@@ -11,6 +15,8 @@ def convert(filename, output):
     fout.close()
 
 if __name__=='__main__':
-    convert("../../../data/processed_simplequestions_dataset/train.txt", "data/stanford.train")
-    convert("../../../data/processed_simplequestions_dataset/valid.txt", "data/stanford.valid")
-    convert("../../../data/processed_simplequestions_dataset/test.txt", "data/stanford.test")
+    parser = ArgumentParser(description='Convert dataset to stanford format for training')
+    parser.add_argument('--data_dir', type=str, default="../../../data/processed_simplequestions_dataset/train.txt")
+    parser.add_argument('--save_path', type=str, default="data/stanford.train")
+    args = parser.parse_args()
+    convert(args.data_dir, args.save_path)

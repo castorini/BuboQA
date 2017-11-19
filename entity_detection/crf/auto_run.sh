@@ -11,7 +11,9 @@ pushd stanford-ner
 pwd
 mkdir data
 ## Convert
-python ../convert.py
+python ../convert.py --data_dir ../../../data/processed_simplequestions_dataset/train.txt --save_path data/stanford.train
+python ../convert.py --data_dir ../../../data/processed_simplequestions_dataset/valid.txt --save_path data/stanford.valid
+python ../convert.py --data_dir ../../../data/processed_simplequestions_dataset/test.txt --save_path data/stanford.test
 
 echo "Training in domain data"
 java -cp stanford-ner.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop ../qa.prop
@@ -26,4 +28,5 @@ python ../eval.py data/stanford.predicted.test
 popd
 
 mkdir query_text
-python output2query.py
+python output2query.py --data_dir stanford-ner/data/stanford.predicted.valid --valid_line ../../data/processed_simplequestions_dataset/lineids_valid.txt --results_path query_text/query.valid
+python output2query.py --data_dir stanford-ner/data/stanford.predicted.test --valid_line ../../data/processed_simplequestions_dataset/lineids_test.txt --results_path query_text/query.test 
