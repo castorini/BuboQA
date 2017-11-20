@@ -14,7 +14,7 @@ from sklearn import metrics
 
 parser = ArgumentParser(description='Logistic Regression - word2vec and top 300 relation word features')
 parser.add_argument('--data_dir', type=str, default="../../data/lr_w2v_rel_features/")
-parser.add_argument('--save_path', type=str, default='./saved_checkpoints/w2v_rel/')
+parser.add_argument('--save_path', type=str, default='./saved_checkpoints/w2v_rel')
 parser.add_argument('--results_path', type=str, default='./results/w2v_rel/')
 parser.add_argument('--trained_model', type=str, default='')
 parser.add_argument('--hits', type=int, default=5, help="number of top results to output")
@@ -35,7 +35,7 @@ if not args.trained_model:
     with open(train_path, 'r') as f:
         for line in f:
             items = line.split(" %%%% ")
-            lineid = items[0].split("-")[0] + str(int(items[0].split("-")[1])+1)
+            lineid = items[0].split("-")[0] + str(int(items[0].split("-")[1]))
             x = np.fromstring(items[1], sep=' ')
             X_train.append(x)
             y_train.append(items[2].strip())
@@ -63,7 +63,7 @@ for (data, path) in [("valid", valid_path), ("test", test_path)]:
     with open(path, 'r') as f:
         for line in f:
             items = line.split(" %%%% ")
-            lineid = items[0].split("-")[0] + "-" + str(int(items[0].split("-")[1])+1)
+            lineid = items[0].split("-")[0] + "-" + str(int(items[0].split("-")[1]))
             lineids.append(lineid)
             x = np.fromstring(items[1], sep=' ')
             X_test.append(x)

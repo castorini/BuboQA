@@ -25,6 +25,7 @@ echo "Evaluation on test data (in-domain)"
 python ../eval.py data/stanford.predicted.valid
 python ../eval.py data/stanford.predicted.test
 
+
 cd ..
 
 mkdir query_text
