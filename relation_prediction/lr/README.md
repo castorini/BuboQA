@@ -9,17 +9,18 @@ python lr_tfidf.py --help
 python lr_tfidf.py --trained_model path/to/model/pickle
 ```
 
-### For word2vec + top 300 relation features
+### For embeddings + top 300 relation features
+- We average the word embeddings (GloVe) of the words in the sentence and use the top 300 relation words.
 ```
-python lr_w2v_rel.py --help
+python lr_embeddings_rel.py --help
 ```
 - If you have a trained model, then use:
 ```
-python lr_w2v_rel.py --trained_model path/to/model/pickle
+python lr_embeddings_rel.py --trained_model path/to/model/pickle
 ```
 
 ### Results
-- word2vec + 300 top rel words:
+- embeddings + 300 top rel words:
 ```
 Testing on valid data...
 Accuracy on valid dataset: 70.63162747810051

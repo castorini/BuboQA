@@ -18,8 +18,8 @@ mv sq_glove300d.pt data/
 
 echo "Downloading Features...\n"
 wget http://ocp59jkku.bkt.clouddn.com/feature4lr.zip
-unzip feature4lr.zip -d lr_w2v_rel_features/
-mv lr_w2v_rel_features/ data/
+unzip feature4lr.zip -d lr_glove_rel_features/
+mv lr_glove_rel_features/ data/
 rm feature4lr.zip
 
 echo "Downloading Mapping to wiki...\n"
