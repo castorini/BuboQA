@@ -115,6 +115,5 @@ relation_prediction/*/trained_model/*
 relation_prediction/*/results/*
 entity_linking/results
 
-evidence_integration/*
 entity_linking-old/*
 
