@@ -113,6 +113,7 @@ def entity_linking(data_type, predictedfile, goldfile, HITS_TOP_ENTITIES, output
             top50 += 1
         if gold_id in midList[:100]:
             top100 += 1
+            
     print(data_type)
     print("Top1 Entity Linking Accuracy: {}".format(top1 / total))
     print("Top3 Entity Linking Accuracy: {}".format(top3 / total))
@@ -125,6 +126,7 @@ def entity_linking(data_type, predictedfile, goldfile, HITS_TOP_ENTITIES, output
 
 if __name__=="__main__":
     parser = ArgumentParser(description='Perform entity linking')
+    parser.add_argument('--model_type', type=str, required=True, help="options are [crf|lstm|gru]")
     parser.add_argument('--index_ent', type=str, default="../indexes/entity_2M.pkl",
                         help='path to the pickle for the inverted entity index')
     parser.add_argument('--data_dir', type=str, default="../data/processed_simplequestions_dataset")
@@ -134,17 +136,20 @@ if __name__=="__main__":
     args = parser.parse_args()
     print(args)
 
-    os.makedirs(args.output_dir, exist_ok=True)
+    model_type = args.model_type.lower()
+    assert(model_type == "crf" || model_type == "lstm" || model_type == "gru")
+    output_dir = os.path.join(args.output_dir, model_type)
+    os.makedirs(output_dir, exist_ok=True)
 
     get_stat_inverted_index(args.index_ent)
     entity_linking("valid",
                     os.path.join(args.query_dir, "query.valid"),
                     os.path.join(args.data_dir, "valid.txt"),
                     args.hits,
-                    os.path.join(args.output_dir, "valid-h{}.txt".format(args.hits)))
+                    os.path.join(output_dir, "valid-h{}.txt".format(args.hits)))
 
     entity_linking("test",
                     os.path.join(args.query_dir, "query.test"),
                     os.path.join(args.data_dir, "test.txt"),
                     args.hits,
-                    os.path.join(args.output_dir, "test-h{}.txt".format(args.hits)))
+                    os.path.join(output_dir, "test-h{}.txt".format(args.hits)))
