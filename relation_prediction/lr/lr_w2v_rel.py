@@ -92,8 +92,8 @@ for (data, path) in [("valid", valid_path), ("test", test_path)]:
             gold = y_test[i]
             if gold in cand_rels:
                 retrieved += 1
-        
-        rate = retrieved * 100.0 / total 
+
+        rate = retrieved * 100.0 / total
         print("Hits: {}, Retrieved: {}, Total: {}, RetrievalRate: {}".format(hits, retrieved, total, rate))
 
     outfile = open(os.path.join(args.results_path, "topk-retrieval-{}-hits-{}.txt").format(data, args.hits), "w")

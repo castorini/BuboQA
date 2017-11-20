@@ -69,8 +69,8 @@ for (data, df) in [("valid", valid_df), ("test", test_df)]:
             gold = df['relation'][i]
             if gold in cand_rels:
                 retrieved += 1
-        
-        rate = retrieved * 100.0 / total 
+
+        rate = retrieved * 100.0 / total
         print("Hits: {}, Retrieved: {}, Total: {}, RetrievalRate: {}".format(hits, retrieved, total, rate))
 
 
