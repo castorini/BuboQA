@@ -12,10 +12,10 @@ from sklearn.pipeline import Pipeline
 from sklearn import metrics
 
 
-parser = ArgumentParser(description='Logistic Regression - word2vec and top 300 relation word features')
-parser.add_argument('--data_dir', type=str, default="../../data/lr_w2v_rel_features/")
-parser.add_argument('--save_path', type=str, default='./saved_checkpoints/w2v_rel')
-parser.add_argument('--results_path', type=str, default='./results/w2v_rel/')
+parser = ArgumentParser(description='Logistic Regression - embeddings (GloVe) and top 300 relation word features')
+parser.add_argument('--data_dir', type=str, default="../../data/lr_glove_rel_features/")
+parser.add_argument('--save_path', type=str, default='./saved_checkpoints/embeddings_rel')
+parser.add_argument('--results_path', type=str, default='./results/embeddings_rel/')
 parser.add_argument('--trained_model', type=str, default='')
 parser.add_argument('--hits', type=int, default=5, help="number of top results to output")
 args = parser.parse_args()
@@ -43,6 +43,7 @@ if not args.trained_model:
     X_train = np.array(X_train)
     y_train = np.array(y_train)
 
+    print("training the model - this will take some time...")
     clf = LogisticRegression()
     clf.fit(X_train, y_train)
     print("model trained, saving to pickle...")
@@ -53,6 +54,7 @@ if not args.trained_model:
     print("Accuracy on training set: {}".format(accuracy_on_train))
 
 else:
+    print("loading the model from pickle...")
     clf = pickle.load(open(args.trained_model, "rb" ) )
 
 
