@@ -113,3 +113,7 @@ entity_detection/crf/stanford-ner*
 relation_prediction/*/saved_checkpoints/*
 relation_prediction/*/trained_model/*
 relation_prediction/*/results/*
+
+evidence_integration/*
+entity_linking-old/*
+
