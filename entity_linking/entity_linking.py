@@ -1,7 +1,8 @@
-from collections import defaultdict
 import pickle
-from tqdm import tqdm
 
+from collections import defaultdict
+from tqdm import tqdm
+from argparse import ArgumentParser
 from fuzzywuzzy import fuzz
 from nltk.corpus import stopwords
 from util import clean_uri, processed_text, www2fb
@@ -132,15 +133,17 @@ if __name__=="__main__":
     args = parser.parse_args()
     print(args)
 
+    os.makedirs(args.output_dir, exist_ok=True)
+
     get_stat_inverted_index(args.index_ent)
     entity_linking("valid",
                     os.path.join(args.query_dir, "query.valid"),
                     os.path.join(args.data_dir, "valid.txt"),
                     args.hits, 
-                    os.path.join(args.output_dir, "valid-h{}.txt".format(args.hits))
+                    os.path.join(args.output_dir, "valid-h{}.txt".format(args.hits)))
 
     entity_linking("test",
                     os.path.join(args.query_dir, "query.test"),
                     os.path.join(args.data_dir, "test.txt"),
                     args.hits, 
-                    os.path.join(args.output_dir, "test-h{}.txt".format(args.hits))
+                    os.path.join(args.output_dir, "test-h{}.txt".format(args.hits)))
