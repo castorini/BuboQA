@@ -59,7 +59,6 @@ index2word = np.array(TEXT.vocab.itos)
 results_path = os.path.join(args.results_path, args.entity_detection_mode.lower())
 if not os.path.exists(results_path):
     os.makedirs(results_path, exist_ok=True)
-os.makedirs('tmp', exist_ok=True)
 
 
 def convert(fileName, idFile, outputFile):

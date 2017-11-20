@@ -3,9 +3,9 @@
 ### Quick Start
 
 ```
-python train.py --entity_prediction_mode LSTM --fix_embed
+python train.py --entity_detection_mode LSTM --fix_embed
 or
-python train.py --entity_prediction_mode LSTM --fix_embed --no_cuda
+python train.py --entity_detection_mode LSTM --fix_embed --no_cuda
 ```
 
 to train the model.
