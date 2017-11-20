@@ -1,18 +1,17 @@
 #!/usr/bin/python
-
 import os
 import sys
 import argparse
 import pickle
 import logging
-# from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
+from fuzzywuzzy import process, fuzz
 import re
 from nltk.tokenize.treebank import TreebankWordTokenizer
 from util import www2fb, clean_uri, processed_text
 tokenizer = TreebankWordTokenizer()
 logger = logging.getLogger()
 logger.disabled = True
+
 
 def get_index(index_path):
     print("loading index from: {}".format(index_path))
@@ -45,82 +44,54 @@ def get_indices(src_list, pattern_list):
             break
     return indices
 
-be = ["is", "was", "'s", "were", "are", "'re"]
 
-def reverseLinking(question, names_list):
-    # get question tokens
-    tokens = question.split()
-    # init default value of returned variables
+
+def get_ngram(tokens):
+    ngram = []
+    for i in range(1, len(tokens)+1):
+        for s in range(len(tokens)-i+1):
+            ngram.append((" ".join(tokens[s: s+i]), s, i+s))
+    return ngram
+
+
+def reverseLinking(sent, text_candidate):
+    tokens = sent.split()
     label = ["O"] * len(tokens)
-    exact_match = False
     text_attention_indices = None
-    for res in sorted(names_list, key=lambda name: len(name), reverse=True):
-        pattern = r'(^|\s)(%s)($|\s)' % (re.escape(res))
-        if re.search(pattern, question):
-            text_attention_indices = get_indices(tokens, res.split())
+    exact_match = False
+
+    if text_candidate is None or len(text_candidate) == 0:
+        return '<UNK>', label, exact_match
+
+    # sorted by length
+    for text in sorted(text_candidate, key=lambda x:len(x), reverse=True):
+        pattern = r'(^|\s)(%s)($|\s)' % (re.escape(text))
+        if re.search(pattern, sent):
+            text_attention_indices = get_indices(tokens, text.split())
             break
     if text_attention_indices != None:
         exact_match = True
         for i in text_attention_indices:
             label[i] = 'I'
     else:
-        if names_list == None or len(names_list) == 0:
-            return '<UNK>', label, exact_match
         try:
-            v, score = process.extractOne(question, names_list)
+            v, score = process.extractOne(sent, text_candidate, scorer=fuzz.partial_ratio)
         except:
-            print(question, names_list)
-            exit()
-        v = tokenizer.tokenize(v)
-        for w in v:
-            result = process.extractOne(w, tokens, score_cutoff=85)
-            if result == None:
-                continue
-            else:
-                word = result[0]
-                label[tokens.index(word)] = 'I'
-        # Manually correct some error
-        # 'is' or 'was' is often matched and labeled as 'I'
-        if len(tokens) > 1 and (tokens[1] in be) and label[1] == 'I':
-            label[1] = 'O'
-        if len(tokens) > 2 and (tokens[2] in be) and label[2] == 'I':
-            label[1] = 'O'
-        # Smoothing the label (like 'I I I O I I I')
-        start = end = -1
-        start_len = end_len = 0
-        for l in range(len(label)):
-            if label[l] == 'I':
-                start = l
-                start_len += 1
-            if label[l] == 'O' and start != -1:
-                start = l
-                break
-        if start != -1:
-            for l in range(len(label)):
-                if label[len(label) - l - 1] == 'I':
-                    end = len(label) - l
-                    end_len += 1
-                if label[len(label) - l - 1 ] == 'O' and end != -1:
-                    end = len(label) - l
-                    break
-        if start != -1 and end != -1 and start < end:
-            if end-start<2:
-                for l in range(start, end):
-                    label[l] = 'I'
-            else:
-                if start_len <= end_len:
-                    for l in range(start-start_len, start):
-                        label[l] = 'O'
-                else:
-                    for l in range(end, end+end_len):
-                        label[l] = 'O'
-    entity = []
+            print("Extraction Error with FuzzyWuzzy : {} || {}".format(sent, text_candidate))
+            return '<UNK>', label, exact_match
+        v = v.split()
+        n_gram_candidate = get_ngram(tokens)
+        n_gram_candidate = sorted(n_gram_candidate, key=lambda x: fuzz.ratio(x[0], v), reverse=True)
+        top = n_gram_candidate[0]
+        for i in range(top[1], top[2]):
+            label[i] = 'I'
+    entity_text = []
     for l, t in zip(label, tokens):
         if l == 'I':
-            entity.append(t)
-    entity = " ".join(entity)
+            entity_text.append(t)
+    entity_text = " ".join(entity_text)
     label = " ".join(label)
-    return entity, label, exact_match
+    return entity_text, label, exact_match
 
 def augment_dataset(datadir, index_namespath, outdir):
     names_map = get_index(index_namespath)
@@ -160,7 +131,6 @@ def augment_dataset(datadir, index_namespath, outdir):
                     continue
 
                 cand_entity_names = names_map[subject]
-                #entity_name = pick_best_name(question, cand_entity_names)
 
                 entity_name, label, exact_match = reverseLinking(question, cand_entity_names)
                 if exact_match:

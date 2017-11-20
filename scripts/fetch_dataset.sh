@@ -16,11 +16,15 @@ echo "Downloading Embeddings...\n"
 wget http://ocp59jkku.bkt.clouddn.com/sq_glove300d.pt
 mv sq_glove300d.pt data/
 
-echo "Downloading Features for LR word2vec + top 300 relations...\n"
+echo "Downloading Features...\n"
 wget http://ocp59jkku.bkt.clouddn.com/feature4lr.zip
 unzip feature4lr.zip -d lr_w2v_rel_features/
 mv lr_w2v_rel_features/ data/
 rm feature4lr.zip
+
+echo "Downloading Mapping to wiki...\n"
+wget http://ocp59jkku.bkt.clouddn.com/fb2w.nt
+mv fb2w.nt data/
 
 #echo "\n\nDownloading the augmented FB2M graph and names file...\n"
 #wget https://www.dropbox.com/s/yqbesl07hsw297w/FB5M.name.txt

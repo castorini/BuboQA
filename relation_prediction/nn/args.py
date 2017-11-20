@@ -16,7 +16,7 @@ def get_args():
     parser.add_argument('--patience', type=int, default=10)
     parser.add_argument('--save_path', type=str, default='saved_checkpoints')
     parser.add_argument('--specify_prefix', type=str, default='id1')
-    parser.add_argument('--output_channel', type=int, default=200)
+    parser.add_argument('--output_channel', type=int, default=300)
     parser.add_argument('--words_dim', type=int, default=300)
     parser.add_argument('--num_layer', type=int, default=2)
     parser.add_argument('--rnn_dropout', type=float, default=0.3, help='dropout in rnn')
