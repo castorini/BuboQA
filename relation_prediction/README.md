@@ -50,5 +50,6 @@ python top_retrieval.py --relation_prediction_mode CNN --trained_model path_to_f
 ### LR(glove+rel)
 
 | Dataset | 1@R | 3@R | 5@R |
+|:-------:|:---:|:---:|:---:|
 |  Valid  |74.71|88.93|92.16|
 |  Test   |74.50|88.64|92.02|
