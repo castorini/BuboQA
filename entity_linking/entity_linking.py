@@ -113,7 +113,7 @@ def entity_linking(data_type, predictedfile, goldfile, HITS_TOP_ENTITIES, output
             top50 += 1
         if gold_id in midList[:100]:
             top100 += 1
-            
+
     print(data_type)
     print("Top1 Entity Linking Accuracy: {}".format(top1 / total))
     print("Top3 Entity Linking Accuracy: {}".format(top3 / total))
@@ -137,7 +137,7 @@ if __name__=="__main__":
     print(args)
 
     model_type = args.model_type.lower()
-    assert(model_type == "crf" || model_type == "lstm" || model_type == "gru")
+    assert(model_type == "crf" or model_type == "lstm" or model_type == "gru")
     output_dir = os.path.join(args.output_dir, model_type)
     os.makedirs(output_dir, exist_ok=True)
 

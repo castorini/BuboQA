@@ -2,10 +2,12 @@
 
 ### Quick Start
 
+- You can run linking like this:
 ```
 python entity_linking --help
-python entity_linking
+python entity_linking --model_type crf
 ```
+- You must provide the model type. Change the query directory according to the model type.
 
 ### Results
 
