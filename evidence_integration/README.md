@@ -2,13 +2,19 @@
 
 ### Quick Start
 ```
-python evidence_integration --help
+python evidence_integration.py --help
 
-python evidence_integration --ent_type cnn --ent_path ../entity_linking/crf/test-h100.txt \
-                --rel_type cnn --rel_path ../relation_prediction/nn/results/cnn/test.txt
+python evidence_integration.py --ent_type crf --ent_path ../entity_linking/results/crf/test-h100.txt \
+ --rel_type cnn --rel_path ../relation_prediction/nn/results/cnn/test.txt
 ```
-- You must provide the arguments for the model type for entity linking (--ent_type) and the relation (--rel_type). 
+- You must provide the arguments for the model type for entity linking (--ent_type) and the relation (--rel_type).
 - Change the argument for the entity linking results directory (--ent_path) and the relation prediction result directory (--rel_path) to their model types.
+- To run on the validation set:
+```
+python evidence_integration.py --data_path ../data/processed_simplequestions_dataset/valid.txt \
+ --ent_type crf --ent_path ../entity_linking/results/crf/valid-h100.txt \
+ --rel_type cnn --rel_path ../relation_prediction/nn/results/cnn/valid.txt
+```
 
 
 ### Evidence Integration Results

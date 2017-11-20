@@ -4,8 +4,8 @@
 
 - You can run linking like this:
 ```
-python entity_linking --help
-python entity_linking --model_type crf --query_dir ../entity_detection/crf/query_text
+python entity_linking.py --help
+python entity_linking.py --model_type crf --query_dir ../entity_detection/crf/query_text
 ```
 - You must provide the model type argument (--model_type). Change the argument for query directory (--query_dir) according to the model type.
 
