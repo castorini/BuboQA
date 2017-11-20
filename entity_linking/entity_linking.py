@@ -127,7 +127,7 @@ if __name__=="__main__":
     parser = ArgumentParser(description='Perform entity linking')
     parser.add_argument('--index_ent', type=str, default="../indexes/entity_2M.pkl",
                         help='path to the pickle for the inverted entity index')
-    parser.add_argument('--data_dir', type=str, default="../../data/processed_simplequestions_dataset")
+    parser.add_argument('--data_dir', type=str, default="../data/processed_simplequestions_dataset")
     parser.add_argument('--query_dir', type=str, default="../entity_detection/crf/query_text")
     parser.add_argument('--hits', type=int, default=100)
     parser.add_argument('--output_dir', type=str, default="./results")
@@ -140,11 +140,11 @@ if __name__=="__main__":
     entity_linking("valid",
                     os.path.join(args.query_dir, "query.valid"),
                     os.path.join(args.data_dir, "valid.txt"),
-                    args.hits, 
+                    args.hits,
                     os.path.join(args.output_dir, "valid-h{}.txt".format(args.hits)))
 
     entity_linking("test",
                     os.path.join(args.query_dir, "query.test"),
                     os.path.join(args.data_dir, "test.txt"),
-                    args.hits, 
+                    args.hits,
                     os.path.join(args.output_dir, "test-h{}.txt".format(args.hits)))
