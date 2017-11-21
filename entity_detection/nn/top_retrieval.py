@@ -96,7 +96,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
 
     n_correct = 0
     fname = "{}.txt".format(data_name)
-    temp_file = os.path.join('/tmp', fname)
+    temp_file = 'tmp'+fname
     results_file = open(temp_file, 'w')
 
     gold_list = []
@@ -130,6 +130,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     results_file.flush()
     results_file.close()
     convert(temp_file, os.path.join(args.data_dir, "lineids_{}.txt".format(data_name)), os.path.join(results_path,"query.{}".format(data_name)))
+    os.remove(temp_file)
 
 
 # run the model on the dev set and write the output to a file
