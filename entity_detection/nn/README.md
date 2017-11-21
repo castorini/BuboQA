@@ -3,9 +3,9 @@
 ### Quick Start
 
 ```
-python train.py --entity_prediction_mode GRU --fix_embed
+python train.py --entity_detection_mode LSTM --fix_embed
 or
-python train.py --entity_prediction_mode LSTM --fix_embed --no_cuda
+python train.py --entity_detection_mode LSTM --fix_embed --no_cuda
 ```
 
 to train the model.
@@ -13,7 +13,7 @@ to train the model.
 The file should be saved in the *saved_checkpoints* directory.
 
 ```
-python main.py --trained_model [path/to/trained_model.pt]
+python top_retrieval.py --trained_model [path/to/trained_model.pt] --entity_detection_mode LSTM
 ```
 
 to test the model.
