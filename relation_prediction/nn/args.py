@@ -30,6 +30,7 @@ def get_args():
     parser.add_argument('--fix_embed', action='store_false', dest='train_embed')
     parser.add_argument('--hits', type=int, default=5)
     # added for testing
+    parser.add_argument('--data_dir', type=str, default='../../data/processed_simplequestions_dataset/')
     parser.add_argument('--trained_model', type=str, default='')
     parser.add_argument('--results_path', type=str, default='results')
     args = parser.parse_args()

@@ -32,7 +32,7 @@ if torch.cuda.is_available() and not args.cuda:
 TEXT = data.Field(lower=True)
 RELATION = data.Field(sequential=False)
 
-train, dev, test = SQdataset.splits(TEXT, RELATION)
+train, dev, test = SQdataset.splits(TEXT, RELATION, args.data_dir)
 TEXT.build_vocab(train, dev, test)
 RELATION.build_vocab(train, dev)
 

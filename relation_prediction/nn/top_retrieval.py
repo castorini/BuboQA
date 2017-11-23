@@ -28,7 +28,7 @@ if torch.cuda.is_available() and not args.cuda:
 TEXT = data.Field(lower=True)
 RELATION = data.Field(sequential=False)
 
-train, dev, test = SQdataset.splits(TEXT, RELATION)
+train, dev, test = SQdataset.splits(TEXT, RELATION, args.data_dir)
 TEXT.build_vocab(train, dev, test)
 RELATION.build_vocab(train, dev)
 
@@ -66,7 +66,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     results_file = open(os.path.join(results_path, fname), 'w')
     n_retrieved = 0
 
-    fid = open("../../data/processed_simplequestions_dataset/lineids_{}.txt".format(data_name))
+    fid = open(os.path.join(args.data_dir,"lineids_{}.txt".format(data_name)))
     sent_id = [x.strip() for x in fid.readlines()]
 
     for data_batch_idx, data_batch in enumerate(dataset_iter):
