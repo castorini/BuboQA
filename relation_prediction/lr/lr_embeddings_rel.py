@@ -47,7 +47,7 @@ if not args.trained_model:
     clf = LogisticRegression()
     clf.fit(X_train, y_train)
     print("model trained, saving to pickle...")
-    pickle.dump(clf, open(os.path.join(args.save_path, "lr_w2v_rel_clf.pkl"), "wb"))
+    pickle.dump(clf, open(os.path.join(args.save_path, "lr_embeddings_rel_clf.pkl"), "wb"))
 
     predicted_train = clf.predict(X_train)
     accuracy_on_train = 100.0 * np.mean(predicted_train == y_train)
