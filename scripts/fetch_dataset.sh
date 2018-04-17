@@ -32,8 +32,10 @@ mv fb2w.nt data/
 
 mkdir data/freebase_names
 echo "\n\nDownloading the names file...\n"
-#wget https://www.dropbox.com/s/yqbesl07hsw297w/FB5M.name.txt
 wget http://ocp59jkku.bkt.clouddn.com/FB5M.name.txt
+# Another Solution for FB5M.name.txt
+# wget https://github.com/castorini/BuboQA-data/raw/master/FB5M.name.txt.bz2
+# bzip2 -d FB5M.name.txt.bz2
 
 mv FB5M.name.txt data/freebase_names/
 
