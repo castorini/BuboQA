@@ -51,7 +51,7 @@ def create_inverted_index_entity(namespath, outpath):
                 size += 1
                 ngram = " ".join(ngram_tuple)
                 # print(ngram)
-                if ngram in index.keys():
+                if index.get(ngram) is not None:
                     index[ngram].add((entity_mid, entity_name, entity_type))
                 else:
                     index[ngram] = set([(entity_mid, entity_name, entity_type)])

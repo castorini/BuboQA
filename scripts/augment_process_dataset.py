@@ -125,7 +125,7 @@ def augment_dataset(datadir, index_namespath, outdir):
                 object = www2fb(items[2])
                 question = processed_text(items[3])
 
-                if subject not in names_map.keys():
+                if names_map.get(subject) is None:
                     skipped += 1
                     print("lineid {} - name not found. {} skipping question.".format(lineid, subject))
                     continue

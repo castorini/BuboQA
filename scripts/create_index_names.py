@@ -22,7 +22,7 @@ def get_names_for_entities(namespath):
             type = items[1]
             literal = items[2].strip()
             if literal != "":
-                if entity not in names.keys():
+                if names.get(entity) is None:
                     names[entity] = [(literal)]
                 else:
                     names[entity].append(literal)

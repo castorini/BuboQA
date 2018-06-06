@@ -25,7 +25,7 @@ def create_index_reachability(fbpath, outpath):
             object = www2fb(items[2])
             # print("{}  -   {}".format(subject, predicate))
 
-            if subject in index.keys():
+            if index.get(subject) is not None:
                 index[subject].add(predicate)
             else:
                 index[subject] = set([predicate])

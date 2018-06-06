@@ -26,17 +26,17 @@ def create_index_degrees(fbpath, outpath):
             # print("{}  -   {}".format(subject, predicate))
 
             # increment outdegree of subject
-            if subject in index.keys():
+            if index.get(subject) is not None:
                 index[subject][1] += 1
             else:
                 index[subject] = [0, 1]
             # increment the count of predicate - first index, 2nd index is useless here
-            if predicate in index.keys():
+            if index.get(predicate) is not None:
                 index[predicate][0] += 1
             else:
                 index[predicate] = [1, 0]
             # increment the indegree of object
-            if object in index.keys():
+            if index.get(object) is not None:
                 index[object][0] += 1
             else:
                 index[object] = [1, 0]

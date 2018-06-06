@@ -26,7 +26,7 @@ def create_graph(fbpath, outpath):
             object = www2fb(items[2])
             # print("{}  -   {}".format(subject, predicate))
 
-            if subject in index.keys():
+            if index.get(subject) is not None:
                 index[(subject, predicate)].add(object)
             else:
                 index[(subject, predicate)] = set([object])
