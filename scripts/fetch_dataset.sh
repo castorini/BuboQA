@@ -4,7 +4,7 @@
 mkdir data
 
 echo "Downloading SimpleQuestions dataset...\n"
-wget https://www.dropbox.com/s/tohrsllcfy7rch4/SimpleQuestions_v2.tgz
+wget https://git.uwaterloo.ca/jimmylin/BuboQA-data/raw/master/SimpleQuestions_v2.tgz
 
 echo "\n\nUnzipping SimpleQuestions dataset...\n"
 tar -xvzf SimpleQuestions_v2.tgz
@@ -13,17 +13,17 @@ mv SimpleQuestions_v2 data/
 rm SimpleQuestions_v2.tgz
 
 echo "Downloading Embeddings...\n"
-wget http://ocp59jkku.bkt.clouddn.com/sq_glove300d.pt
+wget https://git.uwaterloo.ca/jimmylin/BuboQA-data/raw/master/sq_glove300d.pt
 mv sq_glove300d.pt data/
 
 echo "Downloading Features...\n"
-wget http://ocp59jkku.bkt.clouddn.com/feature4lr.zip
+wget https://git.uwaterloo.ca/jimmylin/BuboQA-data/raw/master/feature4lr.zip
 unzip feature4lr.zip -d lr_glove_rel_features/
 mv lr_glove_rel_features/ data/
 rm feature4lr.zip
 
 echo "Downloading Mapping to wiki...\n"
-wget http://ocp59jkku.bkt.clouddn.com/fb2w.nt
+wget https://git.uwaterloo.ca/jimmylin/BuboQA-data/raw/master/fb2w.nt
 mv fb2w.nt data/
 
 #echo "\n\nDownloading the augmented FB2M graph and names file...\n"
@@ -32,10 +32,8 @@ mv fb2w.nt data/
 
 mkdir data/freebase_names
 echo "\n\nDownloading the names file...\n"
-wget http://ocp59jkku.bkt.clouddn.com/FB5M.name.txt
-# Another Solution for FB5M.name.txt
-# wget https://github.com/castorini/BuboQA-data/raw/master/FB5M.name.txt.bz2
-# bzip2 -d FB5M.name.txt.bz2
+wget https://git.uwaterloo.ca/jimmylin/BuboQA-data/raw/master/FB5M.name.txt.bz2
+bzip2 -d FB5M.name.txt.bz2
 
 mv FB5M.name.txt data/freebase_names/
 
