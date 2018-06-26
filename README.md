@@ -8,11 +8,16 @@ This repo contains code for the following paper:
 
 Install the following Python 3 packages:
 
-+ PyTorch (version 0.2.0)
-+ torchtext (version 0.2.0)
++ PyTorch (version 0.4.0)
++ torchtext (version 0.2.3)
 + NLTK 
 + NLTK data (tokenizers, stopwords list)
 + fuzzywuzzy
+
+If you use PyTorch version 0.2.0, please checkout to 
+```
+commit 34a71f29192ed57f83d8576002f2b540de7d722f
+```
 
 Run the setup script. This takes a long time. It fetches dataset, other files, processes them and creates indexes:
 
