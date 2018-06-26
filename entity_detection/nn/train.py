@@ -55,11 +55,11 @@ else:
 print("Embedding match number {} out of {}".format(match_embedding, len(TEXT.vocab)))
 
 train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   sort=False, shuffle=True)
+                                   sort=False, shuffle=True, sort_within_batch=False)
 dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
-                                   sort=False, shuffle=False)
+                                   sort=False, shuffle=False, sort_within_batch=False)
 test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
-                                   sort=False, shuffle=False)
+                                   sort=False, shuffle=False, sort_within_batch=False)
 
 config = args
 config.words_num = len(TEXT.vocab)
@@ -73,7 +73,7 @@ else:
 
 model.embed.weight.data.copy_(TEXT.vocab.vectors)
 if args.cuda:
-    model.cuda()
+    modle = model.to(torch.device("cuda:{}".format(args.gpu)))
     print("Shift model to GPU")
 
 print(config)
@@ -127,8 +127,8 @@ while True:
         scores = model(batch)
         # Entity Detection
         if args.dataset == 'EntityDetection':
-            n_correct += ((torch.max(scores, 1)[1].view(batch.ed.size()).data == batch.ed.data).sum(dim=0) \
-                      == batch.ed.size()[0]).sum()
+            n_correct += torch.sum((torch.sum((torch.max(scores, 1)[1].view(batch.ed.size()).data == batch.ed.data), dim=0) \
+                      == batch.ed.size()[0])).item()
             loss = criterion(scores, batch.ed.view(-1, 1)[:, 0])
         else:
             print("Wrong Dataset")
@@ -137,7 +137,7 @@ while True:
         n_total += batch.batch_size
         loss.backward()
         # clip the gradient
-        torch.nn.utils.clip_grad_norm(model.parameters(), args.clip_gradient)
+        torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip_gradient)
         optimizer.step()
 
         # evaluate performance on validation set periodically
@@ -193,6 +193,6 @@ while True:
             # print progress message
             print(log_template.format(time.time() - start,
                                           epoch, iterations, 1 + batch_idx, len(train_iter),
-                                          100. * (1 + batch_idx) / len(train_iter), loss.data[0], ' ' * 8,
+                                          100. * (1 + batch_idx) / len(train_iter), loss.item(), ' ' * 8,
                                           100. * n_correct / n_total, ' ' * 12))
 

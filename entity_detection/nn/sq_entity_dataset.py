@@ -6,6 +6,6 @@ class SQdataset(data.TabularDataset):
                train='train.txt', validation='valid.txt', test='test.txt'):
         return super(SQdataset, cls).splits(
             path=path, train=train, validation=validation, test=test,
-            format='TSV', fields=[('id', None), ('sub', None), ('entity', None), ('relation', None),
+            format='tsv', fields=[('id', None), ('sub', None), ('entity', None), ('relation', None),
                                   ('obj', None), ('text', text_field), ('ed', label_field)]
         )

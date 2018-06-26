@@ -105,8 +105,8 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     for data_batch_idx, data_batch in enumerate(dataset_iter):
         scores = model(data_batch)
         if args.dataset == 'EntityDetection':
-            n_correct += ((torch.max(scores, 1)[1].view(data_batch.ed.size()).data == data_batch.ed.data).sum(dim=0) \
-                              == data_batch.ed.size()[0]).sum()
+            n_correct += torch.sum(torch.sum(torch.max(scores, 1)[1].view(data_batch.ed.size()).data == data_batch.ed.data, dim=1) \
+                              == data_batch.ed.size()[0]).item()
             index_tag = np.transpose(torch.max(scores, 1)[1].view(data_batch.ed.size()).cpu().data.numpy())
             tag_array = index2tag[index_tag]
             index_question = np.transpose(data_batch.text.cpu().data.numpy())

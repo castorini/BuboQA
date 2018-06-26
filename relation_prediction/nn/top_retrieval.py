@@ -72,7 +72,7 @@ def predict(dataset_iter=test_iter, dataset=test, data_name="test"):
     for data_batch_idx, data_batch in enumerate(dataset_iter):
         scores = model(data_batch)
         if args.dataset == 'RelationPrediction':
-            n_correct += (torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).sum()
+            n_correct += torch.sum(torch.max(scores, 1)[1].view(data_batch.relation.size()).data == data_batch.relation.data).item()
             # Get top k
             top_k_scores, top_k_indices = torch.topk(scores, k=args.hits, dim=1, sorted=True)  # shape: (batch_size, k)
             top_k_scores_array = top_k_scores.cpu().data.numpy()

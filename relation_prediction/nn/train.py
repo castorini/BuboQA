@@ -54,11 +54,11 @@ else:
 print("Embedding match number {} out of {}".format(match_embedding, len(TEXT.vocab)))
 
 train_iter = data.Iterator(train, batch_size=args.batch_size, device=args.gpu, train=True, repeat=False,
-                                   sort=False, shuffle=True)
+                                   sort=False, shuffle=True, sort_within_batch=False)
 dev_iter = data.Iterator(dev, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
-                                   sort=False, shuffle=False)
+                                   sort=False, shuffle=False, sort_within_batch=False)
 test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, train=False, repeat=False,
-                                   sort=False, shuffle=False)
+                                   sort=False, shuffle=False, sort_within_batch=False)
 
 config = args
 config.words_num = len(TEXT.vocab)
@@ -72,7 +72,7 @@ else:
 
 model.embed.weight.data.copy_(TEXT.vocab.vectors)
 if args.cuda:
-    model.cuda()
+    model = model.to(torch.device("cuda:{}".format(args.gpu)))
     print("Shift model to GPU")
 
 print(config)
@@ -148,7 +148,7 @@ while True:
                 answer = model(dev_batch)
 
                 if args.dataset == 'RelationPrediction':
-                    n_dev_correct += (torch.max(answer, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data).sum()
+                    n_dev_correct += torch.sum((torch.max(answer, 1)[1].view(dev_batch.relation.size()).data == dev_batch.relation.data)).item()
                 else:
                     print("Wrong Dataset")
                     exit()
@@ -181,5 +181,5 @@ while True:
             # print progress message
             print(log_template.format(time.time() - start,
                                           epoch, iterations, 1 + batch_idx, len(train_iter),
-                                          100. * (1 + batch_idx) / len(train_iter), loss.data[0], ' ' * 8,
+                                          100. * (1 + batch_idx) / len(train_iter), loss.item(), ' ' * 8,
                                           100. * n_correct / n_total, ' ' * 12))
