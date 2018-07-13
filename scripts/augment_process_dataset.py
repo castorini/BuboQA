@@ -126,11 +126,15 @@ def augment_dataset(datadir, index_namespath, outdir):
                 question = processed_text(items[3])
 
                 if names_map.get(subject) is None:
-                    skipped += 1
-                    print("lineid {} - name not found. {} skipping question.".format(lineid, subject))
-                    continue
-
-                cand_entity_names = names_map[subject]
+                    if fname != "test":
+                        skipped += 1
+                        print("lineid {} - name not found. {} Skip".format(lineid, subject))
+                        continue
+                    else:
+                        cand_entity_names = []
+                        print("lineid {} - name not found. {}".format(lineid, subject))
+                else:
+                    cand_entity_names = names_map[subject]
 
                 entity_name, label, exact_match = reverseLinking(question, cand_entity_names)
                 if exact_match:
@@ -143,10 +147,11 @@ def augment_dataset(datadir, index_namespath, outdir):
 
         print("wrote to {}".format(fpath_numbered))
         print("Exact Match Entity : {} out of {} : {}".format(total_exact_match, total, total_exact_match/total))
+
         outfile.close()
 
     print("wrote to {}".format(allpath))
-    print("skipped # questions: {}".format(skipped))
+    # print("skipped # questions: {}".format(skipped))
     outallfile.close()
     print("DONE!")
 
