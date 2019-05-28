@@ -22,10 +22,12 @@ random.seed(args.seed)
 
 if not args.cuda:
     args.gpu = -1
+    map_location = None
 if torch.cuda.is_available() and args.cuda:
     print("Note: You are using GPU for training")
     torch.cuda.set_device(args.gpu)
     torch.cuda.manual_seed(args.seed)
+    map_location = lambda storage, location: storage.cuda(args.gpu)
 if torch.cuda.is_available() and not args.cuda:
     print("Warning: You have Cuda but not use it. You are using CPU for training.")
 
@@ -44,7 +46,7 @@ test_iter = data.Iterator(test, batch_size=args.batch_size, device=args.gpu, tra
                                    sort=False, shuffle=False)
 
 # load the model
-model = torch.load(args.trained_model, map_location=lambda storage,location: storage.cuda(args.gpu))
+model = torch.load(args.trained_model, map_location=map_location)
 
 print(model)
 
