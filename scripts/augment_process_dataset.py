@@ -61,7 +61,7 @@ def reverseLinking(sent, text_candidate):
     exact_match = False
 
     if text_candidate is None or len(text_candidate) == 0:
-        return '<UNK>', label, exact_match
+        return '<UNK>', " ".join(label), exact_match
 
     # sorted by length
     for text in sorted(text_candidate, key=lambda x:len(x), reverse=True):
@@ -78,7 +78,7 @@ def reverseLinking(sent, text_candidate):
             v, score = process.extractOne(sent, text_candidate, scorer=fuzz.partial_ratio)
         except:
             print("Extraction Error with FuzzyWuzzy : {} || {}".format(sent, text_candidate))
-            return '<UNK>', label, exact_match
+            return '<UNK>', " ".join(label), exact_match
         v = v.split()
         n_gram_candidate = get_ngram(tokens)
         n_gram_candidate = sorted(n_gram_candidate, key=lambda x: fuzz.ratio(x[0], v), reverse=True)
